@@ -1,0 +1,67 @@
+/*Polls*/
+.content {
+    overflow: auto;
+}
+
+.col-md-9 > h4{
+    color: #08a057;
+    display: inline;"
+}
+
+.img-size img{
+    height: 260px;
+    width: 90%;
+}
+
+.row .img-size{
+   margin-left: 15px;
+}
+
+
+.choice-radio{
+    margin-left: 42%
+}
+
+.poll-vote {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.poll-vote .img-size {
+    margin-left: -15px
+
+}
+
+.col-md-4 .radio img.wide{
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+.choice {
+    word-break: break-all;
+    word-wrap:  break-word
+}
+/*END Polls*/
+
+/*Summary page*/
+.illustration {
+    display: inline-block;
+}
+.illustration > a{
+    padding: 5px;
+}
+
+.title-col{
+    display: inline-block;
+    word-break: break-all;
+    word-wrap:  break-word;
+    min-width: 80%;
+}
+
+.topic-name {
+    width:100%;
+    word-break: break-all;
+    word-wrap:  break-word;
+}
+/*END Summary page*/

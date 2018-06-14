@@ -1,0 +1,260 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_static %}
+
+{% block extrastyle %}
+
+    <link href="{% static 'admin/css/dashboard.css' %}" rel="stylesheet"/>
+      {{ block.super }}
+{% endblock %}
+
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block content %}
+<div class="first_line" style="display: inline-block">
+
+{#  <div id="content-main">#}
+{% if not request.user.is_editor %}
+       <div class="balance" style="width: 45%; float: left">
+
+                <div class="balance_head">
+                    <h4 class="title">{% trans 'Informations about condominium' %}</h4>
+                    <p class="category">{% trans 'Informations about activity in your condominium' %}<p>
+                </div>
+
+
+                    <table class="table">
+{#                        <thead>#}
+{#                        <tr>#}
+{#                            <th class="text-center">#</th>#}
+{#                            <th>Дата</th>#}
+{#                            <th>Пpизначення</th>#}
+{#                            <th class="text-right">Сума</th>#}
+{#                        </tr>#}
+{#                        </thead>#}
+                        <tbody>
+                        <tr>
+                            <td class="text-left" style="word-break: normal;">{% trans 'Last users on site' %}:</td>
+                            <td>
+                                {% for user in users %}
+                                    {{ user|truncatechars:40 }};
+                                {% empty %}
+                                    {% trans 'Information about users is absent' %}
+                                {% endfor %}
+                            </td>
+                            <td style="width: 80px">({% trans 'Total' %}: {{ users_count }})</td>
+{#                            <td class="text-right">120 ₴</td>#}
+                        </tr>
+                        <tr>
+                            <td class="text-left" style="word-break: normal;">{% trans 'Last news' %}:</td>
+                            <td>
+                            {% for new in news %}
+                                {{ new|truncatechars:40 }};
+                            {% empty %}
+                                {% trans 'Absent' %}
+                            {% endfor %}
+                            </td>
+                            <td style="width: 80px">({% trans 'Total' %}: {{ news_count }})</td>
+{#                            <td class="text-right">25 ₴</td>#}
+                        </tr>
+                        <tr>
+                            <td class="text-left" style="word-break: normal;">{% trans 'Last ideas' %}:</td>
+                            <td>
+                            {% for idea in ideas %}
+                                {{ idea|truncatechars:40 }};
+                            {% empty %}
+                                {% trans 'Absent' %}
+                            {% endfor %}
+                            </td>
+                            <td style="width: 80px">({% trans 'Total' %}: {{ ideas_count }})</td>
+{#                            <td class="text-right">24 000 ₴</td>#}
+                        </tr>
+                        <tr>
+                            <td class="text-left" style="word-break: normal;">{% trans 'Condominiums where you are manager ' %}:</td>
+                            <td>
+                            <ul>
+                                {% for cond in  managers_condominium%}
+                                   <li>{{ cond }}</li>
+                                {% endfor %}
+                            </ul>
+                            </td>
+                            <td style="width: 80px"></td>
+{#                            <td class="text-right">24 000 ₴</td>#}
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+
+  </div>
+
+{#  <div id="content-related">#}
+
+
+            <div class="balance" style="width: 45%; float: left;margin-left: 50px">
+
+                <div class="balance_head">
+                    <h4 class="title">{% trans 'Help with Condominium' %}</h4>
+                    <p class="category">{% trans 'Service in development and filling' %}<p>
+                </div>
+
+
+                    <table class="table">
+
+                        <tbody>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td>{% trans 'How create news?' %}</td>
+                            <td><a href="help/#news">{% trans 'To the manual' %}</a></td>
+{#                            <td class="text-right">120 ₴</td>#}
+                        </tr>
+                        <tr>
+                            <td class="text-center">2</td>
+                            <td>{% trans 'How give to the user the permissions of manager?' %}</td>
+                            <td><a href="help/#users">{% trans 'To the manual' %}</a></td>
+{#                            <td class="text-right">25 ₴</td>#}
+                        </tr>
+                        <tr>
+                            <td class="text-center">3</td>
+                            <td>{% trans 'How add ideas?' %}</td>
+                            <td><a href="help/#ideas">{% trans 'To the manual' %}</a></td>
+{#                            <td class="text-right">24 000 ₴</td>#}
+                        </tr>
+                        <tr>
+                            <td class="text-center">4</td>
+                            <td>{% trans 'How add problems?' %}</td>
+                            <td><a href="help/#problems">{% trans 'To the manual' %}</a></td>
+{#                            <td class="text-right">24 000 ₴</td>#}
+                        </tr>
+
+                        </tbody>
+                    </table>
+            </div>
+{#    </div>#}
+
+{#</div>#}
+{% endif %}
+</div>
+
+<div class="first_line">
+{% if problems.object_list %}
+    <div class="obj-card">
+
+        <div class="balance_head">
+                <h4 class="title">{% trans 'Issues that need consideration' %}.</h4>
+                <p class="category">{% trans 'Click on the issue to go to manage page of it' %}.<p>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="text-center" >{% trans 'Title' %}</th>
+                <th class="text-center" >{% trans 'Create date' %}</th>
+                <th class="text-center" >{% trans 'User' %}</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for problem in problems.object_list %}
+                    <tr>
+                        <td class="text-center"><a href="/manage/problems/items/{{ problem.id }}">{{ problem.title|truncatechars:50 }}</a></td>
+                        <td class="text-center">{{ problem.create }}</td>
+                        <td class="text-center">
+                            {{ problem.user_ref.last_name|truncatechars:50 }} {{ problem.user_ref.first_name|slice:"1" }}. {{ problem.user_ref.middle_name|slice:"1" }}.
+                        </td>
+        {#                            <td class="text-right">120 ₴</td>#}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {# The following renders the pagination html #}
+        <div class="pagination text-center" style="padding: 10px 30px;">
+            {% if problems.has_previous or problems.has_next%}
+                {% if problems.has_previous %}
+                    <a href="?page_pr={{ problems.previous_page_number }}" class="prev btn">&lsaquo;&lsaquo; {% trans "previous" %}</a>
+                {% else %}
+                    <span class="disabled prev btn">&lsaquo;&lsaquo; {% trans "previous" %}</span>
+                {% endif %}
+                {% for page in problems.pages %}
+                    {% if page %}
+                        {% ifequal page problems.number %}
+                            <span class="btn active current page">{{ page }}</span>
+                        {% else %}
+                            <a href="?page_pr={{ page }}" class="page btn">{{ page }}</a>
+                        {% endifequal %}
+                    {% else %}
+                        ...
+                    {% endif %}
+                {% endfor %}
+                {% if problems.has_next %}
+                    <a href="?page_pr={{ problems.next_page_number }}" class="next btn">{% trans "next" %} &rsaquo;&rsaquo;</a>
+                {% else %}
+                    <span class="disabled next btn">{% trans "next" %} &rsaquo;&rsaquo;</span>
+                {% endif %}
+            {% endif %}
+        </div>
+
+    </div>
+
+ {% endif %}
+
+    <div class="obj-card {% if problems.object_list %}idea{% endif %}">
+        {% if ideas_list.object_list %}
+        <div class="balance_head">
+            <h4 class="title">{% trans 'Ideas that need consideration' %}.</h4>
+            <p class="category">{% trans 'Click on the idea to go to manage page of it' %}.<p>
+        </div>
+        <table class="table">
+            <thead >
+            <tr >
+                <th class="text-center">{% trans 'Title' %}</th>
+                <th class="text-center">{% trans 'Create date' %}</th>
+                <th class="text-center">{% trans 'User' %}</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for idea in ideas_list.object_list %}
+                    <tr >
+                        <td class="text-center" ><a href="/manage/ideas/ideas/{{ idea.id }}">{{ idea.title|truncatechars:50 }}</a></td>
+                        <td class="text-center">{{ idea.create_date }}</td>
+                        <td class="text-center">
+                            {{ idea.owner_user.last_name|truncatechars:50 }} {{ idea.owner_user.first_name|slice:"1" }}. {{ idea.owner_user.middle_name|slice:"1" }}.
+                        </td>
+        {#                            <td class="text-right">120 ₴</td>#}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="pagination text-center" style="padding: 10px 30px;">
+            {% if ideas_list.has_previous or ideas_list.has_next%}
+                {% if ideas_list.has_previous %}
+                    <a href="?page_idea={{ ideas_list.previous_page_number }}" class="prev btn">&lsaquo;&lsaquo; {% trans "previous" %}</a>
+                {% else %}
+                    <span class="disabled prev btn">&lsaquo;&lsaquo; {% trans "previous" %}</span>
+                {% endif %}
+                {% for page in ideas_list.pages %}
+                    {% if page %}
+                        {% ifequal page ideas_list.number %}
+                            <span class="btn active current page">{{ page }}</span>
+                        {% else %}
+                            <a href="?page_idea={{ page }}" class="page btn">{{ page }}</a>
+                        {% endifequal %}
+                    {% else %}
+                        ...
+                    {% endif %}
+                {% endfor %}
+                {% if ideas_list.has_next %}
+                    <a href="?page_idea={{ ideas_list.next_page_number }}" class="next btn">{% trans "next" %} &rsaquo;&rsaquo;</a>
+                {% else %}
+                    <span class="disabled next btn">{% trans "next" %} &rsaquo;&rsaquo;</span>
+                {% endif %}
+            {% endif %}
+        </div>
+    {% endif %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,823 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-10 14:09+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: modules/newsletter/addressimport/parsers.py:40
+#, python-format
+msgid "Entry '%s' does not contain a valid e-mail address."
+msgstr "Запис '%s' не містить коректної електронної ошти"
+
+#: modules/newsletter/addressimport/parsers.py:55
+#, python-format
+msgid "The address file contains duplicate entries for '%s'."
+msgstr "Адреса файлу містить запис, що повторюються для '%s'."
+
+#: modules/newsletter/addressimport/parsers.py:69
+msgid "Some entries are already subscribed to."
+msgstr "Деякі записи вже підписані"
+
+#: modules/newsletter/addressimport/parsers.py:108
+#, python-format
+msgid ""
+"E-mail address %(email)s too long, maximum length is %(email_length)s "
+"characters."
+msgstr ""
+"Електронна пошта %(email)s занадто довга, максимально %(email_length)s "
+"символів"
+
+#: modules/newsletter/addressimport/parsers.py:135
+#, python-format
+msgid "Name %(name)s too long, maximum length is %(name_length)s characters."
+msgstr "Ім'я %(name)s занадто довге, максимально %(name_length)s символів"
+
+#: modules/newsletter/addressimport/parsers.py:196
+#: modules/newsletter/addressimport/parsers.py:208
+#: modules/newsletter/addressimport/parsers.py:243
+#: modules/newsletter/models.py:168 modules/newsletter/models.py:181
+msgid "name"
+msgstr "Назва"
+
+#: modules/newsletter/addressimport/parsers.py:200
+msgid "display"
+msgstr "Показати"
+
+#: modules/newsletter/addressimport/parsers.py:207
+#, python-format
+msgid ""
+"Name column not found. The name of this column should be either 'name' or "
+"'%s'."
+msgstr "Стовпчик назвою '%s'. не знайдено"
+
+#: modules/newsletter/addressimport/parsers.py:219
+#: modules/newsletter/addressimport/parsers.py:231
+#: modules/newsletter/addressimport/parsers.py:244
+#: modules/newsletter/models.py:43 modules/newsletter/models.py:183
+#: modules/newsletter/models.py:196
+msgid "e-mail"
+msgstr "електронна адреса"
+
+#: modules/newsletter/addressimport/parsers.py:229
+#, python-format
+msgid ""
+"E-mail column not found. The name of this column should be either 'email', "
+"'e-mail' or '%(email)s'."
+msgstr "Стовпчик адреси '%(email)s' не знайдено"
+
+#: modules/newsletter/addressimport/parsers.py:239
+#, python-format
+msgid ""
+"Could not properly determine the proper columns in the CSV-file. There "
+"should be a field called 'name' or '%(name)s' and one called 'e-mail' or "
+"'%(e-mail)s'."
+msgstr ""
+
+#: modules/newsletter/addressimport/parsers.py:264
+#, python-format
+msgid "Row with content '%(row)s' does not contain a name and email field."
+msgstr "Рядок з вмістом '%(row)s' не містить ім'я та адресу електронної поле."
+
+#: modules/newsletter/addressimport/parsers.py:290
+#, python-format
+msgid "Error reading vCard file: %s"
+msgstr "Помилка читання vCard файла: %s"
+
+#: modules/newsletter/addressimport/parsers.py:309
+#, python-format
+msgid "Entry '%s' contains no email address."
+msgstr "Запис '%s' не містить адресу електронної пошти."
+
+#: modules/newsletter/addressimport/parsers.py:345
+msgid "Some entries have no e-mail address."
+msgstr "Деякі записи не мають адреси електронної пошти"
+
+#: modules/newsletter/admin.py:81
+msgid "Messages"
+msgstr "Листи"
+
+#: modules/newsletter/admin.py:89
+#: modules/newsletter/templates/admin/newsletter/subscription/confirmimportform.html:16
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:16
+msgid "Subscriptions"
+msgstr "Підписанти"
+
+#: modules/newsletter/admin.py:95
+msgid "Submissions"
+msgstr "Списки розсилання"
+
+#: modules/newsletter/admin.py:126 modules/newsletter/models.py:544
+msgid "submission"
+msgstr "список розсилання"
+
+#: modules/newsletter/admin.py:133 modules/newsletter/admin.py:296
+#: modules/newsletter/admin.py:433 modules/newsletter/models.py:106
+#: modules/newsletter/models.py:303 modules/newsletter/models.py:494
+#: modules/newsletter/models.py:678
+msgid "newsletter"
+msgstr "Розсилання"
+
+#: modules/newsletter/admin.py:142
+msgid "publish date"
+msgstr "дата публікації"
+
+#: modules/newsletter/admin.py:168
+msgid "Sent."
+msgstr "Відправленно."
+
+#: modules/newsletter/admin.py:171
+msgid "Delayed submission."
+msgstr "Невчасно подані"
+
+#: modules/newsletter/admin.py:173
+msgid "Submitting."
+msgstr "Надсилання"
+
+#: modules/newsletter/admin.py:175
+msgid "Not sent."
+msgstr "Не відправлено"
+
+#: modules/newsletter/admin.py:176 modules/newsletter/admin.py:458
+#: modules/newsletter/admin_forms.py:115
+msgid "Status"
+msgstr "Статус"
+
+#: modules/newsletter/admin.py:183
+msgid "Submission already sent."
+msgstr "Розсилання вже відправлені"
+
+#: modules/newsletter/admin.py:192
+msgid "Your submission is being sent."
+msgstr "Ваше подання направлене"
+
+#: modules/newsletter/admin.py:238
+msgid "Optional"
+msgstr "Опціональний"
+
+#: modules/newsletter/admin.py:284 modules/newsletter/models.py:467
+#: modules/newsletter/models.py:519 modules/newsletter/models.py:681
+msgid "message"
+msgstr "Повідомлення"
+
+#: modules/newsletter/admin.py:288
+#: modules/newsletter/templates/admin/newsletter/message/change_form.html:10
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:13
+msgid "Preview"
+msgstr "Попередній пергляд"
+
+#: modules/newsletter/admin.py:316 modules/newsletter/views.py:606
+msgid ""
+"No HTML template associated with the newsletter this message belongs to."
+msgstr "Ніякиї HTML шаблон не пов'язаний з цим розсиланням."
+
+#: modules/newsletter/admin.py:453 modules/newsletter/admin_forms.py:103
+msgid "Subscribed"
+msgstr "Підписаний"
+
+#: modules/newsletter/admin.py:455 modules/newsletter/admin_forms.py:104
+msgid "Unsubscribed"
+msgstr "Відписався"
+
+#: modules/newsletter/admin.py:457
+msgid "Unactivated"
+msgstr "Неактивовано"
+
+#: modules/newsletter/admin.py:465 modules/newsletter/models.py:316
+msgid "subscribe date"
+msgstr "Дата підписки"
+
+#: modules/newsletter/admin.py:472 modules/newsletter/models.py:324
+msgid "unsubscribe date"
+msgstr "Дата відписки"
+
+#: modules/newsletter/admin.py:480
+#, python-format
+msgid "%d user has been successfully subscribed."
+msgid_plural "%d users have been successfully subscribed."
+msgstr[0] "%d користувач був успішно підписаний."
+msgstr[1] "%d користувачі були успішно підписані."
+
+#: modules/newsletter/admin.py:485
+msgid "Subscribe selected users"
+msgstr "Підписати обраних користувачів"
+
+#: modules/newsletter/admin.py:492
+#, python-format
+msgid "%d user has been successfully unsubscribed."
+msgid_plural "%d users have been successfully unsubscribed."
+msgstr[0] "%d користувач був успішно відписаний."
+msgstr[1] "%d користувачі були успішно відписані."
+
+#: modules/newsletter/admin.py:497
+msgid "Unsubscribe selected users"
+msgstr "Відписати обраних користувачів"
+
+#: modules/newsletter/admin.py:553
+#, python-format
+msgid "%d subscription has been successfully added."
+msgid_plural "%d subscriptions have been successfully added."
+msgstr[0] "%d підписка була успішно додана."
+msgstr[1] "%d підписки були успішно додані."
+
+#: modules/newsletter/admin_forms.py:43
+#, python-format
+msgid "File type '%s' was not recognized."
+msgstr "'%s'- даний тип файлу не підтримується"
+
+#: modules/newsletter/admin_forms.py:60
+#, python-format
+msgid "File extension '%s' was not recognized."
+msgstr "Розширення файлу '%s' не був підтримується"
+
+#: modules/newsletter/admin_forms.py:64
+msgid "No entries could found in this file."
+msgstr "Записів в цьому файлі не знайдено"
+
+#: modules/newsletter/admin_forms.py:72
+#: modules/newsletter/templates/admin/newsletter/subscription/confirmimportform.html:12
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:12
+#: modules/newsletter/templates/newsletter/common.html:7
+#: modules/newsletter/templates/newsletter/newsletter_detail.html:10
+#: modules/newsletter/templates/newsletter/newsletter_list.html:14
+#: modules/newsletter/templates/newsletter/newsletter_list.html:32
+#: modules/newsletter/templates/newsletter/subscription_activate.html:5
+#: modules/newsletter/templates/newsletter/subscription_activate.html:8
+#: modules/newsletter/templates/newsletter/subscription_subscribe_activated.html:5
+#: modules/newsletter/templates/newsletter/subscription_subscribe_activated.html:8
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_activated.html:5
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_activated.html:8
+#: modules/newsletter/templates/newsletter/subscription_update_activated.html:5
+#: modules/newsletter/templates/newsletter/subscription_update_activated.html:8
+msgid "Newsletter"
+msgstr "Розсилання"
+
+#: modules/newsletter/admin_forms.py:75
+msgid "Address file"
+msgstr "Адреса файлу"
+
+#: modules/newsletter/admin_forms.py:77
+msgid "Ignore non-fatal errors"
+msgstr "Ігнорувати не фатальні помилки"
+
+#: modules/newsletter/admin_forms.py:88
+msgid "You should confirm in order to continue."
+msgstr "Ви повинні підтвердити для продовження"
+
+#: modules/newsletter/admin_forms.py:91
+#: modules/newsletter/templates/admin/newsletter/subscription/confirmimportform.html:23
+#: modules/newsletter/templates/admin/newsletter/subscription/confirmimportform.html:28
+msgid "Confirm import"
+msgstr "Підтвердіть імпорт"
+
+#: modules/newsletter/admin_forms.py:123 modules/newsletter/admin_forms.py:131
+msgid "If a user has been selected this field should remain empty."
+msgstr "Якщо користувач був обраний, це поле повинно залишатися порожнім."
+
+#: modules/newsletter/admin_forms.py:141
+msgid "Either a user must be selected or an email address must be specified."
+msgstr ""
+"Або користувач повинен бути обраний або повинна бути вказана адреса "
+"електронної пошти."
+
+#: modules/newsletter/admin_forms.py:170
+msgid ""
+"This message has already been published in some other submission. Messages "
+"can only be published once."
+msgstr ""
+"Це повідомлення вже було опубліковано в іншому записі. Повідомлення можуть "
+"бути опубліковані тільки один раз."
+
+#: modules/newsletter/admin_utils.py:25
+#, python-format
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr "%(name)s об'єкта з первинним ключем %(key)r не існує."
+
+#: modules/newsletter/apps.py:6
+msgid "Our newsletter"
+msgstr "Розсилання"
+
+#: modules/newsletter/forms.py:47 modules/newsletter/forms.py:106
+msgid "An e-mail address is required."
+msgstr "Неохідний e-mail"
+
+#: modules/newsletter/forms.py:55
+#, python-format
+msgid ""
+"The e-mail address '%(email)s' belongs to a user with an account on this "
+"site. Please log in as that user and try again."
+msgstr ""
+"Електроннa поштa '%(email)s' належить користувачеві з обліковим записом на "
+"цьому сайті. Будь ласка, увійдіть в систему під користувачем, і спробуйте ще "
+"раз."
+
+#: modules/newsletter/forms.py:72
+msgid "Your e-mail address has already been subscribed to."
+msgstr "Вашу адресу електронної пошти вже підписано."
+
+#: modules/newsletter/forms.py:97
+msgid "This subscription has not yet been activated."
+msgstr "Цю підписку ще не активовано."
+
+#: modules/newsletter/forms.py:114
+#, python-format
+msgid ""
+"This e-mail address belongs to the user '%(username)s'. Please log in as "
+"that user and try again."
+msgstr ""
+"Електроннa поштa належить користувачеві '%(username)s'. Будь ласка, увійдіть "
+"в систему під користувачем, і спробуйте ще раз."
+
+#: modules/newsletter/forms.py:132
+msgid "This e-mail address has not been subscribed to."
+msgstr "Ця адреса електронної пошти не підписана"
+
+#: modules/newsletter/forms.py:147
+msgid "This subscription has already been unsubscribed from."
+msgstr "Цей підписник відписався"
+
+#: modules/newsletter/forms.py:163
+msgid "The validation code supplied by you does not match."
+msgstr "Код перевірки, наданий вами не підходить."
+
+#: modules/newsletter/forms.py:169
+msgid "Activation code"
+msgstr "Код активації"
+
+#: modules/newsletter/jobs/hourly/submit.py:15
+msgid "Submitting queued newsletter mailings"
+msgstr "Надсилаємо поставлені в чергу поштові розсилки"
+
+#: modules/newsletter/models.py:33
+msgid "Condominium"
+msgstr "ОСББ"
+
+#: modules/newsletter/models.py:35
+msgid "site"
+msgstr "Сайт"
+
+#: modules/newsletter/models.py:38
+msgid "newsletter title"
+msgstr "Назва"
+
+#: modules/newsletter/models.py:40 modules/newsletter/models.py:491
+msgid "slug"
+msgstr "Коротка назва"
+
+#: modules/newsletter/models.py:43
+msgid "Sender e-mail"
+msgstr "e-mail відправника"
+
+#: modules/newsletter/models.py:46
+msgid "sender"
+msgstr "Відправник"
+
+#: modules/newsletter/models.py:46
+msgid "Sender name"
+msgstr "Ім'я відправника"
+
+#: modules/newsletter/models.py:50
+msgid "visible"
+msgstr "Видимий"
+
+#: modules/newsletter/models.py:54
+msgid "send html"
+msgstr "Надсилання html"
+
+#: modules/newsletter/models.py:55
+msgid "Whether or not to send HTML versions of e-mails."
+msgstr "He посилати HTML версії електронних листів"
+
+#: modules/newsletter/models.py:107
+msgid "newsletters"
+msgstr "Розсилання"
+
+#: modules/newsletter/models.py:163
+msgid "user"
+msgstr "Користувач"
+
+#: modules/newsletter/models.py:168
+msgid "optional"
+msgstr "Опціональний"
+
+#: modules/newsletter/models.py:213
+#, python-format
+msgid "Updated subscription %(subscription)s to %(action)s."
+msgstr "Оновлення підписки %(subscription)s на %(action)s."
+
+#: modules/newsletter/models.py:255
+msgid "Neither an email nor a username is set. This asks for inconsistency!"
+msgstr "Ні електронна пошта, ні ім'я користувача не встановлено."
+
+#: modules/newsletter/models.py:259
+msgid "If user is set, email must be null and vice versa."
+msgstr ""
+"Якщо користувача встановлено, адреса електронної пошти повинна бути "
+"порожньою, і навпаки."
+
+#: modules/newsletter/models.py:301
+msgid "IP address"
+msgstr "ІР адреса"
+
+#: modules/newsletter/models.py:308
+msgid "activation code"
+msgstr "Код активації"
+
+#: modules/newsletter/models.py:313
+msgid "subscribed"
+msgstr "Підписаний"
+
+#: modules/newsletter/models.py:321
+msgid "unsubscribed"
+msgstr "Відписаний"
+
+#: modules/newsletter/models.py:329
+#, python-format
+msgid "%(name)s <%(email)s> to %(newsletter)s"
+msgstr "%(name)s <%(email)s> до %(newsletter)s"
+
+#: modules/newsletter/models.py:336
+#, python-format
+msgid "%(email)s to %(newsletter)s"
+msgstr "%(email)s до %(newsletter)s"
+
+#: modules/newsletter/models.py:342
+msgid "subscription"
+msgstr "підпискa"
+
+#: modules/newsletter/models.py:343
+msgid "subscriptions"
+msgstr "підписки"
+
+#: modules/newsletter/models.py:446
+msgid ""
+"Sort order determines the order in which articles are concatenated in a post."
+msgstr ""
+"Порядок сортування визначає порядок, в якому статті закріплюються в "
+"публікації."
+
+#: modules/newsletter/models.py:448
+msgid "sort order"
+msgstr "Сортувати за"
+
+#: modules/newsletter/models.py:451 modules/newsletter/models.py:490
+msgid "title"
+msgstr "Назва"
+
+#: modules/newsletter/models.py:452
+msgid "text"
+msgstr "Текст"
+
+#: modules/newsletter/models.py:455
+msgid "link"
+msgstr "Посилання"
+
+#: modules/newsletter/models.py:461
+msgid "image"
+msgstr "Зображення"
+
+#: modules/newsletter/models.py:472
+msgid "article"
+msgstr "Стаття"
+
+#: modules/newsletter/models.py:473
+msgid "articles"
+msgstr "Статті"
+
+#: modules/newsletter/models.py:498
+msgid "created"
+msgstr "Створено"
+
+#: modules/newsletter/models.py:501
+msgid "modified"
+msgstr "Змінено"
+
+#: modules/newsletter/models.py:506
+#, python-format
+msgid "%(title)s in %(newsletter)s"
+msgstr "%(title)s в %(newsletter)s"
+
+#: modules/newsletter/models.py:520
+msgid "messages"
+msgstr "повідомлення"
+
+#: modules/newsletter/models.py:545
+msgid "submissions"
+msgstr "Списки розсилання"
+
+#: modules/newsletter/models.py:548
+#, python-format
+msgid "%(newsletter)s on %(publish_date)s"
+msgstr "%(newsletter)s на %(publish_date)s"
+
+#: modules/newsletter/models.py:557
+#, python-format
+msgid "Submitting %(submission)s to %(count)d people"
+msgstr "Підтвердити %(submission)s для %(count)d осіб"
+
+#: modules/newsletter/models.py:613
+#, python-format
+msgid "Submitting message to: %s."
+msgstr "Підтвердити повідомлення до : %s."
+
+#: modules/newsletter/models.py:622
+#, python-format
+msgid "Message %(subscription)s failed with error: %(error)s"
+msgstr "Повідомлення %(subscription)s завершилось з помилкою: %(error)s"
+
+#: modules/newsletter/models.py:646
+#, python-format
+msgid "Submission of message %s"
+msgstr "Подача повідомлення %s"
+
+#: modules/newsletter/models.py:686
+msgid ""
+"If you select none, the system will automatically find the subscribers for "
+"you."
+msgstr ""
+"Якщо ви нічого не оберете, система автоматично знайде підписників для вас"
+
+#: modules/newsletter/models.py:688
+msgid "recipients"
+msgstr "Одержувачі"
+
+#: modules/newsletter/models.py:693
+msgid "publication date"
+msgstr "Дата публікації"
+
+#: modules/newsletter/models.py:697
+msgid "publish"
+msgstr "Опубліковано"
+
+#: modules/newsletter/models.py:698
+msgid "Publish in archive."
+msgstr "Опубліковано в архіві"
+
+#: modules/newsletter/models.py:702
+msgid "prepared"
+msgstr "Підготовлений"
+
+#: modules/newsletter/models.py:706
+msgid "sent"
+msgstr "Надіслано"
+
+#: modules/newsletter/models.py:710
+msgid "sending"
+msgstr "Надсилання"
+
+#: modules/newsletter/templates/admin/newsletter/message/change_form.html:8
+#: modules/newsletter/templates/admin/newsletter/newsletter/change_form.html:8
+#: modules/newsletter/templates/admin/newsletter/submission/change_form.html:16
+msgid "History"
+msgstr "Історія"
+
+#: modules/newsletter/templates/admin/newsletter/message/change_form.html:9
+#: modules/newsletter/templates/admin/newsletter/newsletter/change_form.html:9
+#: modules/newsletter/templates/admin/newsletter/submission/change_form.html:17
+msgid "View on site"
+msgstr "Подивитись на сайті"
+
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:5
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:19
+msgid "Preview message"
+msgstr "Попередній перегляд повідомлення"
+
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:9
+#: modules/newsletter/templates/admin/newsletter/subscription/confirmimportform.html:8
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:8
+msgid "Home"
+msgstr "Домівка"
+
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:11
+msgid "Message"
+msgstr "Повідомлення"
+
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:22
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:28
+msgid "Change"
+msgstr "Зміни"
+
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:23
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:29
+msgid "Create submission"
+msgstr "Створити"
+
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:26
+msgid "HTML"
+msgstr "HTML"
+
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:30
+msgid "Text"
+msgstr "Текст"
+
+#: modules/newsletter/templates/admin/newsletter/submission/change_form.html:18
+msgid "Submit"
+msgstr "Підтвердити"
+
+#: modules/newsletter/templates/admin/newsletter/subscription/change_list.html:8
+msgid "import"
+msgstr "Імпорт"
+
+#: modules/newsletter/templates/admin/newsletter/subscription/change_list.html:12
+#, python-format
+msgid "Add %(name)s"
+msgstr "Додати %(name)s"
+
+#: modules/newsletter/templates/admin/newsletter/subscription/confirmimportform.html:3
+#: modules/newsletter/templates/admin/newsletter/subscription/confirmimportform.html:20
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:3
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:19
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:24
+msgid "Import addresses"
+msgstr "Імпорт адрес"
+
+#: modules/newsletter/templates/admin/newsletter/subscription/confirmimportform.html:40
+msgid "Confirm"
+msgstr "Підтвердити"
+
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:41
+msgid "Upload"
+msgstr "Завантажити"
+
+#: modules/newsletter/templates/newsletter/newsletter_detail.html:5
+msgid "Newsletter detail"
+msgstr "Деталі "
+
+#: modules/newsletter/templates/newsletter/newsletter_list.html:5
+msgid "Newsletter list"
+msgstr "Список "
+
+#: modules/newsletter/templates/newsletter/newsletter_list.html:16
+#: modules/newsletter/templates/newsletter/subscription_subscribe.html:23
+#: modules/newsletter/templates/newsletter/subscription_subscribe_user.html:22
+msgid "Subscribe"
+msgstr "Підписатися"
+
+#: modules/newsletter/templates/newsletter/newsletter_list.html:27
+msgid "Update subscriptions"
+msgstr "Оновити підписки"
+
+#: modules/newsletter/templates/newsletter/submission_archive.html:5
+#: modules/newsletter/templates/newsletter/submission_archive.html:10
+msgid "Newsletter archive"
+msgstr "Архіа новин"
+
+#: modules/newsletter/templates/newsletter/subscription_activate.html:5
+#: modules/newsletter/templates/newsletter/subscription_activate.html:8
+#: modules/newsletter/templates/newsletter/subscription_subscribe_activated.html:5
+#: modules/newsletter/templates/newsletter/subscription_subscribe_activated.html:8
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_activated.html:5
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_activated.html:8
+#: modules/newsletter/templates/newsletter/subscription_update_activated.html:5
+#: modules/newsletter/templates/newsletter/subscription_update_activated.html:8
+msgid "activate"
+msgstr "активувати"
+
+#: modules/newsletter/templates/newsletter/subscription_activate.html:13
+msgid "Activate"
+msgstr "Активувати"
+
+#: modules/newsletter/templates/newsletter/subscription_subscribe.html:5
+#: modules/newsletter/templates/newsletter/subscription_subscribe.html:8
+#: modules/newsletter/templates/newsletter/subscription_subscribe_email_sent.html:5
+#: modules/newsletter/templates/newsletter/subscription_subscribe_email_sent.html:8
+#: modules/newsletter/templates/newsletter/subscription_subscribe_user.html:5
+#: modules/newsletter/templates/newsletter/subscription_subscribe_user.html:8
+msgid "Newsletter subscribe"
+msgstr "Підписка розсилання"
+
+#: modules/newsletter/templates/newsletter/subscription_subscribe.html:11
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe.html:11
+#: modules/newsletter/templates/newsletter/subscription_update.html:11
+msgid ""
+"Due to a technical error we were not able to submit your confirmation email. "
+"This could be because your email address is invalid."
+msgstr ""
+"Через технічну помилку ми не змогли відправити підтвердження по електронній "
+"пошті."
+
+#: modules/newsletter/templates/newsletter/subscription_subscribe_activated.html:10
+msgid "Your subscription has successfully been activated."
+msgstr "Ваша підписка була успішно активована."
+
+#: modules/newsletter/templates/newsletter/subscription_subscribe_email_sent.html:10
+msgid ""
+"Your subscription request was successfully received and an activation email "
+"has been sent to you. In that email you will find a link which you need to "
+"follow in order to activate your subscription."
+msgstr ""
+"Ваш запит на підписку був успішно отриманий і лист з кодом активації був "
+"висланий вам"
+
+#: modules/newsletter/templates/newsletter/subscription_subscribe_user.html:19
+msgid "Do you want to subscribe to this newsletter?"
+msgstr "Ви хочете, щоб підписатися на це розсилання?"
+
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe.html:5
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe.html:8
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_email_sent.html:5
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_email_sent.html:8
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_user.html:5
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_user.html:8
+msgid "Newsletter unsubscribe"
+msgstr "Відписатись від розсилки новин"
+
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe.html:23
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_user.html:23
+msgid "Unsubscribe"
+msgstr "Відписатися"
+
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_activated.html:10
+msgid "You have successfully been unsubscribed."
+msgstr "Ви успішно відписалися"
+
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_email_sent.html:10
+msgid ""
+"Your unsubscription request has successfully been received. An email has "
+"been sent to you with a link you need to follow in order to confirm your "
+"unsubscription."
+msgstr ""
+"Ваш запит на відписку отримано. На вашу електронну пошту вислано лист з "
+"посиланням, на яке ви повинні перейти, щоб підтвердити відписку."
+
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_user.html:20
+msgid "Do you want to unsubscribe from this newsletter?"
+msgstr "Ви хочете відписатися з цього розсилання"
+
+#: modules/newsletter/templates/newsletter/subscription_update.html:5
+#: modules/newsletter/templates/newsletter/subscription_update.html:8
+#: modules/newsletter/templates/newsletter/subscription_update_email_sent.html:5
+#: modules/newsletter/templates/newsletter/subscription_update_email_sent.html:8
+msgid "Newsletter update"
+msgstr "Розсилання оновлено"
+
+#: modules/newsletter/templates/newsletter/subscription_update.html:23
+msgid "Update subscription"
+msgstr "Оновлено підписку"
+
+#: modules/newsletter/templates/newsletter/subscription_update_activated.html:10
+msgid "Your subscription has successfully been updated."
+msgstr "Ваша підписка була успішно оновлена."
+
+#: modules/newsletter/templates/newsletter/subscription_update_email_sent.html:10
+msgid ""
+"Your update request was successfully received and an activation email has "
+"been sent to you. In that email you will find a link which you need to "
+"follow in order to update your subscription."
+msgstr ""
+"Ваш запит на оновлення отримано. На вашу електронну пошту вислано лист з "
+"посиланням, на яке ви повинні перейти щоб оновити ваші підписки."
+
+#: modules/newsletter/templates/widget/image.html:2
+msgid "Currently:"
+msgstr "В даний час"
+
+#: modules/newsletter/templates/widget/image.html:4
+msgid "Change:"
+msgstr "Змінити"
+
+#: modules/newsletter/views.py:114
+msgid "Your changes have been saved."
+msgstr "Ваші зміни збережені"
+
+#: modules/newsletter/views.py:305
+#, python-format
+msgid "You have been subscribed to %s."
+msgstr "Ви підписані на  %s."
+
+#: modules/newsletter/views.py:309
+#, python-format
+msgid "User %(rs)s subscribed to %(my_newsletter)s."
+msgstr "Користувач %(rs)s підписаний на %(my_newsletter)s."
+
+#: modules/newsletter/views.py:319
+#, python-format
+msgid "You are already subscribed to %s."
+msgstr "Ви вже підписані на %s."
+
+#: modules/newsletter/views.py:344
+#, python-format
+msgid "You have been unsubscribed from %s."
+msgstr "Ви вже відписані від %s."
+
+#: modules/newsletter/views.py:348
+#, python-format
+msgid "User %(rs)s unsubscribed from %(my_newsletter)s."
+msgstr "Користувач %(rs)s відписаний з %(my_newsletter)s."
+
+#: modules/newsletter/views.py:361
+#, python-format
+msgid "You are not subscribed to %s."
+msgstr "Ви не підписані на %s."

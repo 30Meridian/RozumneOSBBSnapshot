@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Server error' %}{% endblock %}
+
+{% block content %}
+          <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+
+            <div class="content">
+
+    <h1>{% trans 'Error' %} 500</h1>
+<h3>{% trans 'Internal Server Error' %}</h3>
+<h4>{% trans 'Please contact to the manager by the email' %}: office@rozumneosbb.org</h4>
+
+            </div><!-- /.box-body -->
+
+          </div><!-- /.box -->
+
+        </section><!-- /.content -->
+{% endblock %}

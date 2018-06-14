@@ -1,0 +1,124 @@
+{% extends "admin/base.html" %}
+{% load admin_static %}
+{% load i18n %}
+
+{# Additional <head> content here, some extra meta tags or favicon #}
+{% block extrahead %}
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.ico' %}">
+{% endblock %}
+
+
+{# Additional CSS includes #}
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom_admin.css' %}" media="all">
+{% endblock %}
+            {% block header_time %}
+
+            {% endblock %}
+
+{# Additional JS files in footer, right before </body> #}
+{% block extrajs %}
+{#  <script type="text/javascript" src="{% static 'js/my_project.js' %}"></script>#}
+    <script>
+         $(function () {
+             $.ajax({
+                 url: '/condactivesearchformanage',
+                 type: 'POST',
+                 success: function (data) {
+{#                     var cond = gettext("Condominium")#}
+                     var output = [];
+                     data.forEach(function (value) {
+                         output.push('<li style=""><a tabindex="0" class="" style="" href="/managechoose/' + value['slug'] + '">'+
+                                         '<span class="text">{% trans 'Condominium' %} "' + value['name'] + '"</span>' +
+                                         '<span class="fa fa-check check-mark"></span>' +
+                                     '</a></li>')
+
+                     });
+                     $('#search').find("div.select").find("ul").html(output.join(''));
+                 }
+             });
+         })
+    </script>
+
+{% endblock %}
+
+
+{# Footer links (left side) #}
+{% block footer_links %}
+{#  <a href="/docs/" class="icon"><i class="icon-question-sign"></i>Documentation</a>#}
+{% endblock %}
+{% block quick-search %}
+
+{#      {% if search_url %}#}
+{#        <form class="form-search nav-quick-search" autocomplete="off" action="{% if '/' in search_url %}{{ search_url }}{% else %}{% url search_url %}{% endif %}" method="GET">#}
+{#          <input type="text" name="q" class="input-medium search-query" id="quick-search">#}
+{#          <i class="input-icon icon-search"></i>#}
+{#          <input type="submit" class="submit" value="">#}
+{#        </form>#}
+{#      {% endif %}#}
+    <div style="font-size: 20px; margin-top: 20px" align="center">{% trans 'Management' %}</div>
+
+{% endblock %}
+{# Additional header content like notifications or language switcher #}
+
+
+
+{% block messages %}
+  {% if messages %}
+
+    {% for message in messages %}
+      <div class="alert alert-{% firstof message.tags 'info' %}">
+        <button class="close" data-dismiss="alert">×</button>
+        <div style="width:100%; word-break: break-all; word-wrap:  break-word;">
+            {{ message }}
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endblock messages %}
+
+{% block header_content %}
+    {{ block.super }}
+
+    <div class="header-content">
+        <!-- First icon column -->
+        <div class="header-column icon">
+            <i class="icon-home" style="margin-left: 35%"></i><br>
+            <a href="/" class="grey">{% trans 'Home' %}</a><br>
+{#            <i class="icon-cog"></i>#}
+        </div>
+
+        <div class="header-column" style="margin-left: 20px">
+            {% if not request.user.is_editor %}
+                <div id="search" style="position: absolute; z-index: 1; ">
+
+                     <div class="select " style="position: relative; width: 230px; margin-top: 3px;">
+                         <button type="button" class="btn" data-toggle="dropdown" title="Select your Condominium" aria-expanded="true"  style="width: auto; min-width: 180px">
+                             <span class="filter-option pull-left">
+                                 {% trans 'Condominium' %} "{{ request.session.condominium_name|truncatechars:14 }}"
+                             </span>&nbsp;
+                             <span class="bs-caret pull-right" style="">
+                                 <span class="caret"></span>
+                             </span>
+                         </button>
+                             <ul class="dropdown-menu inner" role="menu" style="float: none;">
+                             </ul>
+                     </div>
+                </div>
+            {% endif %}
+        </div>
+
+
+
+    </div>
+{% endblock %}
+
+{# Footer branding name (center) #}
+{#{% block footer_branding %}#}
+{#{% endblock %}#}
+
+
+{# Footer copyright (right side) #}
+{% block copyright %}
+  Copyright &copy; 2016 30th Meridian<br>Developed by <a href="/" target="_blank">30th Meridian</a>
+{% endblock %}

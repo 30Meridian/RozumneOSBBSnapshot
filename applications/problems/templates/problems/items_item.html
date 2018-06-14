@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-8"><h3>{% trans 'Item Problem Head' %} №{{ item.id }}. {% trans 'Status' %} - {% trans last_status.status %}</h3></div>
+        <div class="col-md-4">
+            <div class="pull-right">
+            <ol class="breadcrumb">
+                <li><a href="{% url 'condominium:home' request.session.condominium_slug %}"><i class="fa fa-home"></i> {% trans 'Problems Home' %}</a></li>
+                <li><a href="{% url 'condominium:problems:items_list' request.session.condominium_slug %}">{% trans 'Problems List' %}</a></li>
+                <li class="active">{% trans 'Problems Card' %}</li>
+            </ol>
+                </div>
+            </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="content">
+                 <div class="row">
+                    <div class="col-md-8">
+                        <b>{% trans 'Item Title' %}:</b> {{ item.title }}<br/>
+                        <b>{% trans 'Item Create' %}:</b> {{ item.create|date:'d M. Y' }}<br/>
+                        <b>{% trans 'Item Actual Status' %}:</b> {% trans last_status.status %}<br/>
+                        {% if item.resolution %}
+                            {% trans 'Item Resolution' %}: {{ item.create }}<br/>
+                        {% endif %}
+                     <b>{% trans 'Item Description' %}:</b> <br/>{{ item.description }}<br/><br/>
+
+                     <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="content">
+                         <table class="table table-striped">
+                                <thead>
+                                    <th>{% trans 'Status Data' %}</th>
+                                    <th>{% trans 'Status Title' %}</th>
+                                    <th>{% trans 'Status Resolution' %}</th>
+                                    <th>{% trans 'Status DeadLine' %}</th>
+                                    <th>{% trans 'Status Owner' %}</th>
+
+                                </thead>
+                            <tbody>
+                            {% for status in status_log %}
+                                <tr>
+                                    <td>{{  status.create|date:'d M. Y' }}</td>
+                                    <td>{% trans status.status %}</td>
+
+                                    {% if status.resolution %}
+                                        <td>{{  status.resolution }}</td>
+                                    {% else %}
+                                        <td><i>{% trans 'Resolution is missing' %}</i></td>
+                                    {% endif %}
+
+                                    {% if status.deadline %}
+                                    <td>{{  status.deadline }}</td>
+                                    {% else %}
+                                    <td><i>{% trans 'The term is not defined' %}</i></td>
+                                    {% endif %}
+                                    <td>{{ status.owner.last_name }} {{ status.owner.first_name }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                            </table>
+                                 </div>
+                             </div>
+                         </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="pull-right">
+                        {% if item.photo %}
+                           <div class="petbox"> <img src="/media/{{ item.photo}}" width="350px"></div>
+                        {% else %}
+                            <div class="petbox"><img src="{% static 'img/empty.gif' %}" width="350px"></div>
+                        {% endif %}
+                        </div>
+                     </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

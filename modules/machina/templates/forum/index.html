@@ -1,0 +1,25 @@
+{% extends 'board_base.html' %}
+{% load i18n %}
+{% load mptt_tags %}
+{% load forum_tags %}
+
+{% block sub_title %}{% trans "Index" %}{% endblock sub_title %}
+
+{% block content %}
+  <div class="row">
+        <!-- Default box -->
+        <div class="col-md-12">
+            <div class="card">
+                <div class="content">
+{#	<br />#}
+                    {% forum_list forums %}
+                    <h5 class="page-header">{% trans "Statistics" %}</h5>
+                    <p class="statistics">{% trans "Total posts:" %}&nbsp;<b>{{ total_posts_count }}</b>&nbsp;&#8226;&nbsp;{% trans "Total topics:" %}&nbsp;<b>{{ total_topics_count }}</b>&nbsp;</p>
+
+                </div>
+            </div>
+        </div>
+  </div>
+
+
+{% endblock content %}

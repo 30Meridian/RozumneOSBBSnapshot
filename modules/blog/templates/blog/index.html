@@ -1,0 +1,196 @@
+{% extends 'blog_base.html' %}
+{% load static %}
+{% block content %}
+
+        <!--colleft-->
+        <div class="col-md-8 col-sm-12">
+          <div class="box-caption">
+            <span>Карта України по підключеним ОСББ</span>
+          </div>
+          <!--sportlight-->
+          <div class="map-block" style="padding-bottom: 0%">
+
+              <div id="map" ></div>
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+
+
+        <script>
+            function initMap() {
+                var markers = [];
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 3,
+                    center: {lat: 49.024, lng: 31.887}
+                });
+
+                {% for condominium in condominiums %}
+                    var string = '{{ condominium.name|escapejs }}'.replace("ОСББ", '');
+                    var label = string.match(/([^\s\"]+?)\w{0}/g)[0];
+                    var marker{{ condominium.id }} = new google.maps.Marker({
+                        position: {lat:Number('{{ condominium.latitude }}'), lng:Number('{{ condominium.longitude }}') },
+                        label: label,
+                        title: '{{ condominium.name|escapejs }}'
+                    });
+                    markers.push(marker{{ condominium.id }});
+
+                    var infowindow{{ condominium.id }} = new google.maps.InfoWindow({
+                        content: 'ОСББ "{{ condominium.name }}"'+
+                            "<br/> {{ condominium.city.name }}"+
+                            "<br/> Адреса реєстрації:{{ condominium.legal_address }}"+
+                            "<br/><a href='../condominium/{{ condominium.slug }}/home' target=_blank><div class='pull-right'>перейти до ОСББ</div></a>"
+                    });
+
+                    google.maps.event.addListener(marker{{ condominium.id }}, 'click', function() {
+                        infowindow{{ condominium.id }}.open(map,marker{{ condominium.id }});
+                    });
+                {% endfor %}
+
+                // Add a marker clusterer to manage the markers.
+                var markerCluster = new MarkerClusterer(map, markers,
+                    {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
+            }
+
+        </script>
+
+          </div>
+          <!--spotlight-thumbs-->
+
+          <!--box-practices-->
+          <section class="box-news">
+
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="page-head">
+                      <h1>Новини ОСББ</h1>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="news-two-large">
+                      <a href="{% url 'blog:article_detail' second_article.id %}">
+                        <img src="{{ second_article.mainimg.middle.url }}">
+                      </a>
+                      <h3>
+                          <a href="{% url 'blog:article_detail' second_article.id %}">
+                            {{ second_article.title }}
+                          </a>
+                      </h3>
+                      <div class="meta-post">
+                          <a href="{% url 'blog:article_detail' second_article.id %}">{{ second_article.author }}</a>
+                          <em></em>
+                          <span>{{ second_article.datetime_publish }}</span>
+                      </div>
+                      <p>{{ second_article.shortdesc }}</p>
+                  </article>
+
+                  <ul class="list-news-popular">
+                    {% for article in half1_articles %}
+                    <li>
+                      <a href="{% url 'blog:article_detail' article.id %}">
+                        <img src="{{ article.mainimg.middle.url }}" />
+                      </a>
+                      <h3><a href="{% url 'blog:article_detail' article.id %}">{{ article.title }}</a></h3>
+                      <div class="meta-post">
+                        <a href="#">{{ article.author }} </a>
+                        <em></em>
+                        <span> {{ article.datetime_publish }}  </span>
+                      </div>
+                    </li>
+                    {% endfor %}
+                  </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="news-two-large">
+                      <a href="{% url 'blog:article_detail' first_article.id %}">
+                        <img src="{{ first_article.mainimg.middle.url }}">
+                      </a>
+                      <h3>
+                          <a href="{% url 'blog:article_detail' first_article.id %}">
+                            {{ first_article.title }}
+                          </a>
+                      </h3>
+                      <div class="meta-post">
+                          <a href="{% url 'blog:article_detail' first_article.id %}">{{ first_article.author }}</a>
+                          <em></em>
+                          <span>{{ first_article.datetime_publish }}</span>
+                      </div>
+                      <p>{{ first_article.shortdesc }}</p>
+                  </article>
+
+                  <ul class="list-news-popular">
+                    {% for article in half2_articles %}
+                    <li>
+                      <a href="{% url 'blog:article_detail' article.id %}">
+                        <img src="{{ article.mainimg.middle.url }}" />
+                      </a>
+                      <h3><a href="{% url 'blog:article_detail' article.id %}">{{ article.title }}</a></h3>
+                      <div class="meta-post">
+                        <a href="#">{{ article.author }} </a>
+                        <em></em>
+                        <span> {{ article.datetime_publish }}  </span>
+                      </div>
+                    </li>
+                    {% endfor %}
+                  </ul>
+              </div>
+            </div>
+          </section>
+
+          <!--box-practices-->
+          <section class="box-news">
+            <div class="box-caption">
+              <span>ОСТАННІ ФОТО</span>
+            </div>
+            <div class="owl-carousel owl-review">
+                {% for photo_info in photos_info %}
+                  <div>
+                    <article class="review-item">
+                      <div class="review-img">
+                        <img alt="" src="{{ photo_info.photo.image.url }}" class="img-responsive" />
+                      </div>
+                      <div class="review-item-caption">
+                        <h3 class="font-heading" style="color: whitesmoke">
+                              {{ photo_info.photo.caption }}
+                          </h3>
+                        <div class="meta-post">
+                          <div style="float: left; color: whitesmoke;">
+                            {{ photo_info.photo.date_added }}
+                            </div>
+                            {% if photo_info.gallery %}
+                            <a href="{% url 'blog:photologue:pl-gallery' photo_info.gallery.slug %}">
+                                <div style="color: whitesmoke; float: right;">
+                                    Галерея: {{ photo_info.gallery }}
+                                </div>
+                            </a>
+                            {% endif %}
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                {% endfor %}
+            </div>
+          </section>
+
+        <section>
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div id="news-feed" class="timeline">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <script src="{% static 'blog/js/jquery.min.js' %}"></script>
+        <script src="{% static 'blog/js/news-feed.js' %}"></script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&callback=initMap">
+        </script>
+
+{% endblock %}

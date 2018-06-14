@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{% load i18n %}
+{% block title %}{% trans 'Error' %}.{% endblock %}
+{% block head_top %}{% endblock %}
+{% block content %}
+<meta http-equiv="refresh" content="5;url='/'">
+ <section class="content">
+     <!-- Default box -->
+          <div class="card">
+                <div class="content">
+                    <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-check"></i> {{ desc }}</h4>
+                    {% trans 'If you do not understand the causes of errors' %} - {% trans 'please write to the chat of support or mail: ' %} office@rozumneosbb.org  <!-- TODO put valid email here -->
+                </div>
+          </div><!-- /.box-body -->
+          </div><!-- /.box -->
+ </section><!-- /.content -->
+
+{% endblock %}

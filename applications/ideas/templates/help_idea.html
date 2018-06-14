@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans 'Help for the module "Ideas"' %}{% endblock %}
+
+{% block content %}
+<!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+
+            <div class="content">
+                <div class="text-center"><h1>{% trans 'Help for the module "Ideas"' %}</h1></div>
+
+                <p><strong>{% trans 'How does create idea?' %}</strong></p>
+                <h5>{% trans 'To create idea user must:' %}</h5>
+                <p>-{% trans 'register on the web portal' %}</p>
+{#                <img src="{%  static 'img/ideas/reg-2.jpg' %}" style="max-width:100%"><br /><br />#}
+                <p>-{% trans 'In the sidebar choose "Ideas" then "Add idea"' %};</p>
+
+{#                <img src="{%  static 'img/ideas/reg-3.jpg' %}" style="max-width:100%"><br /><br />#}
+                <p>-{% trans 'Fill all these fields' %}</p>
+                        <ul>
+                            <li> {% trans 'Idea title' %}</li>
+                            <li>{% trans 'Text substantiation ideas' %}</li>
+                            <li> {% trans 'Requirements to authorities' %}</li>
+                            <li>{% trans 'Load picture' %}</li>
+                            <li>{% trans 'Confirm that you agree with the processing of your personal data' %}</li>
+
+                            <li>{% trans 'Push submit to sent your idea to moderation' %}</li>
+                            </ul>
+{#                <img src="{%  static 'img/ideas/pic-5-1.png' %}" style="max-width:100%"><br /><br />#}
+                <p>{% trans 'After reviewing your idea of a moderator, it will appear on the site. In the event that your idea will not pass moderation,You will be notified on your registration e-mail.' %} </p>
+
+                <p><strong>{% trans 'How sign idea?' %}</strong></p>
+
+                <p>{% trans 'For sign idea user must choose "Ideas" then "Ideas List" in the sidebar.' %}
+                    {% trans 'On this page you can see: illustration, number, essence, colected voives, and status of idea' %}
+                <p>
+
+
+{#                <img src="{%  static 'img/ideas/pic-6.png' %}" style="max-width:100%"><br /><br />#}
+                <p>{% trans 'Ideas what were signed by you have status "Signed", and ideas what you can sign have status "Doesn`t signed"' %}
+                    <p>
+{#                <img src="{%  static 'img/ideas/pic-7.png' %}" style="max-width:100%"><br /><br />#}
+
+                <p>{% trans 'If idea was signed by you, you can cancel your voice.' %}<p>
+{#                <img src="{%  static 'img/ideas/pic-8.png' %}" style="max-width:100%"><br /><br />#}
+
+            </div><!-- /.box-body -->
+
+          </div><!-- /.box -->
+
+        </section><!-- /.content -->
+
+{% endblock %}

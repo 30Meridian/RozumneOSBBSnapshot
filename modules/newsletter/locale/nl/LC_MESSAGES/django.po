@@ -1,0 +1,845 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# dokterbob <mathijs@mathijsfietst.nl>, 2011
+# G M <gerben_m88@hotmail.com>, 2016
+# dokterbob <mathijs@mathijsfietst.nl>, 2013,2016
+# dokterbob <mathijs@mathijsfietst.nl>, 2012
+msgid ""
+msgstr ""
+"Project-Id-Version: django-newsletter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-10 14:09+0200\n"
+"PO-Revision-Date: 2016-02-02 13:32+0000\n"
+"Last-Translator: dokterbob <mathijs@mathijsfietst.nl>\n"
+"Language-Team: Dutch (http://www.transifex.com/dokterbob/django-newsletter/"
+"language/nl/)\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: modules/newsletter/addressimport/parsers.py:40
+#, python-format
+msgid "Entry '%s' does not contain a valid e-mail address."
+msgstr "Ingang '%s' bevat geen geldig e-mail adres."
+
+#: modules/newsletter/addressimport/parsers.py:55
+#, python-format
+msgid "The address file contains duplicate entries for '%s'."
+msgstr "Het adressenbestand bevat een dubbele ingang voor '%s'."
+
+#: modules/newsletter/addressimport/parsers.py:69
+msgid "Some entries are already subscribed to."
+msgstr "Op enkele ingangen is al geabonneerd."
+
+#: modules/newsletter/addressimport/parsers.py:108
+#, python-format
+msgid ""
+"E-mail address %(email)s too long, maximum length is %(email_length)s "
+"characters."
+msgstr ""
+"E-mail adres %(email)s te lang, maximale lengte is %(email_length)s "
+"karakters."
+
+#: modules/newsletter/addressimport/parsers.py:135
+#, python-format
+msgid "Name %(name)s too long, maximum length is %(name_length)s characters."
+msgstr "Naam %(name)s te lang, maximale lengte is %(name_length)s karakters."
+
+#: modules/newsletter/addressimport/parsers.py:196
+#: modules/newsletter/addressimport/parsers.py:208
+#: modules/newsletter/addressimport/parsers.py:243
+#: modules/newsletter/models.py:168 modules/newsletter/models.py:181
+msgid "name"
+msgstr "naam"
+
+#: modules/newsletter/addressimport/parsers.py:200
+msgid "display"
+msgstr "display"
+
+#: modules/newsletter/addressimport/parsers.py:207
+#, python-format
+msgid ""
+"Name column not found. The name of this column should be either 'name' or "
+"'%s'."
+msgstr ""
+"Naam kolom niet gevonden. De naam van deze kolom moet 'name' of '%s' zijn."
+
+#: modules/newsletter/addressimport/parsers.py:219
+#: modules/newsletter/addressimport/parsers.py:231
+#: modules/newsletter/addressimport/parsers.py:244
+#: modules/newsletter/models.py:43 modules/newsletter/models.py:183
+#: modules/newsletter/models.py:196
+msgid "e-mail"
+msgstr "e-mail"
+
+#: modules/newsletter/addressimport/parsers.py:229
+#, python-format
+msgid ""
+"E-mail column not found. The name of this column should be either 'email', "
+"'e-mail' or '%(email)s'."
+msgstr ""
+"Email-kolom niet gevonden. De naam van deze kolom moet 'email', 'e-mail'  of "
+"'%(email)s' zijn."
+
+#: modules/newsletter/addressimport/parsers.py:239
+#, python-format
+msgid ""
+"Could not properly determine the proper columns in the CSV-file. There "
+"should be a field called 'name' or '%(name)s' and one called 'e-mail' or "
+"'%(e-mail)s'."
+msgstr ""
+"Het is niet gelukt om de juiste kolommon in het CSV-betand te bepalen. Er "
+"zou een veld 'name' of '%(name)s' en een veld 'e-mail' of '%(e-mail)s' in "
+"moeten staan.'"
+
+#: modules/newsletter/addressimport/parsers.py:264
+#, python-format
+msgid "Row with content '%(row)s' does not contain a name and email field."
+msgstr "Rij met inhoud '%(row)s' bevat geen naam- en email-veld."
+
+#: modules/newsletter/addressimport/parsers.py:290
+#, python-format
+msgid "Error reading vCard file: %s"
+msgstr "Fout bij lezen vCard-bestand: %s"
+
+#: modules/newsletter/addressimport/parsers.py:309
+#, python-format
+msgid "Entry '%s' contains no email address."
+msgstr "Ingang '%s' bevat geen geldig e-mail adres."
+
+#: modules/newsletter/addressimport/parsers.py:345
+msgid "Some entries have no e-mail address."
+msgstr "Enkele ingangen hebben geen geldig e-mail adres."
+
+#: modules/newsletter/admin.py:81
+msgid "Messages"
+msgstr "Berichten"
+
+#: modules/newsletter/admin.py:89
+#: modules/newsletter/templates/admin/newsletter/subscription/confirmimportform.html:16
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:16
+msgid "Subscriptions"
+msgstr "Abonnementen"
+
+#: modules/newsletter/admin.py:95
+msgid "Submissions"
+msgstr "Zendingen"
+
+#: modules/newsletter/admin.py:126 modules/newsletter/models.py:544
+msgid "submission"
+msgstr "zending"
+
+#: modules/newsletter/admin.py:133 modules/newsletter/admin.py:296
+#: modules/newsletter/admin.py:433 modules/newsletter/models.py:106
+#: modules/newsletter/models.py:303 modules/newsletter/models.py:494
+#: modules/newsletter/models.py:678
+msgid "newsletter"
+msgstr "nieuwsbrief"
+
+#: modules/newsletter/admin.py:142
+msgid "publish date"
+msgstr "publicatiedatum"
+
+#: modules/newsletter/admin.py:168
+msgid "Sent."
+msgstr "Verzonden."
+
+#: modules/newsletter/admin.py:171
+msgid "Delayed submission."
+msgstr "Wordt later verzonden."
+
+#: modules/newsletter/admin.py:173
+msgid "Submitting."
+msgstr "Wordt nu verzonden."
+
+#: modules/newsletter/admin.py:175
+msgid "Not sent."
+msgstr "Niet verzonden."
+
+#: modules/newsletter/admin.py:176 modules/newsletter/admin.py:458
+#: modules/newsletter/admin_forms.py:115
+msgid "Status"
+msgstr "Status"
+
+#: modules/newsletter/admin.py:183
+msgid "Submission already sent."
+msgstr "Zending is al verzonden."
+
+#: modules/newsletter/admin.py:192
+msgid "Your submission is being sent."
+msgstr "Uw zending wordt verzonden."
+
+#: modules/newsletter/admin.py:238
+msgid "Optional"
+msgstr "Optioneel"
+
+#: modules/newsletter/admin.py:284 modules/newsletter/models.py:467
+#: modules/newsletter/models.py:519 modules/newsletter/models.py:681
+msgid "message"
+msgstr "bericht"
+
+#: modules/newsletter/admin.py:288
+#: modules/newsletter/templates/admin/newsletter/message/change_form.html:10
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:13
+msgid "Preview"
+msgstr "Voorvertonen"
+
+#: modules/newsletter/admin.py:316 modules/newsletter/views.py:606
+msgid ""
+"No HTML template associated with the newsletter this message belongs to."
+msgstr ""
+"Er is geen HTML-template geässocieerd met de nieuwsbrief die bij dit bericht "
+"hoort."
+
+#: modules/newsletter/admin.py:453 modules/newsletter/admin_forms.py:103
+msgid "Subscribed"
+msgstr "Aangemeld"
+
+#: modules/newsletter/admin.py:455 modules/newsletter/admin_forms.py:104
+msgid "Unsubscribed"
+msgstr "Opzeggen"
+
+#: modules/newsletter/admin.py:457
+msgid "Unactivated"
+msgstr "Ongeactiveerd"
+
+#: modules/newsletter/admin.py:465 modules/newsletter/models.py:316
+msgid "subscribe date"
+msgstr "abonneerdatum"
+
+#: modules/newsletter/admin.py:472 modules/newsletter/models.py:324
+msgid "unsubscribe date"
+msgstr "opzegdatum"
+
+#: modules/newsletter/admin.py:480
+#, fuzzy, python-format
+#| msgid "%d user has been successfully subscribed."
+#| msgid_plural "%d users have been successfully subscribed."
+msgid "%d user has been successfully subscribed."
+msgid_plural "%d users have been successfully subscribed."
+msgstr[0] "%s gebruiker is succesvol ingeschreven."
+msgstr[1] "%s gebruikers zijn succesvol ingeschreven."
+
+#: modules/newsletter/admin.py:485
+msgid "Subscribe selected users"
+msgstr "Schrijf geselecteerde gebruikers in"
+
+#: modules/newsletter/admin.py:492
+#, fuzzy, python-format
+#| msgid "%d user has been successfully unsubscribed."
+#| msgid_plural "%d users have been successfully unsubscribed."
+msgid "%d user has been successfully unsubscribed."
+msgid_plural "%d users have been successfully unsubscribed."
+msgstr[0] "%s gebruiker is succesvol uitgeschreven."
+msgstr[1] "%s gebruikers zijn succesvol uitgeschreven."
+
+#: modules/newsletter/admin.py:497
+msgid "Unsubscribe selected users"
+msgstr "Geselecteerde gebruikers uitschrijven"
+
+#: modules/newsletter/admin.py:553
+#, fuzzy, python-format
+#| msgid "%d subscription has been successfully added."
+#| msgid_plural "%d subscriptions have been successfully added."
+msgid "%d subscription has been successfully added."
+msgid_plural "%d subscriptions have been successfully added."
+msgstr[0] "%s aanmeldingen zijn succesvol toegevoegd."
+msgstr[1] "%s aanmeldingen zijn succesvol toegevoegd."
+
+#: modules/newsletter/admin_forms.py:43
+#, python-format
+msgid "File type '%s' was not recognized."
+msgstr "Bestandstype '%s' wordt niet herkend."
+
+#: modules/newsletter/admin_forms.py:60
+#, python-format
+msgid "File extension '%s' was not recognized."
+msgstr "Bestandsextensie '%s' is niet herkend."
+
+#: modules/newsletter/admin_forms.py:64
+msgid "No entries could found in this file."
+msgstr "Er zijn geen adressen gevonden in dit bestand."
+
+#: modules/newsletter/admin_forms.py:72
+#: modules/newsletter/templates/admin/newsletter/subscription/confirmimportform.html:12
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:12
+#: modules/newsletter/templates/newsletter/common.html:7
+#: modules/newsletter/templates/newsletter/newsletter_detail.html:10
+#: modules/newsletter/templates/newsletter/newsletter_list.html:14
+#: modules/newsletter/templates/newsletter/newsletter_list.html:32
+#: modules/newsletter/templates/newsletter/subscription_activate.html:5
+#: modules/newsletter/templates/newsletter/subscription_activate.html:8
+#: modules/newsletter/templates/newsletter/subscription_subscribe_activated.html:5
+#: modules/newsletter/templates/newsletter/subscription_subscribe_activated.html:8
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_activated.html:5
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_activated.html:8
+#: modules/newsletter/templates/newsletter/subscription_update_activated.html:5
+#: modules/newsletter/templates/newsletter/subscription_update_activated.html:8
+msgid "Newsletter"
+msgstr "Nieuwsbrief"
+
+#: modules/newsletter/admin_forms.py:75
+msgid "Address file"
+msgstr "Adressenbestand"
+
+#: modules/newsletter/admin_forms.py:77
+msgid "Ignore non-fatal errors"
+msgstr "Negeer niet-fatale fouten"
+
+#: modules/newsletter/admin_forms.py:88
+msgid "You should confirm in order to continue."
+msgstr "U moet bevestigen om door te kunnen gaan."
+
+#: modules/newsletter/admin_forms.py:91
+#: modules/newsletter/templates/admin/newsletter/subscription/confirmimportform.html:23
+#: modules/newsletter/templates/admin/newsletter/subscription/confirmimportform.html:28
+msgid "Confirm import"
+msgstr "Bevestig import"
+
+#: modules/newsletter/admin_forms.py:123 modules/newsletter/admin_forms.py:131
+msgid "If a user has been selected this field should remain empty."
+msgstr "Als er een gebruiker is geselecteerd dient dit veld leeg te blijven."
+
+#: modules/newsletter/admin_forms.py:141
+msgid "Either a user must be selected or an email address must be specified."
+msgstr "Er moet óf een gebruiker of een e-mail adres worden ingevoerd."
+
+#: modules/newsletter/admin_forms.py:170
+msgid ""
+"This message has already been published in some other submission. Messages "
+"can only be published once."
+msgstr ""
+"Dit bericht is al gepubliceerd in een andere zending. Berichten kunnen maar "
+"eenmalig gepubliceerd worden."
+
+#: modules/newsletter/admin_utils.py:25
+#, python-format
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr "%(name)s-object met primaire sleutel %(key)r bestaat niet."
+
+#: modules/newsletter/apps.py:6
+#, fuzzy
+#| msgid "newsletter"
+msgid "Our newsletter"
+msgstr "nieuwsbrief"
+
+#: modules/newsletter/forms.py:47 modules/newsletter/forms.py:106
+msgid "An e-mail address is required."
+msgstr "Een email adres is verplicht."
+
+#: modules/newsletter/forms.py:55
+#, python-format
+msgid ""
+"The e-mail address '%(email)s' belongs to a user with an account on this "
+"site. Please log in as that user and try again."
+msgstr ""
+"Het email-adres '%(email)s' hoort bij een gebruiker van deze site. Log in "
+"als deze gebruiker en probeer het nog eens."
+
+#: modules/newsletter/forms.py:72
+msgid "Your e-mail address has already been subscribed to."
+msgstr "Uw e-mail adres is al geabonneerd."
+
+#: modules/newsletter/forms.py:97
+msgid "This subscription has not yet been activated."
+msgstr "Deze inschrijving is nog niet geactiveerd."
+
+#: modules/newsletter/forms.py:114
+#, python-format
+msgid ""
+"This e-mail address belongs to the user '%(username)s'. Please log in as "
+"that user and try again."
+msgstr ""
+"Dit emailadres is van gebruiker '%(username)s'. Log in als deze gebruik er "
+"probeer het opnieuw."
+
+#: modules/newsletter/forms.py:132
+msgid "This e-mail address has not been subscribed to."
+msgstr "Er is geen abonnement voor dit email adres."
+
+#: modules/newsletter/forms.py:147
+msgid "This subscription has already been unsubscribed from."
+msgstr "Deze inschrijving is al opgezegd."
+
+#: modules/newsletter/forms.py:163
+msgid "The validation code supplied by you does not match."
+msgstr "De verificatiecode die door u is opgegeven komt niet overeen."
+
+#: modules/newsletter/forms.py:169
+msgid "Activation code"
+msgstr "Verificatiecode"
+
+#: modules/newsletter/jobs/hourly/submit.py:15
+msgid "Submitting queued newsletter mailings"
+msgstr "Bezig met versturen van klaarstaande zendingen"
+
+#: modules/newsletter/models.py:33
+msgid "Condominium"
+msgstr ""
+
+#: modules/newsletter/models.py:35
+msgid "site"
+msgstr ""
+
+#: modules/newsletter/models.py:38
+msgid "newsletter title"
+msgstr "Nieuwsbrief titel"
+
+#: modules/newsletter/models.py:40 modules/newsletter/models.py:491
+msgid "slug"
+msgstr "slug"
+
+#: modules/newsletter/models.py:43
+msgid "Sender e-mail"
+msgstr "E-mail verzender"
+
+#: modules/newsletter/models.py:46
+msgid "sender"
+msgstr "verzender"
+
+#: modules/newsletter/models.py:46
+msgid "Sender name"
+msgstr "Naam verzender"
+
+#: modules/newsletter/models.py:50
+msgid "visible"
+msgstr "zichtbaar"
+
+#: modules/newsletter/models.py:54
+msgid "send html"
+msgstr "html versturen"
+
+#: modules/newsletter/models.py:55
+msgid "Whether or not to send HTML versions of e-mails."
+msgstr "Of er al dan niet HTML versies van e-mails verstuurd moeten worden."
+
+#: modules/newsletter/models.py:107
+msgid "newsletters"
+msgstr "nieuwsbrieven"
+
+#: modules/newsletter/models.py:163
+msgid "user"
+msgstr "gebruiker"
+
+#: modules/newsletter/models.py:168
+msgid "optional"
+msgstr "optioneel"
+
+#: modules/newsletter/models.py:213
+#, python-format
+msgid "Updated subscription %(subscription)s to %(action)s."
+msgstr "Abonement %(subscription)s aangepast naar %(action)s."
+
+#: modules/newsletter/models.py:255
+msgid "Neither an email nor a username is set. This asks for inconsistency!"
+msgstr ""
+"Er is geen e-mail adres noch een gebruikersnaam ingesteld. Dit is vragen om "
+"inconsistentie!"
+
+#: modules/newsletter/models.py:259
+msgid "If user is set, email must be null and vice versa."
+msgstr "Als er een gebruiker is ingesteld moet e-mail null zijn en vice versa."
+
+#: modules/newsletter/models.py:301
+msgid "IP address"
+msgstr "IP-adres"
+
+#: modules/newsletter/models.py:308
+msgid "activation code"
+msgstr "activatiecode"
+
+#: modules/newsletter/models.py:313
+msgid "subscribed"
+msgstr "aangemeld"
+
+#: modules/newsletter/models.py:321
+msgid "unsubscribed"
+msgstr "opgezegd"
+
+#: modules/newsletter/models.py:329
+#, python-format
+msgid "%(name)s <%(email)s> to %(newsletter)s"
+msgstr "%(name)s <%(email)s> op %(newsletter)s"
+
+#: modules/newsletter/models.py:336
+#, python-format
+msgid "%(email)s to %(newsletter)s"
+msgstr "%(email)s aan %(newsletter)s"
+
+#: modules/newsletter/models.py:342
+msgid "subscription"
+msgstr "abonnement"
+
+#: modules/newsletter/models.py:343
+msgid "subscriptions"
+msgstr "abonnementen"
+
+#: modules/newsletter/models.py:446
+msgid ""
+"Sort order determines the order in which articles are concatenated in a post."
+msgstr ""
+"Sorteer volgorde bepaald de volgorde waarin artikelen in een bericht achter "
+"elkaar gezet worden."
+
+#: modules/newsletter/models.py:448
+msgid "sort order"
+msgstr "sorteer volgorde"
+
+#: modules/newsletter/models.py:451 modules/newsletter/models.py:490
+msgid "title"
+msgstr "titel"
+
+#: modules/newsletter/models.py:452
+msgid "text"
+msgstr "tekst"
+
+#: modules/newsletter/models.py:455
+msgid "link"
+msgstr "koppeling"
+
+#: modules/newsletter/models.py:461
+msgid "image"
+msgstr "afbeelding"
+
+#: modules/newsletter/models.py:472
+msgid "article"
+msgstr "artikel"
+
+#: modules/newsletter/models.py:473
+msgid "articles"
+msgstr "artikelen"
+
+#: modules/newsletter/models.py:498
+msgid "created"
+msgstr "aangemaakt"
+
+#: modules/newsletter/models.py:501
+msgid "modified"
+msgstr "verandert"
+
+#: modules/newsletter/models.py:506
+#, python-format
+msgid "%(title)s in %(newsletter)s"
+msgstr "%(title)s in %(newsletter)s"
+
+#: modules/newsletter/models.py:520
+msgid "messages"
+msgstr "berichten"
+
+#: modules/newsletter/models.py:545
+msgid "submissions"
+msgstr "zendingen"
+
+#: modules/newsletter/models.py:548
+#, python-format
+msgid "%(newsletter)s on %(publish_date)s"
+msgstr "%(newsletter)s op %(publish_date)s"
+
+#: modules/newsletter/models.py:557
+#, python-format
+msgid "Submitting %(submission)s to %(count)d people"
+msgstr "Versturen van %(submission)s aan %(count)d mensen"
+
+#: modules/newsletter/models.py:613
+#, python-format
+msgid "Submitting message to: %s."
+msgstr "Versturen bericht aan: %s"
+
+#: modules/newsletter/models.py:622
+#, python-format
+msgid "Message %(subscription)s failed with error: %(error)s"
+msgstr "Bericht %(subscription)s is gefaald met fout: %(error)s"
+
+#: modules/newsletter/models.py:646
+#, python-format
+msgid "Submission of message %s"
+msgstr "Verzending van bericht %s"
+
+#: modules/newsletter/models.py:686
+msgid ""
+"If you select none, the system will automatically find the subscribers for "
+"you."
+msgstr ""
+"Als u er geen selecteerd, zal het systeem automatisch de abonnees voor u "
+"opzoeken."
+
+#: modules/newsletter/models.py:688
+msgid "recipients"
+msgstr "geaddresseerden"
+
+#: modules/newsletter/models.py:693
+msgid "publication date"
+msgstr "publicatiedatum"
+
+#: modules/newsletter/models.py:697
+msgid "publish"
+msgstr "publiceer"
+
+#: modules/newsletter/models.py:698
+msgid "Publish in archive."
+msgstr "Publiceer in archief."
+
+#: modules/newsletter/models.py:702
+msgid "prepared"
+msgstr "voorbereid"
+
+#: modules/newsletter/models.py:706
+msgid "sent"
+msgstr "verzonden"
+
+#: modules/newsletter/models.py:710
+msgid "sending"
+msgstr "verzenden"
+
+#: modules/newsletter/templates/admin/newsletter/message/change_form.html:8
+#: modules/newsletter/templates/admin/newsletter/newsletter/change_form.html:8
+#: modules/newsletter/templates/admin/newsletter/submission/change_form.html:16
+msgid "History"
+msgstr "Geschiedenis"
+
+#: modules/newsletter/templates/admin/newsletter/message/change_form.html:9
+#: modules/newsletter/templates/admin/newsletter/newsletter/change_form.html:9
+#: modules/newsletter/templates/admin/newsletter/submission/change_form.html:17
+msgid "View on site"
+msgstr "Bekijk op site"
+
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:5
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:19
+msgid "Preview message"
+msgstr "Voorvertoning bericht"
+
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:9
+#: modules/newsletter/templates/admin/newsletter/subscription/confirmimportform.html:8
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:8
+msgid "Home"
+msgstr "Home"
+
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:11
+msgid "Message"
+msgstr "Bericht"
+
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:22
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:28
+msgid "Change"
+msgstr "Verander"
+
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:23
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:29
+msgid "Create submission"
+msgstr "Maak zending aan"
+
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:26
+msgid "HTML"
+msgstr "HTML"
+
+#: modules/newsletter/templates/admin/newsletter/message/preview.html:30
+msgid "Text"
+msgstr "Tekst"
+
+#: modules/newsletter/templates/admin/newsletter/submission/change_form.html:18
+msgid "Submit"
+msgstr "Verzend"
+
+#: modules/newsletter/templates/admin/newsletter/subscription/change_list.html:8
+msgid "import"
+msgstr "importeer"
+
+#: modules/newsletter/templates/admin/newsletter/subscription/change_list.html:12
+#, python-format
+msgid "Add %(name)s"
+msgstr "Voeg %(name)s toe"
+
+#: modules/newsletter/templates/admin/newsletter/subscription/confirmimportform.html:3
+#: modules/newsletter/templates/admin/newsletter/subscription/confirmimportform.html:20
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:3
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:19
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:24
+msgid "Import addresses"
+msgstr "Importeer adres"
+
+#: modules/newsletter/templates/admin/newsletter/subscription/confirmimportform.html:40
+msgid "Confirm"
+msgstr "Bevestig"
+
+#: modules/newsletter/templates/admin/newsletter/subscription/importform.html:41
+msgid "Upload"
+msgstr "Upload"
+
+#: modules/newsletter/templates/newsletter/newsletter_detail.html:5
+msgid "Newsletter detail"
+msgstr "Nieuwsbrief detail"
+
+#: modules/newsletter/templates/newsletter/newsletter_list.html:5
+msgid "Newsletter list"
+msgstr "Nieuwsbrieven lijst"
+
+#: modules/newsletter/templates/newsletter/newsletter_list.html:16
+#: modules/newsletter/templates/newsletter/subscription_subscribe.html:23
+#: modules/newsletter/templates/newsletter/subscription_subscribe_user.html:22
+msgid "Subscribe"
+msgstr "Abonneer"
+
+#: modules/newsletter/templates/newsletter/newsletter_list.html:27
+msgid "Update subscriptions"
+msgstr "Pas inschrijvingen aan"
+
+#: modules/newsletter/templates/newsletter/submission_archive.html:5
+#: modules/newsletter/templates/newsletter/submission_archive.html:10
+msgid "Newsletter archive"
+msgstr "Nieuwsbrief archief"
+
+#: modules/newsletter/templates/newsletter/subscription_activate.html:5
+#: modules/newsletter/templates/newsletter/subscription_activate.html:8
+#: modules/newsletter/templates/newsletter/subscription_subscribe_activated.html:5
+#: modules/newsletter/templates/newsletter/subscription_subscribe_activated.html:8
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_activated.html:5
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_activated.html:8
+#: modules/newsletter/templates/newsletter/subscription_update_activated.html:5
+#: modules/newsletter/templates/newsletter/subscription_update_activated.html:8
+msgid "activate"
+msgstr "activeer"
+
+#: modules/newsletter/templates/newsletter/subscription_activate.html:13
+msgid "Activate"
+msgstr "Activeer"
+
+#: modules/newsletter/templates/newsletter/subscription_subscribe.html:5
+#: modules/newsletter/templates/newsletter/subscription_subscribe.html:8
+#: modules/newsletter/templates/newsletter/subscription_subscribe_email_sent.html:5
+#: modules/newsletter/templates/newsletter/subscription_subscribe_email_sent.html:8
+#: modules/newsletter/templates/newsletter/subscription_subscribe_user.html:5
+#: modules/newsletter/templates/newsletter/subscription_subscribe_user.html:8
+msgid "Newsletter subscribe"
+msgstr "Abonneer op nieuwsbrief"
+
+#: modules/newsletter/templates/newsletter/subscription_subscribe.html:11
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe.html:11
+#: modules/newsletter/templates/newsletter/subscription_update.html:11
+msgid ""
+"Due to a technical error we were not able to submit your confirmation email. "
+"This could be because your email address is invalid."
+msgstr ""
+"Wegens technische omstandigheden is het niet gelukt om een bevestigingsmail "
+"te versturen. Misschien heeft u een ongeldig e-mail adres ingevuld."
+
+#: modules/newsletter/templates/newsletter/subscription_subscribe_activated.html:10
+msgid "Your subscription has successfully been activated."
+msgstr "Uw inschrijving is succesvol geactiveerd."
+
+#: modules/newsletter/templates/newsletter/subscription_subscribe_email_sent.html:10
+msgid ""
+"Your subscription request was successfully received and an activation email "
+"has been sent to you. In that email you will find a link which you need to "
+"follow in order to activate your subscription."
+msgstr ""
+"Uw inschrijfverzoek is succesvol ontvangen en een activiatie e-mail is naar "
+"u verstuurd. In deze e-mail vind u een link die gevolgd moet worden om uw "
+"inschrijving te activeren."
+
+#: modules/newsletter/templates/newsletter/subscription_subscribe_user.html:19
+msgid "Do you want to subscribe to this newsletter?"
+msgstr "Wilt u zich inschrijven op deze nieuwsbrief?"
+
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe.html:5
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe.html:8
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_email_sent.html:5
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_email_sent.html:8
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_user.html:5
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_user.html:8
+msgid "Newsletter unsubscribe"
+msgstr "Zeg nieuwsbrief op"
+
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe.html:23
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_user.html:23
+msgid "Unsubscribe"
+msgstr "Opzeggen"
+
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_activated.html:10
+msgid "You have successfully been unsubscribed."
+msgstr "U bent succesvol uitgeschreven."
+
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_email_sent.html:10
+msgid ""
+"Your unsubscription request has successfully been received. An email has "
+"been sent to you with a link you need to follow in order to confirm your "
+"unsubscription."
+msgstr ""
+"Uw uitschrijfverzoek is succesvol ontvangen. Er is een e-mail naar u "
+"verstuurd met een link die u dient te volgen om de uitschrijving te "
+"bevestigen."
+
+#: modules/newsletter/templates/newsletter/subscription_unsubscribe_user.html:20
+msgid "Do you want to unsubscribe from this newsletter?"
+msgstr "Wilt u zich uitschrijven van deze nieuwsbrief?"
+
+#: modules/newsletter/templates/newsletter/subscription_update.html:5
+#: modules/newsletter/templates/newsletter/subscription_update.html:8
+#: modules/newsletter/templates/newsletter/subscription_update_email_sent.html:5
+#: modules/newsletter/templates/newsletter/subscription_update_email_sent.html:8
+msgid "Newsletter update"
+msgstr "Nieuwsbrief aanpassen"
+
+#: modules/newsletter/templates/newsletter/subscription_update.html:23
+msgid "Update subscription"
+msgstr "Pas inschrijving aan"
+
+#: modules/newsletter/templates/newsletter/subscription_update_activated.html:10
+msgid "Your subscription has successfully been updated."
+msgstr "Uw inschrijving is succesvol aangepast."
+
+#: modules/newsletter/templates/newsletter/subscription_update_email_sent.html:10
+msgid ""
+"Your update request was successfully received and an activation email has "
+"been sent to you. In that email you will find a link which you need to "
+"follow in order to update your subscription."
+msgstr ""
+"Uw aanpassingsverzoek is succesvol ontvangen en een activiatiemail is naar u "
+"verstuurd. In deze e-mail vind u een link die u dient aan te klikken om de "
+"aanpassingen te bevestigen."
+
+#: modules/newsletter/templates/widget/image.html:2
+msgid "Currently:"
+msgstr "Huidig:"
+
+#: modules/newsletter/templates/widget/image.html:4
+msgid "Change:"
+msgstr "Verander:"
+
+#: modules/newsletter/views.py:114
+msgid "Your changes have been saved."
+msgstr "Uw veranderingen zijn opgeslagen."
+
+#: modules/newsletter/views.py:305
+#, python-format
+msgid "You have been subscribed to %s."
+msgstr "U bent geaboneerd op %s."
+
+#: modules/newsletter/views.py:309
+#, python-format
+msgid "User %(rs)s subscribed to %(my_newsletter)s."
+msgstr "Gebruiker %(rs)s geaboneerd op %(my_newsletter)s."
+
+#: modules/newsletter/views.py:319
+#, python-format
+msgid "You are already subscribed to %s."
+msgstr "U bent al geabonneerd op %s."
+
+#: modules/newsletter/views.py:344
+#, python-format
+msgid "You have been unsubscribed from %s."
+msgstr "U bent uitgeschreven van %s."
+
+#: modules/newsletter/views.py:348
+#, python-format
+msgid "User %(rs)s unsubscribed from %(my_newsletter)s."
+msgstr "Gebruiker %(rs)s uitgeschreven van %(my_newsletter)s."
+
+#: modules/newsletter/views.py:361
+#, python-format
+msgid "You are not subscribed to %s."
+msgstr "U bent niet ingeschreven op %s."

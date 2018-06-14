@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% block title %}{% trans 'About project' %}{% endblock %}
+
+{% block content %}
+        <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+
+            <div class="content">
+<div class="text-center">{#<img src="{%  static 'info_page/header.jpg' %}" style="height: 300px;">#} <h3>{% trans 'About us' %}</h3></div>
+
+<b>{% trans 'Smart "OSBB"' %}</b>{% trans 'web-service that implemented conception "Smart condominium" in IT part. It provides tools for optimization process of sefl-government at the level of your home. "Smart Condominium" designed as microservices, therefore it is easy to use in any condominium.. ' %}<br/>
+    <br/>
+
+{% blocktrans %}Developers of this web-service have practical experience with designed web-services to reform the management of cities{% endblocktrans %}.<br/><br/>
+
+{% trans 'When creating a product, our team put these priorities' %}:<br/>
+    <ul>
+        <li>{% trans 'User-friendly and intuitive interface' %}</li>
+        <li>{% trans 'Multifunctional' %}</li>
+        <li>{% trans 'Consolidation of services and tools' %}</li>
+        <li>{% trans 'Ability to install additional modules' %}</li>
+        <li>{% trans 'Distribution the access permissions depending on the position' %}</li>
+    </ul>
+
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="section-heading">{% trans 'Project team' %}<strong> {% trans 'Smart "OSBB"' %}</strong></h2>
+<br/>
+                </div>
+            </div>
+<div class="row">
+
+				<div class="col-md-3">
+                    <div class="team-member">
+                        <img src="http://www.cityfuture.org.ua/img/team/pev.jpg" class="img-responsive img-circle" alt="">
+                        <h4>{% trans 'Poremchuk Eugene' %}</h4>
+                        <p class="text-muted">{% trans 'Developer, Teamlead at "30th Meridian" and founder'  %} <a href="http://rozumnemisto.org"> {% trans 'Rozumne Misto' %}</a> </p>
+                        <ul class="list-inline social-buttons">
+                             <li><a href="https://www.facebook.com/e.poremchuk" target="_blank"><i class="fa fa-facebook"></i></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+{#<div class="row">#}
+
+              <div class="col-md-3">
+                    <div class="team-member">
+                        <img src="http://www.rozumnemisto.org/static/img/crew/cashporov.jpg" class="img-responsive img-circle" alt="">
+                        <h4>{% trans 'Vladimir Kashporov' %}</h4>
+                        <p class="text-muted">{% trans 'The senior partner of "Law firm "Kashporov & Partners"' %}</p>
+                        <ul class="list-inline social-buttons">
+                             <li><a href="https://www.facebook.com/vladimir.kashporov?fref=ts" target="_blank"><i class="fa fa-facebook"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
+{#            </div><!-- /.box-body -->#}
+
+          </div><!-- /.box -->
+            </div>
+          </div>
+
+        </section><!-- /.content -->
+
+{% endblock %}

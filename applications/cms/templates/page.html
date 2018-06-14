@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% load static %}
+
+{% block title %} {{ page.title }} {% endblock %}
+
+{% block content %}
+
+    <section class="card">
+        <div class="content">
+            <div class="header">
+                <h3 class="text-center">{{ page.title }}</h3>
+                {% if page.author %}
+                    <p class="text-right"><i>{% trans 'Author of last changes:' %} {{ page.author.last_name }} {{ page.author.first_name|slice:"1" }}.{{ page.author.middle_name|slice:"1" }}. </i></p>
+                {% endif %}
+                <p class="text-right"><i>{% trans 'Date of last changes:' %} {{ page.datetime_update }}</i></p>
+            </div>
+            <div class="card">
+                <div class="content">
+                    {% autoescape off %}
+                        {{ page.content }}
+                    {% endautoescape %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Instructions' %}.{% endblock %}
+{% load staticfiles %}
+{% block content %}
+        <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+
+            <div class="content">
+
+
+<div class="text-center">
+    <h2>{% trans 'Instructions for service "Smart Condominium"!' %}</h2></div>
+                <ol>
+                    <li style="font-size: 18px"><a href="https://drive.google.com/file/d/0B02Q1XgKSDN4V3NNUjVmQ19SdWs/view" target="_blank">{% trans 'Short instruction for user' %}</a></li>
+                    <li style="font-size: 18px"><a href="https://drive.google.com/file/d/0B02Q1XgKSDN4SUZwZFdSeUZqVFE/view" target="_blank">{% trans 'Full instruction for user' %}</a></li>
+                    <li style="font-size: 18px"><a href="https://drive.google.com/file/d/0B02Q1XgKSDN4MG50bERSV2RjdkU/view" target="_blank">{% trans 'Short instruction for administrator' %}</a></li>
+                    <li style="font-size: 18px"><a href="https://drive.google.com/file/d/0B02Q1XgKSDN4ZmM1a0tlcFJ2Q0U/view" target="_blank">{% trans 'Full instruction for administrator' %}</a></li>
+
+                </ol>
+
+      </div><!-- /.box-body -->
+
+          </div><!-- /.box -->
+
+        </section><!-- /.content -->
+    
+{% endblock %}

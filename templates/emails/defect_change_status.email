@@ -1,0 +1,9 @@
+  Вас вітає команда проекту "Розумне ОСББ" !<br/><br/>
+  По заявці <strong><a href="http://www.rozumneosbb.org/{{condominiumslug}}/defects/{{defect_id}}">{{title}}</a></strong> змінено статус на "{{status}}"<br/>
+{{resolution}}<br/><br/>
+{% if status == 'Виконана'%}
+
+<strong>Статуси змінюються <a href="http://www.rozumneosbb.org/{{condominiumslug}}/moderators/">менеджерами</a> вашого ОСББ.</strong><br/><br/>
+
+  З повагою,<br/>
+  команда проекту <a href='www.rozumneosbb.org'>"Розумне ОСББ"</a> та компанія "30-тий Меридіан"<br/>

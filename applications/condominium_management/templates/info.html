@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    <!-- Main content -->
+    <div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="content">
+                <legend>
+                    <i class="fa fa-building"></i>
+                    {% trans 'OSBB profile' %}
+                    {% if request.user in condominium.manager.all %}
+                        <a style="float: right" class="btn btn-warning btn-fill btn-sm"
+                        href="{% url 'condominium:management:edit' condominium_slug=condominium.slug %}">
+                        <i class="fa fa-pencil"></i>
+                        {% trans 'Edit' %}
+                        </a>
+                    {% endif %}
+                </legend>
+                <br/>
+                <strong>{% trans 'Name' %}: </strong>{{ condominium.name }}<br/>
+                <strong>{% trans 'Slug' %}: </strong>{{ condominium.slug }}<br/>
+                <strong>{% trans 'Address' %}: </strong>{{ condominium.legal_address }}<br/>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h3>{% trans 'Houses' %}</h3>
+                <table class="table table-striped">
+                    <tr>
+                        <th class="col-md-3">{% trans 'Address' %}</th>
+                        <th class="col-md-3">{% trans 'Area' %}</th>
+                        <th class="col-md-6">{% trans 'Count of porches' %}</th>
+                    </tr>
+                    {% for house in condominium.condominiumhouse_set.all %}
+                        <tr>
+                            <td class="col-md-5"><a href="{% url 'condominium:management:house_info' request.session.condominium_slug house.id %}">{{ house.address|truncatechars:80 }}</a></td>
+                            <td class="col-md-4">{{ house.area }} {% trans "m" %}<sup>2</sup></td>
+                            <td class="col-md-3">{{ house.condominiumporch_set.all.count }}</td>
+                        </tr>
+                    {%  endfor %}
+                </table>
+                <br/>
+                <h3>{% trans 'Infrastructure objects' %}</h3>
+                <table class="table table-striped">
+                    <tr>
+                        <th class="col-md-3">{% trans 'Type' %}</th>
+                        <th class="col-md-3">{% trans 'Area' %}</th>
+                        <th class="col-md-6">{% trans 'Description' %}</th>
+                    </tr>
+                    {% for record in infrastructure %}
+                        <tr>
+                            <td class="col-md-3">{{ record.type }}</td>
+                            <td class="col-md-3">{{ record.area }} {% trans "m" %}<sup>2</sup></td>
+                            <td class="col-md-9">{{ record.description }}</td>
+                        </tr>
+                    {%  endfor %}
+                </table>
+
+{#                <h3>{% trans 'Houses' %}</h3>#}
+{#                                            <div class="content">#}
+{#                                    <div class="row">#}
+{#                                    {% for house in condominium.condominiumhouse_set.all %}#}
+{##}
+{##}
+{#                                        <div class="col-md-4">#}
+{#                                        <div class="card">#}
+{#                                            <div class="content">#}
+{#                                       {{ house.address }}#}
+{#                                        {{ house.number }}#}
+{#                                             </div></div>#}
+{#                                        </div>#}
+{#                                        {% endfor %}#}
+{#        </div></div>#}
+            </div>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}

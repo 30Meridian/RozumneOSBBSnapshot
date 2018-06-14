@@ -1,0 +1,131 @@
+{% extends 'account/sign.html' %}
+
+{% load i18n %}
+{% load static %}
+{% load cache %}
+
+{% block title %}
+
+    <title>{% trans "Sign In" %}. Розумне ОСББ.</title>
+
+{% endblock %}
+
+{% block content %}
+    <div class="full-page login-page" data-color="green" data-image="{% static 'img/full-screen-image-1.jpg' %}">
+    <!--   you can change the color of the filter page using: data-color="blue | azure | green | orange | red | purple" -->
+    <div class="content">
+        <div class="container">
+            {% for message in messages %}
+            <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3 alert alert-{{ message.tags }}" role="alert">
+                <span class="close" data-dismiss="alert">&times;</span>
+                <span>{% trans message.message %}</span>
+            </div>
+            {% endfor %}
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                    <div class="text-center">
+                        <a href="/" class="logo-text">
+                            <img src="/static/img/logo.png" width="270px">
+                        </a>
+                    </div>
+                    <br/>
+                    <br/>
+                    <form class="login" method="POST" action="{% url 'account_login' %}" id="loginform">
+                        <div class="card card-hidden">
+                            <div class="text-center header" style="display: block; overflow: auto">
+
+                                <a class="" href="/accounts/login/">
+                                    <div class="loginicon">
+                                    <i class="fa pe-7s-user"></i><br/>
+                                        </div>
+                                    Вхід в ОСББ
+                                </a>
+                            </div>
+                            <div class="content" style="display: block; overflow: auto">
+                                {% csrf_token %}
+                                {% for field in form %}
+                                    <div class="form-group">
+                                        {% if field.name == 'remember'%}
+                                            {{ field.errors }}
+                                            <div class="checkbox" >
+{#                                            <span class="first-icon fa fa-check-square-o">#}
+{#                                            </span>#}
+                                                <span class="icons">
+                                                    <span class="first-icon fa fa-square-o"></span>
+                                                    <span class="second-icon fa fa-check-square-o"></span>
+                                                </span>
+                                                {{ field }}
+                                                <label > {{ field.label_tag }}</label>
+                                            </div>
+
+                                        {% else %}
+                                            {{ field.errors }}
+{#                                            <label> {{ field.label_tag }}</label>#}
+                                            {{ field }}
+                                        {% endif %}
+                                    </div>
+
+                                {% endfor %}
+                                {% if redirect_field_value %}
+                                    <input type="hidden" name="{{ redirect_field_name }}"
+                                           value="{{ redirect_field_value }}"/>
+                                {% endif %}
+                                <div class="text-center" style="display: block; overflow: auto">
+                                    <button type="submit" class="btn btn-fill btn-lg btn-success col-md-12 col-sm-12">
+                                        {% trans "Sign In" %}
+                                    </button>
+
+                                    <div class="col-xs-12">
+                                        <br/>
+                                        <a class="btn-xs" href="{% url 'account_signup' %}">
+                                            {% trans "Register?" %}
+                                        </a>
+                                        <a class="btn-xs" href="{% url 'account_reset_password' %}">
+                                            {% trans "Forgot Password?" %}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer footer-transparent">
+        <div class="container">
+            <nav class="pull-left">
+                <ul>
+                    <li>
+                        <a href="/">
+                            Головна
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about">
+                            Про проект
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/help">
+                            Допомога
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contacts">
+                            Контакти
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <p class="copyright pull-right">
+                2016 &copy; <a href="/">30th Meridian</a> and
+                <a href="http://rozumnemisto.org">Розумне Місто</a>
+            </p>
+        </div>
+    </footer>
+
+    </div>
+
+{% endblock %}

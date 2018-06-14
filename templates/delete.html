@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load base %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="card">
+        <div class="header">
+            <h4 class="text-center">{% trans "Do you want to delete this premise?" %}</h4>
+            <hr/>
+        </div>
+        <div class="row">
+            <div class="content">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="col-md-5 col-md-offset-1">
+                        <input class="btn btn-danger btn-block btn-fill" type="submit" value="{% trans 'Yes' %}">
+                    </div>
+                </form>
+                <div class="col-md-5">
+                    <a class="btn btn-fill btn-block btn-success"
+                       href="{% url 'profile' object.user.id %}">{% trans 'No' %}</a>
+                </div>
+            </div>
+            <div class="margin-top">
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

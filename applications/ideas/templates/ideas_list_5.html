@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Ideas what didn`t collect needed count of voice' %}{% endblock %}
+{% load staticfiles %}
+
+
+{% block content %}
+                  <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+
+            <div class="content">
+
+{% if ideas.object_list %}
+
+    <div class="card">
+        <div class="header"><h3 class="box-title">{% trans 'Ideas in Archive' %}:</h3></div>
+                <div class="content">
+                  <table class="table table-bordered table-hover">
+                    <tbody><tr bgcolor="#f4f4f4">
+                      <th  style="width: 65px">{% trans 'Illustration' %}</th>
+                      <th style="width: 115px">{% trans 'Number' %}</th>
+                      <th>{% trans 'Idea text' %}</th>
+                      <th style="width: 125px">{% trans 'Count of signatures' %}</th>
+
+                    </tr>
+
+                    {% for idea in ideas.object_list %}
+
+                <tr>
+                    <td class="vert-align">
+                        {% if idea.image.thumbnail%}
+                        <a href="../../ideas/{{ idea.id }}" class="title-idea"><img src="{{ MEDIA_URL }}{{ idea.image.thumbnail }}" width="80px"></a>
+                        {% else %}
+                        <a href="../../ideas/{{ idea.id }}" class="title-idea"><img src="{{ MEDIA_URL }}/ideas/empty.gif" width="80px"></a>
+                        {% endif %}
+                    </td>
+                  <td class="vert-align"><a href="../../ideas/{{ idea.id }}" class="title-idea">{{ idea.id }}</a></td>
+                  <td class="valign"><a href="../../ideas/{{ idea.id }}" class="title-idea">{{ idea.title | truncatewords:25}}</a></td>
+                 <td class="vert-align"><span class="badge bg-green"><a href="../../ideas/{{ idea.id }}" class="title-idea">{{ idea.vote_count }}</a></span><br />
+                      <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-success" style="width:{% widthratio idea.ideasvoices_set.count need_votes 100 %}%"></div>
+                    </div>
+
+                  </td>
+
+                  </td>
+
+
+
+                </tr>
+            {% endfor %}
+              </tbody></table>
+            </div>
+
+</div>
+    <div class="col-md-5 col-md-offset-3">
+  {% if ideas.object_list >= 10 %}   {{ ideas.render }}{% endif %}
+    </div>
+
+{% else %}
+    {% trans 'Your condominium has not ideas in archive yet.' %}
+{% endif %}
+  </div><!-- /.box-body -->
+
+          </div><!-- /.box -->
+
+        </section><!-- /.content -->
+{% endblock %}
+

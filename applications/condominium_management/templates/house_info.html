@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    <section class="content-header">
+      <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-home"></i> {% trans 'Home' %}</a></li>
+        <li><a href="{% url 'condominium:management:info' request.session.condominium_slug %}">{% trans 'About OSBB'%}</a></li>
+        <li class="active">{% trans 'About House' %}</li>
+      </ol>
+    </section>
+    <!-- Main content -->
+    <div class="row">
+    <div class="col-md-12">
+
+        <div class="card">
+            <div class="content">
+                <h3>{% trans 'House on the address: ' %} {{ house.address|truncatechars:60 }}</h3>
+                <table class="table table-striped">
+                    <tr>
+                        <th class="col-md-1" style="text-align: center">{% trans 'Count of porches' %}</th>
+                        <th class="col-md-1" style="text-align: center">{% trans 'Count of floors' %}</th>
+                        <th class="col-md-2" style="text-align: center">{% trans 'Area' %}</th>
+                        <th class="col-md-2" style="text-align: center">{% trans 'Ressidential area' %}</th>
+                        <th class="col-md-2" style="text-align: center">{% trans 'Added residential premise' %}</th>
+                        <th class="col-md-2" style="text-align: center">{% trans 'Added non residential premise' %}</th>
+                        <th class="col-md-2" style="text-align: center">{% trans 'Count of users' %}</th>
+
+
+                    </tr>
+                        <tr>
+                            <td class="col-md-1" style="text-align: center">
+                                {% if house.condominiumporch_set.all.count %}
+                                    {{ house.condominiumporch_set.all.count }}
+                                {% else %}
+                                    -
+                                {% endif %}
+                                </td>
+                            <td class="col-md-1" style="text-align: center">
+                                {% if house.condominiumporch_set.all.0.floors_count %}
+                                    {{ house.condominiumporch_set.all.0.floors_count }}
+                                {% else %}
+                                    -
+                                {% endif %}
+                                </td>
+                            <td class="col-md-2" style="text-align: center">
+                                {% if house.area %}
+                                    {{ house.area }} {% trans "m" %}<sup>2</sup>
+                                {% else %}
+                                    -
+                                {% endif %}
+                                </td>
+                            <td class="col-md-2" style="text-align: center">
+                                {% if house.residential_area %}
+                                    {{ house.residential_area }} {% trans "m" %}<sup>2</sup>
+                                {% else %}
+                                    -
+                                {% endif %}
+                                </td>
+                            <td class="col-md-2" style="text-align: center">
+                                {% if house.condominiumresidentialpremise_set.all.count %}
+                                    {{ house.condominiumresidentialpremise_set.all.count }}
+                                {% else %}
+                                    -
+                                {% endif %}
+                                </td>
+                            <td class="col-md-2" style="text-align: center">
+                                {% if house.condominiumnonresidentialpremise_set.all.count %}
+                                    {{ house.condominiumnonresidentialpremise_set.all.count }}
+                                {% else %}
+                                    -
+                                {% endif %}
+                                </td>
+                            <td class="col-md-2" style="text-align: center">
+                                {% if users_count %}
+                                    {{ users_count }}
+                                {% else %}
+                                    -
+                                {% endif %}
+                            </td>
+
+                        </tr>
+                </table>
+                <br/>
+
+
+        </div>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}

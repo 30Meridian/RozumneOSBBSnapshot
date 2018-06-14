@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Confirm your email' %}!{% endblock %}
+{% block head_top %}<meta http-equiv="refresh" content="3;url=http://rozumnemisto.org/">{% endblock %}
+{% block content %}
+        <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+
+            <div class="content">
+<div class="alert alert-warning alert-dismissible">
+
+                <h2><i class="icon fa fa-warning"></i> {% trans 'Confirm your email' %}! </h2>
+                {% trans 'You need to go to your mailbox and click on the link in the email what we sent' %}. <br/>
+                {% trans 'Users with unconfirmed email-addresses can not participate in the vote or add material' %}.<br/>
+                (<a href="/">{% trans 'Return to home' %}</a> )
+
+              </div>
+
+            </div><!-- /.box-body -->
+
+          </div><!-- /.box -->
+
+        </section><!-- /.content -->
+
+{% endblock %}

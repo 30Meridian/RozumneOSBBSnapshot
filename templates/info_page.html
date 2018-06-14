@@ -1,0 +1,311 @@
+{% load staticfiles %}
+{% load cache %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {#    <meta name="description" content="">#}
+    {#    <meta name="author" content="">#}
+
+    <title>{% trans 'Smart "OSBB"' %}</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static 'info_page/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="{% static 'info_page/vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="{% static 'info_page/css/creative.min.css' %}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top">
+
+<nav id="" class="navbar navbar-default navbar-fixed-top affix"><!-- mainNav -->
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" style="color: whitesmoke ">
+                <span class="sr-only">{% trans 'Navigation' %}</span> {% trans 'Menu' %} <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top"><img src="{% static 'img/logo.png' %}"
+                                                                      width="170px" height ="40px"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#about">{% trans 'About us' %}</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#services">{% trans 'Services' %}</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#portfolio">{% trans 'Portfolio' %}</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">{% trans 'Contacts' %}</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1 id="homeHeading">{% trans 'Your possibility to manage your home' %}</h1>
+            <hr>
+
+            <a href="/accounts/login" class="btn btn-primary btn-xl page-scroll"><i class="fa fa-sign-in"
+                                                                                    aria-hidden="true"></i> {% trans 'LogIn' %}</a>
+            <a href="/accounts/signup" class="btn btn-primary btn-xl page-scroll"><i class="fa fa-user-plus"
+                                                                                     aria-hidden="true"></i> {% trans 'Register' %}</a>
+            <a href="/instructions" class="btn btn-primary btn-xl page-scroll"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                {% trans 'Instructions' %}</a>
+            <a href="#about" class="btn btn-primary btn-xl page-scroll"><i class="fa fa-home" aria-hidden="true"></i>
+                {% trans 'About us' %}</a>
+        </div>
+    </div>
+</header>
+
+<section class="bg-primary" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">{% trans 'About us' %}</h2>
+                <hr class="light">
+                <p class="text-faded">{% trans 'We are a team of developers and analysts. Our aim make more comfortable life for residents of homes' %}</p>
+                <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">{% trans 'What do we propose?' %}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">{% trans 'Our services' %}</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-building text-primary sr-icons"></i>
+                    <h3>{% trans 'Condominum page' %}</h3>
+                    <p class="text-muted">{% trans 'Activists of your condominium create page of your association' %}! </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-info-circle text-primary sr-icons"></i>
+                    <h3>{% trans 'Manager of Condominium' %}</h3>
+                    <p class="text-muted">{% trans 'Administrator of condominium page appoints managers of page for publishing materials of manager, audit groups and activists ' %}!</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
+                    <h3>{% trans 'Discussions' %}</h3>
+                    <p class="text-muted">{% trans 'Talk over ideas and problems online. You can add items to solve problems and watch for their solving. ' %}!</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-credit-card text-primary sr-icons"></i>
+                    <h3>{% trans 'Utilities' %}</h3>
+                    <p class="text-muted">{% trans 'You can pay utility bills online through our product' %}!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="no-padding" id="portfolio">
+    <div class="container-fluid">
+        <div class="row no-gutter popup-gallery">
+            <div class="col-lg-4 col-sm-6">
+                <a href="{% static 'img/portfolio_1.png' %}" class="portfolio-box" style="{# height: 260px; #}">
+                    <img src="{% static 'img/portfolio_1.png' %}" class="img-responsive" alt="" >
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+
+                            <div class="project-name">
+                                {% trans 'Login page' %}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="{% static 'img/portfolio_2.png' %}" class="portfolio-box" style="{# height: 260px; #}">
+                    <img src="{% static 'img/portfolio_2.png' %}" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+
+                            <div class="project-name">
+                                {% trans 'Start page' %}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="{% static 'img/portfolio_3.png' %}" class="portfolio-box" style="{# height: 260px; #}">
+                    <img src="{% static 'img/portfolio_3.png' %}" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+
+                            <div class="project-name">
+                                {% trans 'User profile' %}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="{% static 'img/portfolio_4.png' %}" class="portfolio-box" >
+                    <img src="{% static 'img/portfolio_4.png' %}" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+
+                            </div>
+                            <div class="project-name">
+                                {% trans 'OSBB profile' %}
+{#                                {% trans 'Additional materials' %}#}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="{% static 'img/portfolio_6.png' %}" class="portfolio-box" >
+                    <img src="{% static 'img/portfolio_6.png' %}" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+
+                            </div>
+                            <div class="project-name">
+                                {% trans 'Administration panel' %}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="{% static 'img/portfolio_5.png' %}" class="portfolio-box" >
+                    <img src="{% static 'img/portfolio_5.png' %}" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+
+                            </div>
+                            <div class="project-name">
+                                {% trans 'Edit' %}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<aside class="bg-dark">
+    <div class="container text-center">
+        <div class="call-to-action">
+            <h2>{% trans 'Create new condominium or register in some existing condominium' %}</h2>
+            <a href="{% url 'account_login' %}" class="btn btn-default btn-xl sr-button">{% trans 'Join' %}!</a>
+        </div>
+    </div>
+</aside>
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">{% trans 'How contact with us' %}?</h2>
+                <hr class="primary">
+                <p>{% trans 'You can call us or send a letter to the email' %}</p>
+            </div>
+            <div class="col-lg-4 col-lg-offset-2 text-center">
+                <i class="fa fa-phone fa-3x sr-contact"></i>
+                <p>(097) 84-86-092</p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                <p><a href="mailto:your-email@your-domain.com">office@rozumneosbb.org</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- jQuery -->
+<script src="{% static 'info_page/vendor/jquery/jquery.min.js' %}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="{% static 'info_page/vendor/scrollreveal/scrollreveal.min.js' %}"></script>
+<script src="{% static 'info_page/vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+
+<!-- Theme JavaScript -->
+<script src="{% static 'info_page/js/creative.min.js' %}"></script>
+
+<script>
+        $(function () {
+            var msgs = [];
+            {% for message in messages %}
+                msgs.push({
+                    tag: '{{ message.tags }}',
+                    msg: '{{ message.message }}'
+                });
+            {% endfor %}
+        });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72220102-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+
+</html>

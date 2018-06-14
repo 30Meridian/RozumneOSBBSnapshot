@@ -1,0 +1,109 @@
+{% extends 'base.html' %}>
+{%  load i18n %}
+
+{% block title %}{% trans "Add idea. Information system 'Smart OSBB' " %}{% endblock %}
+
+
+{% block content %}
+
+        <div class="row">
+            <div class="col-md-7"><h3>{% trans 'Add idea for your OSBB' %}</h3></div>
+            <div class="col-md-5">
+                <div class="pull-right">
+                <ol class="breadcrumb">
+                    <li><a href="/"><i class="fa fa-home"></i>{% trans 'Main page' %}</a></li>
+                    <li><a href="../ideas/status/2">{% trans 'List of ideas' %}</a></li>
+                    <li class="active">{% trans 'Add own idea' %}</li>
+                </ol>
+                    </div>
+            </div>
+        </div>
+
+
+
+    <!-- Main content -->
+{#    <section class="content">#}
+<div class="row">
+        <!-- Default box -->
+        <div class="col-md-12">
+            <div class="card">
+                <div class="content">
+
+                    <form id="addIdea" action="../ideas/add" method="post" enctype="multipart/form-data">
+                                           {% csrf_token %}
+
+                        <div class="form-group">
+                            <h4>{% trans 'Idea title' %}</h4>
+                            {{ form.title.errors }}
+                            {{ form.title }}
+                        </div>
+
+
+                        <div class="form-group">
+                            <h4>{% trans 'Idea description' %}</h4>
+                            {{ form.text.errors }}
+                            {{ form.text }}
+                        </div>
+
+
+                        <div class="form-group">
+                            <h4>{% trans 'Illustration for idea' %}</h4>
+                            {{ form.image.errors }}
+                            {{ form.image }}
+                        </div>
+                        <div class="form-group">
+                            <h4>{{ form.public.label }}</h4>
+                            <div class="checkbox {% if form.public.value %}checked{% endif %}">
+                                <span class="icons">
+                                    <span class="first-icon fa fa-square-o"></span>
+                                    <span class="second-icon fa fa-check-square-o"></span>
+                                </span>
+                                <label>
+                                    {{ form.public }}
+                                    {{ form.public.help_text }}
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <span class="icons">
+                                    <span class="first-icon fa fa-square-o"></span>
+                                    <span class="second-icon fa fa-check-square-o"></span>
+                                </span>
+                                <label>
+                                    <input type="checkbox" id="perinfo" name="perinfo">
+                                    {% trans 'read' %} <a href="../ideas/rules" target="_blank"> {% trans 'rules' %}</a>
+                                    {% trans 'of ideas and consent to the processing of personal data' %}
+
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="text-center"><input type="submit" class="btn btn-success btn-fill btn-wd"
+                                                                value="{% trans 'Submit idea!' %}"
+                                        {#                                    onclick="this.value='Зачекайте, будь ласка ..';this.disabled='disabled'; this.form.submit();"#}
+                                ></div>
+
+                            </div>
+                        </div>
+                    </form>
+
+                </div><!-- /.content -->
+            </div><!-- /.card -->
+        </div><!-- /.col-md-12 -->
+
+</div>
+{#    </section><!-- /.content -->#}
+
+    <script>
+        $(document).ready(function () {
+            initForm($('#addIdea'));
+        });
+    </script>
+
+
+{% endblock %}

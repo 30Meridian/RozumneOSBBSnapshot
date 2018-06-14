@@ -1,0 +1,1956 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-10 14:09+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: modules/common/templates/pagination.html:5
+#: modules/common/templates/pagination.html:7
+#: templates/admin/own_index.html:175 templates/admin/own_index.html.py:177
+#: templates/admin/own_index.html:233 templates/admin/own_index.html.py:235
+msgid "previous"
+msgstr ""
+
+#: modules/common/templates/pagination.html:31
+#: modules/common/templates/pagination.html:33
+#: templates/admin/own_index.html:191 templates/admin/own_index.html.py:193
+#: templates/admin/own_index.html:249 templates/admin/own_index.html.py:251
+msgid "next"
+msgstr ""
+
+#: system/admin.py:133 system/admin.py:154
+msgid "area"
+msgstr ""
+
+#: system/admin.py:236 system/admin.py:237
+msgid "Condominium modules"
+msgstr ""
+
+#: system/apps.py:6
+msgid "systems"
+msgstr ""
+
+#: system/forms.py:33
+msgid "Please enter name, for example: Eugene"
+msgstr ""
+
+#: system/forms.py:35
+msgid "Please enter last name, for example: Poremchuk"
+msgstr ""
+
+#: system/forms.py:37
+msgid "Please enter middle name, fro example: Volodymyrovych"
+msgstr ""
+
+#: system/forms.py:39
+msgid "Please enter your phone, for example: 097 111 22 33"
+msgstr ""
+
+#: system/forms.py:132 system/forms.py:143
+msgid "This field is required."
+msgstr ""
+
+#: system/forms.py:157 system/forms.py:252
+msgid "City"
+msgstr ""
+
+#: system/forms.py:158 system/forms.py:253
+msgid "Chose your city. Use search to find more."
+msgstr ""
+
+#: system/forms.py:162
+msgid "Position"
+msgstr ""
+
+#: system/forms.py:163
+msgid "Chose one of the following"
+msgstr ""
+
+#: system/forms.py:166
+msgid "I read system rules and consent to the processing of personal data."
+msgstr ""
+
+#: system/forms.py:195
+msgid "Condominium name"
+msgstr ""
+
+#: system/forms.py:198
+msgid "Write condominium legal address"
+msgstr ""
+
+#: system/forms.py:224
+msgid "Name"
+msgstr ""
+
+#: system/forms.py:225 templates/nesting/admin/inlines/stacked.html:41
+#: templates/profile.html:131 templates/profile.html.py:174
+msgid "Remove"
+msgstr ""
+
+#: system/forms.py:257 templates/admin/base_site.html:32
+#: templates/admin/base_site.html.py:97 templates/base.html:287
+#: templates/base.html.py:482 templates/profile.html:24
+#: templates/profile.html.py:130 templates/profile.html:173
+msgid "Condominium"
+msgstr ""
+
+#: system/forms.py:258
+msgid "Chose your condominium. Use search to find more."
+msgstr ""
+
+#: system/forms.py:273 templates/search/search.html:28
+msgid "Search"
+msgstr ""
+
+#: system/forms.py:274
+msgid "Enter text what you search."
+msgstr ""
+
+#: system/forms.py:279
+msgid "Porches count"
+msgstr ""
+
+#: system/forms.py:280
+msgid "Floors count"
+msgstr ""
+
+#: system/helper.py:18
+msgid "Condominium did not find in urls and cookies"
+msgstr ""
+
+#: system/middleware.py:21
+msgid "You have not permission to change anything in this condominium!"
+msgstr ""
+
+#: system/models.py:24
+msgid "username"
+msgstr ""
+
+#: system/models.py:25
+msgid "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr ""
+
+#: system/models.py:29
+msgid ""
+"Enter a valid username. This value may contain only letters, numbers and @/./"
+"+/-/_ characters."
+msgstr ""
+
+#: system/models.py:34
+msgid "A user with that username already exists."
+msgstr ""
+
+#: system/models.py:36
+msgid "first name"
+msgstr ""
+
+#: system/models.py:37
+msgid "last name"
+msgstr ""
+
+#: system/models.py:38
+msgid "middle name"
+msgstr ""
+
+#: system/models.py:39
+msgid "email address"
+msgstr ""
+
+#: system/models.py:41
+msgid "A user with that email already exists."
+msgstr ""
+
+#: system/models.py:43
+msgid "user phone"
+msgstr ""
+
+#: system/models.py:45
+msgid "user condominium"
+msgstr ""
+
+#: system/models.py:46
+msgid "owned"
+msgstr ""
+
+#: system/models.py:49
+msgid "date joined"
+msgstr ""
+
+#: system/models.py:50
+msgid "staff status"
+msgstr ""
+
+#: system/models.py:51
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: system/models.py:53
+msgid "active"
+msgstr ""
+
+#: system/models.py:54
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: system/models.py:105 system/models.py:106
+msgid "auth user"
+msgstr ""
+
+#: system/models.py:140 system/models.py:209
+msgid "city"
+msgstr ""
+
+#: system/models.py:141
+msgid "cities"
+msgstr ""
+
+#: system/models.py:155
+msgid "object type"
+msgstr ""
+
+#: system/models.py:156
+msgid "object types"
+msgstr ""
+
+#: system/models.py:174 system/models.py:424
+msgid "object registry"
+msgstr ""
+
+#: system/models.py:175
+msgid "objects registry"
+msgstr ""
+
+#: system/models.py:194 system/models.py:265
+msgid "module"
+msgstr ""
+
+#: system/models.py:195
+msgid "modules"
+msgstr ""
+
+#: system/models.py:207
+msgid "name condominium"
+msgstr ""
+
+#: system/models.py:208
+msgid "slug condominium"
+msgstr ""
+
+#: system/models.py:211
+msgid "condominium constitution"
+msgstr ""
+
+#: system/models.py:212
+msgid "legal address"
+msgstr ""
+
+#: system/models.py:213
+msgid "description condominium"
+msgstr ""
+
+#: system/models.py:215
+msgid "votes condominium"
+msgstr ""
+
+#: system/models.py:216
+msgid "problem condominium"
+msgstr ""
+
+#: system/models.py:217
+msgid "ideas_days condominium"
+msgstr ""
+
+#: system/models.py:219
+msgid "ideas number condominium"
+msgstr ""
+
+#: system/models.py:220
+msgid "Registration date"
+msgstr ""
+
+#: system/models.py:221
+msgid "manager condominium"
+msgstr ""
+
+#: system/models.py:222
+msgid "Public ideas"
+msgstr ""
+
+#: system/models.py:223
+msgid "Allows by default to view ideas for users from other condominiums "
+msgstr ""
+
+#: system/models.py:224
+msgid "Public news"
+msgstr ""
+
+#: system/models.py:225
+msgid "Allows by default to view news for users from other condominiums "
+msgstr ""
+
+#: system/models.py:226
+msgid "Public polls"
+msgstr ""
+
+#: system/models.py:227
+msgid "Allows by default to view polls for users from other condominiums "
+msgstr ""
+
+#: system/models.py:228
+msgid "Public problems"
+msgstr ""
+
+#: system/models.py:229
+msgid "Allows by default to view problems for users from other condominiums "
+msgstr ""
+
+#: system/models.py:236 system/models.py:264
+msgid "condominium"
+msgstr ""
+
+#: system/models.py:237
+msgid "condominiums"
+msgstr ""
+
+#: system/models.py:242
+msgid "Сhairman"
+msgstr ""
+
+#: system/models.py:243
+msgid "Vice-Chairman"
+msgstr ""
+
+#: system/models.py:244
+msgid "Secretary"
+msgstr ""
+
+#: system/models.py:245
+msgid "Trustee"
+msgstr ""
+
+#: system/models.py:246
+msgid "Audit team member"
+msgstr ""
+
+#: system/models.py:247
+msgid "Member"
+msgstr ""
+
+#: system/models.py:248
+msgid "Inhabitant"
+msgstr ""
+
+#: system/models.py:251
+msgid "user"
+msgstr ""
+
+#: system/models.py:254
+msgid "position"
+msgstr ""
+
+#: system/models.py:266
+msgid "use"
+msgstr ""
+
+#: system/models.py:267
+msgid "weight"
+msgstr ""
+
+#: system/models.py:274
+msgid "condominium module"
+msgstr ""
+
+#: system/models.py:275
+msgid "condominium modules"
+msgstr ""
+
+#: system/models.py:280
+msgid "house condominium "
+msgstr ""
+
+#: system/models.py:281
+msgid "house name "
+msgstr ""
+
+#: system/models.py:282
+msgid "house address "
+msgstr ""
+
+#: system/models.py:283
+msgid "house area "
+msgstr ""
+
+#: system/models.py:285
+msgid "house residential area "
+msgstr ""
+
+#: system/models.py:286
+msgid "house entrance count "
+msgstr ""
+
+#: system/models.py:287
+msgid "house min floors "
+msgstr ""
+
+#: system/models.py:288
+msgid "house max floors "
+msgstr ""
+
+#: system/models.py:290
+msgid "house residential count "
+msgstr ""
+
+#: system/models.py:291
+msgid "house elevators count "
+msgstr ""
+
+#: system/models.py:292 system/models.py:314 system/models.py:335
+#: system/models.py:354 system/models.py:383 system/models.py:454
+#: system/models.py:469
+msgid "object_registry"
+msgstr ""
+
+#: system/models.py:293
+msgid "house description "
+msgstr ""
+
+#: system/models.py:297
+msgid "house"
+msgstr ""
+
+#: system/models.py:298
+msgid "houses"
+msgstr ""
+
+#: system/models.py:306
+msgid "porch house"
+msgstr ""
+
+#: system/models.py:307
+msgid "porch number"
+msgstr ""
+
+#: system/models.py:308
+msgid "porch name"
+msgstr ""
+
+#: system/models.py:309
+msgid "porch floors_count"
+msgstr ""
+
+#: system/models.py:310
+msgid "porch residential_count"
+msgstr ""
+
+#: system/models.py:311
+msgid "porch non_residential_count"
+msgstr ""
+
+#: system/models.py:312
+msgid "porch lighting_points"
+msgstr ""
+
+#: system/models.py:313
+msgid "porch elevators_count"
+msgstr ""
+
+#: system/models.py:315
+msgid "porch description"
+msgstr ""
+
+#: system/models.py:319
+msgid "porch"
+msgstr ""
+
+#: system/models.py:320
+msgid "porches"
+msgstr ""
+
+#: system/models.py:323 templates/people.html:42
+msgid "Porch"
+msgstr ""
+
+#: system/models.py:328
+msgid "floor porch"
+msgstr ""
+
+#: system/models.py:329
+msgid "floor type"
+msgstr ""
+
+#: system/models.py:330
+msgid "floor number"
+msgstr ""
+
+#: system/models.py:331
+msgid "floor name"
+msgstr ""
+
+#: system/models.py:332
+msgid "floor residential_count"
+msgstr ""
+
+#: system/models.py:333
+msgid "floor non_residential_count"
+msgstr ""
+
+#: system/models.py:334
+msgid "floor lighting_points"
+msgstr ""
+
+#: system/models.py:336
+msgid "floor description"
+msgstr ""
+
+#: system/models.py:340 templates/people.html:42
+msgid "floor"
+msgstr ""
+
+#: system/models.py:341
+msgid "floors"
+msgstr ""
+
+#: system/models.py:344
+msgid "Fl."
+msgstr ""
+
+#: system/models.py:348
+msgid "non residential owner"
+msgstr ""
+
+#: system/models.py:349
+msgid "non residental house"
+msgstr ""
+
+#: system/models.py:350
+msgid "non residental floor"
+msgstr ""
+
+#: system/models.py:351
+msgid "non residental type"
+msgstr ""
+
+#: system/models.py:352
+msgid "non residential number or name"
+msgstr ""
+
+#: system/models.py:353
+msgid "non residental area"
+msgstr ""
+
+#: system/models.py:355
+msgid "non residental description"
+msgstr ""
+
+#: system/models.py:364
+msgid "condominium non residential premise"
+msgstr ""
+
+#: system/models.py:365
+msgid "condominium non residential premises"
+msgstr ""
+
+#: system/models.py:372
+msgid "residential owner"
+msgstr ""
+
+#: system/models.py:373
+msgid "residental house"
+msgstr ""
+
+#: system/models.py:374
+msgid "residental floor"
+msgstr ""
+
+#: system/models.py:375
+msgid "residental type "
+msgstr ""
+
+#: system/models.py:376
+msgid "residential number or name"
+msgstr ""
+
+#: system/models.py:377
+msgid "residental area "
+msgstr ""
+
+#: system/models.py:378
+msgid "residental residential area "
+msgstr ""
+
+#: system/models.py:379
+msgid "residental heating area "
+msgstr ""
+
+#: system/models.py:380
+msgid "residental rooms count "
+msgstr ""
+
+#: system/models.py:381
+msgid "residental residents_count "
+msgstr ""
+
+#: system/models.py:382
+msgid "residental pets count "
+msgstr ""
+
+#: system/models.py:384
+msgid "residental description "
+msgstr ""
+
+#: system/models.py:393
+msgid "condominium residential premise"
+msgstr ""
+
+#: system/models.py:394
+msgid "condominium residential premises"
+msgstr ""
+
+#: system/models.py:415 system/models.py:426
+msgid "service"
+msgstr ""
+
+#: system/models.py:416
+msgid "services"
+msgstr ""
+
+#: system/models.py:428
+msgid "start value"
+msgstr ""
+
+#: system/models.py:432 system/models.py:433
+msgid "utilities"
+msgstr ""
+
+#: system/models.py:446
+msgid "utility log"
+msgstr ""
+
+#: system/models.py:447
+msgid "utility logs"
+msgstr ""
+
+#: system/models.py:455
+msgid "common area type"
+msgstr ""
+
+#: system/models.py:456
+msgid "common area-area"
+msgstr ""
+
+#: system/models.py:457
+msgid "common area description"
+msgstr ""
+
+#: system/models.py:461
+msgid "Common area"
+msgstr ""
+
+#: system/models.py:462
+msgid "Common Areas"
+msgstr ""
+
+#: system/models.py:470
+msgid "infrastructure type"
+msgstr ""
+
+#: system/models.py:471
+msgid "infrastructure area"
+msgstr ""
+
+#: system/models.py:472
+msgid "infrastructure description"
+msgstr ""
+
+#: system/models.py:476
+msgid "infrastructure"
+msgstr ""
+
+#: system/models.py:477
+msgid "infrastructures"
+msgstr ""
+
+#: system/models.py:487
+msgid "Page"
+msgstr ""
+
+#: system/models.py:488
+msgid "Pages"
+msgstr ""
+
+#: system/models.py:501 templates/base.html:126
+msgid "Tariffs"
+msgstr ""
+
+#: system/models.py:502 templates/base.html:132
+msgid "Debtors"
+msgstr ""
+
+#: system/models.py:503 templates/base.html:138
+msgid "Our masters"
+msgstr ""
+
+#: system/models.py:504 templates/base.html:144
+msgid "Our contacts"
+msgstr ""
+
+#: system/models.py:514
+msgid "Base users forum"
+msgstr ""
+
+#: system/models.py:515
+msgid "Basic forum for our Condominium."
+msgstr ""
+
+#: system/noop_translations.py:3 templates/admin/change_list.html:114
+#, python-format
+msgid "%(name_plural)s are not created yet"
+msgstr ""
+
+#: system/noop_translations.py:4
+#, python-format
+msgid "Add %s"
+msgstr ""
+
+#: system/noop_translations.py:5
+#, python-format
+msgid "Change %s"
+msgstr ""
+
+#: system/noop_translations.py:6 templates/admin/change_form.html:123
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: system/noop_translations.py:7
+#: templates/nesting/admin/inlines/stacked.html:73
+#, python-format
+msgid "Add another %(verbose_name)s"
+msgstr ""
+
+#: system/noop_translations.py:8 system/noop_translations.py:24
+#: templates/admin/change_form.html:50 templates/profile.html:120
+#: templates/profile.html.py:164 templates/profile.html:208
+msgid "Add"
+msgstr ""
+
+#: system/noop_translations.py:9
+#: templates/nesting/admin/inlines/stacked.html:34
+msgid "Change"
+msgstr ""
+
+#: system/noop_translations.py:10 templates/base.html:150
+msgid "Additional"
+msgstr ""
+
+#: system/noop_translations.py:11
+msgid "People"
+msgstr ""
+
+#: system/noop_translations.py:12
+msgid "Search In"
+msgstr ""
+
+#: system/noop_translations.py:13
+msgid ""
+"The groups this user belongs to. A user will get all permissions granted to "
+"each of their groups."
+msgstr ""
+
+#: system/noop_translations.py:14
+msgid ""
+"Hold down \"Control\", or \"Command\" on a Mac, to select more than one."
+msgstr ""
+
+#: system/noop_translations.py:16 system/views.py:566 templates/base.html:250
+msgid "Problems"
+msgstr ""
+
+#: system/noop_translations.py:17
+msgid "Documents"
+msgstr ""
+
+#: system/noop_translations.py:18
+msgid "You have signed out."
+msgstr ""
+
+#: system/noop_translations.py:21 system/noop_translations.py:23
+msgid "Problems Create"
+msgstr ""
+
+#: system/noop_translations.py:22
+msgid "General"
+msgstr ""
+
+#: system/noop_translations.py:29
+msgid "Basement"
+msgstr ""
+
+#: system/noop_translations.py:30
+msgid "Pedimential"
+msgstr ""
+
+#: system/noop_translations.py:31
+msgid "Common"
+msgstr ""
+
+#: system/noop_translations.py:32
+msgid "Mansard"
+msgstr ""
+
+#: system/noop_translations.py:33
+msgid "Penthouse"
+msgstr ""
+
+#: system/noop_translations.py:34
+msgid "Semi-basement"
+msgstr ""
+
+#: system/noop_translations.py:37
+msgid "Office"
+msgstr ""
+
+#: system/noop_translations.py:38
+msgid "Boiler Room"
+msgstr ""
+
+#: system/noop_translations.py:39
+msgid "District heating substation"
+msgstr ""
+
+#: system/noop_translations.py:40
+msgid "Store"
+msgstr ""
+
+#: system/noop_translations.py:41
+msgid "Pantry"
+msgstr ""
+
+#: system/noop_translations.py:42
+msgid "Concierges Room "
+msgstr ""
+
+#: system/noop_translations.py:45 templates/people.html:30
+msgid "Flat"
+msgstr ""
+
+#: system/noop_translations.py:46
+msgid "Studio flat"
+msgstr ""
+
+#: system/noop_translations.py:47
+msgid "Room"
+msgstr ""
+
+#: system/noop_translations.py:48
+msgid "Hotel room"
+msgstr ""
+
+#: system/noop_translations.py:51
+msgid "Stairwell"
+msgstr ""
+
+#: system/noop_translations.py:52
+msgid "Veranda"
+msgstr ""
+
+#: system/noop_translations.py:53
+msgid "Elevator hall"
+msgstr ""
+
+#: system/noop_translations.py:54
+msgid "Common hallway "
+msgstr ""
+
+#: system/noop_translations.py:55
+msgid "House territory"
+msgstr ""
+
+#: system/noop_translations.py:58
+msgid "Fence"
+msgstr ""
+
+#: system/noop_translations.py:59
+msgid "Gate / barrier"
+msgstr ""
+
+#: system/noop_translations.py:60
+msgid "Footpaths"
+msgstr ""
+
+#: system/noop_translations.py:61
+msgid "Access roads"
+msgstr ""
+
+#: system/noop_translations.py:62
+msgid "The lawn / green area"
+msgstr ""
+
+#: system/noop_translations.py:63
+msgid "Playground"
+msgstr ""
+
+#: system/noop_translations.py:64
+msgid "Garage"
+msgstr ""
+
+#: system/noop_translations.py:65
+msgid "Outdoor gym"
+msgstr ""
+
+#: system/noop_translations.py:67
+msgid "Jan"
+msgstr ""
+
+#: system/noop_translations.py:67
+msgid "Feb"
+msgstr ""
+
+#: system/noop_translations.py:67
+msgid "Mar"
+msgstr ""
+
+#: system/noop_translations.py:67
+msgid "Apr"
+msgstr ""
+
+#: system/noop_translations.py:67
+msgid "May"
+msgstr ""
+
+#: system/noop_translations.py:67
+msgid "Jun"
+msgstr ""
+
+#: system/noop_translations.py:67
+msgid "Jul"
+msgstr ""
+
+#: system/noop_translations.py:67
+msgid "Aug"
+msgstr ""
+
+#: system/noop_translations.py:67
+msgid "Sep"
+msgstr ""
+
+#: system/noop_translations.py:67
+msgid "Oct"
+msgstr ""
+
+#: system/noop_translations.py:67
+msgid "Nov"
+msgstr ""
+
+#: system/noop_translations.py:67
+msgid "Dec"
+msgstr ""
+
+#: system/settings.py:151
+msgid "English"
+msgstr ""
+
+#: system/settings.py:152
+msgid "Ukrainian"
+msgstr ""
+
+#: system/settings.py:153
+msgid "Russian"
+msgstr ""
+
+#: system/settings.py:154
+msgid "Dutch"
+msgstr ""
+
+#: system/settings.py:316
+msgid "OUR_OSBB"
+msgstr ""
+
+#: system/validators.py:11
+msgid "Unsupported file extension."
+msgstr ""
+
+#: system/views.py:69
+msgid "This reference on module is wrong or module is not exists."
+msgstr ""
+
+#: system/views.py:341 system/views.py:343
+msgid "Access not allowed"
+msgstr ""
+
+#: system/views.py:402
+msgid "This object is not exist."
+msgstr ""
+
+#: system/views.py:487
+msgid "pedding"
+msgstr ""
+
+#: system/views.py:563
+#, python-brace-format
+msgid ""
+"Warning. Next modules will be public: {ideas} {news} {problems} {polls} You "
+"can change it in admin page."
+msgstr ""
+
+#: system/views.py:564 templates/base.html:236
+msgid "Ideas"
+msgstr ""
+
+#: system/views.py:565 templates/base.html:229
+msgid "News"
+msgstr ""
+
+#: system/views.py:567 templates/base.html:243
+msgid "Polls"
+msgstr ""
+
+#: templates/403.html:4
+msgid "Access denied!"
+msgstr ""
+
+#: templates/403.html:15
+msgid "Error 403"
+msgstr ""
+
+#: templates/403.html:16
+msgid "Access denied. Return to the"
+msgstr ""
+
+#: templates/403.html:16 templates/404.html:26
+msgid "home page"
+msgstr ""
+
+#: templates/404.html:3
+msgid "Information is absent"
+msgstr ""
+
+#: templates/404.html:20
+msgid "Uppps. Page not found"
+msgstr ""
+
+#: templates/404.html:23
+msgid "Maybe the link does not correct"
+msgstr ""
+
+#: templates/404.html:26
+msgid "You can"
+msgstr ""
+
+#: templates/404.html:26
+msgid "go to "
+msgstr ""
+
+#: templates/404.html:27
+msgid "If you need help - below is chat"
+msgstr ""
+
+#: templates/500.html:3
+msgid "Server error"
+msgstr ""
+
+#: templates/500.html:14 templates/error.html:3
+msgid "Error"
+msgstr ""
+
+#: templates/500.html:15
+msgid "Internal Server Error"
+msgstr ""
+
+#: templates/500.html:16
+#, fuzzy
+msgid "Please contact to the manager by the email"
+msgstr ""
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+
+#: templates/about.html:4
+msgid "About project"
+msgstr ""
+
+#: templates/about.html:14 templates/info_page.html:60
+#: templates/info_page.html.py:91 templates/info_page.html:100
+msgid "About us"
+msgstr ""
+
+#: templates/about.html:16 templates/about.html.py:33
+#: templates/info_page.html:15
+msgid "Smart \"OSBB\""
+msgstr ""
+
+#: templates/about.html:16
+msgid ""
+"web-service that implemented conception \"Smart condominium\" in IT part. It "
+"provides tools for optimization process of sefl-government at the level of "
+"your home. \"Smart Condominium\" designed as microservices, therefore it is "
+"easy to use in any condominium.. "
+msgstr ""
+
+#: templates/about.html:19
+msgid ""
+"Developers of this web-service have practical experience with designed web-"
+"services to reform the management of cities"
+msgstr ""
+
+#: templates/about.html:21
+msgid "When creating a product, our team put these priorities"
+msgstr ""
+
+#: templates/about.html:23
+msgid "User-friendly and intuitive interface"
+msgstr ""
+
+#: templates/about.html:24
+msgid "Multifunctional"
+msgstr ""
+
+#: templates/about.html:25
+msgid "Consolidation of services and tools"
+msgstr ""
+
+#: templates/about.html:26
+msgid "Ability to install additional modules"
+msgstr ""
+
+#: templates/about.html:27
+msgid "Distribution the access permissions depending on the position"
+msgstr ""
+
+#: templates/about.html:33
+msgid "Project team"
+msgstr ""
+
+#: templates/about.html:42
+msgid "Poremchuk Eugene"
+msgstr ""
+
+#: templates/about.html:43
+msgid "Developer, Teamlead at \"30th Meridian\" and founder"
+msgstr ""
+
+#: templates/about.html:43 templates/base.html:418
+msgid "Rozumne Misto"
+msgstr ""
+
+#: templates/about.html:58
+msgid "Vladimir Kashporov"
+msgstr ""
+
+#: templates/about.html:59
+msgid "The senior partner of \"Law firm \"Kashporov & Partners\""
+msgstr ""
+
+#: templates/admin/base_site.html:59 templates/base.html:326
+msgid "Management"
+msgstr ""
+
+#: templates/admin/base_site.html:87 templates/admin/change_form.html:61
+#: templates/admin/change_list.html:42
+#: templates/admin/delete_selected_confirmation.html:8 templates/base.html:390
+#: templates/suit/menu.html:14
+msgid "Home"
+msgstr ""
+
+#: templates/admin/change_form.html:21
+msgid "You have unsaved changes"
+msgstr ""
+
+#: templates/admin/change_form.html:76
+msgid "Add:"
+msgstr ""
+
+#: templates/admin/change_form.html:98
+msgid "tools"
+msgstr ""
+
+#: templates/admin/change_form.html:108
+msgid "History"
+msgstr ""
+
+#: templates/admin/change_form.html:112
+#: templates/nesting/admin/inlines/stacked.html:36
+msgid "View on site"
+msgstr ""
+
+#: templates/admin/change_form.html:152 templates/admin/change_list.html:86
+#, fuzzy
+msgid "Please correct the error below."
+msgstr ""
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+
+#: templates/admin/change_form.html:152 templates/admin/change_list.html:86
+#, fuzzy
+msgid "Please correct the errors below."
+msgstr ""
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+"#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+
+#: templates/admin/change_list.html:68 templates/admin/change_list.html:116
+#, python-format
+msgid "Add: %(name)s"
+msgstr ""
+
+#: templates/admin/change_list.html:110
+msgid "Nothing found"
+msgstr ""
+
+#: templates/admin/change_list.html:112
+msgid "Reset search and filters"
+msgstr ""
+
+#: templates/admin/change_list_results.html:19
+#, python-format
+msgid "Sorting priority: %(priority_number)s"
+msgstr ""
+
+#: templates/admin/change_list_results.html:20
+msgid "Toggle sorting"
+msgstr ""
+
+#: templates/admin/change_list_results.html:22
+msgid "Remove from sorting"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:16
+msgid "Delete multiple objects"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:24
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would result in deleting related "
+"objects, but your account doesn't have permission to delete the following "
+"types of objects:"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:34
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would require deleting the following "
+"protected related objects:"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:52
+msgid "Confirm deletion"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:55
+#, python-format
+msgid ""
+"Are you sure you want to delete the selected %(objects_name)s? All of the "
+"following objects and their related items will be deleted:"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:65
+msgid "Yes, I'm sure"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:76
+msgid "And all subscribes and messages what related with it newsletter"
+msgstr ""
+
+#: templates/admin/includes/fieldset.html:50
+msgid "Published"
+msgstr ""
+
+#: templates/admin/includes/fieldset.html:52
+msgid "Not Published"
+msgstr ""
+
+#: templates/admin/own_index.html:24
+msgid "Informations about condominium"
+msgstr ""
+
+#: templates/admin/own_index.html:25
+msgid "Informations about activity in your condominium"
+msgstr ""
+
+#: templates/admin/own_index.html:40
+msgid "Last users on site"
+msgstr ""
+
+#: templates/admin/own_index.html:45
+msgid "Information about users is absent"
+msgstr ""
+
+#: templates/admin/own_index.html:48 templates/admin/own_index.html.py:60
+#: templates/admin/own_index.html:72
+msgid "Total"
+msgstr ""
+
+#: templates/admin/own_index.html:52
+msgid "Last news"
+msgstr ""
+
+#: templates/admin/own_index.html:57 templates/admin/own_index.html.py:69
+msgid "Absent"
+msgstr ""
+
+#: templates/admin/own_index.html:64
+msgid "Last ideas"
+msgstr ""
+
+#: templates/admin/own_index.html:76
+msgid "Condominiums where you are manager "
+msgstr ""
+
+#: templates/admin/own_index.html:100
+msgid "Help with Condominium"
+msgstr ""
+
+#: templates/admin/own_index.html:101
+msgid "Service in development and filling"
+msgstr ""
+
+#: templates/admin/own_index.html:110
+msgid "How create news?"
+msgstr ""
+
+#: templates/admin/own_index.html:111 templates/admin/own_index.html.py:117
+#: templates/admin/own_index.html:123 templates/admin/own_index.html.py:129
+msgid "To the manual"
+msgstr ""
+
+#: templates/admin/own_index.html:116
+msgid "How give to the user the permissions of manager?"
+msgstr ""
+
+#: templates/admin/own_index.html:122
+msgid "How add ideas?"
+msgstr ""
+
+#: templates/admin/own_index.html:128
+msgid "How add problems?"
+msgstr ""
+
+#: templates/admin/own_index.html:147
+msgid "Issues that need consideration"
+msgstr ""
+
+#: templates/admin/own_index.html:148
+msgid "Click on the issue to go to manage page of it"
+msgstr ""
+
+#: templates/admin/own_index.html:153 templates/admin/own_index.html.py:211
+#: templates/summarypage.html:155
+msgid "Title"
+msgstr ""
+
+#: templates/admin/own_index.html:154 templates/admin/own_index.html.py:212
+#: templates/summarypage.html:207
+msgid "Create date"
+msgstr ""
+
+#: templates/admin/own_index.html:155 templates/admin/own_index.html.py:213
+msgid "User"
+msgstr ""
+
+#: templates/admin/own_index.html:205
+msgid "Ideas that need consideration"
+msgstr ""
+
+#: templates/admin/own_index.html:206
+msgid "Click on the idea to go to manage page of it"
+msgstr ""
+
+#: templates/base.html:15
+msgid "Electronic social space for residents of condominiums."
+msgstr ""
+
+#: templates/base.html:95 templates/base.html.py:206 templates/base.html:222
+msgid "Startpage"
+msgstr ""
+
+#: templates/base.html:102 templates/base.html.py:213
+msgid "My Account"
+msgstr ""
+
+#: templates/base.html:112
+msgid "My Condominium"
+msgstr ""
+
+#: templates/base.html:120
+msgid "Info"
+msgstr ""
+
+#: templates/base.html:314
+msgid "Search message"
+msgstr ""
+
+#: templates/base.html:338
+msgid "Logout"
+msgstr ""
+
+#: templates/base.html:342
+msgid "Login"
+msgstr ""
+
+#: templates/base.html:343
+msgid "SignUp"
+msgstr ""
+
+#: templates/base.html:361
+msgid "You have no residential premise for condominium "
+msgstr ""
+
+#: templates/base.html:363
+msgid "Go to profile"
+msgstr ""
+
+#: templates/base.html:395
+msgid "Help with site"
+msgstr ""
+
+#: templates/base.html:400
+msgid "About our project"
+msgstr ""
+
+#: templates/base.html:406 templates/contacts.html:3
+#: templates/info_page.html:69
+msgid "Contacts"
+msgstr ""
+
+#: templates/base.html:411 templates/info_page.html:89
+#: templates/instructions.html:3
+msgid "Instructions"
+msgstr ""
+
+#: templates/condominiums_update.html:16
+msgid "Select exists"
+msgstr ""
+
+#: templates/condominiums_update.html:36
+msgid "Create new"
+msgstr ""
+
+#: templates/condominiums_update.html:54
+msgid ""
+"Configure data openness of your condominium for users from other condminiums "
+"and unregistered users!"
+msgstr ""
+
+#: templates/condominiums_update.html:55
+msgid "Publicity settings"
+msgstr ""
+
+#: templates/condominiums_update.html:57
+msgid "Choose which modules can watch users from other condominiums:"
+msgstr ""
+
+#: templates/condominiums_update.html:104
+msgid "Supported file extensions: "
+msgstr ""
+
+#: templates/condominiums_update.html:114 templates/edit.html:21
+#: templates/summarypage_for_new.html:54
+msgid "Submit"
+msgstr ""
+
+#: templates/condominiums_update.html:115
+msgid "Please wait ..."
+msgstr ""
+
+#: templates/condominiums_update.html:234
+msgid "No results matched "
+msgstr ""
+
+#: templates/contacts.html:16
+msgid "How to contact with team of \"Smart OSBB\""
+msgstr ""
+
+#: templates/contacts.html:18
+msgid "We work"
+msgstr ""
+
+#: templates/contacts.html:19 templates/people.html:29
+#: templates/profile.html:36
+msgid "Phone"
+msgstr ""
+
+#: templates/contacts.html:25 templates/people.html:28
+#: templates/profile.html:35
+msgid "Email"
+msgstr ""
+
+#: templates/delete.html:10
+msgid "Do you want to delete this premise?"
+msgstr ""
+
+#: templates/delete.html:18
+msgid "Yes"
+msgstr ""
+
+#: templates/delete.html:23
+msgid "No"
+msgstr ""
+
+#: templates/docs.html:3
+msgid "Information system \"Smart OSBB\""
+msgstr ""
+
+#: templates/error.html:14
+msgid "If you do not understand the causes of errors"
+msgstr ""
+
+#: templates/error.html:14
+msgid "please write to the chat of support or mail: "
+msgstr ""
+
+#: templates/info_page.html:50
+msgid "Navigation"
+msgstr ""
+
+#: templates/info_page.html:50
+msgid "Menu"
+msgstr ""
+
+#: templates/info_page.html:63
+msgid "Services"
+msgstr ""
+
+#: templates/info_page.html:66
+msgid "Portfolio"
+msgstr ""
+
+#: templates/info_page.html:81
+msgid "Your possibility to manage your home"
+msgstr ""
+
+#: templates/info_page.html:85
+msgid "LogIn"
+msgstr ""
+
+#: templates/info_page.html:87
+msgid "Register"
+msgstr ""
+
+#: templates/info_page.html:102
+msgid ""
+"We are a team of developers and analysts. Our aim make more comfortable life "
+"for residents of homes"
+msgstr ""
+
+#: templates/info_page.html:103
+msgid "What do we propose?"
+msgstr ""
+
+#: templates/info_page.html:113
+msgid "Our services"
+msgstr ""
+
+#: templates/info_page.html:123
+msgid "Condominum page"
+msgstr ""
+
+#: templates/info_page.html:124
+msgid "Activists of your condominium create page of your association"
+msgstr ""
+
+#: templates/info_page.html:130
+msgid "Manager of Condominium"
+msgstr ""
+
+#: templates/info_page.html:131
+msgid ""
+"Administrator of condominium page appoints managers of page for publishing "
+"materials of manager, audit groups and activists "
+msgstr ""
+
+#: templates/info_page.html:137
+msgid "Discussions"
+msgstr ""
+
+#: templates/info_page.html:138
+msgid ""
+"Talk over ideas and problems online. You can add items to solve problems and "
+"watch for their solving. "
+msgstr ""
+
+#: templates/info_page.html:144
+msgid "Utilities"
+msgstr ""
+
+#: templates/info_page.html:145
+msgid "You can pay utility bills online through our product"
+msgstr ""
+
+#: templates/info_page.html:162
+msgid "Login page"
+msgstr ""
+
+#: templates/info_page.html:175
+msgid "Start page"
+msgstr ""
+
+#: templates/info_page.html:188 templates/profile.html:7
+#: templates/profile.html.py:17
+msgid "User profile"
+msgstr ""
+
+#: templates/info_page.html:203
+msgid "OSBB profile"
+msgstr ""
+
+#: templates/info_page.html:219
+msgid "Administration panel"
+msgstr ""
+
+#: templates/info_page.html:234 templates/profile.html:20
+msgid "Edit"
+msgstr ""
+
+#: templates/info_page.html:247
+msgid "Create new condominium or register in some existing condominium"
+msgstr ""
+
+#: templates/info_page.html:248
+msgid "Join"
+msgstr ""
+
+#: templates/info_page.html:257
+msgid "How contact with us"
+msgstr ""
+
+#: templates/info_page.html:259
+msgid "You can call us or send a letter to the email"
+msgstr ""
+
+#: templates/instructions.html:16
+msgid "Instructions for service \"Smart Condominium\"!"
+msgstr ""
+
+#: templates/instructions.html:18
+msgid "Short instruction for user"
+msgstr ""
+
+#: templates/instructions.html:19
+msgid "Full instruction for user"
+msgstr ""
+
+#: templates/instructions.html:20
+msgid "Short instruction for administrator"
+msgstr ""
+
+#: templates/instructions.html:21
+msgid "Full instruction for administrator"
+msgstr ""
+
+#: templates/people.html:5
+msgid "My neighbors"
+msgstr ""
+
+#: templates/people.html:20
+msgid "My neighbors in Condominium"
+msgstr ""
+
+#: templates/people.html:27
+msgid "Full Name"
+msgstr ""
+
+#: templates/people.html:42
+msgid "flat"
+msgstr ""
+
+#: templates/people.html:44
+msgid "Undefined"
+msgstr ""
+
+#: templates/please_confirm_your_email.html:3
+#: templates/please_confirm_your_email.html:15
+msgid "Confirm your email"
+msgstr ""
+
+#: templates/please_confirm_your_email.html:16
+msgid ""
+"You need to go to your mailbox and click on the link in the email what we "
+"sent"
+msgstr ""
+
+#: templates/please_confirm_your_email.html:17
+msgid ""
+"Users with unconfirmed email-addresses can not participate in the vote or "
+"add material"
+msgstr ""
+
+#: templates/please_confirm_your_email.html:18
+msgid "Return to home"
+msgstr ""
+
+#: templates/profile.html:31
+msgid "Last name"
+msgstr ""
+
+#: templates/profile.html:32
+msgid "First name"
+msgstr ""
+
+#: templates/profile.html:34
+msgid "Middle name"
+msgstr ""
+
+#: templates/profile.html:116
+msgid "Residential premise"
+msgstr ""
+
+#: templates/profile.html:127 templates/profile.html.py:171
+#: templates/summarypage.html:60 templates/summarypage.html.py:154
+msgid "Number"
+msgstr ""
+
+#: templates/profile.html:128 templates/profile.html.py:172
+msgid "Area"
+msgstr ""
+
+#: templates/profile.html:129
+msgid "Residents"
+msgstr ""
+
+#: templates/profile.html:138 templates/profile.html.py:181
+msgid "m"
+msgstr ""
+
+#: templates/profile.html:161
+msgid "Non residential premise"
+msgstr ""
+
+#: templates/profile.html:205
+msgid "Engineering service"
+msgstr ""
+
+#: templates/profile.html:216
+msgid "Service"
+msgstr ""
+
+#: templates/profile.html:217
+msgid "Value"
+msgstr ""
+
+#: templates/search/search.html:12
+msgid "Search by category (Show/Hide)"
+msgstr ""
+
+#: templates/search/search.html:38
+msgid "Results for"
+msgstr ""
+
+#: templates/search/search.html:76 templates/search/search.html.py:80
+msgid "No results found."
+msgstr ""
+
+#: templates/search/search.html:85
+msgid "Previous"
+msgstr ""
+
+#: templates/search/search.html:87
+msgid "Next"
+msgstr ""
+
+#: templates/suit/menu.html:40
+msgid "Conversations"
+msgstr ""
+
+#: templates/suit/menu.html:49
+msgid "Permissions of forum"
+msgstr ""
+
+#: templates/suit/menu.html:58
+msgid "Tracking"
+msgstr ""
+
+#: templates/suit/menu.html:108
+msgid "Help"
+msgstr ""
+
+#: templates/summarypage.html:6 templates/summarypage_for_new.html:7
+#: templates/summarypage_for_new_user.html:6
+msgid "Home Page"
+msgstr ""
+
+#: templates/summarypage.html:16
+msgid "Last news in codominium"
+msgstr ""
+
+#: templates/summarypage.html:40
+msgid "Read all news"
+msgstr ""
+
+#: templates/summarypage.html:54
+msgid "Last active ideas"
+msgstr ""
+
+#: templates/summarypage.html:59
+msgid "Picture"
+msgstr ""
+
+#: templates/summarypage.html:61
+msgid "Text"
+msgstr ""
+
+#: templates/summarypage.html:62
+msgid "Signatures"
+msgstr ""
+
+#: templates/summarypage.html:150
+msgid "Last polls"
+msgstr ""
+
+#: templates/summarypage.html:156
+msgid "Date of start"
+msgstr ""
+
+#: templates/summarypage.html:157
+msgid "Date of end"
+msgstr ""
+
+#: templates/summarypage.html:158
+msgid "Count of votes"
+msgstr ""
+
+#: templates/summarypage.html:159
+msgid "Status"
+msgstr ""
+
+#: templates/summarypage.html:180
+msgid "Voting continues"
+msgstr ""
+
+#: templates/summarypage.html:182
+msgid "In archive"
+msgstr ""
+
+#: templates/summarypage.html:200
+msgid "Last problems"
+msgstr ""
+
+#: templates/summarypage.html:206
+msgid "Item"
+msgstr ""
+
+#: templates/summarypage.html:225
+msgid "Time to react"
+msgstr ""
+
+#: templates/summarypage.html:231
+msgid "days"
+msgstr ""
+
+#: templates/summarypage.html:240
+msgid "View all problems"
+msgstr ""
+
+#: templates/summarypage.html:253
+msgid "Last topics on forums"
+msgstr ""
+
+#: templates/summarypage.html:259
+msgid "Forum"
+msgstr ""
+
+#: templates/summarypage.html:260
+msgid "Topic title"
+msgstr ""
+
+#: templates/summarypage.html:261
+msgid "Count of publications"
+msgstr ""
+
+#: templates/summarypage.html:262
+msgid "Date of the last publications in topic"
+msgstr ""
+
+#: templates/summarypage.html:300
+msgid "View all forums"
+msgstr ""
+
+#: templates/summarypage.html:312
+msgid "This condominium has not any content!"
+msgstr ""
+
+#: templates/summarypage_for_new.html:18
+msgid "Go to filling information about condominium"
+msgstr ""
+
+#: templates/summarypage_for_new.html:19
+msgid "Do one of the below steps"
+msgstr ""
+
+#: templates/summarypage_for_new.html:21
+msgid "Add news to your condominium"
+msgstr ""
+
+#: templates/summarypage_for_new.html:22 templates/summarypage_for_new.html:28
+#: templates/summarypage_for_new.html:31
+msgid "Go to adding"
+msgstr ""
+
+#: templates/summarypage_for_new.html:24
+msgid "Fill pages: Contacts, tariffs etc."
+msgstr ""
+
+#: templates/summarypage_for_new.html:25
+msgid "Go to filling"
+msgstr ""
+
+#: templates/summarypage_for_new.html:27
+msgid "Add forum topic"
+msgstr ""
+
+#: templates/summarypage_for_new.html:30
+msgid "Add poll to your condominium"
+msgstr ""
+
+#: templates/summarypage_for_new.html:36
+msgid "Thank you for register your condominium"
+msgstr ""
+
+#: templates/summarypage_for_new.html:36
+msgid "Now you are manager, your next step"
+msgstr ""
+
+#: templates/summarypage_for_new.html:37
+msgid "Create new house"
+msgstr ""
+
+#: templates/summarypage_for_new_user.html:15
+msgid "Thank you for registration"
+msgstr ""
+
+#: templates/summarypage_for_new_user.html:16
+msgid "In this condominium is not created content yet"
+msgstr ""

@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-10 14:08+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: applications/cms/admin.py:49
+msgid "Our masters"
+msgstr "Наші майстри"
+
+#: applications/cms/admin.py:49
+msgid "Our contacts"
+msgstr "Контакти нашого ОСББ"
+
+#: applications/cms/apps.py:6 applications/cms/templates/pages_list.html:13
+msgid "Additional materials"
+msgstr "Додаткові матеріали"
+
+#: applications/cms/forms.py:14
+msgid "Page address.No more than 64 characters"
+msgstr "Адреса сторінки. Не більше 64 символів."
+
+#: applications/cms/forms.py:16
+msgid "Page title. No more than 128 characters."
+msgstr "Заголовок сторінки. Не більше 128 символів."
+
+#: applications/cms/models.py:10
+msgid "Pages condominium"
+msgstr "ОСББ"
+
+#: applications/cms/models.py:11
+msgid "Pages author"
+msgstr "Автор останніх змін"
+
+#: applications/cms/models.py:12
+msgid "Pages datetime"
+msgstr "Дата створення"
+
+#: applications/cms/models.py:13
+msgid "Pages datetime update"
+msgstr "Дата оновлення"
+
+#: applications/cms/models.py:14
+msgid "Pages slug"
+msgstr "Коротка назва сторінки"
+
+#: applications/cms/models.py:15
+msgid "Pages title"
+msgstr "Назва сторінки"
+
+#: applications/cms/models.py:16
+msgid "Pages content"
+msgstr "Зміст сторінки"
+
+#: applications/cms/models.py:23
+msgid "Page"
+msgstr "Сторінка"
+
+#: applications/cms/models.py:24
+msgid "Pages"
+msgstr "Сторінки"
+
+#: applications/cms/templates/page.html:15
+msgid "Author of last changes:"
+msgstr "Автор останніх змін:"
+
+#: applications/cms/templates/page.html:17
+msgid "Date of last changes:"
+msgstr "Дата останніх змін:"
+
+#: applications/cms/templates/pages_list.html:3
+msgid "Additional pages"
+msgstr "Додаткові сторінки"
+
+#~ msgid "Content management system"
+#~ msgstr "Система управління контентом"
+
+#~ msgid "Адреса сторінки. Не більше 64 символів."
+#~ msgstr "Адреса сторінки. Не більше 64 символів."
+
+#~ msgid "Заголовок сторінки. Не більше 128 символів."
+#~ msgstr "Заголовок сторінки. Не більше 128 символів."

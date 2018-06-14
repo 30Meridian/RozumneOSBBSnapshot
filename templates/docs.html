@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% if doc.title %}{{ doc.title }}{% endif %}.{% trans 'Information system "Smart OSBB"' %} {% endblock %}
+
+
+
+{% block content %}
+
+    {% if doc.title %}
+    <section class="content-header">
+      <h1>{{ doc.title }}</h1>
+
+    </section>
+{% endif %}
+            <!-- Main content -->
+        <section class="content">
+
+        {% if doc.description %}
+<div class="card">
+
+            <div class="content">
+
+                {% autoescape off %}{{ doc.description }}{% endautoescape %}
+            </div>
+</div>
+        {% endif %}
+
+          <!-- Default box -->
+          <div class="card">
+
+            <div class="content">
+
+{% autoescape off %}{{ doc.body }}{% endautoescape %}
+
+
+            </div><!-- /.box-body -->
+
+          </div><!-- /.box -->
+
+        </section><!-- /.content -->
+{% endblock %}
+

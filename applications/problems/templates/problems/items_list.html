@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="content">
+                <legend>
+                        {% trans 'Items List Header' %}
+
+                        <i class="fa cart-plus"></i>
+                    {% if request.session.condominium_id in request.user.condominiums_list  %}
+                        <a style="float: right" class="btn btn-success btn-fill btn-sm" href="{% url "condominium:problems:items_create" condominium.slug  %}"><i class="fa fa-plus-square"></i> {% trans 'Add Problem' %}</a>
+                    {% endif %}
+                    </legend>
+        <div class="content table-responsive table-full-width">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>{% trans 'Item Photo' %}</th>
+                                            <th>{% trans 'Item Title' %}</th>
+                                            <th>{% trans 'Item Create Date' %}</th>
+                                            <!--<th class="text-right"></th>-->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for item in object_list %}
+                                        <tr>
+                                            <td>
+                                                 {% if item.photo %}
+                                                  <a href="{% url "condominium:problems:items_item" condominium.slug item.id %}"> <img src="/media/{{ item.photo}}" width="150px"></a>
+                                                 {% else %}
+                                                      <a href="{% url "condominium:problems:items_item" condominium.slug item.id %}"> <img src="{% static 'img/empty.gif' %}" width="150px"></a>
+                                                 {% endif %}
+                                            </td>
+                                            <td>  <a href="{% url "condominium:problems:items_item" condominium.slug item.id %}">{{ item.title|truncatechars:80 }}</a></td>
+                                            <td>{{ item.create|date:"d-m-Y" }}<br/>{% trans 'Count of days for reaction' %}: <b>
+                                            {% if item.days_left >= 0 %}
+                                                {{ item.days_left }}
+                                            {% else %}
+                                                0
+                                            {% endif %}
+                                            </b> </td>
+
+                                            <!--<td class="text-right"></td>-->
+
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

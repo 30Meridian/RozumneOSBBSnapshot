@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Access denied!' %}{% endblock %}
+
+{% block content %}
+      <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+
+            <div class="content">
+
+    <h1>{% trans 'Error 403' %}</h1>
+<h3>{% trans 'Access denied. Return to the' %} <a href="{% url 'condominium:home' request.session.condominium_slug %}">{% trans 'home page' %}</a></h3>
+
+            </div><!-- /.box-body -->
+
+          </div><!-- /.box -->
+
+        </section><!-- /.content -->
+{% endblock %}

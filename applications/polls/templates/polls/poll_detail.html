@@ -1,0 +1,148 @@
+{% extends "base.html"%}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans 'Poll' %} -"{{poll.question|truncatechars:25}}".{% endblock %}
+
+{% block content %}
+
+      <ol class="breadcrumb">
+        <li><a href="{% url 'condominium:home' request.session.condominium_slug %}"><i class="fa fa-home"></i> {% trans 'Home' %}</a></li>
+        <li><a href="{% url 'condominium:polls:list' request.session.condominium_slug %}">{%  trans 'Polls list' %}</a></li>
+        <li class="active">{% trans 'Poll' %}</li>
+      </ol>
+
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet"/>
+    <!-- Main content -->
+    <section class="content">
+        <!-- Default box -->
+        <div class="card">
+            <div class="content" >
+                <div class="col-md-12">
+                    <h3><div class="text-center">{{poll.question}}</div></h3>
+                    <div class="card">
+                        <div class="row"  >
+                            <div class="header">
+                                <div class="col-sm-12 col-md-9" >
+                                        <h4 ><i class="fa fa-clock-o" > </i> {% trans 'Poll continues since' %} {{ poll.date_start|date:" d-m-Y" }} {% trans 'to' %}{{ poll.date_end|date:" d-m-Y" }}</h4>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                    {% if poll.archive == False %}
+                                        <span class="label label-success">{% trans 'Active Voting' %}</span>
+                                    {% else %}<span class="label label-gray">{% trans 'Archive Voting' %}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.header -->
+
+                            <div class="content col-md-12" style="{% if poll.has_image %}display: inline{% endif %}">
+                                </br>
+                                <div class="{% if poll.has_image %}col-md-12{% else %}col-md-7 col-xs-7{% endif %}" >
+                                    <div class="content">
+                                    <blockquote>
+                                        <h5 >{{poll.description}}</h5>
+                                    </blockquote>
+                                    </div>
+                                </div>
+
+                                <div class="{% if poll.has_image %}col-md-12{% else %}col-md-5 col-xs-5{% endif %} choice" >
+
+                                {% if poll.votable%}
+                                    <div class="content">
+                                    <h5>{% trans "Please, choose one of the choices" %}:</h5>
+                                        <form action="{% url "condominium:polls:vote" request.session.condominium_slug poll.id %}" method="post">
+                                            {% csrf_token %}
+                                            {% for choice in poll.choice_set.all %}
+                                                <div class="form-group" >
+
+                                                    <div class="{% if poll.has_image %}col-md-4{% else %}choice-content{% endif %} radio" >
+                                                        <div class="{% if poll.has_image %}row img-size{% endif %}" >
+
+                                                            {% if poll.has_image %}
+                                                                {% if choice.image.url%}
+                                                                    <a href="#" class="pop">
+                                                                    <img src="{{ choice.image.url }}"></a>
+                                                                {% else %}
+                                                                    <img src="{% static "img/empty.gif" %}">
+                                                                {% endif %}
+
+                                                            {% endif %}
+
+                                                            <label class="radio {% if poll.has_image %}choice-radio{% endif %}">
+                                                                <input type="radio" name="choice_pk" value="{{choice.id}}" required>
+                                                                <span class="icons">
+                                                                    <span class="first-icon fa fa-circle-o"></span>
+                                                                    <span class="second-icon fa fa-dot-circle-o"></span>
+                                                                </span>
+                                                                 {{choice.choice}}
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                            <div class="{% if poll.has_image %}col-md-12{% endif %} text-center"> <input type="submit" class="btn btn-fill btn-primary " value="{% trans 'Submit vote' %}"></div>
+                                        </form>
+                                    </div>
+                                    {% else %}
+                                    <div class="content">
+                                     <h5>{% trans 'Voting result' %}:</h5>
+                                        <ul>
+                                            {% for choice in poll.choice_set.all %}
+                                                {% if not poll.has_image %}
+                                                    <li>{{choice.choice}} - <b>{{choice.count_votes}}</b></li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+
+                                        {% for choice in poll.choice_set.all %}
+                                            {% if poll.has_image %}
+                                             <div class="col-md-4 poll-vote" >
+                                                 <div class="row img-size ">
+                                                    {% if choice.image.url%}
+                                                        <a href="#" class="pop">
+                                                        <img src="{{ choice.image.url }}" ></a>
+                                                    {% else %}
+                                                        <img src="{% static "img/empty.gif" %}" >
+                                                    {% endif %}
+                                                </div>
+                                                 <b>{{choice.count_votes}}</b>
+                                               </div>
+                                             {% endif %}
+                                        {% endfor %}
+                                    </div>
+
+                                    {% endif %}
+
+                                </div><!-- /.col-md-5 -->
+                            </div><!-- /.content -->
+                        </div><!-- /.row -->
+                    </div><!-- /.card -->
+                </div><!-- /.col-md-12 -->
+            </div><!-- /.content -->
+        </div><!-- /.card -->
+
+        <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-body" >
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <img src="" class="imagepreview" style="width: 100%;" >
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </section><!-- /.content -->
+
+
+<script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+<script>
+
+$(function() {
+		$('.pop').on('click', function() {
+			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+			$('#imagemodal').modal('show');
+		});
+});
+</script>
+
+{% endblock %}

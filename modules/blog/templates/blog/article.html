@@ -1,0 +1,165 @@
+﻿{% extends 'blog_base.html' %}
+
+{% block content %}
+
+      <div class="col-md-8 col-sm-12">
+        {% if article.youtube_video %}
+            <div class="box-caption">
+              <span>Video</span>
+            </div>
+            <div class="video-wrap">
+                <div class='embed-container'><iframe src='{{ article.youtube_video }}' frameborder='0' allowfullscreen></iframe></div>
+            </div>
+        {% elif article.mainimg.url %}
+            <div class="box-caption">
+              <span>Новина</span>
+            </div>
+            <div><img src="{{ article.mainimg.url }}" /></div>
+        {% else %}
+        {% endif %}
+
+        <div class="row">
+            {% for photo in photos %}
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                    <a href="{{ photo.image.url }}" target="_blank">
+                        <img src="{{ photo.image.url }}" class="thumbnail">
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+
+        <!--post-detail-->
+        <article class="post-detail">
+          <h1>
+            {{ article.title }}
+          </h1>
+          <div class="meta-post">
+            <span>
+                {{ article.author }}
+            </span>
+{#            <em></em>#}
+            <span>
+            {{ article.datetime_publish }}
+            </span>
+          </div>
+          {% autoescape off %}{{ article.text }}{% endautoescape %}
+            <div>
+                <h5>Прикріплені документи:</h5>
+                <ul>
+                    {% for doc in article.documents_set.all %}
+                        <li><a href="{{ doc.file.url }}">{{ doc.filename }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+          <h5 class="text-right font-heading"><strong>{{ article.author }}</strong> </h5>
+          <h5 class="text-right font-heading">
+                {% for category in article.categories.all %}
+                   <a href="{% url 'blog:articles_by_category' category.slug %}">{{ category }}</a>|
+                {% endfor %}
+          </h5>
+        </article>
+        <!--social-detail-->
+          <div class="social-detail">
+
+          <span> Оцінити публікацю</span>
+          <ul class="list-social-icon">
+            <li>
+                {% if user_like %}
+
+                  <a class="like" style="cursor: pointer;">
+                    <i class="fa fa-heart"></i>
+                  </a>
+                {% else %}
+
+                  <a class="like" style="cursor: pointer;">
+                    <i class="fa fa-heart-o"></i>
+                  </a>
+                {% endif %}
+            </li>
+            <li class="like_count">
+                {{ likes_count }}
+            </li>
+
+
+          </ul>
+        </div>
+{#        <div class="social-detail">#}
+{#          <span>   Share article</span>#}
+{#          <ul class="list-social-icon">#}
+{#            <li>#}
+{#              <a href="#" class="facebook">#}
+{#              <i class="fa fa-facebook"></i>#}
+{#              </a>#}
+{#            </li>#}
+{#            <li>#}
+{#              <a href="#" class="twitter">#}
+{#              <i class="fa fa-twitter"></i>#}
+{#              </a>#}
+{#            </li>#}
+{#             <li class="text-right">#}
+{#              <a href="#" class="text-right">#}
+{#              <i class="fa fa-twitter"></i>#}
+{#              </a>#}
+{#            </li>#}
+{#          </ul>#}
+{#        </div>#}
+        <!--related post-->
+        <div class="detail-caption">
+          <span>Останні публікації</span>
+        </div>
+        <section class="spotlight-thumbs spotlight-thumbs-related">
+          <div class="row">
+              {% for last_article in articles %}
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="spotlight-item-thumb">
+                    <div class="spotlight-item-thumb-img">
+                      <a href="{% url 'blog:article_detail' last_article.id %}">
+                      <img alt="" src="{{ last_article.mainimg.middle.url }}">
+                      </a>
+                    </div>
+                    <h3><a href="{% url 'blog:article_detail' last_article.id %}">{{ last_article.title }}</a></h3>
+                    <div class="meta-post">
+                      <span >
+                        {{ last_article.author }}
+                      </span>
+{#                      <em></em>#}
+                      <span>
+                        {{ last_article.datetime_publish }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              {% empty %}
+                  <div class="col-md-4 col-sm-4 col-xs-12">
+                    ВІДСУТНІ
+                  </div>
+              {% endfor %}
+          </div>
+        </section>
+      </div>
+
+    <script>
+    $('.like i').click(function () {
+        $.ajax({
+            type: "POST",
+            url : "{% url 'blog:like_article' %}",
+            data : {
+                'user_id' : '{{ request.user.id }}',
+                'article_id' : '{{ article.id }}'
+            }
+        });
+        var current_value = parseInt($('.like_count').text());
+        if ($(this).attr('class') == 'fa fa-heart-o'){
+            $(this).attr('class','fa fa-heart')
+            $('.like_count').text(current_value+1)
+        }
+        else {
+            $(this).attr('class', 'fa fa-heart-o');
+            $('.like_count').text(current_value-1)
+        }
+
+    });
+    </script>
+
+{% endblock %}

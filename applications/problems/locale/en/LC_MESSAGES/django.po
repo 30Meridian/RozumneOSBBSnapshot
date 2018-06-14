@@ -1,0 +1,229 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-10 14:08+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: applications/problems/admin.py:36 applications/problems/models.py:67
+#: applications/problems/templates/problems/items_item.html:7
+msgid "Status"
+msgstr ""
+
+#: applications/problems/admin.py:37
+msgid "Add statuses"
+msgstr ""
+
+#: applications/problems/admin.py:52 applications/problems/admin.py:53
+msgid "Statuses log"
+msgstr ""
+
+#: applications/problems/admin.py:89 applications/problems/models.py:18
+#: applications/problems/templates/problems/items_list.html:21
+msgid "Item Photo"
+msgstr ""
+
+#: applications/problems/admin.py:105 applications/problems/models.py:25
+#: applications/problems/models.py:58
+msgid "create"
+msgstr ""
+
+#: applications/problems/admin.py:106 applications/problems/models.py:26
+msgid "last_update"
+msgstr ""
+
+#: applications/problems/admin.py:110
+msgid "Author"
+msgstr ""
+
+#: applications/problems/apps.py:6
+msgid "Problems"
+msgstr ""
+
+#: applications/problems/forms.py:11
+msgid "Please, enter short item title. Not more than 255 characters"
+msgstr ""
+
+#: applications/problems/forms.py:14
+msgid "Detailed description of the item. No more than 3,000 characters."
+msgstr ""
+
+#: applications/problems/forms.py:17
+msgid "Choose picture"
+msgstr ""
+
+#: applications/problems/models.py:16
+#: applications/problems/templates/problems/items_item.html:25
+#: applications/problems/templates/problems/items_list.html:22
+msgid "Item Title"
+msgstr ""
+
+#: applications/problems/models.py:17
+#: applications/problems/templates/problems/items_item.html:31
+msgid "Item Description"
+msgstr ""
+
+#: applications/problems/models.py:23
+msgid "user"
+msgstr ""
+
+#: applications/problems/models.py:24
+msgid "Condominium"
+msgstr ""
+
+#: applications/problems/models.py:27
+msgid "Public"
+msgstr ""
+
+#: applications/problems/models.py:28
+msgid "Allows to view problem for users from other condominiums"
+msgstr ""
+
+#: applications/problems/models.py:34 applications/problems/models.py:56
+#: applications/problems/models.py:73
+msgid "Item"
+msgstr ""
+
+#: applications/problems/models.py:35
+msgid "Items"
+msgstr ""
+
+#: applications/problems/models.py:49
+msgid "pedding"
+msgstr ""
+
+#: applications/problems/models.py:50
+msgid "inwork"
+msgstr ""
+
+#: applications/problems/models.py:51
+msgid "waiting_board_decision"
+msgstr ""
+
+#: applications/problems/models.py:52
+msgid "waiting_general_meeting"
+msgstr ""
+
+#: applications/problems/models.py:53
+msgid "done"
+msgstr ""
+
+#: applications/problems/models.py:54
+msgid "reject"
+msgstr ""
+
+#: applications/problems/models.py:57
+msgid "status"
+msgstr ""
+
+#: applications/problems/models.py:59
+msgid "deadline"
+msgstr ""
+
+#: applications/problems/models.py:60
+msgid "resolution"
+msgstr ""
+
+#: applications/problems/models.py:61
+msgid "owner"
+msgstr ""
+
+#: applications/problems/models.py:68
+msgid "Statuses"
+msgstr ""
+
+#: applications/problems/templates/problems/items_form.html:44
+msgid "Save"
+msgstr ""
+
+#: applications/problems/templates/problems/items_item.html:7
+msgid "Item Problem Head"
+msgstr ""
+
+#: applications/problems/templates/problems/items_item.html:11
+msgid "Problems Home"
+msgstr ""
+
+#: applications/problems/templates/problems/items_item.html:12
+msgid "Problems List"
+msgstr ""
+
+#: applications/problems/templates/problems/items_item.html:13
+msgid "Problems Card"
+msgstr ""
+
+#: applications/problems/templates/problems/items_item.html:26
+msgid "Item Create"
+msgstr ""
+
+#: applications/problems/templates/problems/items_item.html:27
+msgid "Item Actual Status"
+msgstr ""
+
+#: applications/problems/templates/problems/items_item.html:29
+msgid "Item Resolution"
+msgstr ""
+
+#: applications/problems/templates/problems/items_item.html:39
+msgid "Status Data"
+msgstr ""
+
+#: applications/problems/templates/problems/items_item.html:40
+msgid "Status Title"
+msgstr ""
+
+#: applications/problems/templates/problems/items_item.html:41
+msgid "Status Resolution"
+msgstr ""
+
+#: applications/problems/templates/problems/items_item.html:42
+msgid "Status DeadLine"
+msgstr ""
+
+#: applications/problems/templates/problems/items_item.html:43
+msgid "Status Owner"
+msgstr ""
+
+#: applications/problems/templates/problems/items_item.html:55
+msgid "Resolution is missing"
+msgstr ""
+
+#: applications/problems/templates/problems/items_item.html:61
+msgid "The term is not defined"
+msgstr ""
+
+#: applications/problems/templates/problems/items_list.html:10
+msgid "Items List Header"
+msgstr ""
+
+#: applications/problems/templates/problems/items_list.html:14
+msgid "Add Problem"
+msgstr ""
+
+#: applications/problems/templates/problems/items_list.html:23
+msgid "Item Create Date"
+msgstr ""
+
+#: applications/problems/templates/problems/items_list.html:38
+msgid "Count of days for reaction"
+msgstr ""
+
+#: applications/problems/views.py:59
+msgid "Warning! You have added public Item"
+msgstr ""
+
+#: applications/problems/views.py:78
+msgid "Access denied"
+msgstr ""

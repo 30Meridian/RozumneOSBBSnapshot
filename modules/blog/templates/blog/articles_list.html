@@ -1,0 +1,88 @@
+{% extends 'blog_base.html' %}
+{% load i18n %}
+
+{% block content %}
+        <div class="col-md-8 col-sm-12">
+          <div class="box-caption">
+              {% if category_title %}
+                  <span>Новини по категорії {{ category_title}}</span>
+              {% else %}
+                  <span>Новини</span>
+              {% endif %}
+          </div>
+
+          <div class="list-news-cate">
+{#            <br/>#}
+              {% for article in articles.object_list %}
+                <article class="news-cate-item {% if forloop.first %}news-cate-item-first{% endif %}">
+                  <div class="row">
+                    <div class="col-md-5 col-sm-5 col-xs-12">
+
+                      <a href="{% url 'blog:article_detail' article.id %}">
+                        <img src="{{ article.mainimg.middle.url }}" />
+                      </a>
+                    </div>
+                    <div class="col-md-7 col-sm-7 col-xs-12">
+                      <h3><a href="{% url 'blog:article_detail' article.id %}">{{ article.title }}</a></h3>
+                      <div class="meta-post">
+                        <span>
+                            {{ article.author }}
+                        </span>
+{#                        <em></em>#}
+                        <span>
+                            {{ article.datetime_publish }}
+                        </span>
+
+
+                          <span>
+                          {% for category in article.categories.all %}
+                            <a href="{% url 'blog:articles_by_category' category.slug %}">{{ category }} </a>|
+                            {% endfor %}
+                        </span>
+
+                      </div>
+                      <p>
+                          {{ article.shortdesc }}
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              {% empty %}
+                  Новин НЕМАЄ
+              {% endfor %}
+
+          </div>
+{#    {% for person in articles.object_list %}#}
+{#        <div>#}
+{#            First name: {{ person }}#}
+{#        </div>#}
+{#    {% endfor %}#}
+
+    <div class="paging">
+        {% if articles.has_previous %}
+            <a href="?{{ articles.previous_page_number.querystring }}" class="prev">&lsaquo;&lsaquo; {% trans "previous" %}</a>
+        {% else %}
+    {#        <span class="disabled prev">&lsaquo;&lsaquo; {% trans "previous" %}</span>#}
+        {% endif %}
+        {% for page in articles.pages %}
+            {% if page %}
+                {% ifequal page articles.number %}
+                    <span><a href="#" class="current">{{ page }}</a></span>
+                {% else %}
+                    <a href="?{{ page.querystring }}" class="page">{{ page }}</a>
+                {% endifequal %}
+            {% else %}
+                ...
+            {% endif %}
+        {% endfor %}
+        {% if articles.has_next %}
+            <a href="?{{ articles.next_page_number.querystring }}" class="next">{% trans "next" %} &rsaquo;&rsaquo;</a>
+        {% else %}
+    {#        <span class="disabled next">{% trans "next" %} &rsaquo;&rsaquo;</span>#}
+        {% endif %}
+    </div>
+
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load base %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Home Page' %}. {{ condominium.name }}.
+{% endblock %}
+
+{% block content %}
+    <!-- Main content -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="content">
+                    {% if has_house %}
+                        <div class="osbbreg">
+                            <h4 class="text-center">{% trans 'Go to filling information about condominium' %}.</h4><br/>
+                            <h5 style="margin-left: 50px;">{% trans 'Do one of the below steps' %}:</h5>
+                            <ul>
+                                <li class="passed">{% trans 'Add news to your condominium' %}.
+                                    (<a href='/manage/news/news/'>{% trans 'Go to adding' %}</a>)
+                                </li>
+                                <li class="passed">{% trans 'Fill pages: Contacts, tariffs etc.' %}.
+                                    (<a href='/manage/system/proxymanagementpages/'>{% trans 'Go to filling' %}</a>)
+                                </li>
+                                <li class="passed">{% trans 'Add forum topic' %}.
+                                    (<a href="{% url 'condominium:forum:index' condominium.slug %}">{% trans 'Go to adding' %}</a>)
+                                </li>
+                                <li class="passed">{% trans 'Add poll to your condominium' %}.
+                                    (<a href='/manage/polls/poll/'>{% trans 'Go to adding' %}</a>)
+                                </li>
+                            </ul>
+                        </div>
+                    {% else %}
+                        <h3 class="text-center"><img src="{% static 'img/celebration.png' %}"> <br/>{% trans 'Thank you for register your condominium' %}! {% trans 'Now you are manager, your next step' %}: </h3>
+                        <h4 class="text-center">{% trans 'Create new house' %}:</h4>
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <div class="card">
+                                    <div class="content">
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            {% for field in form %}
+                                                <div class="form-group {% if field.errors %}has-error{% endif %}">
+                                                    {{ field.label_tag }}
+                                                    {{ field|add_css:"form-control" }}
+                                                    {% for err in field.errors %}
+                                                        <span class="help-block">{{ err }}</span>
+                                                    {% endfor %}
+                                                </div>
+                                            {% endfor %}
+                                            <input class="btn btn-success btn-fill center-block" type="submit"
+                                                   value="{% trans 'Submit' %}"/>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

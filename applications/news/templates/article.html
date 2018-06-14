@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ article.title }}.{% endblock %}
+
+
+{% block content %}
+<section class="content-header">
+      <ol class="breadcrumb">
+        <li><a href="{% url 'condominium:home' request.session.condominium_slug %}"><i class="fa fa-home"></i> {% trans 'Home' %}</a></li>
+        <li><a href="../news/">{% trans 'News list' %}</a></li>
+        <li class="active">{% trans 'News' %}</li>
+      </ol>
+    </section>
+ <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+
+            <div class="content">
+
+
+    {% if allowed %}
+
+
+    {% endif %}
+
+<div class="text-center"> <h3 class="box-title">{{ article.title }}</h3></div>
+        <div class="card">
+                <div class="header">
+                    {% if article.publish == 1 %}
+                    <span class="label label-success">{% trans 'Published' %} ({{ article.datetime_publish|date:"d.m.Y H:i" }})</span>
+
+                    {% else %}
+                    <span class="label label-warning">{% trans 'Not published' %} ({% trans 'Created' %}: {{ article.datetime|date:"d.m.Y H:i" }})</span>
+
+                    {% endif %}
+
+                    <div class="pull-right">
+{#                       <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f23dc3c4265dc08"></script>#}
+{#<div class="addthis_sharing_toolbox"></div>#}
+                    </div>
+
+
+                </div>
+        <div class="content">
+                {% autoescape off %}
+                {{ article.text }}
+               {% endautoescape %}
+            <i>{{ article.author.last_name }} {{ article.author.first_name }} {{ article.author.middle_name }}</i>
+        </div>
+
+</div><!-- /.box-body -->
+
+          </div><!-- /.box -->
+
+        </section><!-- /.content -->
+{% endblock %}
+

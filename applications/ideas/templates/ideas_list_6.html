@@ -1,0 +1,76 @@
+{% extends 'base.html'%}
+{% load i18n %}
+
+{% block title %}{% trans 'Ideas under consideration' %}. {% endblock %}
+{% load staticfiles %}
+
+{% block content %}
+              <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+
+            <div class="content">
+
+{% if ideas.object_list %}
+
+    <div class="card">
+        <div class="header"><h3 class="box-title">{% trans 'Ideas under consideration' %}:</h3></div>
+                <div class="content">
+                  <table class="table table-bordered table-hover">
+                    <tbody><tr bgcolor="#f4f4f4">
+                      <th  style="width: 65px">{% trans 'Illustration' %}</th>
+                      <th style="width: 115px">{% trans 'Number' %}</th>
+                      <th>{% trans 'Text' %}</th>
+                      <th style="width: 125px">{% trans 'Count of signatures' %}</th>
+                      <th style="width: 115px">{% trans 'Your signature' %}</th>
+                    </tr>
+
+                    {% for idea in ideas.object_list %}
+
+                <tr>
+                    <td class="vert-align">
+                        {% if idea.image.thumbnail%}
+                        <a href="../../ideas/{{ idea.id }}" class="title-idea"><img src="{{ MEDIA_URL }}{{ idea.image.thumbnail }}" width="80px"></a>
+                        {% else %}
+                        <a href="../../ideas/{{ idea.id }}" class="title-idea"><img src="{{ MEDIA_URL }}/ideas/empty.gif" width="80px"></a>
+                        {% endif %}
+                    </td>
+                  <td class="vert-align"><a href="../../ideas/{{ idea.id }}" class="title-idea">{{ idea.id }}</a></td>
+                  <td class="valign"><a href="../../ideas/{{ idea.id }}" class="title-idea">{{ idea.title|truncatewords:25 }}</a></td>
+                 <td class="vert-align"><span class="badge bg-green"><a href="../../ideas/{{ idea.id }}" class="title-idea">{{ idea.vote_count }}</a></span><br />
+                      <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-success" style="width:{{ idea.ideasvoices_set.count }}%"></div>
+                    </div>
+
+                  </td>
+
+                  </td>
+                    {% if request.user in idea.voters %}
+                        <td class="vert-align"><div class=text-center"><a href="../../ideas/{{ idea.id }}" class="title-idea"><span class="label label-success">Пiдписана</span></a></td>
+                    {% else %}
+                        <td class="vert-align"><div class=text-center"><a href="../../ideas/{{ idea.id }}" class="title-idea"><span class="label label-warning">Не пiдписана</span></a></td>
+                    {% endif %}
+
+
+                </tr>
+            {% endfor %}
+              </tbody></table>
+            </div>
+
+</div>
+    <div class="col-md-5 col-md-offset-3">
+  {% if ideas.object_list >= 10 %}   {{ ideas.render }}{% endif %}
+    </div>
+
+{% else %}
+    {% trans 'Unfortunately, your condominium has nothing ideas under consideration yet' %}
+{% endif %}
+  </div><!-- /.box-body -->
+
+          </div><!-- /.box -->
+
+        </section><!-- /.content -->
+{% endblock %}
+

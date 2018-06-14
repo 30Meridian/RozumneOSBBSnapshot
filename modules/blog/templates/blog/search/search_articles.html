@@ -1,0 +1,60 @@
+{% extends 'blog_base.html' %}
+
+
+{% block content %}
+    <div class="col-md-8">
+        {% if query %}
+        <h2>Результат пошукового запиту "{{ query }}:"</h2>
+             <div class="list-news-cate">
+
+              {% for article in page_obj.object_list %}
+                  {% if article.model_name == 'articles' %}
+                    <article class="news-cate-item {% if forloop.first %}news-cate-item-first{% endif %}">
+                      <div class="row">
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                          <a href="{% url 'blog:article_detail' article.object.id %}">
+                            <img src="{{ article.object.mainimg.middle.url }}" />
+                          </a>
+                        </div>
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                          <h3><a href="{% url 'blog:article_detail' article.object.id %}">{{ article.title }}</a></h3>
+                          <div class="meta-post">
+                            <span>
+                                {{ article.object.author }}
+                            </span>
+
+                            <span>
+                                {{ article.object.datetime_publish }}
+                            </span>
+
+
+                              <span>
+                              {% for category in article.object.categories.all %}
+{#                                <a href="{% url 'blog:articles_by_category' category.slug %}">{{ category }} </a>|#}
+                                {% endfor %}
+                            </span>
+
+                          </div>
+                          <p>
+                              {{ article.object.shortdesc }}
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  {% endif %}
+              {% empty %}
+                  За запитом "{{ query }}" нічого не знайдено
+              {% endfor %}
+
+          </div>
+
+            {% if page_obj.has_previous or page_obj.has_next %}
+                <div>
+                    {% if page_obj.has_previous %}<a href="?q={{ query }}&amp;page={{ page_obj.previous_page_number }}">{% endif %}&laquo; Previous{% if page_obj.has_previous %}</a>{% endif %}
+                    |
+                    {% if page_obj.has_next %}<a href="?q={{ query }}&amp;page={{ page_obj.next_page_number }}">{% endif %}Next &raquo;{% if page_obj.has_next %}</a>{% endif %}
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}

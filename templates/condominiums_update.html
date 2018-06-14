@@ -1,0 +1,340 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load base %}
+
+{% block content %}
+    <div class="card">
+        <div class="content">
+            <form method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+            <div class="col-md-12" style="display: block;">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="header-content">
+                            <h5 class="header">
+                                {% trans 'Select exists' %}
+                            </h5>
+                        </div>
+                        <div class="content">
+                            {% for field in form %}
+                                <div class="form-group {% if field.errors %}has-error{% endif %}">
+                                    {{ field.label_tag }}
+                                    {{ field }}
+                                    {% for err in field.errors %}
+                                        <span class="help-block">{{ err }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="header-content">
+                            <h5 class="header">
+                                {% trans 'Create new' %}
+                            </h5>
+                        </div>
+                        <div class="content">
+                            {% for field in create_form %}
+                                <div class="form-group {% if field.errors %}has-error{% endif %}">
+                                {% if field.name == 'checkbox' %}
+                                <div  style="display: inline-block; margin-top: 10px;">
+                                    <span >{{ field }}</span>
+                                    <div style="width: 90%; float: right;">
+                                        <label>{{ field.label }}</label>
+                                    </div>
+                                    </div>
+                                {% elif field.name == 'public_ideas' or field.name == 'public_polls' or field.name == 'public_problems' or field.name == 'public_news' %}
+
+{##}
+                                    {% if field.name == 'public_ideas' %}
+                                        <label
+                                                title="{% trans 'Configure data openness of your condominium for users from other condminiums and unregistered users!' %}"
+                                                class="publicity-settings" style="cursor:pointer">{% trans "Publicity settings" %}<i class="fa fa-arrow-up"></i></label>
+                                        <div class="publicity-block" style="display:none;">
+                                             <label style="width:100%">{% trans 'Choose which modules can watch users from other condominiums:' %}</label>
+        {#                                        <div class="col-md-6" style="padding-left: 15px; padding-top: 15px">#}
+        {#                                            <span>{{ field }}</span>#}
+        {#                                            <div style="width: 80%; float: right; margin-top: 5px">#}
+        {#                                                <label>{{ field.label }}</label>#}
+        {#                                            </div>#}
+        {#                                        </div>#}
+        {##}
+        {#                                    {% else %}#}
+                                            <div class="col-md-6">
+                                                <span>{{ create_form.public_ideas }}</span>
+                                                <div style="width: 80%; float: right; margin-top: 5px">
+                                                    <label>{{ create_form.public_ideas.label }}</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <span>{{ create_form.public_polls }}</span>
+                                                <div style="width: 80%; float: right; margin-top: 5px">
+                                                    <label>{{ create_form.public_polls.label }}</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <span>{{ create_form.public_problems }}</span>
+                                                <div style="width: 80%; float: right; margin-top: 5px">
+                                                    <label>{{ create_form.public_problems.label }}</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <span>{{ create_form.public_news }}</span>
+                                                <div style="width: 80%; float: right; margin-top: 5px">
+                                                    <label>{{ create_form.public_news.label }}</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    {% endif %}
+                                {% elif field.name == 'latitude' or field.name == 'longitude' %}
+                                    <div style="display: none">
+                                        {{ field.label_tag }}
+                                    {{ field }}
+                                    </div>
+                                {% else %}
+                                    {{ field.label_tag }}
+                                    {{ field }}
+                                {% endif %}
+                                {% for err in field.errors %}
+                                    <span class="help-block">{{ err }}</span>
+                                {% endfor %}
+                                {% if field.name == 'document' %}
+                                    <small>{% trans 'Supported file extensions: ' %}.pdf, .doc, .docx, .odt, .rtf, .jpg, .jpeg, .png, .tif, .tiff</small>
+                                {% endif %}
+                                </div>
+                            {% endfor %}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input id="submit-button" class="btn btn-success btn-fill btn-default center-block" type="submit" value="{% trans 'Submit' %}" />
+        </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+        $(function () {
+            // City selectpickers management
+            var create_form_city_select = $("#id_create-city"),
+                chose_form_city_select = $("#id_city");
+            bind_city(create_form_city_select);
+            bind_city(chose_form_city_select);
+
+            // Condominium selectpicker management
+            var chose_form_current_city_id = null,
+                chose_form_condominium_select = $('#id_condominium');
+
+            // Hidden input management
+            var condominiums_table_body = $("#id_condominiums_table").find('tbody'),
+                condominiums_input = $("#id_condominiums"),
+                condominiums_values = JSON.parse(condominiums_input.val());
+
+            // Enable condominium picker if correct city chosen. Filter condominiums by chosen city
+            var chose_form_city_select_list = chose_form_city_select.parent().find('ul');
+            chose_form_city_select_list.on('click', 'li', function (e) {
+                e.preventDefault();
+
+                var curIndex = this.getAttribute('data-original-index');
+                var $options = chose_form_city_select.find('option');
+                if (!($options.length > curIndex && curIndex > -1)) return;
+
+                var $option = $options[curIndex];
+                chose_form_current_city_id = $option.getAttribute('value');
+
+                chose_form_condominium_select.removeAttr("disabled");
+                chose_form_condominium_select.parent().removeClass("disabled");
+                chose_form_condominium_select.parent().find('button').removeClass("disabled");
+
+                bind_condominium(chose_form_condominium_select);
+            });
+
+            var chose_form_condominium_select_list = chose_form_condominium_select.parent().find('ul');
+            chose_form_condominium_select_list.on('click', 'li', function (e) {
+                e.preventDefault();
+
+                var curIndex = this.getAttribute('data-original-index');
+                var $options = chose_form_condominium_select.find('option');
+                if (!($options.length > curIndex && curIndex > -1)) return;
+
+                var $option = $options[curIndex];
+                var condominium_id = parseInt($option.getAttribute('value'));
+                var condominium_name = $option.text;
+
+                if (!(condominiums_values.indexOf(condominium_id) > -1)) {
+                    condominiums_values[condominiums_values.length] = condominium_id;
+                    condominiums_input.val(JSON.stringify(condominiums_values));
+                    condominiums_table_body.append(
+                            $('<tr>').attr('value', condominium_id).append(
+                                    $('<td>').text(condominium_name)
+                            ).append('<td class="td-actions text-right"><a href="#" rel="tooltip" title="" ' +
+                                    'class="btn btn-danger btn-simple btn-xs" data-original-title="Видалити">' +
+                                    '<i class="fa fa-times"></i></a></td>')
+                    )
+                }
+            });
+
+            condominiums_table_body.on('click', 'a', function (e) {
+                e.preventDefault();
+
+                var td_element = $(this).parent().parent();
+                var condominium_id = parseInt(td_element.attr('value')),
+                    index = condominiums_values.indexOf(condominium_id);
+
+                condominiums_values.splice(index, 1);
+                condominiums_input.val(JSON.stringify(condominiums_values));
+                td_element.remove();
+            });
+
+            function bind_city (select_instance) {
+                var select = select_instance;
+                var selected_node = select.parent();
+                var search_node = selected_node.find('.bs-searchbox');
+                var input = search_node.find('input');
+                var select_list = search_node.parent().find('ul');
+                var default_option = '';
+
+                function city_request() {
+                    $.ajax({
+                        url: '/filter-cities',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            "filter": input.val()
+                        },
+                        success: function (data) {
+                            select.empty();
+                            select.append(default_option);
+                            select_list.empty();
+                            if (data.length > 0) {
+                               data.forEach(function (value, i) {
+                                    select.append(
+                                            $('<option>').attr('value', value['id'])
+                                                    .append(value['value'])
+                                    );
+                                    select_list.append(
+                                            $('<li>').attr('data-original-index', i+1).append(
+                                                $('<a>').attr('tabindex', 0).attr('data-tokens', 'null').attr('class', '')
+                                                        .attr('style', '').append(
+                                                        $('<span>').attr('class', 'text').append(value['value'])
+                                                ).append($('<span>').attr('class', 'fa fa-check check-mark'))
+                                            )
+                                    )
+                                })
+                            } else {
+                                select_list.append(
+                                        $('<li>').attr('class', 'no-results').attr('style', 'display: list-item;').append(
+                                               '{% trans 'No results matched ' %}' + ' "' + input.val() + '"'
+                                        ))
+                            }
+                        }
+                    })
+                }
+
+                $(document).ready(function () {
+                    input.attr('placeholder', 'Введіть місто, що шукаєте');
+                    var options = select.find('option');
+                    if (options.length > 1){
+                        default_option = options[1];
+                    } else {
+                        default_option = options[0];
+                    }
+                    city_request();
+                });
+
+                selected_node.click(function (e) {
+                    e.preventDefault();
+
+                    input.focus();
+                });
+
+                input.keyup(function (e) {
+                    if (!(e.which >=37 && e.which <= 40)){
+                        e.preventDefault();
+                        city_request();
+                    }
+                });
+            }
+            
+            function bind_condominium (select_instance) {
+                var select = select_instance;
+                var selected_node = select.parent();
+                var search_node = selected_node.find('.bs-searchbox');
+                var input = search_node.find('input');
+                var select_list = search_node.parent().find('ul');
+                var default_option = '';
+
+                selected_node.click(function (e) {
+                    e.preventDefault();
+
+                    input.focus();
+                });
+
+                input.attr('placeholder', 'Введіть ОСББ, що шукаєте');
+                default_option = select.find('option')[0];
+
+                condominium_request();
+
+                function condominium_request() {
+                    $.ajax({
+                        url: '/filter-condominiums',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            "filter": chose_form_current_city_id
+                        },
+                        success: function (data) {
+                            select.empty();
+                            select.append(default_option);
+                            select_list.empty();
+                            if (data.length > 0) {
+                               data.forEach(function (value, i) {
+                                    select.append(
+                                            $('<option>').attr('value', value['id'])
+                                                    .append(value['value'])
+                                    );
+                                })
+                            }
+                            select.selectpicker('refresh');
+                        }
+                    })
+                }
+            }
+        });
+    </script>
+    <script>
+    $(".publicity-settings").click( function () {
+        $(this).children('i').attr('class') == 'fa fa-arrow-up' ? $(this).children('i').attr('class', 'fa fa-arrow-down')
+            : $(this).children('i').attr('class', 'fa fa-arrow-up');
+        $(".publicity-block").toggle();
+    });
+    $("#id_create-legal_address").change(function () {
+        var town = $('#id_create-city option:selected').text();
+        var address = $('#id_create-legal_address').val();
+         $.get("https://maps.googleapis.com/maps/api/geocode/json?address=+"+town+address+"&key={{ api_key }}"+"&language=uk&sensor=true",function(data){
+           if(data.status=="OK"&&data.results.length>0) {
+               $('#id_create-latitude').val(data.results[0].geometry.location.lat);
+               $('#id_create-longitude').val(data.results[0].geometry.location.lng);
+
+           }
+           else{
+               $.get("https://maps.googleapis.com/maps/api/geocode/json?address=+"+town+"&key=AIzaSyDGxU9s01H0vbSYHyrZxeH_hQL26ly-xbg"+"&language=uk&sensor=true",function(data){
+                    $('#id_create-latitude').val(data.results[0].geometry.location.lat);
+                    $('#id_create-longitude').val(data.results[0].geometry.location.lng);
+               });
+           }
+        });
+
+    })
+    </script>
+{% endblock %}

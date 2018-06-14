@@ -1,0 +1,352 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="congnd91">
+  <title>РОЗУМНЕ ОСББ</title>
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="{% static 'blog/images/favicon.ico' %}">
+  <!--     <link rel="apple-touch-icon" href="{% static 'blog/images/apple-touch-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'blog/images/apple-touch-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'blog/images/apple-touch-icon-114x114.png' %}"> -->
+  <!-- Online Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700&subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
+  <!-- Vender -->
+  <link href="{% static 'blog/css/font-awesome.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'blog/css/bootstrap.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'blog/css/normalize.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'blog/css/owl.carousel.min.css' %}" rel="stylesheet" />
+  <!-- Main CSS (SCSS Compile) -->
+  <link rel="stylesheet" href="{% static 'blog/css/languages.min.css' %}">
+  <link href="{% static 'blog/css/main.css' %}" rel="stylesheet" />
+  <link href="{% static 'blog/css/custom.css' %}" rel="stylesheet" />
+  <!-- JavaScripts -->
+  <!--<script src="js/modernizr.js"></script>-->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+  <script src="{% static 'blog/js/jquery.min.js' %}"></script>
+</head>
+
+<body>
+  <!--preload-->
+  <div class="loader">
+    <div class="loading-wrapper">
+    </div>
+  </div>
+  <!--menu mobile-->
+  <nav class="menu-res hidden-lg hidden-md ">
+    <div class="menu-res-inner">
+      <ul>
+        <li><a href="index.html">новини</a></li>
+        <li><a href="{% url 'blog:team' %}">Команда</a></li>
+        <li><a href="{% url 'blog:about_us' %}">Про нас</a></li>
+        <li><a href="{% url 'blog:contacts' %}">Контакти</a></li>
+        <li>
+          <p>
+            <a href="{% url 'blog:best_practice' %}">Кращі практики</a>
+            <span class="open-submenu"><i class="fa fa-angle-down"></i></span>
+          </p>
+          <ul>
+            <li>
+              <a href="{% url 'blog:best_practice' %}">Топ 10 практик</a>
+            </li>
+            <li>
+              <a href="{% url 'blog:best_practice' %}">Нормативна база</a>
+            </li>
+            <li>
+              <a href="{% url 'blog:best_practice' %}">Навчання</a>
+            </li>
+            <li>
+              <a href="{% url 'blog:best_practice' %}">Енергозбереження</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <a href="#">Партнери</a>
+            <span class="open-submenu"><i class="fa fa-angle-down"></i></span>
+          </p>
+          <ul>
+            <li>
+              <a href="{% url 'blog:partners' %}">UNDP</a>
+            </li>
+            <li>
+              <a href="{% url 'blog:partners' %}">ГО "Гарні справи"</a>
+            </li>
+          </ul>
+        </li>
+          <li><a href="{% url 'blog:photologue:pl-photologue-root' %}">Галерея</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="page">
+    <div class="container">
+      <!--header-->
+      <header class="header">
+        <div class="row">
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <a href="{% url 'blog:index' %}" class="logo">
+              <img alt="Logo" src="{% static 'blog/images/logo1.png' %}" />
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-8 col-xs-12">
+            <div class="header-text">
+              Ваша можливість управляти своїм будинком
+            </div>
+          </div>
+          <div class="col-md-5 col-xs-12">
+            <div class="btn-group log-buttons">
+                {% if request.user.is_authenticated %}
+                    <div class="header-text"><i class="fa fa-user"></i> {{ request.user.get_full_name }}</div>
+                    {% if request.user.has_condominiums %}
+                        <a href="{% url 'condominium:home' request.user.get_first_condominium.slug %}" style="color: whitesmoke">Перейти до свого ОСББ</a>
+                    {% endif %}
+
+                {% else %}
+                  <a href="/accounts/login/?next=/index/" class="btn btn-primary btn-md page-scroll log-in"><i class="fa fa-sign-in" aria-hidden="true"></i> Увійти</a>
+                  <a href="/accounts/signup" class="btn btn-primary btn-md page-scroll registration"><i class="fa fa-user-plus" aria-hidden="true"></i> Реєстрація</a>
+                {% endif %}
+            </div>
+          </div>
+{#          <div class="col-md-2 col-sm-12 col-xs-12">#}
+{#            <div class="form-group lang-select">#}
+{#              <select class="form-control" id="sel1">#}
+{#                <option>Українська</option>#}
+{#                <option>Англійська</option>#}
+{#              </select>#}
+{#            </div>#}
+{#          </div>#}
+        </div>
+      </header>
+      <!--menu-->
+      <nav class="menu font-heading">
+        <div class="menu-icon hidden-lg hidden-md">
+          <i class="fa fa-navicon"></i>
+          <span>МЕНЮ</span>
+        </div>
+        <ul class="hidden-sm hidden-xs">
+          <li>
+            <a href="{% url 'blog:articles_list' %}">Новини</a>
+          </li>
+
+          <li>
+              <a href="{% url 'blog:team' %}">Команда</a>
+          </li>
+          <li>
+              <a href="{% url 'blog:about_us' %}">Про нас</a>
+          </li>
+          <li>
+              <a href="{% url 'blog:contacts' %}">Контакти</a>
+          </li>
+          <li>
+            <a href="{% url 'blog:best_practice' %}">Кращі практики <span></span></a>
+            <ul class="submenu">
+                <li>
+                  <a href="{% url 'blog:best_practice' %}">Топ 10 практик</a>
+                </li>
+                <li>
+                  <a href="{% url 'blog:best_practice' %}">Нормативна база</a>
+                </li>
+                <li>
+                  <a href="{% url 'blog:best_practice' %}">Навчання</a>
+                </li>
+                <li>
+                  <a href="{% url 'blog:best_practice' %}">Енергозбереження</a>
+                </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Партнери <span></span></a>
+            <ul class="submenu">
+                <li>
+                  <a href="{% url 'blog:partners' %}">UNDP</a>
+                </li>
+                <li>
+                  <a href="{% url 'blog:partners' %}">ГО "Гарні справи"</a>
+                </li>
+            </ul>
+          </li>
+            <li><a href="{% url 'blog:photologue:pl-photologue-root' %}">Галерея</a></li>
+        </ul>
+        <div class="search-icon">
+          <div class="search-icon-inner">
+            <i class="fa fa-search"></i>
+          </div>
+          <div class="search-box">
+            <form action="{% url 'blog:search_articles' %}">
+                <input type="text" name="q" placeholder="Пошук..." />
+                <button type="submit">Пошук</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="row" id="content-loader">
+          {% block content %}
+          {% endblock content %}
+      {% block colright %}
+        <div class="col-md-4 col-sm-12">
+          <!--tab popular-->
+          <ul role="tablist" class="tab-popular">
+            <li class="active">
+              <a href="#tab1" role="tab" data-toggle="tab">
+                  Останні Гранти
+                </a>
+            </li>
+          </ul>
+          <div class="tab-content">
+              <script type="text/javascript">
+                  $(function () {
+                            $.ajax({
+                                url: '{% url 'blog:grants' %}',
+                                type: 'POST',
+                            success: function (data) {
+                                var output = [];
+                                var border = 0;
+                                data.forEach(function (value) {
+                                    if(border < 5){
+                                    output.push(
+                                            '<li class="list-news-popular">'                                       +
+                                                '<a href="/index/articles/'+ value['article_id'] +  '">'            +
+                                                    '<img alt="" src="'+ value['image'] + '">'                     +
+                                                '</a>'                                                             +
+                                                '<h3>' +'<a href="/index/articles/' + value['article_id'] + '">' + value['title'] + '</a>'+'</h3>'            +
+                                                '<div class="meta-post">'                                          +
+                                                    '<a href="#">'                                                 +
+                                                    value['author_art']                                            +
+                                                    '</a>'                                                         +
+                                                '<span>'                                                           +
+                                                    value['date']                                                  +
+                                                '</span>'                                                          +
+                                            '</li>'                                                                +
+                                            '</div>'
+                                    );
+                                        border = border +1;
+                                    }
+                             });
+                             $('.grants').html(output.join(''));
+                         }
+                                    });
+                                })
+              </script>
+
+
+          <div role="tabpanel" class="tab-pane active" id="tab1">
+                <div class="list-news-popular">
+                    <ul class="grants"></ul>
+                </div>
+
+                <a href="{% url 'blog:articles_by_category' "grants" %}">
+                    <button class="">Читати всі гранти</button>
+                </a>
+          </div>
+
+          </div>
+        </div>
+    {% endblock colright %}
+      </div>
+      <!--colright-->
+
+    </div>
+
+    <!--footer-->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4  col-sm-4 col-xs-12">
+            <div class="about">
+              <a href="#" class="logo">
+                <img alt="" src="{% static 'blog/images/logo1.png' %}" />
+              </a>
+              <p>ВАША МОЖЛИВІСТЬ УПРАВЛЯТИ СВОЇМ БУДИНКОМ УВІЙТИ РЕЄСТРАЦІЯ</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-md-offset-1 col-sm-4 col-xs-12">
+            <h3>Навігація</h3>
+
+            <ul class="list-category">
+              <li><a href="{% url 'blog:articles_list' %}">Новини</a></li>
+              <li><a href="{% url 'blog:team' %}">Команда</a></li>
+              <li><a href="{% url 'blog:about_us' %}">Про нас</a></li>
+              <li><a href="{% url 'blog:contacts' %}">Контакти</a></li>
+              <li><a href="{% url 'blog:best_practice' %}">Кращі практики</a></li>
+              <li><a href="{% url 'blog:partners' %}">Партнери</a></li>
+              <li><a href="{% url 'blog:photologue:pl-photologue-root' %}">Галерея</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-md-offset-1 col-sm-4 col-xs-12">
+            <h3>Рекомендовані категорії</h3>
+            <div class="list-tags">
+
+            </div>
+          </div>
+        </div>
+        <!--All right-->
+        <div class="allright">
+          <div class="row">
+            <div class="col-sm-6 col-xs-12">
+              <p> © 2017 <a href="#">Розумне ОСББ.</a>Всі права захищені .</p>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+              <ul class="list-social-icon list-social-icon-footer">
+                <li>
+                  <a href="https://www.facebook.com/rozumneosbb.org/?fref=ts" class="facebook">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/Rozumne_OSBB" class="twitter">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+  </div>
+
+  <!--scrip file-->
+  <script src="{% static 'blog/js/jquery.min.js' %}"></script>
+  <script src="{% static 'blog/js/bootstrap.js' %}"></script>
+  <script src="{% static 'blog/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'blog/js/main.js' %}"></script>
+
+<script>
+     $(function () {
+         $.ajax({
+             url: '{% url 'blog:popular_category' %}',
+             type: 'POST',
+             success: function (data) {
+{#                     var cond = gettext("Condominium")#}
+                 var output = [];
+                 data.forEach(function (value) {
+
+                     output.push('<a href="/index/articles/'+value['slug']+'">'+value['title']+'</a>')
+
+                 });
+                 $('.list-tags').html(output.join(''));
+             }
+         });
+     })
+</script>
+</body>
+
+</html>
+

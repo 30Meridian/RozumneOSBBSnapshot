@@ -1,0 +1,2841 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_static %}
+
+<script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+{% block content %}
+<script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+    <BODY>
+    <link href="{% static 'admin/css/dashboard.css' %}" rel="stylesheet"/>
+{#<div class="first_line" style="display: inline-block">#}
+    <div class="help-card" >
+        <div class="help-content" >
+{#            <h2 align="center">Допомога по панелі адміністратора</h2>#}
+            <br/>
+
+{#<BODY LANG="en-US" BGCOLOR="#ffffff" DIR="LTR">#}
+<P ALIGN=CENTER STYLE="text-indent: 0.5in; margin-bottom: 0.04in; line-height: 100%; page-break-inside: avoid; widows: 2; orphans: 2; page-break-after: avoid"><A NAME="_w8b9skdkj4e4"></A>
+<FONT SIZE=6 STYLE="font-size: 26pt"><FONT ><FONT SIZE=6><I>Адміністрування</I></FONT></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4 STYLE="font-size: 16pt"><B>Розділи</B></FONT></FONT></P>
+<OL>
+	<a href="#home_page"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4><B>Домашня
+	сторінка</B></FONT></FONT></P></a>
+	<a href="#additionals"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4><B>Додаткові
+	матеріали</B></FONT></FONT></P></a>
+	<OL>
+		<a href="#pages"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Сторінки</FONT></FONT></P></a>
+	</OL>
+	<a href="#users_groups"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4><B>Користувачі
+	та групи</B></FONT></FONT></P></a>
+	<OL>
+		<a href="#users"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Користувачі</FONT></FONT></P></a>
+	</OL>
+	<a href="#news"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4><B>Новини</B></FONT></FONT></P></a>
+	<a href="#polls"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4><B>Опитування</B></FONT></FONT></P></a>
+
+	<a href="#problems"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4><B>Проблеми
+	ОСББ</B></FONT></FONT></P></a>
+	<OL>
+		<a href="#problems_items"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Заявки</FONT></FONT></P></a>
+	</OL>
+	<a href="#newsletters"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4><B>Розсилання</B></FONT></FONT></P></a>
+	<OL>
+		<a href="#newsletters_message"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Повідомлення</FONT></FONT></P></a>
+		<a href="#newsletters_subscr"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Підписки</FONT></FONT></P></a>
+		<a href="#newsletters_letters"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Розсилання</FONT></FONT></P></a>
+		<a href="#newsletters_lists"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Списки
+		розсилання</FONT></FONT></P></a>
+	</OL>
+	<a href="#cond_management"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4><B>Управління
+	ОСББ</B></FONT></FONT></P></a>
+	<OL>
+		<a href= "#cond_houses"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Будинки</FONT></FONT></P>
+		<a href="#cond_yours"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Ваші
+		ОСББ</FONT></FONT></P></a>
+		<a href="#cond_user"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Користувач</FONT></FONT></P>
+		<a href="#cond_common_place"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Місце
+		громадського користування</FONT></FONT></P></a>
+		<a href="#cond_infr"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Об'єкти
+		додаткової інфраструктури </FONT></FONT>
+		</P></a>
+
+        <a href='#cond_modules'><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Модулі
+        ОСББ</FONT></FONT></P></a>
+        <a href="#cond_pages"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Сторінки</FONT></FONT></P></a>
+
+	</OL>
+	<a href="#forum"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4><B>Форум</B></FONT></FONT></P></a>
+	<OL>
+		<a href="#forum_forums"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Форуми</FONT></FONT></P></a>
+		<a href="#forum_attachment"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Бесіда:</FONT></FONT></P></a>
+		<OL>
+
+			<a href="#forum_conversation_attachment"><LI style="font-size: 16pt;"><P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Бесіда:
+			Вкладення</FONT></FONT></P></a>
+			<a href="#forum_conversation_votes"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Бесіда:
+			Голоси опитування</FONT></FONT></P></a>
+			<a href="#forum_conversation_post"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Бесіда:
+			Публікація</FONT></FONT></P></a>
+			<a href="#forum_conversation_topic"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Бесіда:
+			Тема</FONT></FONT></P></a>
+			<a href="#forum_conversation_polltopsic"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Бесіда:
+			Тема опитування</FONT></FONT></P></a>
+		</OL>
+		<a href="#forum_perms"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Права:</FONT></FONT></P></a>
+		<OL>
+			<a href="#forum_perms_groups"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Права:
+			Групи</FONT></FONT></P></a>
+			<a href="#forum_perms_user"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Права:
+			Користувача</FONT></FONT></P></a>
+			<a href="#forum_perms_forum"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Права:
+			Форуму</FONT></FONT></P></a>
+			<a href="#forum_members"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Учасники:
+			Профілі</FONT></FONT></P></a>
+		</OL>
+        <a href="#forum_tracking"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Відстеження:</FONT></FONT></P></a>
+		<OL>
+			<a href="#forum_tracking_topics"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Відстеження:
+			Прочитані теми</FONT></FONT></P></a>
+			<a href="#forum_tracking_forums"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Відстеження:
+			Прочитані форуми </FONT></FONT>
+			</P></a>
+		</OL>
+	</OL>
+	<a href="#ideas"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4><B>Ідеї</B></FONT></FONT></P></a>
+	<OL>
+		<a href="#voices"><LI style="font-size: 16pt;"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Голоси</FONT></FONT></P></a>
+	</OL>
+</OL>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in; page-break-before: always">
+<BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0.04in; line-height: 100%; page-break-inside: avoid; widows: 2; orphans: 2; page-break-after: avoid"><A NAME="_fqcbiga9lkn1"></A>
+<FONT SIZE=6 STYLE="font-size: 26pt"><FONT ><FONT SIZE=6><I>Інструкція</I></FONT></FONT></FONT></P>
+
+	<LI id = "home_page"  style="list-style: none"><H1 CLASS="western" ALIGN=CENTER><A NAME="_jt2eyw6sy6st"></A><FONT ><FONT SIZE=5><U><B>Домашня
+        сторінка</B></U></FONT></FONT></H1></LI>
+
+<P ALIGN=LEFT STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4>		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspНа
+домашній сторінці менеджер може
+слідкувати за деякою активністю
+користувачів конкретного ОСББ на сайті.
+Наприклад, Ви можете бачити, які
+користувачі останніми приєднались до
+Вашого ОСББ, бачити останні опубліковані
+новини, останні додані ідеї та заявки,
+список ОСББ, в яких Ви є менеджером
+(Рис.1.6 та Рис.1.8). </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЗа
+допомогою меню (Рис.1.1) Ви можете переходити
+до будь-якого іншого розділю сайту.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЩоб
+вибрати інше ОСББ, в якому Ви менеджер,
+скористайтесь випадним списком. (Рис.1.
+3). </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо
+бажаєте перейти на основний портал, то
+Вам потрібно натиснути на посилання
+“Головна” (Рис.1.2). Також перейти на
+основний портал дозволяє посилання
+“30th Meridian” у нижньому правому кутку
+сторінки.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp>Щоб
+змінити свій пароль, натисніть на
+посилання “Змінити пароль” (Рис.1.4).
+Щоб вийти зі свого акаунту, натисніть
+на посилання “Вийти” (Рис.1.5).</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+блоці “Проблеми, що потребують розгляду”
+(Рис.1.8) будуть виводитись заявки, які
+додають користувачі на основному порталі
+та заявки, які мають статус “Заявка
+очікує реакції”.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+блоці “Ідеї, що потребують розгляду”
+(Рис.1.9) виводяться ідеї, які користувачі
+додають на основному порталі та, які
+мають статус “На модерації”. Ці ідеї
+потрібно переглянути та змінити їх
+статус. Щоб ідея перейшла на підписання
+до користувачів, потрібно додати їй
+статус “Триває збір підписів”.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+блоці “Допомога по ОСББ” є деяка
+інформація, про те, як користуватись
+деякими модулями адміністрування. Якщо
+бажаєте переглянути всю інформацію про
+користування адміністрацією, то натисніть
+на кнопку “Допомога” (Рис.1.10)</FONT></FONT></P>
+<P ALIGN=CENTER WIDTH=900 HEIGHT=600  STYLE="margin-left: -0.02in; margin-bottom: 0in"><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_bf72e617.png' %}" NAME="image31.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.1
+Домашня сторінка</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Меню </I></FONT></FONT>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Кнопка переходу на основний портал</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>3
+- Випадний список для вибору ОСББ, в яких
+Ви э менеджером</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>4
+- Посилання на форму зміни паролю</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>5
+- Посилання на вихід з аккаунту</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>6-
+Блок, де Ви можете слідкувати за останньою
+інформацією в ОСББ</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>7
+-Блок, де Ви можете знайти деякі підказки
+по користуванню адмініструванням </I></FONT></FONT>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>8
+- Блок, в якому знаходяться проблеми, що
+потребують розгляду</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>9
+- Блок ,в яком знаходяться ідеї, що
+потребують розгляду</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>10
+- Кнопка переходу на Допомогу по
+адмініструванню</I></FONT></FONT></P>
+
+	<LI id = "additionals" style="list-style: none"><H1 CLASS="western" ALIGN=CENTER><A NAME="_7b7qhc2kifly"></A><FONT ><U><B>Додаткові
+        матеріали</B></U></FONT>
+    </H1></LI>
+	<OL>
+		<LI id = "pages"><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4 STYLE="font-size: 16pt"><I>Сторінки</I></FONT></FONT></P>
+		<OL>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Сторінки
+			не створені<BR> </FONT></FONT></P>
+                </OL></OL>
+<P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо Вам потрібно донести
+			деяку інформацію до користувачів на
+			основному порталі, то можете створити
+			окрему сторінку. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщЯкщо сторінки ще
+			не створені, Ви маєте можливість
+			створити сторінку. Для цього натискаєте
+			на кнопку “Додати: Сторінка” (Рис 2.
+			2) або на однойменне посилання (Рис.2.
+			1), та переходите на сторінку “Додати:
+			Сторінка” (Рис.3). </FONT></FONT>
+			</P>
+
+
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P A ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_3224281.png' %}" NAME="image130.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0><FONT ><FONT SIZE=3><I>Рис.2
+Сторінки ще не створені</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Посилання на додання сторінки</I></FONT></FONT></P>
+<P ALIGN=CENTER >
+<FONT ><FONT SIZE=3><I>2 - Кнопка
+додання сторінки</I></FONT></FONT><FONT ><FONT SIZE=4><BR></FONT></FONT><BR>
+</P>
+<OL START=2>
+	<OL>
+		<OL START=2>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Додання
+			сторінки</FONT></FONT></P>
+           	</OL>
+	</OL>
+</OL>
+                <BR><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДля того, щоб додати
+			сторінку, спочатку Вам потрібно перейти
+			на сторінку “Додати: Сторінка”
+			(</FONT></FONT><FONT ><FONT SIZE=4><I>Рис.3</I></FONT></FONT><FONT ><FONT SIZE=4>).
+			Потім потрібно заповнити поля, які
+			помічені зірочками (*), це обов'язкові
+			поля, про них далі детальніше.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі
+			“Назва сторінки” введіть повну назву
+			 сторінки.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Зміст сторінки”
+			введіть інформацію, яку б Ви хотіли
+			донести до користувачів.  Тут Ви можете
+			форматувати текст за бажанням, а саме
+			додавати різні стилі, створювати
+			нумерований, маркований списки, також
+			прикріпляти зображення, створювати
+			таблицю, вставляти смайлики та інше.
+			Після виконаних вищезгаданих дій
+			натисніть кнопку “Зберегти” (Рис.3.1),
+			щоб перейти до інших сторінок.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspНатисніть
+			кнопку “Зберегти і продовжити
+			редагування” (Рис.3.2), якщо вирішили
+			щось змінити.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspНатисніть кнопку
+			“Зберегти і додати інше”(Рис.3.2), щоб
+			зберегти поточну сторінку та перейти
+			до створення іншої.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВідображення
+			створеної сторінки можна подивитись
+			на основному порталі у модулі “Моє
+                ОСББ”, розділ “Додаткові матеріали”.<BR></FONT></FONT></P>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_6f16f622.png' %}" NAME="image126.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P   ALIGN=CENTER ><FONT ><FONT SIZE=3><I>Рис.3
+Додання сторінки</I></FONT></FONT></P>
+<P ALIGN=CENTER >
+<FONT ><FONT SIZE=3><I>1 - 3 Кнопки
+збереження введеної інформації</I></FONT></FONT></P>
+
+
+		<OL START=3>
+			<LI id = "cond_pages"><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Сторінки
+			створені<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо сторінки вже створені,
+			в підрозділі “Сторінки  ” розділу
+			“Додаткові матеріали” Ви можете їх
+			проглянути, можете редагувати свої
+			сторінки, натиснувши на кожну з них
+			по черзі.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspТакож сторінки можна
+			видаляти. Щоб видалити не потрібну
+			сторінку, виділіть її, натиснувши на
+			галочку біля даної сторінки (Рис.4. 1).
+			Щоб видалити всі сторінки, поставте
+			найпершу галочку (Рис.4.2), тим самим
+			виділяться всі сторінки. Потім у
+			випадному списку (Рис.4. 3) виберіть
+			пункт “Видалити обрані Сторінки” та
+			натисніть кнопку “Вперед”. Залишилось
+			лише підтвердити видалення.</FONT></FONT></P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_83d481b8.png' %}" NAME="image113.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.4
+Сторінки</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Елемент виділення одної сторінки</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Елемент для виділення всіх сторінок</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>3
+- Елемент, за допомогою якого можна
+видалити сторінки</I></FONT></FONT></P>
+
+	<LI id = "users_groups" style="list-style: none"><H1 CLASS="western" ALIGN=CENTER><A NAME="_dc4lrtrvec1b"></A><FONT ><FONT SIZE=5><U><B>Користувачі
+        та групи</B></U></FONT></FONT></H1></LI>
+<OL START=1>
+		<LI id = "users"><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4 STYLE="font-size: 16pt"><I>Користувачі</I></FONT></FONT></P>
+	</OL>
+
+<P STYLE="margin-left: -0.02in; text-indent: 0.02in; margin-bottom: 0in">
+<FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ цьому
+розділі Ви можете переглядати список
+користувачів, які приєднались до Вашого
+ОСББ (Рис.5). Також Ви маєте можливість
+редагувати профілі цих користувачів,
+натиснувши на потрібного, Ви перейдете
+до профілю користувача (Рис.6 та Рис.7). </FONT></FONT>
+</P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_ba8eef0b.png' %}" NAME="image111.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.5
+Список користувачів ОСББ </I></FONT></FONT>
+</P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Елемент для виділення всіх користувачів</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Елемент для виділення одного конкретного
+користувача</I></FONT></FONT></P>
+<P STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+формі профілю користувача є такі поля:
+Ім'я, Прізвище, По батькові, Номер
+телефону, Електронна адреса, Ваші ОСББ,
+Групи, Статус персоналу, Менеджер даного
+ОСББ, Активний, Дата приєднання (Рис.6
+та Рис.7). Ви можете змінювати будь-яке
+з цих полів. </FONT></FONT>
+</P>
+<P STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЩоб
+приєднати користувача до якогось ОСББ,
+просто перетягніть це ОСББ з блоку
+“Наявні” (Рис.6.4) до блоку “Обрані”(Рис.6.5)
+в Інформації про ОСББ. Для цього Виділіть
+потрібне ОСББ та натисніть на “</FONT></FONT><FONT FONT SIZE=4 STYLE="font-size: 16pt">→</FONT></FONT><FONT ><FONT SIZE=4>”
+(Рис.6.6). </FONT></FONT>
+</P>
+<P STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЩоб
+видалити користувача з ОСББ потрібно
+навпаки, з блоку “Обрані” (Рис.6. 5
+перетягнути потрібне ОСББ до блоку
+“Наявні” (Рис.6.4) за допомогою “</FONT></FONT><FONT FONT SIZE=4 STYLE="font-size: 16pt"><B>←</B></FONT></FONT><FONT ><FONT SIZE=4>”
+(Рис.6.7).</FONT></FONT></P>
+<P STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЩоб
+</FONT></FONT><FONT ><FONT SIZE=4><B>зробити
+користувача менеджером</B></FONT></FONT><FONT ><FONT SIZE=4>,
+змініть статус з користувача на менеджера
+у його профілі. А точніше, у полі групи,
+додайте групу “manager” до блоку “Обрані
+групи” (Рис.6.11), тим самим Ви додаєте
+користувачу права менеджера. А також
+не забудьте поставити галочки у “Статус
+персоналу” (Рис.6.12) та “Менеджер цього
+ОСББ”(Рис.6.13). Якщо Ви не виконаєте хоч
+один із цих пунктів, користувач не зможе
+бути повноцінним менеджером.</FONT></FONT></P>
+<P STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо
+Ви вирішили навпаки у користувача
+забрати статус менеджера, то тоді
+заберіть галочку у “Статус
+персоналу”(Рис.6.12) та “Менеджер цього
+ОСББ”(Рис.6.13), а також перенесіть групу
+“manager” з блоку “Обрані групи”(Рис.6.11)
+до блоку “Наявні групи”(Рис.6.10), але
+залиште групу “User” у блоку “Обрані
+групи”.</FONT></FONT></P>
+<P STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо
+потрібно заборонити взагалі доступ до
+сайту деякому користувачу, то тоді
+заберіть галочку в чекбоксі “Активний”.</FONT></FONT></P>
+<P STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВидалити
+користувача можна за допомогою посилання
+“Видалити” (Рис.6.2)</FONT></FONT></P>
+<P STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПісля
+редагування профілю, не забудьте зберегти
+зміни за допомогою кнопок “Зберегти”
+або “Зберегти і продовжити редагування”.</FONT></FONT></P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_ba914e31.png' %}" NAME="image106.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.6
+Профіль користувача</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- кнопки збереження</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+ - кнопка видалення користувача</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>3
+- кнопка переходу до історії профілю
+користувача</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>4
+- Блок “Наявні Ваші ОСББ”</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>5
+- Блок “Обрані Ваші ОСББ”</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>6-
+Елемент переносу ОСББ з блоку 4 в 5</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>7
+- Елемент переносу ОСББ з блоку 5 в 4</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>8
+- Блок “Наявні групи”</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>9
+- Блок “Обрані групи”</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>10
+- Елемент переносу групи з блоку 8 в 9</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>11-
+Елемент переносу групи з блоку 9 в 8</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>12
+- Елемент, який визначає, чи може користувач
+увійти до цього сайту адміністрування.</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>13
+- Елемент, який визначає, чи може користувач
+бути менеджером поточного ОСББ.</I></FONT></FONT></P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_8988ae1f.png' %}" NAME="image72.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.7
+Продовження сторінки профілю користувача</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Елементи для виставлення дати</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2-
+Елементи для виставлення часу</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>3
+- Елемент, який визначає доступ чи можна
+вважати користувача діючим</I></FONT></FONT></P>
+<P STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=4><BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЩоб
+видалити користувача іншим способом,
+перейдіть до списку користувачів, там
+виділіть його, натиснувши на галочку
+біля даного користувача (Рис.5.2). Щоб
+видалити всіх користувачів натисніть
+на найпершу галочку (Рис.5. 1), тим самим
+виділяться всі групи. Потім у випадному
+списку внизу виберіть пункт “Видалити
+обрані Користувачі” та натисніть кнопку
+“Вперед”. Залишилось лише підтвердити
+видалення.</FONT></FONT></P>
+
+<LI id = "news" style="list-style:none"><H1 CLASS="western" ALIGN=CENTER><A NAME="_8k53bjrfce1z"></A><FONT ><U><B>Новини</B></U></FONT></H1></LI>
+	<OL>
+		<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4 STYLE="font-size: 16pt"><I>Новини</I></FONT></FONT></P>
+
+			<P STYLE="margin-bottom: 0in">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp1.<FONT ><FONT SIZE=4>Новини
+			не створені<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо новини ще не
+			створені, але Ви бажаєте додати новину
+			Вашого ОСББ, то Вам потрібно створити
+			її у розділі “Новини”. Для цього за
+			допомогою меню переходите до відповідного
+			розділу та натискаєте на кнопку
+			“Додати: Новини” (Рис.8. 2) або на
+			однойменний надпис(Рис.8.1) та переходите
+			на сторінку “Додання: Новини”. </FONT></FONT>
+			</P>
+
+	</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_11de1e94.png' %}" NAME="image33.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.8
+Новини ще не створені</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Посилання на додання новини</I></FONT></FONT></P>
+<P ALIGN=CENTER >
+<FONT ><FONT SIZE=3><I>2 - Кнопка
+додання новини</I></FONT></FONT></P>
+
+		<OL START=2>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4><B>Додання
+			новини<BR>	</B></FONT></FONT></OL><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДля
+			того, щоб додати новину, спочатку Вам
+			потрібно перейти на сторінку “Додання:
+			Новини” (Рис.9). Потім потрібно заповнити
+			поля, які помічені зірочками (*), це
+			обов'язкові поля, про них далі детальніше.
+			</FONT></FONT>
+			</P>
+
+
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо
+ви бажаєте одразу після створення
+новини, її опублікувати, то потрібно
+поставити галочку у чекбоксі “Опублікована”
+(Рис.9.1). Статус (Рис.9.2) після збереження
+новини, показує опублікована вона чи
+ні.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Назва” введіть назву Вашої
+новини.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Короткий опис” коротко
+опишіть новину.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Зміст Новини”
+повністю опишіть новину. Тут Ви можете
+форматувати текст за бажанням, а саме
+додавати різні стилі, створювати
+нумерований, маркований списки, також
+прикріпляти зображення, створювати
+таблицю, вставляти смайлики та
+інше.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЗалишається додати зображення
+до новини. Для цього натисніть кнопку
+“Виберіть файл” та виберіть на своєму
+комп'ютері потрібне зображення.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+полі “Дата” (Рис.9.3) потрібно ввести
+дату Вашої публікації у форматі
+“РРРР-ММ-ДД” (наприклад, 2016-10-19), також
+можна натиснути на посилання “Сьогодні”
+справа біля поля, щоб одразу з'явилась
+сьогоднішня дата або натиснути на
+зображення календаря, щоб вибрати
+потрібну дату.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Час” потрібно
+ввести час Вашої публікації у форматі
+ “Год:Хв:Сек” (наприклад, 17:35:41). Також
+можете натиснути на посилання “Зараз”
+справа біля поля, щоб поле заповнилось
+часом в цю секунду або, натиснувши на
+маленький годинник, вибрати потрібний
+час.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspНовина опублікується згідно
+вибраної дати на часу.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо
+залишите дату та час не заповненими, то
+новина опублікується зразу після
+збереження. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПісля виконаних вищезгаданих
+дій натисніть кнопку “Зберегти”, щоб
+перейти до інших новин.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspНатисніть
+кнопку “Зберегти і продовжити
+редагування”, якщо вирішили перечитати
+новину або щось змінити.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspНатисніть
+кнопку “Зберегти і додати інше”, щоб
+зберегти поточну новину та перейти до
+створення іншої.</FONT></FONT></P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_b6b27e14.png' %}" NAME="image44.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.9
+ Додання Новини</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Елемент, який визначає статус новини</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Статус новини</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>3
+- Дата публікації новини</I></FONT></FONT></P>
+<P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+</P>
+
+		<OL START=3>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Новини
+			створені<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо деякі новини вже
+			створені, в розділі “Новини” Ви можете
+			їх проглянути, можете редагувати свої
+			новини, натиснувши на кожну з них по
+			черзі. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspТакож новини можна видаляти.
+			<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЩоб видалити непотрібну новину
+			виділіть її, натиснувши на галочку
+			біля новини (Рис.10.2). Щоб видалити всі
+			новини, поставте  найпершу галочку
+			(Рис.10.1), тим самим виділяться всі
+			новини. Потім у випадному списку внизу
+			виберіть пункт “Видалити обрані
+			Новини” та натисніть кнопку “Вперед”.
+			 Залишилось лише підтвердити видалення.</FONT></FONT></P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_71e9b7c8.png' %}" NAME="image129.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.10
+ Список Новин</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Елемент для виділення всіх новин</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Елемент для виділення одної конкретної
+новини</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>3
+- Випадний список, в якому є елемент для
+видалення новини</I></FONT></FONT></P>
+
+<LI id = "polls" style="list-style:none"><H1 CLASS="western" ALIGN=CENTER><A NAME="_gcwzwwn2930f"></A><FONT ><FONT SIZE=5><U><B>Опитування</B></U></FONT></FONT></H1></LI>
+	<OL>
+		<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4 STYLE="font-size: 16pt"><I>Опитування</I></FONT></FONT></P>
+        </OL>
+<OL>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Опитування
+			ще не створені<BR></FONT></FONT></P></LI>
+</OL>
+<P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspОпитування потрібні
+			для того, щоб вирішувати деякі нагальні
+			та не дуже нагальні питання, в яких
+			може проголосувати кожен член ОСББ.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо
+			опитування ще не створені, Ви маєте
+			можливість створити опитування. Для
+			цього натискаєте на кнопку “Додати:
+			Опитування” (</FONT></FONT><FONT ><FONT SIZE=4><I>Рис.11.
+			2</I></FONT></FONT><FONT ><FONT SIZE=4>)
+			або на однойменне посилання (Рис.11. 2)
+			та переходите на сторінку “Додання:
+                Опитування”. <BR></FONT></FONT></P>
+
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_ddc97c0b.png' %}" NAME="image121.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.11
+Опитування ще не створені </I></FONT></FONT>
+</P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Посилання на додання опитування</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in">
+<FONT ><FONT SIZE=3><I>2 - Кнопка
+додання опитування</I></FONT></FONT></P>
+
+		<OL START=2>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Додання
+			опитування<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДля того, щоб додати
+			опитування, спочатку Вам потрібно
+			перейти на сторінку “Додання: Опитування
+			(</FONT></FONT><FONT ><FONT SIZE=4><I>Рис.11</I></FONT></FONT><FONT ><FONT SIZE=4>).
+			Потім потрібно заповнити поля, які
+			помічені зірочками (*), це обов'язкові
+			поля, про них далі детальніше.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі
+			“Питання” введіть питання опитування.
+			<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Дата початку”(Рис.12.1)
+			введіть дату початку опитування у
+			форматі “РРРР-ММ-ДД” (наприклад,
+			2016-10-19), також можна натиснути на
+			посилання “Сьогодні” справа біля
+			поля, щоб одразу з'явилась сьогоднішня
+			дата або натиснути на маленьке
+			зображення календаря, щоб вибрати
+			потрібну дату.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Дата закінчення”
+			(Рис.12.2) введіть дату закінчення
+			опитування. Заповнити її можна
+			аналогічно до поля “Дата початку”.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspАле
+			є одна умова - Дата початку (Рис.12.1)
+			повинна бути меншою ніж Дата закінчення
+			(Рис.12.2) , інакше опитування не буде
+			доданим.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspІнші поля є необов'язковими,
+			про них нижче детальніше.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі
+			“Опис” введіть розгорнутий опис
+			питання, яке Ви бажаєте винести на
+			голосування. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspГалочка у полі “Активне”
+			(Рис.12.3) означає, що Ваше опитування
+			наразі буде активним, користувачі
+			можуть голосувати.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspТакож якщо хочете
+			занести опитування в архів, то додайте
+			галочку в полі “Архів” (Рис.12.4). Архівні
+			опитування користувачі не бачать.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspОкремо
+			внизу є поле “Варіанти відповіді”(Рис.12.5).
+			У ньому Ви повинні ввести текстові
+			варіанти відповідей на Ваше опитування.
+			Також можна додати зображення замість
+			текстового варіанту (Рис.12.6). Варіантів
+			може бути декілька. Всі варіанти
+			відповідей можуть бути або текстовими,
+			або зображеннями. Щоб додати ще один
+			варіант, натисніть на посилання “Додати
+			ще: вибір” (Рис.12.7). Якщо Ви передумали
+			додавати ще один варіант, то натисніть
+			на посилання “Видалити” напроти поля
+			для варіанту вибору.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПісля заповнення
+			полів, не забудьте зберегти опитування</FONT></FONT></P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_72dbb077.png' %}" NAME="image30.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0><FONT ><FONT SIZE=4><BR>	</FONT></FONT><FONT ><FONT SIZE=3><I>Рис.12
+Опитування ще не створені <BR>1 - Поле для
+введення дати початку опитування<BR>2 -
+Поле для введення дати закінчення
+опитування<BR>3 - Елемент, який визначає
+активність опитування<BR>4 - Елемент, який
+визначає чи є опитування архівним<BR>5 -
+Поле для ведення текстових варіантів
+відповідей<BR>6 - Поле для додання зображень
+як варіанти відповідей<BR>7 - Посилання
+на додання ще одного варіанту відповіді</I></FONT></FONT></P>
+
+		<OL START=3>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Опитування
+			створені<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо деякі опитування вже
+			створені, то в розділі “Опитування”
+			Ви можете їх проглянути, можете
+			редагувати свої опитування, натиснувши
+			на кожне з них по черзі. Також опитування
+			можна видаляти. Щоб видалити непотрібне
+			опитування, виділіть його, натиснувши
+			на галочку біля опитування (Рис.13.2).
+			Щоб видалити всі опитування, поставте
+			 найпершу галочку (Рис.13.1). Потім у
+			випадному списку внизу виберіть пункт
+			“Видалити обрані Опитування” та
+			натисніть кнопку “Вперед”.  Залишилось
+			лише підтвердити видалення.</FONT></FONT></P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_feed2bfd.png' %}" NAME="image90.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-left: 1in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.13
+Список опитувань</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Елемент для виділення всіх опитувань</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Елемент для виділення одного конкретного
+опитування</I></FONT></FONT></P>
+
+	<LI id = "problems" style="list-style:none"><H1 CLASS="western" ALIGN=CENTER><A NAME="_pfmthelu613p"></A><FONT ><FONT SIZE=5><U><B>Проблеми
+        ОСББ</B></U></FONT></FONT></H1></LI>
+	<OL>
+		<LI id = "problems_items"><P STYLE="margin-bottom: 0in">  <FONT ><FONT SIZE=4 STYLE="font-size: 16pt"><I>Заявки</I></FONT></FONT></P>
+
+			<LI><P STYLE="margin-bottom: 0in">  <FONT ><FONT SIZE=4>Заявки
+			ще не створені<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЗаявки потрібні для
+			того, щоб користувачі могли поскаржитися
+			на деякі проблеми в ОСББ.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо заявки
+			ще не створені, Ви маєте можливість
+			створити свою заявку. Для цього
+			натискаєте на кнопку “Додати: Заявка”
+			(Рис.14.2) або на однойменне посилання
+			(Рис.14.1), та переходите на сторінку
+                “Додати: Заявка” (Рис.15). <BR></FONT></FONT></P>
+
+	</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_fe8bc274.png' %}" NAME="image18.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-left: 0.5in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.14
+Скріншот сторінки  </I></FONT></FONT>
+</P>
+<OL START=2>
+
+			<LI><P STYLE="margin-bottom: 0in">  <FONT ><FONT SIZE=4>Додання
+			заявки<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Для того, щоб додати заявку,
+			спочатку Вам потрібно перейти на
+			сторінку “Додання: Заявка (Рис.15).
+			Потім потрібно заповнити поля, які
+			помічені зірочками (*), це обов'язкові
+			поля, про них далі детальніше.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі
+			“Назва заявки” коротко введіть
+			проблему, про яку буде йтись у заявці.
+			<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВиберіть елемент із випадного списку
+			“Статус” (Рис.15. 1) (наприклад, очікує
+			рішення правління по ній, очікує
+			реакції, очікує загальних зборів ОСББ
+			тощо)<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspІнші поля є необов'язковими.<BR>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Докладний опис” детально
+			опишіть проблему.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Фотографія”
+			можете додати зображення до заявки,
+			для цього натисніть на кнопку “Виберіть
+			файл” та завантажте файл зі свого
+			пристрою. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо потрібно виставити
+			кінцевий строк по статусу, тоді задайте
+			дату та час у “Поріг” (Рис.15.2). Для
+			цього введіть дату кінцевого строку
+			 у форматі “РРРР-ММ-ДД” (наприклад,
+			2016-10-19), також можна натиснути на
+			посилання “Сьогодні”  або натиснути
+			на зображення календаря, щоб вибрати
+			потрібну дату.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Час” потрібно
+			ввести час кінцевого строку у форматі
+			 “Год:Хв:Сек” (наприклад, 17:35:41). Також
+			можете натиснути на посилання “Зараз”
+			або, натиснувши на годинник, вибрати
+			потрібний час.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЗа бажанням можете
+			додати резолюцію по заявці. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПісля
+			заповнення форми не забудьте зберегти
+			введену інформацію за допомогою кнопок
+			збереження.<BR></FONT></FONT><BR>
+			</P>
+
+</OL>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_e6640812.png' %}" NAME="image125.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0><FONT ><FONT SIZE=3><I>Рис.15
+Додання заявки</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1-
+Статус Заявки</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Кінцевий термін виконання</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>3
+- Історія статусів, де будуть записані
+всі статуси, які змінювались по якійсь
+заявці</I></FONT></FONT></P>
+
+		<OL START=3>
+			<LI><P STYLE="margin-bottom: 0in">  <FONT ><FONT SIZE=4>Заявки
+			створені</FONT></FONT></P>
+		</OL>
+
+<P STYLE="text-indent: 0.5in; margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо
+деякі заявки вже створені, то в підрозділі
+“Заявки” розділу “Проблеми” Ви можете
+їх проглянути, можете редагувати заявки,
+натиснувши на кожну з них по черзі, а
+можете створювати нові. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПри редагуванні
+заявок у блоці “Історія статусів”
+(Рис.15.3) можете проглянути історію змін
+поточної заявки, маєте можливість до
+існуючої заявки додати новий статус,
+кінцевий термін по цьому статусу та
+додати нову резолюцію по поточній
+заявці. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspТакож заявки можна видаляти.
+<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЩоб видалити непотрібну заявку,
+виділіть її, натиснувши на галочку біля
+неї (Рис.16.1). Щоб видалити всі заявки,
+поставте  найпершу галочку (Рис. 16.1), тим
+самим виділяться всі заявки. Потім у
+випадному списку внизу виберіть пункт
+“Видалити обрані заявки” та натисніть
+кнопку “Вперед”. Залишилось лише
+    підтвердити видалення.<BR><P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_1abb294.png' %}" NAME="image52.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.16
+Список заявок</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Елемент для виділення всіх новин</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Елемент для виділення одної конкретної
+новини</I></FONT></FONT></P>
+<LI id = "newsletters" style="list-style:none"><H1 CLASS="western" ALIGN=CENTER><A NAME="_7058166gyvao"></A><FONT ><FONT SIZE=5><U><B>Розсилання</B></U></FONT></FONT></H1></LI>
+<OL>
+<LI id = "newsletters_message"  ><H2></A><I>Повідомлення</I></H2></LI>
+</OL>
+<OL>
+
+
+			<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Повідомлення
+			ще не створені<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо повідомлення
+			ще не створені, Ви маєте можливість
+			створити повідомлення. Для цього
+			натискаєте на кнопку “Додати:
+			Повідомлення” (Рис.18.1) або на однойменний
+			надпис, та переходите на сторінку
+			“Додання: Повідомлення”(Рис.17). </FONT></FONT>
+			</P>
+			<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Додання
+			повідомлення<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДля того, щоб додати
+			повідомлення, спочатку Вам потрібно
+			перейти на сторінку “Додання:
+			Повідомлення” (Рис.17). Потім потрібно
+			заповнити поля, які помічені зірочками
+			(*), це обов'язкові поля, про них далі
+			детальніше.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Назва” введіть
+			назву повідомлення.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПоле “Коротка
+			назва” генерується відповідно до
+			поля “Назва”.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Розсилання”
+			з випадного списку виберіть потрібне
+			розсилання. Якщо ж такого в списку
+			немає, ви можете додати його, натиснувши
+			на “+” біля поля.  Створюйте нове
+			розсилання відповідно до пункту
+			7.3.2.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДалі до повідомлення можете
+			додавати скільки завгодно статей.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЩоб
+			додати статтю до повідомлення, заповніть
+			три обов'язкових поля: “Назва”,
+			“Сортувати за”(ціле число) та
+			“Текст”.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо ви заповнили дві
+			статті та бажаєте додати ще, то натисніть
+			на посилання “Додати ще: Стаття”
+			внизу сторінки.</FONT></FONT><FONT ><FONT SIZE=4><B><BR></B></FONT></FONT><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПісля
+			виконаних вищезгаданих дій натисніть
+			кнопку “Зберегти”, щоб перейти до
+			інших повідомлень.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПісля створення
+			повідомлення, потрібно його зберегти
+            за допомогою кнопок збереження.<BR></FONT></FONT></P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_1106b49a.png' %}" NAME="image48.png"  ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.17
+Додання повідомлення</I></FONT></FONT></P>
+
+		<OL START=3>
+			<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Повідомлення
+			створені<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо деякі повідомлення
+			вже створені, то в підрозділі
+			“Повідомлення” розділу “Розсилання”
+			ви можете їх проглянути, можете
+			редагувати свої повідомлення, натиснувши
+			на кожне з них по черзі, можете додавати
+			нові.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДля зручності пошуку повідомлення
+			Ви можете додати фільтр за розсиланням
+			(Рис.18.2).<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspТакож повідомлення можна
+			видаляти. Щоб видалити непотрібне
+			повідомлення, виділіть його, натиснувши
+			на галочку біля повідомлення (Рис.18.4).
+			Щоб видалити всі повідомлення, поставте
+			 найпершу галочку (Рис.18.3). Потім у
+			випадному списку внизу виберіть пункт
+			“Видалити обрані повідомлення” та
+			натисніть кнопку “Вперед”.  Залишилось
+                лише підтвердити видалення.<BR></FONT></FONT></P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_d888997b.png' %}" NAME="image99.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.18
+ Список повідомлень</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Кнопка додання повідомлення</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Фільтр пошуку повідомлення</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>3
+- Елемент виділення всіх повідомлень</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>4
+- Елемент видалення конкретного
+повідомлення</I></FONT></FONT></P>
+<P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+</P>
+
+	<OL START=2>
+		<LI id = "newsletters_subscr"><H2 CLASS="western"><A NAME="_sj25lzhqopqs"></A><FONT ><I>Підписки</I></FONT></H2>
+        </OL><OL>
+			<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Підписки
+			ще не створені<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Якщо підписки ще не
+			створені, ви маєте можливість імпортувати
+			підписки або створити свою підписку.
+			Для того, щоб створити,  натискаєте на
+			 “Додати: Підписка” (Рис.20.6), та
+			переходите на сторінку “Додання:
+			Підписка”. </FONT></FONT>
+			</P>
+			<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Додання
+			підписки<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДля того, щоб додати
+			підписку, спочатку Вам потрібно перейти
+			на сторінку “Додання: Підписка”
+			(Рис.19). Потім потрібно заповнити поля.
+			У першому полі “Користувач” (Рис.
+			19.1) можете вибрати користувача, якому
+			додаєте підписку. Якщо ви не вибираєте
+			користувача, то тоді потрібно заповнити
+			поля “Ім'я” (Рис. 19.2) та “Електронна
+			адреса”(Рис. 19.3). У полі “Розсилання”
+			з випадного списку виберіть потрібне
+			розсилання. Якщо ж такого в списку не
+			виявилось, то створіть нове розсилання.
+			Створити нове розсилання можна
+			відповідно до пункту 5.3.2.<BR>Та нарешті
+			виберіть статус підписки: підписаний
+			чи не підписаний користувач. <BR>Після
+			виконаних вищезгаданих дій збережіть
+			повідомлення за допомогою кнопок
+            збереження.<BR></FONT></FONT></P>
+		</OL>
+
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_f9d65992.png' %}" NAME="image16.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.19
+ Додання підписки<BR>1 - Поле вибору
+користувача зі списку</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Поле введення імені </I></FONT></FONT>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>3
+- Поле для введення електронної пошти </I></FONT></FONT>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>4
+- Поле для вибору розсилання зі списку</I></FONT></FONT></P>
+
+		<OL START=3>
+			<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Підписки
+			створені<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо деякі підписки вже
+			створені, то в підрозділі “Підписки”
+			розділу “Розсилання” ви можете їх
+			проглянути, можете створювати нові.
+			Якщо не можете знайти потрібну підписку,
+			то доцільно буде використати пошук.
+			Пошук можна здійснити за трьома
+			критеріями:ключове слово, статус
+			(підписаний чи відписаний користувач)
+			та дата. Також ви можете редагувати
+			свої підписки, натиснувши на кожну з
+			них по черзі. Видалити підписку можна
+			так само, як і інші елементи зі списків
+			в адмініструванні (наприклад, новини,
+			заявки, ідеї тощо).</FONT></FONT></P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_b9c3e3aa.png' %}" NAME="image123.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.20
+ Список підписок<BR>1 - Поле для ведення
+ключового слова пошуку</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Фільтр підписки по розсиланням</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>3,4
+- Фільтр пошуку підписки по статусу
+користувача</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>5
+- Фільтр пошуку підписки по даті підписки</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>6
+- Кнопка додання підписки</I></FONT></FONT></P>
+
+	<OL START=3>
+		<LI id = "newsletters_letters"><H2 CLASS="western"><A NAME="_2xskb7evx2c5"></A><FONT ><I>Розсилання</I></FONT></H2>
+        </OL><OL>
+			<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Розсилання
+			не створені<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо розсилання ще не
+			створені, ви маєте можливість створити
+			розсилання. Для цього натискаєте на
+			кнопку “Додати: розсилання” (Рис.22.1)
+			або на однойменне посилання , та
+			переходите на сторінку “Додання:
+			розсилання” (Рис.22). </FONT></FONT>
+			</P>
+			<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Додання
+			розсилання<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЩоб додати розсилання,
+			заповніть всі обов'язкові поля, які
+			помічені зірочками (*), це обов'язкові
+			поля. У полі “Сайт” виберіть потрібний
+			сайт. У полі “Назва” введіть назву
+			розсилання. Поле “Коротка назва”
+			генерується відповідно до введеної
+			назви розсилання, але ви можете її
+			змінити. У полі “Електронна адреса”
+			введіть адресу електронної пошти
+			відправника. У полі “Відправник”
+			введіть ім'я відправника. За бажанням
+			можете прибрати галочку у полі “Видимий”
+			та “Надіслати html”.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПісля виконаних
+			вищезгаданих дійне забудьте зберегти
+            створене розсилання.<BR></FONT></FONT></P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_a6bdf469.png' %}" NAME="image23.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.21
+ Додання розсилання</I></FONT></FONT></P>
+
+		<OL START=3>
+			<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Розсилання
+			створені<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо деякі розсилання вже
+			створені, у розділі “Розсилання” ви
+			можете їх проглянути, можете редагувати
+			свої розсилання, натиснувши на кожне
+			з них по черзі, можете створювати
+			нові.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВидалити розсилання можна так
+			само, як і інші створені елементи зі
+			списків в адмініструванні (наприклад,
+			новини, заявки, ідеї тощо).</FONT></FONT></P>
+		</OL>
+
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_c8d922ac.png' %}" NAME="image89.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.22
+ Список розсилань</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+-Кнопка додання розсилання<BR></I></FONT></FONT><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+
+	<OL START=4>
+		<LI id = "newsletters_lists"><H2 CLASS="western"><A NAME="_9k96k0rj5knb"></A><FONT ><I>Списки
+		розсилання</I></FONT></H2>
+		</OL><OL>
+			<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Списки
+			розсилань не створені<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо списки
+			розсилань ще не створені, ви маєте
+			можливість створити список розсилань.
+			Для цього натискаєте на кнопку “Додати:
+			список розсилань” (Рис.24.4) або на
+			однойменне посилання , та переходите
+			на сторінку “Додання: список розсилань”
+			(Рис.23).</FONT></FONT></P>
+			<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Додання
+			списку розсилань<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДля того, щоб додати
+			список розсилань, спочатку Вам потрібно
+			перейти на сторінку “Додання: Список
+			розсилань” (Рис.23). Потім потрібно
+			заповнити поля, які помічені зірочками
+			(*), це обов'язкові поля, про них далі
+			детальніше.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Повідомлення”
+			у випадному списку виберіть потрібне
+			повідомлення. Якщо ж такого немає,
+			можете додати нове повідомлення,
+			натиснувши на “+”. Створюйте повідомлення
+			відповідно до пункту 7.1.2.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПоле
+			“Одержувачі” не є обов'язковим. Але
+			ви можете додати будь-якого одержувача.
+			<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо ви бажаєте обрати для свого
+			списку розсилань всіх користувачів,
+			то натисніть на посилання “Обрати
+			всі”.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо бажаєте прибрати всіх
+			одержувачів, то натисніть на посилання
+			“Видалити все”.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Дата
+			публікації” введіть дату та час. У
+			полі “Дата” потрібно ввести дату
+			публікації у форматі “РРРР-ММ-ДД”
+			(наприклад, 2016-10-19).<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Час”
+			потрібно ввести час публікації у
+			форматі  “Год:Хв:Сек” (наприклад,
+			17:35:41). Останнє поле “Опубліковано”
+			визначає чи опубліковано створений
+			список розсилань. Після створення
+			списку розсилань збережіть введену
+			інформацію за допомогою кнопок
+			збереження.
+            </FONT></FONT></P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_d60e6790.png' %}" NAME="image06.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.23
+Додання  Списки  розсилань</I></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+
+		<OL START=3>
+			<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Списки
+			розсилань створені<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо списки
+			розсилань вже створені, в підрозділі
+			“Списки розсилань ” розділу “Розсилання”
+			ви можете їх проглянути, можете
+			редагувати свої списки, натиснувши
+			на кожний з них по черзі, можете
+			створювати нові.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВидалити списки
+			розсилань можна так само, як і інші
+			створені елементи зі списків в
+			адмініструванні (наприклад, новини,
+			заявки, ідеї тощо).</FONT></FONT></P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_45f2b0fe.png' %}" NAME="image73.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.24
+ Списки розсилань</I></FONT></FONT></P>
+
+	<LI id = "cond_management" style="list-style:none"><H1 CLASS="western" ALIGN=CENTER><A NAME="_bppwqfiiucw"></A><FONT ><U><B>Управління
+        ОСББ</B></U></FONT></H1></LI>
+        <OL>
+            <LI id =  "cond_houses"><H2 CLASS="western"><A NAME="_wztmnrior8sg"></A> <FONT ><I>Будинки</I></FONT></H2></OL>
+		<OL>
+			<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Додання
+			будинку<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДля того, щоб додати будинок,
+			спочатку Вам потрібно перейти на
+			сторінку “Додання: Будинок” (Рис.25),
+			натиснувши на кнопку “Додати будинок”
+			(Рис.26.1). Потім потрібно заповнити
+			обов'язкові поля: Адреса, Площа будинку,
+			 Житлова площа, Кількість виходів,
+			Кількість житлових приміщень, Кількість
+			ліфтів, Кількість під'їздів, Кількість
+			поверхів. <BR>У полі “Коментар” за
+			бажанням можете описати будинок.</FONT></FONT></P>
+
+
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПід'їзди
+(Рис.25.1) та поверхи будинку генеруються
+автоматично, тому додавати самостійно
+їх не потрібно. Після збереження будинку,
+можна проглянути всі створені під'їзди
+та поверхи будинку. При бажанні, можна
+там щось змінити.</FONT></FONT></P>
+                </OL>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_2e9a1f01.png' %}" NAME="image36.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.25
+ Додання будинку</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Тут будуть генеруватись під'їзди
+будинку</I></FONT></FONT></P>
+
+		<OL START=2>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Список
+			будинків<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо будинки вже створені,
+			в підрозділі “Будинки” розділу
+			“Управління ОСББ” ви можете їх
+			проглянути, можете редагувати будинки,
+			натиснувши на кожен з них по черзі,
+			можете створити нові. Видалити будинки
+			можна так само, як і інші створені
+			елементи зі списків в адмініструванні
+			(наприклад, новини, заявки, ідеї тощо).</FONT></FONT></P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_2a68794a.png' %}" NAME="image25.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.26
+ Список будинків</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Кнопка додання будинку</I></FONT></FONT></P>
+
+	<OL START=2>
+		<LI id = "cond_user"><H2 CLASS="western"><A NAME="_robrbmhkcs2d"></A> <FONT ><I>Користувач</I></FONT></H2>
+		</OL><OL>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Додання
+			користувача<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	У цьому розділі Ви маєте
+			можливість створити користувача у
+			Вашому ОСББ. Для цього перейдіть на
+			сторінку “Додання: Користувач”,
+			натиснувши на кнопку “Додати:
+			Користувач” (Рис.28.1)</FONT></FONT></P>
+
+
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЩоб
+створити користувача, заповніть такі
+полі: Прізвище, Ім'я, По батькові, Номер
+телефону, Електронна адреса. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЕлектронну
+адресу, яку введете новому користувачу
+у полі “Електронна адреса”, він буде
+використовувати, щоб увійти в систему.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspА
+паролем створеного користувача буде
+“111111”.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspКоли користувач використає
+цей пароль, йому потрібно буде одразу
+його змінити.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspТакож Ви можете одразу
+додати користувачеві його житлову
+(Рис.27.1) та/або не житлову площу
+    (Рис.27.2).</FONT></FONT></OL><BR><P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_9ebc6b18.png' %}" NAME="image127.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.27
+Додання користувача</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Додання житлової площа користувача</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Додання не житлової площі користувача</I></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЩоб
+додати житлову площу створеному
+користувачу, натисніть на посилання
+“Додати ще Житлова площа” (Рис.27.1).
+Відкриється форма створення житлової
+площі (Рис.28), в ній потрібно заповнити
+такі поля: Поверх, Тип житлового
+приміщення, Номер або назва житлового
+приміщення, Площа приміщення, Житлова
+площа приміщення, Площа обігріву,
+Кількість кімнат, Кількість жителів,
+Кількість домашніх тварин. За бажанням
+можна заповнити поле “Коментар”.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+полі “Поверх” виберіть потрібний
+поверх зі списку, не забуваючи вибрати
+цей поверх у потрібному будинку та
+під'їзді.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+полі “Тип житлового приміщення”
+виберіть один з цих типів: Квартира,
+Кімната, Студіо, Готельний номер.  </FONT></FONT>
+</P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_a0775253.png' %}" NAME="image74.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.28
+Додання житлової площі</I></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЩоб
+додати не житлову площу створеному
+користувачу, натисніть на посилання
+“Додати ще Нежитлова площа” (Рис.27.1).
+Відкриється форма створення не житлової
+площі (Рис.29), в ній потрібно заповнити
+такі поля: </FONT></FONT>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПоверх,
+Тип не житлового приміщення, Номер або
+назва не житлового приміщення, Площа
+не житлового приміщення, Коментар (за
+бажанням).<BR>У полі “Поверх” виберіть
+потрібний поверх зі списку, не забуваючи
+вибрати цей поверх у потрібному будинку
+та під'їзді.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+полі “Тип не житлового приміщення”
+виберіть один з цих типів: Офыс, Бойлерна,
+Теплопункт, Магазин, Кладовка, Кімната
+конс’ержів. </FONT></FONT>
+</P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_611d65b8.png' %}" NAME="image104.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.29
+Додання житлової площі</I></FONT></FONT></P>
+
+		<OL START=2>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Список
+			користувачів<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ підрозділі “Користувач”
+			розділу “Управлення ОСББ” знаходиться
+			список користувачів вибраного ОСББ.
+			Тут Ви можете редагувати профілі
+			користувачів, додавати їм нові та
+			редагувати існуючі житлові/ не житлові
+			площі, створювати нових користувачів.
+			Видалити створеного користувача Ви
+			не можете, тільки зробити його не
+			активним у профілі цього користувача
+			у розділі “Користувачі та групи”.</FONT></FONT></P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_e5679f48.png' %}" NAME="image101.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.28
+Список користувачів</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Кнопка додання користувача</I></FONT></FONT></P>
+<OL START=2>
+	<OL START=3>
+		<LI id = 'cond_modules'><H2 CLASS="western"><A NAME="_yj3eqfe3h48z"></A> <FONT ><I>Модулі
+		ОСББ</I></FONT></H2>
+	</OL>
+</OL>
+<P STYLE="text-indent: 0.5in; margin-bottom: 0in"><FONT ><FONT SIZE=4>В
+підрозділі “Модулі  ” розділу “Управління
+модулями ОСББ” ви можете редагувати
+розташування модулів своїх ОСББ.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо
+ви вирішили редагувати розташування
+модулів ОСББ у меню основного порталу,
+то спочатку потрібно перейти на сторінку
+редагування, натиснувши на  потрібне
+ОСББ. Потім потрібно визначитись
+розташування яких модулі ви бажаєте
+змінити.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspСписок модулів наведений
+зліва (Рис.29.1). <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо ви бажаєте зовсім
+виключити модуль з меню, то тоді натисніть
+на елемент “Включити” (Рис.29.2) навпроти
+цього модулю.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЦифра у полі “Порядок
+модуля у меню” (Рис.29.3) означає на якому
+місці модуль буде розташовуватись у
+меню основного порталу. Тобто якщо
+напроти модулю “Новини” стоїть цифра
+1 у полі “Порядок модуля у меню”, це
+значить, щоб модуль “Новини” буде
+першим модулем у меню (після початкової
+сторінки).</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Після
+зроблених змін, не забудьте зберегти
+порядок модулів за допомогою кнопок
+збереження.</FONT></FONT></P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_f66654e8.png' %}" NAME="image96.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.29
+Редагування розташування модулів ОСББ
+у меню</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Модулі ОСББ</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Елемент, який визначає чи включається
+модуль у меню</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>3
+- Порядок модулів у меню (модуль напроти
+якого стоїть найменша цифра, буде першим
+у меню)</I></FONT></FONT></P>
+
+	<OL START=4>
+		<LI id = "cond_common_place"><H2 CLASS="western"><A NAME="_edq52v2tcimn"></A> <FONT ><I>Місця
+		громадського користування</I></FONT></H2></OL>
+		<OL>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Місця
+			громадського користування не
+			створені<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо місця громадського
+			користування ще не створені, Ви маєте
+			можливість створити місце громадського
+			користування. Для цього натискаєте
+			на кнопку “Додати: Місця громадського
+			користування” (Рис.31.1) або на однойменне
+			посилання та переходите на сторінку
+			“Додання: Місця громадського
+			користування” (Рис.30). </FONT></FONT>
+			</P>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Додання
+			місця громадського користування<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Для
+			того, щоб додати місце громадського
+			користування, спочатку Вам потрібно
+			перейти на сторінку “Додання: Місця
+			громадського користування” (Рис.30).
+			Потім потрібно заповнити поля, які
+			помічені зірочками (*), це обов'язкові
+			поля, про них далі детальніше. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі
+			“Тип місця громадського користування”
+			виберіть зі списку один із типів:
+			Звичайний, Сходова клітка, Ганок,
+			Ліфтовий хол, Загальний коридор,
+			Прибудинкова територія.</FONT></FONT></P>
+
+
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+полі “Площа місця громадського
+користування” введіть площу у квадратних
+метрах.<BR>За бажанням, заповніть поле
+“Коментар”.</FONT></FONT><FONT ><FONT SIZE=4><B><BR></B></FONT></FONT><FONT ><FONT SIZE=4>Не
+забудьте зберегти створене місце
+    громадського користування.</FONT></FONT></OL>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_1b139104.png' %}" NAME="image69.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.30
+Додання місця громадського користування</I></FONT></FONT></P>
+
+		<OL START=3>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Місця
+			громадського користування створені<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Якщо
+			місця громадського користування вже
+			створені, в підрозділі “Місця
+			громадського користування ” розділу
+			“Управління ОСББ” ви можете їх
+			проглянути, можете редагувати,
+			натиснувши на кожне з них по черзі,
+			можете створити нові. Видалити місця
+			громадського користування можна так
+			само, як і інші створені елементи зі
+			списків в адмініструванні (наприклад,
+			новини, заявки, ідеї тощо).</FONT></FONT></P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_febad55a.png' %}" NAME="image78.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.31
+Список місць громадського користування</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><BR>
+</P>
+<OL START=2>
+	<OL START=5>
+		<LI id = "cond_yours"><H2 CLASS="western"><A NAME="_69ijeqiopr7g"></A><FONT ><I>ОСББ</I></FONT></H2>
+	</OL>
+</OL>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	У
+даному розділі Ви можете переглянути
+та редагувати профіль Вашого ОСББ. Щоб
+потрапити до профілю ОСББ, натисніть
+на нього у списку (Рис.32).</FONT></FONT></P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600"><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_fe04728c.png' %}" NAME="image110.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.32
+Список ОСББ, у якому лише вибране ОСББ</I></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВи
+потрапите до профілю ОСББ (Рис.33). Ця
+форма моє такі поля: Назва ОСББ, Системне
+ім'я ОСББ, Статут ОСББ, Адреса реєстрації,
+Коментар, Кількість необхідних голосів,
+Кількість днів розгляду проблеми,
+Кількість днів голосування, Шаблон
+номеру ідеї, Голова ОСББ. Усі ці поля є
+обов'язковими, крім поля “Коментар”,
+але за бажанням можете його заповнити.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+полі “Статут ОСББ” вже прикріплений
+файл, який ви додавали при створенні
+цього ОСББ, але Ви можете його змінити.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВ
+полі “Кількість днів голосування”
+(Рис.33.3) вказана кількість днів, яка
+потрібна на розгляд ідеї. Тобто кожна
+ідея розглядається членами ОСББ на
+протязі вказаної кількості днів та,
+якщо за цей період ідея набрала потрібну
+кількість голосів, то на загальних
+зборах потрібно її розглянути та прийняти
+деяке рішення по даній ідеї.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЦю кількість
+днів Ви за бажанням можете змінити.
+<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspМінімальну кількість голосів, для
+того щоб ідея перейшла до розгляду,
+можете змінити у полі “Кількість
+необхідних голосів” (Рис.33.1).</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЗа
+замовчуванням за 30 днів ідея повинна
+набрати як мінімум 10 голосів.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspТа
+у полі “Кількість днів розгляду проблеми”
+(Рис.33.2) вказане ціле число, яке означає
+кількість днів, яка потрібна на розгляд
+кожної проблеми. За замовчуванням 7 днів
+надається на розгляд кожної проблеми.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПоле
+“Шаблон номеру ідеї”  використовується
+для формування внутрішнього номеру
+ідей згідно шаблону найменування вхідних
+документів Вашого ОСББ.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+полі “Голова ОСББ” виберіть користувача,
+який виконує обов'язки голови Вашого
+ОСББ, та, якщо такого користувача немає
+у списку, це значить, що він ще не
+приєднався до ОСББ в системі. Ви можете
+створити користувача, натиснувши на
+“+”.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПісля здійснення змін у профілі,
+не забудьте зберегти їх.
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_1ea58ade.png' %}" NAME="image132.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in">  <FONT ><FONT SIZE=3><I>Рис.33
+Профіль ОСББ</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Поле “Кількість необхідних голосів”</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Поле “Кількість днів розгляду проблеми”</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>3
+- Поле “Кількість днів голосування”</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>4
+- Поле “Шаблон номеру ідеї”</I></FONT></FONT></P>
+
+	<OL START=6>
+		<LI id = "cond_infr"><H2 CLASS="western"><A NAME="_xr8crbjazc1m"></A><FONT ><I>Об'єкти
+		додаткової інфраструктури</I></FONT>
+		</H2></OL>
+		<OL>
+			<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Об'єкти
+			додаткової інфраструктури не
+			створені<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо об'єкти додаткової
+			інфраструктури ще не створені, ви
+			маєте можливість створити об'єкт
+			додаткової інфраструктури. Для цього
+			натискаєте на кнопку “Додати:Об'єкти
+			додаткової інфраструктури” (Рис.35.1)
+			або на однойменне посилання та
+			переходите на сторінку “Додання:
+			Об'єкти додаткової інфраструктури”.
+			</FONT></FONT><FONT ><FONT SIZE=4><I>
+			</I></FONT></FONT>
+			</P>
+			<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Додання
+			об'єкта додаткової інфраструктури<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДля
+			того, щоб додати об'єкт додаткової
+			інфраструктури, спочатку Вам потрібно
+			перейти на сторінку “Додання: Об'єкти
+			додаткової інфраструктури” (Рис.34).
+			Потім потрібно заповнити поля, які
+			помічені зірочками (*), це обов'язкові
+			поля, про них далі детальніше. </FONT></FONT><FONT ><FONT SIZE=4><B><BR></B></FONT></FONT><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+			випадному списку виберіть тип об'єкту
+			додаткової інфраструктури (звичайний,
+			паркан, пішохідні доріжки, гараж,
+			дитячий майданчик тощо).<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДалі вкажіть
+			площу цього об'єкту інфраструктури.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspТа
+			за бажанням можете додати деякий опис
+			об'єкту. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПісля виконаних вищезгаданих
+			дій натисніть кнопку “Зберегти”,
+			або<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspкнопку “Зберегти і продовжити
+			редагування”, або кнопку “Зберегти
+			і додати інше”, щоб створити об'єкт. </FONT></FONT>
+			</P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600"><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_ed8fc4f.png' %}" NAME="image112.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.34
+Додання об'єкту додаткової інфраструктури</I></FONT></FONT></P>
+
+		<OL START=3>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Об'єкти
+			додаткової інфраструктури створені<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо
+			об'єкти додаткової інфраструктури
+			вже створені, в підрозділі “Об'єкти
+			додаткової інфраструктури” розділу
+			“Управління ОСББ” ви можете їх
+			проглянути, можете редагувати їх,
+			натиснувши на кожен з них по черзі,
+			можете створювати нові.<BR> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВидалити
+			об'єкти додаткової інфраструктури
+			можна так само, як і інші створені
+			елементи зі списків в адмініструванні
+			(наприклад, новини, заявки, ідеї тощо).</FONT></FONT></P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_86b00bcf.png' %}" NAME="image35.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.35
+Список об'єктів додаткової інфраструктури</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Кнопка додання об'єкту додаткової
+інфраструктури</I></FONT></FONT></P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<OL START=2>
+	<OL START=7>
+		<LI><H2 CLASS="western"><A NAME="_2183r2ipixwl"></A> <FONT ><I>Сторінки</I></FONT></H2>
+	</OL>
+</OL>
+<P STYLE="text-indent: 0.5in; margin-bottom: 0in"><FONT ><FONT SIZE=4>У
+підрозділі “Сторінки” розділу
+“Управління контентом” вже створені
+деякі додаткові сторінки  (Рис.36). А саме
+“Наші контакти”, “Наші майстри”,
+“Боржники” та “Тарифи”. Щоб наповнити
+або редагувати ці сторінки, натисніть
+на потрібну сторінку у списку. Ви
+перейдете до сторінки редагування
+(Рис.37), тут Ви можете форматувати текст
+за бажанням, а саме додавати різні стилі,
+створювати нумерований, маркований
+списки, також прикріпляти зображення,
+створювати таблицю, вставляти смайлики
+та інше. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПісля заповнення змісту
+сторінки не забудьте зберегти введену
+інформацію.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspКористувачі
+будуть слідкувати за інформацією на
+цих сторінках на основному порталі у
+розділі “Моє ОСББ”.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВидалити
+сторінки у цьому розділі Ви не можете.</FONT></FONT></P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_2f2a4d1d.png' %}" NAME="image37.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.36
+Список додаткових сторінок</I></FONT></FONT></P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_e83cc4fa.png' %}" NAME="image115.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.37
+Редагування сторінки “Наші контакти”</I></FONT></FONT></P>
+<OL START=2>
+	<LI id = "forum" style="list-style: none;"><H1 CLASS="western" ALIGN=CENTER><A NAME="_kpl8o6n8i6ly"></A><FONT ><FONT SIZE=5><U><B>Форум</B></U></FONT></FONT></H1>
+	<OL>
+		<LI id = "forum_forums" ><H2 CLASS="western"><A NAME="_an94p6krqq54"></A><FONT ><I>Форуми</I></FONT></H2>
+		<OL>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Форуми
+			не створені</FONT></FONT></P>
+		</OL>
+	</OL>
+</OL>
+<P STYLE="text-indent: 0.5in; margin-bottom: 0in"><FONT ><FONT SIZE=4>Якщо
+форуми ще не створені, ви маєте можливість
+створити новий форум. Для цього натискаєте
+на кнопку “Додати:Форум” (Рис.39.1) або
+на однойменне посилання та переходите
+на сторінку “Додати: Форум” (Рис.38).</FONT></FONT></P>
+<OL START=2>
+	<OL>
+		<OL START=2>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Додання
+			форуму<BR>	</FONT></FONT></P></OL>
+	</OL>
+</OL>
+<P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДля того, щоб додати форум,
+			спочатку Вам потрібно перейти на
+			сторінку “Додання: Форум” (Рис.38).
+			Потім потрібно заповнити поля, які
+			помічені зірочками (*), це обов'язкові
+			поля, про них далі детальніше. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+			першому випадному списку “Тип форуму”
+			виберіть потрібний тип форуму (форум
+			за замовченням, форум, що об’єднує
+			інші форуми).<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Назва” введіть
+			назву нового форуму.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspІнші поля  є
+			необов'язковими.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ випадному списку
+			“Батьківський форум” виберіть старший
+			форум для свого форуму, тобто новий
+			форму буде підфорумом батьківського.
+			Якщо у випадному списку немає підходящого
+			Вам форуму, то ви можете створити новий
+			батьківський форум відповідно до
+			пункту 9.1.2 (Додання форуму), натиснувши
+			на “+”.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Опис” введіть
+			детальний опис нового форуму.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі
+			“Зображення форуму” можете додати
+			будь-яке зображення для форуму,
+			натиснувши на кнопку “Виберіть файл”.
+			Також внизу сторінки є додаткові
+			параметри: “Налаштування форуму” та
+			“Налаштування посилання форуму”,
+			щоб відкрити їх натисніть на посилання
+			“Показати”. У першому налаштуванні
+			можете настроїти чи відображати цей
+			форум в легенді батьківського форуму.
+			<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ другому налаштуванні маєте
+			можливість відслідкувати кількість
+			перенаправлень.<BR> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПісля виконаних
+			вищезгаданих дій потрібно натиснути
+			на одну з кнопок збереження, щоб
+			завершити створення форуму.</FONT></FONT></P>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_4e0f7198.png' %}" NAME="image13.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.38
+Додання форуму</I></FONT></FONT></P>
+
+		<OL START=3>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Форуми
+			створені<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ підрозділі “Форуми”
+			розділу “Форуми” Ви можете проглянути
+			створені форуми, можете редагувати
+			їх, натиснувши на кожен з них по черзі,
+			а можете створювати нові.  Якщо не
+			можете знайти потрібний форум, то
+			доцільно буде використати пошук
+			(Рис.39.2), який можна здійснити за
+			ключовим словом Просто введіть ключове
+			слово, яке відповідає форуму, який ви
+			шукаєте та натисніть на кнопку “Пошук”.
+			Одразу з'являться всі форуми, які
+			відповідають введеному ключовому
+			слову. Якщо потрібний форум не з'явились,
+			це значить що може бути помилка у
+			ключовому слові або такого форуму
+			немає.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВидалити форуми можна так
+			само, як і інші створені елементи зі
+			списків в адмініструванні (наприклад,
+			новини, заявки, ідеї тощо).</FONT></FONT></P>
+		</OL>
+
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_ac6ed9a2.png' %}" NAME="image41.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.39
+Список форумів</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Кнопка додання форуму</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Пошук форуму</I></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<OL START=2>
+	<OL START=2>
+		<LI id = "forum_attachment"> <H2  ALIGN=left><A NAME="_z9j76va6p586"></A><FONT ><I>Бесіда</I></FONT>:</H2>
+		<OL>
+			<LI id = "forum_conversation_attachment" ><H3 CLASS="western"><A NAME="_z02ne36xmly7"></A><FONT ><I>Вкладення</I></FONT></H3>
+			<OL>
+				<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Вкладення
+				не створені</FONT></FONT></P>
+			</OL>
+		</OL>
+	</OL>
+</OL>
+<P STYLE="text-indent: 0.5in; margin-bottom: 0in"><FONT ><FONT SIZE=4>Вкладення
+ - це прикріплені до публікацій форуму
+зображення. Якщо ви не додали при
+створенні публікації зображення, то
+тут можна його додати.<BR>Якщо вкладення
+ще не створені, ви маєте можливість
+створити нове вкладення до будь-якої
+публікації форуму. Для цього натискаєте
+на кнопку “Додати:Вкладення бесіди”
+(Рис.41.1) або на однойменне посилання та
+переходите на сторінку “Додання:
+Вкладення бесіди” (Рис.40). </FONT></FONT>
+</P>
+<OL START=2>
+	<OL>
+		<OL>
+			<OL START=2>
+				<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Додання
+				вкладення бесіди<BR>
+                </FONT></FONT></P></OL>
+		</OL>
+	</OL>
+</OL>
+                   <P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДля того, щоб
+				додати вкладення, спочатку Вам потрібно
+				перейти на сторінку “Додання:Вкладення
+				бесіди” (Рис.40). Потім потрібно
+				заповнити поля, які помічені зірочками
+				(*), це обов'язкові поля, про них далі
+				детальніше.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Публікація”
+				виберіть зі списку публікацію форуму,
+				до якої бажаєте додати вкладення
+				(відповідно до пункту 9.2.3.2 можете
+				створити публікацію).<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Файл”
+				виберіть файл зі свого пристрою, який
+				і буде цим вкладенням.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПоле “Коментар”
+				можна заповнювати за бажанням.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПісля
+				виконаних вищезгаданих дій потрібно
+				зберегти створене вкладення, натиснувши
+				на одну з кнопок збереження.</FONT></FONT></P>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_4cb60277.png' %}" NAME="image71.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.40
+Додання вкладення</I></FONT></FONT></P>
+<OL START=2>
+	<OL>
+		<OL>
+			<OL START=3>
+				<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Вкладення
+				бесіди створені<BR>
+                    </FONT></FONT>
+				</P>
+            </OL>
+		</OL>
+	</OL>
+</OL>
+            <P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо вкладення
+				бесіди вже створені, в підрозділі
+				“Бесіда:Вкладення” розділу “Форум”
+				ви можете їх проглянути, можете
+				редагувати вкладення, натиснувши на
+				кожне з них по черзі, можете створювати
+				нові. </FONT></FONT>
+				</P>
+
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВи
+можете переглянути файли вкладень,
+натиснувши на самі файли (Рис.41.2), не
+заходячи до сторінки редагування
+вкладення .  <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВидалити вкладення можна
+так само, як і інші створені елементи
+зі списків в адмініструванні (наприклад,
+новини, заявки, ідеї тощо).</FONT></FONT></P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_35aea431.png' %}" NAME="image108.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.41
+Список вкладень</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Кнопка додання вкладення</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Прикріплені файли</I></FONT></FONT></P>
+<OL START=2>
+	<OL>
+		<OL START=2>
+			<LI id = "forum_conversation_votes"><H3 CLASS="western"><A NAME="_x5eie5e63okq"></A><FONT ><I>Голоси
+			опитування</I></FONT></H3>
+		</OL>
+	</OL>
+</OL>
+<P STYLE="text-indent: 0.5in; margin-bottom: 0in"><FONT ><FONT SIZE=4>У
+підрозділі “Голоси опитування” розділу
+“Форум” ви можете переглядати голоси
+користувачів, які голосували у опитуваннях
+форуму (Приклад опитування на форумі
+на Рис.).  </FONT></FONT>
+</P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_c0e9d53f.png' %}" NAME="image88.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.42
+Приклад опитування на форумі</I></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо
+користувачі вже голосували у опитуваннях
+на форумах, в підрозділі “Бесіда: Голоси
+опитування” розділу “Форум” ви можете
+їх проглянути. У таблиці зі списком
+голосів спочатку пишеться назва
+опитування (Рис.43.1), потім через тире
+(-) варіант відповіді (Рис.43.2) та у
+сусідньому полі користувач, якому
+присвоєний голос. Видалити голоси
+опитувань можна так само, як і інші
+створені елементи зі списків в
+адмініструванні (наприклад, новини,
+заявки, ідеї тощо).</FONT></FONT></P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_119db2b8.png' %}" NAME="image94.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.43
+Список голосів</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Назва опитування</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Вибраний користувачем варіант</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>3
+- Користувач, який вибрав цей варіант </I></FONT></FONT>
+</P>
+<OL START=2>
+	<OL>
+		<OL START=3>
+			<LI id = "forum_conversation_post" ><H3 CLASS="western"><A NAME="_7uqp24kpui5t"></A><FONT ><I>Публікація</I></FONT></H3>
+
+		</OL>
+	</OL>
+</OL>
+				<OL><LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Публікації
+				не створені</FONT></FONT>
+				</P></OL>
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо публікації ще не
+				створені, ви маєте можливість створити
+				нову публікацію бесіди. Для цього
+				натискаєте на кнопку “Додати:Публікації
+				бесіди” (Рис.45) або на однойменне
+				посилання та переходите на сторінку
+				“Додання: Публікації бесіди” (Рис.44).
+				</FONT></FONT>
+				</P>
+				<OL START=2><LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Додання
+				публікації бесіди</FONT></FONT>
+				</P></OL>
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПублікації
+				додаються до існуючих тем на форумах.
+				<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДля того, щоб додати публікацію
+				бесіди, спочатку Вам потрібно перейти
+				на сторінку “Додання: Публікації
+				бесіди” (Рис.44). Потім потрібно
+				заповнити поля, які помічені зірочками
+				(*), це обов'язкові поля, про них далі
+				детальніше. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Тема” виберіть
+				тему з випадного списку, якій Ви би
+				хотіли додати публікацію. У полі
+				“Предмет обговорення” введіть назву
+				публікації або коротко про що в ній
+				йдеться .<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Контент” введіть
+				зміст публікації, тут ви можете
+				редагувати текст , змінюючи його
+				стилі, ставлячи заголовки, марковані
+				списки та інше.<BR> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspІнші поля є
+				необов'язковими до заповнення, про
+				них далі.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо ви бажаєте, щоб Ваша
+				публікація була опублікована відразу
+				після її збереження, то потрібно щоб
+				була галочка у чекбоксі “Затверджено.”<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+				розділі “Вкладення” (Рис. 44) можете
+				додати файл, який буде вкладенням
+				публікації.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПісля виконаних
+				вищезгаданих дій потрібно зберегти
+				створену публікацію. </FONT></FONT>
+				</P>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_bff905a3.png' %}" NAME="image55.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.44
+Додання публікації</I></FONT></FONT></P>
+
+			<OL START=3>
+				<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Публікації
+				бесіди створені<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Якщо публікації
+				бесіди вже створені, в підрозділі
+				“Бесіда: Публікації” розділу “Форум”
+				ви можете їх проглянути, можете
+				редагувати публікації, натиснувши
+				на кожну з них по черзі, а можете
+				додавати нові. Тут же можна змінювати
+				статус публікації (Затверждено/Не
+				затверджено), для цього поставте/заберіть
+				галочку навпроти потрібної публікації
+				у стовпці “Затверджено” (Рис.45.6) та
+				натисніть кнопку зберегти (Рис.45.7)<BR>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо не можете знайти потрібну
+				публікацію, то доцільно буде використати
+				пошук. Пошук можна здійснити за трьома
+				критеріями: ключове слово (Рис.45.2),
+				дата створення (Рис.45.3) та дата
+				редагування (Рис.45.4). Просто введіть
+				в поле ключове слово та/або виберіть
+				приблизну дату створення та/або
+				редагування публікації та натисніть
+				кнопку “Пошук” (Рис.45.1). Одразу
+				з'являться всі публікації, які
+				відповідають ключовому слову або/та
+				вибраній даті.. Якщо потрібна публікація
+				не з'явилась, це означає що може бути
+				помилка у ключовому слові, даті  або
+				такої публікації немає.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВидалити
+				публікації можна так само, як і інші
+				створені елементи зі списків в
+				адмініструванні (наприклад, новини,
+				заявки, ідеї тощо).</FONT></FONT></P>
+			</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_575bfa4f.png' %}" NAME="image103.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0><FONT ><FONT SIZE=3><I>Рис.45
+Список Публікацій</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Пошук</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Поле для введення ключового слова</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>3
+- Поле для вибору дати створення</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>4
+- Поле для вибору дати редагування</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>5
+- Кнопка додання публікації</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>6
+- Елементи, які визначають чи опублікована
+публікація</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>7
+- Кнопка збереження змін</I></FONT></FONT></P>
+<OL START=2>
+	<OL>
+		<OL START=4>
+			<LI id = "forum_conversation_topic" ><H3 CLASS="western"><A NAME="_2eapyqna7emw"></A><FONT ><I>Тема</I></FONT></H3>
+			<OL>
+                		</OL>
+		</OL>
+	</OL>
+</OL>
+				<OL START=1><LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Теми
+				не створені</FONT></FONT>
+				</P></OL>
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо теми ще не створені,
+				ви маєте можливість створити нову
+				тему бесіди. Для цього натискаєте на
+				кнопку “Додати:Тема бесіди” (Рис.47.1)
+				або на однойменне посилання та
+				переходите на сторінку “Додання:
+				Тема бесіди” (Рис.46). </FONT></FONT>
+				</P>
+				<OL START=2><LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Додання
+				теми бесіди</FONT></FONT>
+				</P></OL>
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДля того, щоб додати
+				тему бесіди, спочатку Вам потрібно
+				перейти на сторінку “Додання: Тема
+				бесіди” (Рис.46). Потім потрібно
+				заповнити поля, які помічені зірочками
+				(*), це обов'язкові поля, про них далі
+				детальніше. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Тема на форумі”
+				з випадного списку виберіть форум,
+				якому бажаєте додати тему.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі
+				“Предмет обговорення” коротко
+				опишіть предмет теми.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ наступному
+				випадному списку виберіть тип теми
+				(Тема за замовчуванням, Прикріплена,
+				Анонс).<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ випадному списку під назвою
+				“Статус теми” виберіть статус Вашої
+				теми (Тема закрита, відкрита). На
+				закриту тему користувач зможе лише
+				підписатись, відповісти на неї
+				користувач не може, лише на відкриту
+				тему. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspІнші поля є необов'язковими.
+				<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Якщо ви бажаєте, щоб Ваша тема була
+				опублікована відразу після її
+				збереження, то потрібно щоб була
+				галочка у чекбоксі “Затверджено.”<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+				полі “Останній доданий пост” можете
+				зазначити дату та час останнього
+				доданого посту по цій темі. У полі
+				“Дата ” потрібно ввести дату у форматі
+				“РРРР-ММ-ДД” (наприклад, 2016-10-19)..<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+				полі “Час” потрібно ввести час у
+				форматі  “Год:Хв:Сек” (наприклад,
+				17:35:41). </FONT></FONT>
+				</P>
+
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Також
+ви можете одразу додати темі підписників,
+для цього виберіть користувача, який
+буде підписаний на цю тему.<BR>Після
+виконаних вищезгаданих дій потрібно
+зберегти тему, натиснувши на одну із
+кнопок збереження.</FONT></FONT></P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_423ae6b3.png' %}" NAME="image20.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.46
+Додання теми</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1-
+Поля, в яких потрібно вказати дату
+останньої публікації</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Поле вибору підписників на тему</I></FONT></FONT></P>
+
+			<OL START=3>
+				<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Теми
+				бесіди створені<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Якщо теми бесіди
+				вже створені, в підрозділі “Бесіда:
+				Тема” розділу “Форум” ви можете їх
+				проглянути, можете редагувати теми,
+				натиснувши на кожну з них по черзі, а
+				можете створювати нові. Тут же можна
+				змінювати статус теми (Затверждено/Не
+				затверджено), для цього поставте/заберіть
+				галочку навпроти потрібної публікації
+				у стовпці “Затверджено” (Рис.47.4) та
+				натисніть на кнопку зберегти (Рис.47.5).
+				<BR> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо не можете знайти потрібну
+				тему бесіди, то доцільно буде використати
+				пошук (Рис.47.2). Пошук можна здійснити
+				за трьома критеріями: ключове слово,
+				дата створення та дата редагування.
+				Просто введіть в поле ключове слово
+				та/або виберіть приблизну дату
+				створення та/або редагування теми та
+				натисніть пошук. Одразу з'являться
+				всі теми, які відповідають ключовому
+				слову або вибраній даті, або і тому,
+				і тому. Якщо потрібна тема не з'явилась,
+				це значить що може бути помилка у
+				ключовому слові, даті  або такої теми
+				немає.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВидалити публікації можна
+				так само, як і інші створені елементи
+				зі списків в адмініструванні (наприклад,
+				новини, заявки, ідеї тощо).</FONT></FONT></P>
+			</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_a9fd8e0b.png' %}" NAME="image56.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.47
+Список тем</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Кнопка додання теми</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Пошук у списку</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>3
+- Форум, на якому знаходиться тема</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>4
+- Елементи, які визначають чи опублікована
+публікація</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>5
+- Кнопка збереження змін</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><BR>
+</P>
+<OL START=2>
+	<OL>
+		<OL START=5>
+			<LI id = "forum_conversation_polltopsic"><H3 CLASS="western"><A NAME="_97ykk8gsfzcr"></A><FONT ><I>Тема
+			опитування</I></FONT></H3>
+            	</OL>
+	</OL>
+</OL>
+			<OL START=1><LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Теми
+			опитування ще не створені</FONT></FONT>
+				</P></OL>
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Якщо теми
+			опитування ще не створені, ви маєте
+			можливість створити свою тему
+			опитування. Для цього натискаєте на
+			кнопку “Додати:Тема опитування”
+			(Рис.49.1) або на однойменне посилання
+			та переходите на сторінку “Додання:
+			Тема опитування” (Рис.48). </FONT></FONT>
+			</P><BR/>
+<OL START=2><LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Додання
+			теми опитування</FONT></FONT>
+				</P></OL>
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Для того, щоб додати
+			тему опитування, спочатку Вам потрібно
+			перейти на сторінку “Додання: Тема
+			опитування” (Рис.48). Потім потрібно
+			заповнити поля, які помічені зірочками
+			(*), це обов'язкові поля, про них далі
+			детальніше. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ першому випадному
+			списку виберіть тему, до якої буде
+			додано опитування.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Питання”
+			введіть питання Вашого опитування.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+			полі “Максимальна кількість варіантів
+			для кожного користувача” введіть
+			ціле число, яке означає яку кількість
+			варіантів відповідей може вибрати
+			кожен користувач.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspІнші поля є
+			необов'язковими. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Тривалість
+			опитування, в днях” введіть кількість
+			днів, протягом яких буде проходити
+			опитування. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо бажаєте дозволити
+			користувачам змінювати голос, то
+			поставте галочку у полі “Дозволити
+			змінювати голоси”.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДо створеної
+			теми опитування ви маєте можливість
+			додати варіанти відповідей. Для цього
+			заповніть поле “Текст варіанту
+			опитування” та якщо хочете додати ще
+			один варіант, натисніть на посилання
+			“Додати ще: Варіант Теми Опитування”.
+			 Якщо варіант виявився лишнім, по
+			натисніть на посилання “Видалити”
+			навпроти відповіді. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПісля виконаних
+			вищезгаданих дій збережіть створене
+			опитування у темі, натиснувши на одну
+			з кнопок збереження.</FONT></FONT></P>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_5c26c2be.png' %}" NAME="image62.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.48
+Додання теми опитування</I></FONT></FONT></P>
+<OL START=2>
+	<OL>
+		<OL START=8>
+			<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Теми
+			опитування створені</FONT></FONT></P>
+		</OL>
+	</OL>
+</OL>
+<P STYLE="text-indent: 0.5in; margin-bottom: 0in"><FONT ><FONT SIZE=4>Приклад
+теми опитування на форумі на основному
+порталі зображений на Рис.42.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо теми
+опитування вже створені, в підрозділі
+“Бесіда: Тема опитування” розділу
+“Форум” ви можете їх проглянути, можете
+редагувати теми, натиснувши на кожну з
+них по черзі.  Якщо не можете знайти
+потрібну тему опитування, то доцільно
+буде використати пошук (Рис.49.2). Пошук
+можна здійснити за трьома критеріями:
+ключове слово, дата створення та дата
+редагування. Просто введіть в поле
+ключове слово та/або виберіть приблизну
+дату створення та/або редагування теми
+та натисніть пошук. Одразу з'являться
+всі теми, які відповідають ключовому
+слову або вибраній даті, або і тому, і
+тому. Якщо потрібна тема не з'явилась,
+це значить що може бути помилка у
+ключовому слові, даті  або такої теми
+немає.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВидалити теми опитувань можна
+так само, як і інші створені елементи
+зі списків в адмініструванні (наприклад,
+новини, заявки, ідеї тощо).</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_e1b365ca.png' %}" NAME="image46.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.49
+Список тем опитування</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Кнопка додання опитування</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Пошук теми опитування зі списку</I></FONT></FONT></P>
+<OL START=2>
+	<OL START=3>
+		<LI id = "forum_perms" ><H2 ><A NAME="_7kymazg1noyn"></A><FONT ><I>Права:</I></FONT></H2>
+		<OL>
+			<LI id = "forum_perms_groups"><H3 CLASS="western"><A NAME="_b41ccjr0jsyw"></A><FONT ><I>Групи</I></FONT></H3>
+		</OL>
+	</OL>
+</OL>
+<OL>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+підрозділі “Права:Групи” розділу
+“Форум” Ви можете переглянути список
+прав, які належать різним групам. Всього
+є дві групи: менеджери та користувачі.
+Якщо Ви менеджер ОСББ, то  тоді Ви
+відповідно належите до групи менеджери.
+Звичайні користувачі відповідно належать
+до групи користувачі. </FONT></FONT>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspКористувачі
+мають такі права на форумі, як, наприклад,
+створювати опитування, переглядати
+форум, відповідати на відкриті теми,
+прикріплювати файли тощо.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspГрупі
+менеджер належать ті ж права, що й групі
+користувачі та ще декілька інших прав,
+наприклад, видаляти всі публікації,
+додавати повідомлення в закриті теми,
+редагувати публікації тощо. </FONT></FONT>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЩоб
+додати право групі, натисніть на кнопку
+“Додати: Права групи” (Рис.51.1).</FONT></FONT></P>
+
+
+				<LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Додання
+				прав групи<BR>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДля того, щоб додати
+				права деякій групі, спочатку Вам
+				потрібно перейти на сторінку “Додання:
+				Права групи” (Рис.50). Потім потрібно
+				заповнити поля, які помічені зірочками
+				(*), це обов'язкові поля, про них далі
+				детальніше. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ випадному списку
+				“Права на форумі” виберіть право,
+				яке бажаєте додати до групи.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+				випадному списку “Група” виберіть
+				групу (користувачі або менеджери),
+				право якій ви бажаєте додати. У
+				випадному списку “Форум” виберіть
+				форум, до якого будуть застосовані
+				вибрані права. Якщо такого форуму
+				немає, ви можете його створити,
+				натиснувши на “+”, відповідно до
+				пункту 9.1.2 (Додання форуму). <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspІнші
+				поля є необов'язковими.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspГалочка у
+				чекбоксі “Має право” означає, що ви
+				групі надаєте вибране право.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПісля
+				виконаних вищезгаданих дій збережіть
+				право, натиснувши за одну із кнопок
+				збереження.</FONT></FONT></P>
+			</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_d5cc4e41.png' %}" NAME="image39.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.50
+Додання права групі</I></FONT></FONT></P>
+<OL START=2>
+
+		<OL>
+			<OL START=2>
+				<LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Права
+				групи створені
+                </FONT></FONT></P>	</OL>
+		</OL>
+
+</OL>
+                <P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо права групи
+				вже створені, в підрозділі “Права:
+				Групи” розділу “Форум” ви можете
+				їх проглянути, можете редагувати
+				права, натиснувши на кожне з них по
+				черзі, а можете додавати нові.  Якщо
+				не можете знайти потрібні права, то
+				доцільно буде використати пошук
+				(Рис.51.2), який можна здійснити за
+				ключовим словом. Просто введіть
+				ключове слово, яке відповідає праву,
+				яке ви шукаєте та натисніть на кнопку
+				пошук. Одразу з'являться всі права,
+				які відповідають введеному ключовому
+				слову. Якщо потрібні права не з'явились,
+				це значить що може бути помилка у
+				ключовому слові або такого права
+				немає.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо бажаєте позбавити прав
+				одну з груп, то це можна зробити,
+				видаливши відповідні права групи так
+				само, як і інші створені елементи зі
+				списків в адмініструванні (наприклад,
+				новини, заявки, ідеї тощо).</FONT></FONT></P>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_c75f332d.png' %}" NAME="image119.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.51
+Список прав груп</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Кнопка додання права групі</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Пошук</I></FONT></FONT></P>
+<OL START=2>
+	<OL>
+		<OL START=2>
+			<LI id = "forum_perms_user"><H3 CLASS="western"><A NAME="_7idce6sqxr66"></A><FONT ><I>Користувача</I></FONT></H3>
+
+                		</OL>
+		</OL>
+	</OL>
+</OL>
+				<OL START=1><ol><LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Права
+				користувача не створені</FONT></FONT>
+				</P></ol></OL>
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ підрозділі
+				“Права: Користувача” розділу “Форум”
+				Ви можете додати деяке право на форумі
+				конкретному користувачу, а не групі.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЩоб
+				це зробити, натисніть на кнопку
+				“Додати: Права користувача” (Рис.53.1).
+				Ви перейдете на сторінку “Додання:
+				Права користувача” (Рис.52).</FONT></FONT></P>
+<BR/>
+				<OL ><ol START=2><LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Додання
+				прав користувача</FONT></FONT>
+				</P></ol></OL>
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Для того, щоб
+				додати права користувача, спочатку
+				Вам потрібно перейти на сторінку
+				“Додання: Права користувача” (Рис.52).
+				Потім потрібно заповнити поля, які
+				помічені зірочками (*), це обов'язкові
+				поля, про них далі детальніше. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+				випадному списку “Права на форумі”
+				виберіть право, яке бажаєте додати
+				користувачу. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПотім якщо це право
+				бажаєте додати анонімному користувачу,
+				то поставте галочку у останньому
+				полі. Якщо ж бажаєте додати право
+				конкретному користувачу, то у випадному
+				списку “Користувач” виберіть цього
+				користувача.</FONT></FONT></P>
+
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspТакож
+право можна додати до конкретного
+форуму, тоді  у полі “Форум” з випадного
+списку виберіть форум, в якому вибраний
+користувач отримає поточне право. Якщо
+у випадному списку не знайшовся потрібний
+форум, то ви можете додати новий форум
+відповідно до пункту 9.13.2 (Додання
+форуму), натиснувши на “+” біля цього
+поля.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspІнші
+поля є необов'язковими.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо
+бажаєте щоб якийсь користувач не мав
+права, яке ви обрали, то заберіть галочку
+в полі “Має право”. Останнім кроком
+додання права користувачеві є збереження
+цього права, для цього натисніть на одну
+із кнопок збереження. </FONT></FONT>
+</P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_6660d442.png' %}" NAME="image64.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.52
+Додання прав користувачеві</I></FONT></FONT></P>
+
+			<OL ><ol START=3><LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Права
+				користувача створені</FONT></FONT>
+				</P></ol></OL>
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо права
+				користувача вже створені, в підрозділі
+				“Права: Користувача” розділу “Форум”
+				ви можете їх проглянути, можете
+				редагувати створені права, натиснувши
+				на кожне з них по черзі,а можете
+				додавати нові.  Якщо не можете знайти
+				потрібні права, то доцільно буде
+				використати пошук , який можна здійснити
+				за ключовим словом (Рис.53.2). Просто
+				введіть ключове слово, яке відповідає
+				праву, яке ви шукаєте та натисніть на
+				кнопку пошук. Одразу з'являться всі
+				права, які відповідають введеному
+				ключовому слову. Якщо потрібні права
+				не з'явились, це значить що може бути
+				помилка у ключовому слові або такого
+				права немає.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЩоб позбавити деяких
+				прав користувача, видаліть ці права
+				користувача так само, як і інші створені
+				елементи зі списків в адмініструванні
+				(наприклад, новини, заявки, ідеї тощо).</FONT></FONT></P>
+
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_924376b0.png' %}" NAME="image14.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.53
+Список прав користувачів</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Кнопка додання права користувачеві</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Пошук права користувача</I></FONT></FONT></P>
+<OL START=2>
+	<OL>
+		<OL START=3>
+			<LI id = "forum_perms_forum"><H3 CLASS="western"><A NAME="_yid6nc5nefk9"></A><FONT ><I>Форуму</I></FONT><FONT ><FONT SIZE=4><BR>	</FONT></FONT></H3>
+                	</OL>
+	</OL>
+</OL>
+            <OL>
+                <FONT COLOR="#000000"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspТут
+			Ви можете переглянути
+			всі права, які відносяться до форуму
+			та які Ви можете надавати групам та
+			користувачам. Щоб створити прав, Вам
+			потрібно</FONT></FONT><FONT COLOR="#000000"><FONT ><FONT SIZE=4>
+			натис</FONT></FONT></FONT><FONT COLOR="#000000"><FONT >нути</FONT></FONT><FONT COLOR="#000000"><FONT ><FONT SIZE=4>
+			на кнопку “Додати: Права” (</FONT></FONT></FONT><FONT COLOR="#000000"><FONT >Рис.55.1</FONT></FONT><FONT COLOR="#000000"><FONT ><FONT SIZE=4>)
+			або на однойменне посилання та
+			переходите на сторінку “Додати: Права”
+			(Рис.5</FONT></FONT></FONT><FONT COLOR="#000000"><FONT >4</FONT></FONT><FONT COLOR="#000000"><FONT ><FONT SIZE=4>).
+			</FONT></FONT></FONT>
+
+            <BR/>
+				<OL ><ol START=1><LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Додання
+				прав форуму</FONT></FONT>
+				</P></ol></OL>
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Для того, щоб додати
+				права форуму, спочатку Вам потрібно
+				перейти на сторінку “Додання: Права”
+				(Рис.54). Потім потрібно заповнити поля,
+				які помічені зірочками (*), це обов'язкові
+				поля, про них далі детальніше. <BR>У
+				полі “Код доступу” введіть назву
+				права латинськими літерами, без
+				пробілів. <BR>Інші поля є необов'язковими.
+				<BR>У полі “Назва прав” введіть назву
+				права. Далі виберіть право буде
+				загальним (може бути надане глобально
+				для всіх форумів) або локальним (може
+				бути надане індивідуально для кожного
+				форуму).  Після виконаних вищезгаданих
+				дій збережіть додану інформацію.</FONT></FONT></P>
+                </FONT></OL>
+
+<P ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_2e7d1a29.png' %}" NAME="image19.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.54
+Додання права форуму</I></FONT></FONT></P>
+
+				<OL ><ol START=3><LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Права
+				форуму створені</FONT></FONT>
+				</P></ol></OL>
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	В підрозділі “Права:
+				Форуму” розділу “Форум” ви можете
+				проглянути список прав форуму, можете
+				редагувати права, натиснувши на кожне
+				з них по черзі,а можете додавати нові.
+				 Якщо не можете знайти потрібні права,
+				то доцільно буде використати пошук,
+				який можна здійснити за ключовим
+				словом (Рис.55.2). Просто введіть ключове
+				слово, яке відповідає праву, яке ви
+				шукаєте та натисніть на кнопку пошук.
+				Одразу з'являться всі права, які
+				відповідають введеному ключовому
+				слову. Якщо потрібні права не з'явились,
+				це значить що може бути помилка у
+				ключовому слові або такого права
+				немає.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВидалити права форуму Ви не
+				можете.</FONT></FONT></P>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_44239636.png' %}" NAME="image11.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.55
+Список прав форуму</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Кнопка додання права</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Пошук</I></FONT></FONT></P>
+<OL START=2>
+	<OL>
+		<OL START=4>
+			<LI id = "forum_members"><H3 CLASS="western"><A NAME="_y7zzyresoish"></A><FONT ><I>Учасники:
+			Профілі</I></FONT></H3>
+		</OL>
+	</OL>
+</OL>
+			<OL>
+				<OL ><ol START=1><LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Профілі
+				ще не створені</FONT></FONT>
+				</P></ol></OL>
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Якщо профілі ще не
+				створені, це означає, що користувачі
+				ще не створювали постів на форумі та
+				не додавали нових тем. Ви маєте
+				можливість створити профілі учасників
+				форуму. Для цього натискаєте на кнопку
+				“Додати: Профіль” (Рис.57.1) або на
+				однойменне посилання та переходите
+				на сторінку “Додати: Профіль”
+				(Рис.56). </FONT></FONT>
+				</P>
+				<OL ><ol START=2><LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Додання
+				профілю</FONT></FONT>
+				</P></ol></OL>
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Для того, щоб додати профіль,
+				спочатку Вам потрібно перейти на
+				сторінку “Додання: Профіль” (Рис.56).
+				Потім потрібно заповнити поля, які
+				помічені зірочками (*), це обов'язкові
+				поля, про них далі детальніше. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+				випадному списку “Користувач”
+				виберіть користувача, профіль якому
+				потрібно додати.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspІнші поля є
+				необов'язковими. </FONT></FONT>
+				</P>
+
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspАле
+за бажанням можете користувачеві додати
+аватар (зображення, яке відображається
+у профілі зареєстрованого користувача
+форуму) та підпис. Після виконаних
+вищезгаданих дій збережіть створений
+профіль.</FONT></FONT></P></OL>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_c487070b.png' %}" NAME="image60.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.56
+Додання профілю учасника форуму</I></FONT></FONT></P>
+<OL>
+<OL ><ol START=3><LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Профілі
+				створені</FONT></FONT>
+				</P></ol></OL>
+
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Якщо профілі вже створені,
+				в підрозділі “Учасники: Профілі”
+				розділу “Форум” ви можете їх
+				проглянути, можете редагувати їх,
+				натиснувши на кожен з них по черзі,а
+				можете створювати нові.  Якщо не можете
+				знайти потрібний профіль, скористайтесь
+				пошуком, який можна здійснити за
+				ключовим словом або/та кількістю
+				повідомлень. Просто введіть ключове
+				слово, яке відповідає профілю, який
+				ви шукаєте. Або/та виберіть кількість
+				повідомлень у випадному списку та
+				натисніть на кнопку пошук. Одразу
+				з'являться всі профілі, які відповідають
+				введеному ключовому слову або/та
+				кількості повідомлень у випадному
+				списку. Якщо потрібний профіль не
+				з'явився, це значить що може бути
+				помилка у ключовому слові або такого
+				профілю немає. Видалити профілі можна
+				так само, як і інші створені елементи
+				зі списків в адмініструванні (наприклад,
+				новини, заявки, ідеї тощо). Але якщо
+				користувач, профіль якого Ви видалили,
+				створить тему або публікацію, та зайде
+				на свій профіль, то профіль знову
+				створиться.<BR></FONT></FONT><BR>
+				</P>
+</OL>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_60dbc178.png' %}" NAME="image43.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.57
+Список профілів</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Кнопка додання профілю</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Пошук</I></FONT></FONT></P>
+<OL START=2>
+	<OL START=4>
+		<LI id = "forum_tracking"  ><H2 CLASS="western"><A NAME="_teutzcf1vsrd"></A><FONT ><I>Відстеження:</I></FONT></H2>
+		</OL>
+</OL>
+            <OL><OL><OL>
+			<LI id = "forum_tracking_topics"><H3 CLASS="western"><A NAME="_t2xpl29csg93"></A><FONT ><I>Прочитані
+                теми</I></FONT></H3></OL></OL></OL>
+                <OL>
+
+			<OL ><ol START=1><LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Прочитаних
+			тем немає</FONT></FONT>
+				</P></ol></OL>
+
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Якщо прочитаних тем немає,
+			це значить, що користувачі ще не
+			переглядали створені на форумі теми.
+			Ви маєте можливість створити прочитану
+			тему. Для цього натискаєте на кнопку
+			“Додати: Прочитана тема” (Рис. 59.1) або
+			на однойменне посилання та переходите
+			на сторінку “Додання: Прочитана тема”
+			(Рис.58).</FONT></FONT></P>
+			<OL ><ol START=2><LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Додання
+			прочитаної теми</FONT></FONT>
+				</P></ol></OL>
+
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДля того, щоб додати
+			прочитану тему, спочатку Вам потрібно
+			перейти на сторінку “Додання: Прочитана
+			тема” (Рис.58). Потім потрібно заповнити
+			поля, які помічені зірочками (*), це
+			обов'язкові поля, про них далі детальніше.
+			<BR>У випадному списку “Користувач”
+			виберіть користувача, у якого тема
+			буде прочитаною та у другому випадному
+			списку “Тема” виберіть,  яка саме
+			тема буде відмічена, як прочитана.
+			<BR>Потім збережіть змінену інформацію
+			за допомогою кнопок збереження. </FONT></FONT>
+			</P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_4849489e.png' %}" NAME="image92.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.58
+Додання прочитаної теми</I></FONT></FONT></P>
+  <OL>
+<OL ><ol START=1><LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Прочитані
+			теми створені</FONT></FONT>
+				</P></ol></OL>
+
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Якщо прочитані теми
+			вже створені, в підрозділі “Відстеження:
+			Прочитані теми” розділу “Форум” ви
+			можете їх проглянути, можете редагувати
+			прочитані теми, натиснувши на кожну
+			з них по черзі, а можете створювати
+			нові.  Якщо не можете знайти потрібну
+			прочитану тему, скористайтесь пошуком,
+			який можна здійснити за датою, коли
+			приблизно тема була відмічена як
+			прочитана (Рис.59.2). Просто виберіть
+			дату та натисніть на кнопку пошук.
+			Одразу з'являться всі теми, які
+			відповідають вибраній даті. Якщо
+			потрібна тема не з'явилась, це значить
+			що може бути помилка у даті або такої
+			теми немає.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВидалити прочитані теми
+			можна так само, як і інші створені
+			елементи зі списків в адмініструванні
+			(наприклад, новини, заявки, ідеї тощо).
+			</FONT></FONT>
+			</P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_fd4ef2d2.png' %}" NAME="image133.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.59
+Список прочитаних тем</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Кнопка додання прочитаної теми</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Пошук</I></FONT></FONT></P>
+<OL START=2>
+		<OL START=5>
+			<LI id = "forum_tracking_forums"><H3 CLASS="western"><A NAME="_pg92ycutnp8r"></A><FONT ><I>Прочитані
+			форуми </I></FONT></H3>
+             </OL>
+</OL>
+            <OL>
+
+			<OL ><ol START=1><LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Прочитаних
+			форумів немає</FONT></FONT>
+				</P></ol></OL>
+
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Якщо прочитаних
+			форумів немає, ви маєте можливість
+			створити прочитаний форум. Для цього
+			натискаєте на кнопку “Додати: Прочитаний
+			форум” (</FONT></FONT><FONT ><FONT SIZE=4><I>зображення
+			кнопки</I></FONT></FONT><FONT ><FONT SIZE=4>)
+			або на однойменне посилання та
+			переходите на сторінку “Додання:
+			Прочитаний форум”. </FONT></FONT>
+			</P>
+                <BR/>
+			<OL ><ol START=2><LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Додання
+			прочитаного форуму</FONT></FONT>
+				</P></ol></OL>
+
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Для того, щоб
+			додати прочитаний форум, спочатку Вам
+			потрібно перейти на сторінку “Додання:
+			Прочитаний форум” (</FONT></FONT><FONT ><FONT SIZE=4><I>Рис.1</I></FONT></FONT><FONT ><FONT SIZE=4>).
+			Потім потрібно заповнити поля, які
+			помічені зірочками (*), це обов'язкові
+			поля, про них далі детальніше. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+			випадному списку “Користувач”
+			виберіть користувача, у якого форум
+			буде прочитаний та у другому випадному
+			списку “Форум” виберіть,  який саме
+			форум буде відмічений, як прочитаний.
+			</FONT></FONT>
+			</P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_54fb0eb.png' %}" NAME="image28.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.60
+Додання прочитаного форуму</I></FONT></FONT></P>
+<OL >
+			<OL ><ol START=3><LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Прочитані
+			форуми створені</FONT></FONT>
+				</P></ol></OL>
+
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Якщо прочитані
+			форуми вже створені, в підрозділі
+			“Відстеження: Прочитані форуми”
+			розділу “Форум” ви можете їх проглянути,
+			можете редагувати форуми, натиснувши
+			на кожен з них по черзі.  Якщо не можете
+			знайти потрібний прочитаний форум,
+			то доцільно буде використати пошук,
+			який можна здійснити за датою, коли
+			приблизно форум був відмічений як
+			прочитаний. Просто виберіть дату та
+			натисніть на кнопку пошук. Одразу
+			з'являться всі форуми, які відповідають
+			вибраній даті. Якщо потрібний форуми
+			не з'явився, це значить що може бути
+			помилка у даті або такого форуму
+			немає.<BR>Видалити прочитаний форум
+			можна так само, як і інші створені
+			елементи зі списків в адмініструванні
+			(наприклад, новини, заявки, ідеї тощо).</FONT></FONT></P>
+</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_1329987e.png' %}" NAME="image116.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.61
+Список прочитаних форумів</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Кнопка додання прочитаного форуму</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Пошук</I></FONT></FONT></P>
+<OL START=2>
+	<LI id = "ideas" style="list-style: none"><H1 CLASS="western" ALIGN=CENTER><A NAME="_icohydhbv6ji"></A><U>
+        <FONT ><FONT SIZE=5><B>Ідеї</B></FONT></FONT></U></H1>
+	<OL>
+	</OL>
+</OL>
+		<OL>
+			<OL ><ol START=1><LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Ідеї
+			ще не створені</FONT></FONT>
+				</P></ol></OL>
+
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Якщо створених ідей
+			немає, 9. маєте можливість створити
+			свою ідею. Для цього натискаєте на
+			кнопку “Додати: Ідея” (Рис</FONT></FONT><FONT ><FONT SIZE=4><I>.</I></FONT></FONT><FONT ><FONT SIZE=4>62.2</FONT></FONT><FONT ><FONT SIZE=4><I>
+			</I></FONT></FONT><FONT ><FONT SIZE=4>)
+			або на однойменне посилання (Рис. 62.1)
+			та переходите на сторінку “Додання:Ідея”
+			(Рис.63 та Рис.64). </FONT></FONT>
+			</P>
+		</OL>
+
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_929b206.png' %}" NAME="image50.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.
+62 Ідеї ще не створені</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: -0.02in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Посилання на додання ідеї</I></FONT></FONT></P>
+<P ALIGN=CENTER>
+<FONT ><FONT SIZE=3><I>2 - Кнопка
+додання ідеї</I></FONT></FONT></P>
+<OL>
+
+			<OL ><ol START=2><LI><P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>Додання
+			ідеї</FONT></FONT>
+				</P></ol></OL>
+
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Для того, щоб додати ідею,
+			спочатку Вам потрібно перейти на
+			сторінку “Додання: Ідея” (</FONT></FONT><FONT ><FONT SIZE=4><I>Рис.</I></FONT></FONT><FONT ><FONT SIZE=4>).
+			Потім потрібно заповнити поля, які
+			помічені зірочками (*), це обов'язкові
+			поля, про них далі детальніше. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+			першому полі “Назва” введіть назву
+			своєї ідеї. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Зміст” введіть
+			детальний опис ідеї, яку висуваєте. .
+			<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ випадному списку “Статус” (Рис.
+			, 1) виберіть статус ідеї (на модерації,
+			триває збір підписів, розглянута
+			тощо).</FONT></FONT></P>
+
+
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspДодані
+користувачами ідеї (на основному порталі)
+ мають статус “На модерації, такі ідеї
+не відображаються на основному порталі.
+Щоб відправити ідею на підписання до
+користувачів, змініть її статус на
+“Триває збір підписів”. Потім змінюйте
+статус ідеї згідно рішення по ній.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspІнші
+поля є необов'язковими. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspВи маєте
+можливість додати зображення до ідеї.
+Для цього потрібно натиснути на кнопку
+“Виберіть файл”, потім вибрати на
+своєму пристрої зображення та додати
+його. <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Рішення” детально
+опишіть рішення, яке ви пропонуєте, щоб
+втілити ідею в життя.<BR> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Коли
+затверждена” задайте дату затверждення
+ідеї  у форматі “РРРР-ММ-ДД” (наприклад,
+2016-10-19), також можна натиснути на посилання
+“Сьогодні” справа біля поля, щоб одразу
+з'явилась сьогоднішня дата або натиснути
+на маленьке зображення календаря, щоб
+вибрати потрібну дату.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ полі “Час”
+потрібно ввести час затвердження ідеї
+у форматі  “Год:Хв:Сек” (наприклад,
+17:35:41). Також можете натиснути на посилання
+“Зараз” справа біля поля, щоб поле
+заповнилось часом в цю секунду або,
+натиснувши на маленький годинник,
+вибрати потрібний час.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspТа останнє, що
+ви можете, це додати ідею анонімно. Для
+цього поставте останню галочку у полі
+“Анонімно” (Рис. , 1). <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspПісля виконаних
+вищезгаданих дій натисніть на одну з
+кнопок збереження, щоб зберегти нову
+ідею.</FONT></FONT></P>
+    </OL>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_3b2c9801.png' %}" NAME="image58.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.63
+Додання Ідеї</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Поле статус</I></FONT></FONT></P>
+<P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_ca823b69.png' %}" NAME="image75.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.64
+Продовження сторінки “Додання ідеї”</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Елемент для додання ідеї анонімно</I></FONT></FONT></P>
+<OL >
+			<OL ><ol START=3><LI><P STYLE="margin-bottom: 0in"> <FONT ><FONT SIZE=4>Ідеї
+			створені</FONT></FONT>
+				</P></ol></OL>
+
+	<P STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	Якщо ідеї вже створені, в
+			підрозділі “Ідеї” розділу “Ідеї”
+			ви можете їх проглянути, можете
+			редагувати їх, натиснувши на кожну з
+			них по черзі.  <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspТакож ідеї можна
+			видаляти. Щоб видалити не потрібну
+			ідею, виділіть її, натиснувши на галочку
+			біля неї. Щоб видалити всі ідеї,
+			натисніть на найпершу галочкутим
+			самим виділяться всі ідеї. Потім у
+			випадному списку внизу виберіть пункт
+			“Видалити обрані ідеї” та натисніть
+			кнопку “Вперед”. Залишилось лише
+			підтвердити видалення.</FONT></FONT></P>
+		</OL>
+
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT ><FONT SIZE=4><BR><P  ALIGN=CENTER WIDTH=900 HEIGHT=600><IMG SRC="{% static 'img/admin_help_page/i_4c5376ac7a61a587_html_7a775a61.png' %}" NAME="image67.png" ALIGN=BOTTOM HSPACE=12 VSPACE=12  BORDER=0></P><BR></FONT></FONT>
+
+<P ALIGN=CENTER STYLE="margin-left: 1in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>Рис.65
+    Список ідей</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: 1in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>2
+- Елемент для виділення всіх ідей</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: 1in; margin-bottom: 0in"><FONT ><FONT SIZE=3><I>1
+- Елемент для виділення одної конкретної
+ідеї</I></FONT></FONT></P>
+<OL>
+		<ol START=2><LI id = "voices"><A NAME="_i5p5z916vjtd"></A> <FONT ><I>Голоси</I></FONT></ol><FONT ><FONT SIZE=4><BR>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspУ
+		підрозділі “Голоси” розділу “Ідеї”
+		відображені голоси користувачів, які
+		вони віддали за ту чи іншу ідею.<BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspЯкщо
+		голоси вже створені, тут Ви можете їх
+		проглянути, можете заблокувати їх,
+		натиснувши на кожну з них по черзі та
+		ввівши ціле число, потім натиснувши
+		на кнопку “Зберегти” або “Зберегти
+		і продовжити редагування”.  <BR>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspТакож
+		голоси можна видаляти. Щоб видалити
+		не потрібний голос, виділіть його,
+		натиснувши на галочку біля нього. Щоб
+		видалити всі голоси, поставте  найпершу
+		галочку,тим самим виділяться всі
+		голоси. Потім у випадному списку внизу
+		виберіть пункт “Видалити обрані
+		голоси” та натисніть кнопку “Вперед”.
+		Залишилось лише підтвердити видалення.</FONT></FONT>
+	</OL>
+
+
+
+
+
+
+        </div>
+    </div>
+</BODY>
+{#        </div>#}
+
+
+{% endblock %}

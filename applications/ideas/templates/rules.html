@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Rules of module "Ideas"' %}.{% endblock %}
+
+{% block content %}
+
+      <!-- Main content -->
+        <section class="content">
+          <!-- Default box -->
+          <div class="card">
+            <div class="content">
+                 <div class="text-center"><h1>{% trans 'Rules of module "Ideas"' %}</h1></div>
+<p>{% trans '"Ideas" is module of web service "Smart Condominium", what was designed subject to the requirements of citizens and allowing them to express their views and focus on the important issues of their condominium.' %} </p>
+
+<p>{% trans 'To the idea was sent for consideration to the management of condominiums, it must gain necessary number of signatures in the allotted voting time' %}
+</p>
+
+<p><strong>{% trans 'General recommendations for placement ideas' %}:</strong></p>
+
+<ul>
+
+        <li>{% trans 'The idea should not duplicate existing' %};</li>
+        <li>{% trans 'Please refrain from submitting ideas with the requirements that are in the process of implementation' %};</li>
+        <li>{% trans 'Text ideas must conform to generally accepted standards of ethics and morality' %};</li>
+        <li>{% trans 'Raised issue should relate to the competence of condominium' %};</li>
+        <li>{% trans 'Enter the recipient ideas, like the head of condominiums, condominium manager' %};</li>
+        <li>{% trans 'The idea that does not meet the guidelines may be rejected by manager' %};</li>
+</ul>
+
+
+<p>{% trans 'Electronic idea that meets all requirements published in menu "Ideas" in the section  "List".' %}
+   {% trans 'In case of discrepancy of  requirements this idea does not publicate. You get the message to the specified e-mail address' %}
+   {% trans 'Verification of ideas and sending printed version of ideas to the appropriate authorities makes condominium manager.' %}
+</p>
+   <p><strong> {% trans 'Ideas statuses' %}.</strong></p>
+<ul>
+    <li>{% trans 'On moderation. These ideas is checked by manager and you can not view their.' %};</li>
+    <li>{% trans 'Active. Ideas what have passed check and now collect signatures' %};</li>
+    <li>{% trans 'Under consideration. Ideas what collected needed count of voice and moved to appropriate authorities.' %};</li>
+    <li>{% trans 'Considered. Ideas what war considered by appropriate authorities.' %};</li>
+    <li>{% trans 'Rejected.Ideas what do not conform requirements of current legislation' %};</li>
+    <li>{% trans 'Archive. Ideas what didn`t collect needed count of voice' %};</li>
+    <li>{% trans 'Hidden.Ideas what from ethical reasons can not be published on the site.These ideas are viewable only for service manager' %}.</li>
+</ul>
+  </div><!-- /.box-body -->
+          </div><!-- /.box -->
+        </section><!-- /.content -->
+{% endblock %}

@@ -1,0 +1,83 @@
+{% load i18n %}
+   <div class="card">
+                <div class="header">
+                  <h3 class="box-title">{{ idea.title }}</h3>
+                </div>
+        <div class="content">
+
+    <strong>{% trans 'Idea Number' %}:</strong> {{idea_number }}<br/>
+    <strong>{% trans 'Create date' %}:</strong> {{ idea.create_date|date:"d-m-Y" }}<br/>
+    <strong>{% trans 'Publication date' %}:</strong> {{ idea.when_approve|date:"d-m-Y" }}<br/>
+    <strong>{% trans 'Author' %}:</strong> {{  owner.get_full_name_atall}}<br/>
+            {% if end_date %}
+               <strong>{% trans 'Date of removed from publication' %}:</strong> {{ end_date|date:"d.m.Y H:i" }}<br/>
+               <strong>{% trans 'Status' %}:</strong> {% trans 'The collection of signatures is completed. Idea has not collected necessary number of voices.' %} <br/>
+               {% endif %}
+    <strong>{% trans 'Contact the author' %}:</strong> {% trans 'phone' %}: {{owner.phone}}, {% trans 'email' %}: {{ owner.email }}<br/>
+    <strong>{% trans 'Signatures' %}:</strong> {{ votes.count }}<br/>
+    <strong>{% trans 'Needed' %}:</strong> {{ needvotes }}<br/>
+
+               <br/><br/>
+           </div>
+
+    </div>
+
+
+
+    <div class="card">
+                <div class="header">
+                  <h3 class="box-title">{% trans 'Idea text' %}:</h3>
+                </div>
+                <div class="content">
+                {{ idea.text }}
+                </div>
+    </div>
+
+
+
+
+
+
+
+        {% if idea.status.id != 1 and idea.status.id != 2 and idea.status.id != 6 and idea.status.id != 8%}
+
+
+    <div class="card">
+                <div class="header">
+                  <h3 class="box-title">{% trans 'Idea resolution' %}:</h3>
+                </div>
+        <div class="content">
+                {{ idea.resolution }}
+        </div>
+
+    </div>
+</div>
+{% endif %}
+
+
+{% if votes %}
+
+
+
+    <div class="card">
+                <div class="header">
+                  <h3 class="box-title">{% trans 'Supported' %}:</h3>
+                </div>
+        <div class="content">
+
+
+        {% for vote in votes %}
+
+            <ul>
+
+                <li>{{ forloop.counter }}. {{ vote.user.get_full_name_atall }}  ({{ vote.created|date:"d.m.Y"}})</li>
+            </ul>
+
+
+        {% endfor %}
+
+
+    </div>
+      </div>
+{% endif %}
+

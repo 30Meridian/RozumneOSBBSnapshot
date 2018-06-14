@@ -1,0 +1,255 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-10 14:08+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: applications/polls/admin.py:22
+msgid "Please add some choices or images"
+msgstr "Будь ласка, додайте варіанти відповіді або зображення."
+
+#: applications/polls/admin.py:24
+msgid "Please add pictures or choices, but not both!"
+msgstr "Будь ласка, додайте лише або варіанти відповіді, або зображення."
+
+#: applications/polls/admin.py:29
+msgid "Choices of poll (Please add only pictures or only text)."
+msgstr ""
+"Варіанти відповіді. (Додайте лише зображення або лише текстові варіанти)"
+
+#: applications/polls/admin.py:41
+msgid "description"
+msgstr "Опис"
+
+#: applications/polls/apps.py:6
+msgid "Our polls"
+msgstr "Опитування"
+
+#: applications/polls/models.py:18
+msgid "Question"
+msgstr "Питання"
+
+#: applications/polls/models.py:19
+msgid "Description"
+msgstr "Опис"
+
+#: applications/polls/models.py:20
+msgid "Poll condominium"
+msgstr "ОСББ"
+
+#: applications/polls/models.py:21
+msgid "date start"
+msgstr "Дата початку"
+
+#: applications/polls/models.py:22
+msgid "date end"
+msgstr "Дата закінчення"
+
+#: applications/polls/models.py:23
+msgid "Active"
+msgstr "Активне"
+
+#: applications/polls/models.py:24
+msgid "Public"
+msgstr "Публічність"
+
+#: applications/polls/models.py:25
+msgid "Allows to view polls for users from other condominiums"
+msgstr ""
+"Дозволити переглядати опитування користувачам інших ОСББ або анонімним "
+"користувачам."
+
+#: applications/polls/models.py:26
+msgid "Archive"
+msgstr "В архіві"
+
+#: applications/polls/models.py:29
+#: applications/polls/templates/polls/poll_detail.html:5
+#: applications/polls/templates/polls/poll_detail.html:12
+msgid "Poll"
+msgstr "Опитування"
+
+#: applications/polls/models.py:30
+msgid "Polls"
+msgstr "Опитування"
+
+#: applications/polls/models.py:56
+msgid "count choices"
+msgstr "Варіантів відповіді"
+
+#: applications/polls/models.py:57
+msgid "count total votes"
+msgstr "Всього голосів"
+
+#: applications/polls/models.py:58
+msgid "can vote"
+msgstr "Може голосувати"
+
+#: applications/polls/models.py:68
+msgid "A date of start can not be more than date end or equal "
+msgstr ""
+"Дата початку голосування не може бути більшою або рівною даті закінчення!"
+
+#: applications/polls/models.py:72 applications/polls/models.py:84
+msgid "Choice of poll"
+msgstr "Варіант"
+
+#: applications/polls/models.py:73
+msgid "user choice"
+msgstr "Варіанти відповіді"
+
+#: applications/polls/models.py:77
+msgid "poll image"
+msgstr "Зображення"
+
+#: applications/polls/models.py:85
+msgid "Choices of poll"
+msgstr "Варіанти відповіді"
+
+#: applications/polls/models.py:93
+msgid "vote of user"
+msgstr "Користувач"
+
+#: applications/polls/models.py:94
+msgid "vote of poll"
+msgstr "Голосування"
+
+#: applications/polls/models.py:95
+msgid "vote of choice"
+msgstr "Вибір"
+
+#: applications/polls/models.py:101 applications/polls/models.py:105
+msgid "Vote"
+msgstr "Голос"
+
+#: applications/polls/models.py:106
+msgid "Votes"
+msgstr "Голоси"
+
+#: applications/polls/templates/polls/poll_detail.html:10
+msgid "Home"
+msgstr "Головна"
+
+#: applications/polls/templates/polls/poll_detail.html:11
+msgid "Polls list"
+msgstr "Список опитувань"
+
+#: applications/polls/templates/polls/poll_detail.html:27
+msgid "Poll continues since"
+msgstr "Опитування триває від"
+
+#: applications/polls/templates/polls/poll_detail.html:27
+msgid "to"
+msgstr "до"
+
+#: applications/polls/templates/polls/poll_detail.html:31
+msgid "Active Voting"
+msgstr "Активне голосування"
+
+#: applications/polls/templates/polls/poll_detail.html:32
+msgid "Archive Voting"
+msgstr "В архіві"
+
+#: applications/polls/templates/polls/poll_detail.html:51
+msgid "Please, choose one of the choices"
+msgstr "Будь ласка, оберіть один з варантів опитування"
+
+#: applications/polls/templates/polls/poll_detail.html:82
+msgid "Submit vote"
+msgstr "Голосувати"
+
+#: applications/polls/templates/polls/poll_detail.html:87
+msgid "Voting result"
+msgstr "Результат голосування"
+
+#: applications/polls/templates/polls/poll_list.html:4
+msgid "Voting"
+msgstr "Голосування"
+
+#: applications/polls/templates/polls/poll_list.html:11
+msgid "Polls what were initiated by the management."
+msgstr "Опитування, ініційовані керівництвом."
+
+#: applications/polls/templates/polls/poll_list.html:15
+msgid "Number"
+msgstr "Номер"
+
+#: applications/polls/templates/polls/poll_list.html:16
+msgid "Poll title"
+msgstr "Назва"
+
+#: applications/polls/templates/polls/poll_list.html:17
+msgid "Start of poll"
+msgstr "Початок голосування"
+
+#: applications/polls/templates/polls/poll_list.html:18
+msgid "End of poll"
+msgstr "Закінчення голосування"
+
+#: applications/polls/templates/polls/poll_list.html:19
+msgid "Count of votes"
+msgstr "Всього голосів"
+
+#: applications/polls/templates/polls/poll_list.html:20
+msgid "Status"
+msgstr "Статус"
+
+#: applications/polls/templates/polls/poll_list.html:41
+msgid "Voting is continues"
+msgstr "Голосування триває"
+
+#: applications/polls/templates/polls/poll_list.html:43
+msgid "Voting is archive"
+msgstr "Голосування архівне"
+
+#: applications/polls/templates/polls/poll_list.html:51
+msgid "Unfortunately, your condominium has nothing poll yet"
+msgstr "На жаль, у вашого ОСББ ще немає опитувань"
+
+#: applications/polls/views.py:39
+#, fuzzy
+#| msgid "Access denied."
+msgid "Access denied"
+msgstr "Доступ заборонено."
+
+#: applications/polls/views.py:64
+msgid "Thank, for your voice"
+msgstr "Дякуємо за ваш голос"
+
+#: applications/polls/views.py:84
+msgid "Done! Find: "
+msgstr "Готово! Знайдено:"
+
+#: applications/polls/views.py:84
+msgid " poll(-s)"
+msgstr "Опитування(-нь)"
+
+#: applications/polls/views.py:86
+msgid "Not found any polls that mutch enddate!"
+msgstr "Не знайдено голосувань, дата закінчення яких вже пройшла."
+
+#: applications/polls/views.py:88
+msgid "Access denied."
+msgstr "Доступ заборонено."
+
+#~ msgid "choice_name"
+#~ msgstr "Назва варіанту"
+
+#~ msgid "Choice"
+#~ msgstr "Вибір"
+
+#~ msgid "Choices"
+#~ msgstr "Вибір"

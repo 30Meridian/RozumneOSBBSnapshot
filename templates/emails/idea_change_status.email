@@ -1,0 +1,8 @@
+  Вас вітає команда проекту "Розумне ОСББ"!<br/><br/>
+  По ідеї <strong><a href="http://www.rozumneosbb.org/{{condominiumslug}}/ideas/{{idea_id}}">"{{title}}"</a></strong> змінено статус на "{{status}}"<br/><br/>
+{{resolution}}<br/>
+<strong>Статуси змінюються <a href="http://www.rozumneosbb.org/{{condominiumslug}}/moderators/">менеджерами</a> вашого ОСББ.</strong><br/><br/>
+
+
+З повагою,<br/>
+  команда проекту <a href='www.rozumneosbb.org'>"Розумне ОСББ"</a> та компанія "30-тий Меридіан"<br/>

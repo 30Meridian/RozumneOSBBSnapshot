@@ -1,0 +1,177 @@
+{% extends 'account/sign.html' %}
+{% load i18n %}
+{% load static %}
+{% load cache %}
+
+{% block title %}
+
+   <title> {% trans "Sign Up" %}. Розумне ОСББ.</title>
+{% endblock %}
+
+{% block content %}
+    <div class="full-page login-page" data-color="green" data-image="{% static 'img/full-screen-image-1.jpg' %}">
+    <!--   you can change the color of the filter page using: data-color="blue | azure | green | orange | red | purple" -->
+    <div class="content">
+        <div class="container">
+            {% for message in messages %}
+                <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3 alert alert-{{ message.tags }}"
+                     role="alert">
+                    <span class="close" data-dismiss="alert">&times;</span>
+                    <span>{% trans message.message %}</span>
+                </div>
+            {% endfor %}
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 text-center">
+                    <a href="/" class="logo-text">
+                        <img src="/static/img/logo.png" width="270px">
+                    </a>
+                    <hr/>
+                    <img src="/static/img/progress_reg_1.png">
+
+                </div>
+
+{#                <div class="col-md-4 col-md-offset-1">#}
+{##}
+{#                    <div class="media">#}
+{#                        <div class="media-left">#}
+{#                            <div class="icon">#}
+{#                                <i class="pe-7s-user"></i>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="media-body">#}
+{#                            <h4>Безкоштовний доступ</h4>#}
+{#                            Система надає АБСОЛЮТНО безкоштовний доступ для користувачів назавжди#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="media">#}
+{#                        <div class="media-left">#}
+{#                            <div class="icon">#}
+{#                                <i class="pe-7s-graph1"></i>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="media-body">#}
+{#                            <h4>Участь у керуванні ОСББ</h4>#}
+{#                            "Рузумне ОСББ" - це інструмент громадської участі в частині впливу на життя ОСББ#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="media">#}
+{#                        <div class="media-left">#}
+{#                            <div class="icon">#}
+{#                                <i class="pe-7s-home"></i>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="media-body">#}
+{#                            <h4>Контроль бюджету</h4>#}
+{#                            Контролюйте видатки Вашого ОСББ та власний баланс не встаючи з дивану!#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="media">#}
+{#                        <div class="media-left">#}
+{#                            <div class="icon">#}
+{#                                <i class="pe-7s-light"></i>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="media-body">#}
+{#                            <h4>Оплата рахунків </h4>#}
+{#                            Оплачуйте комунальні платежі безпечно через єдиний шлюз. Контролюйте власний рахунок#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="media">#}
+{#                        <div class="media-left">#}
+{#                            <div class="icon">#}
+{#                                <i class="pe-7s-check"></i>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="media-body">#}
+{#                            <h4>Колективні рішення</h4>#}
+{#                            Інструменти системи створенні для організації та реалізації опитувнань#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="media">#}
+{#                        <div class="media-left">#}
+{#                            <div class="icon">#}
+{#                                <i class="pe-7s-phone"></i>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="media-body">#}
+{#                            <h4>Соціальна мережа</h4>#}
+{#                            Спілкуйтесь з сусідами за допомогою форуму та приватних повідомленнь#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                </div>#}
+                <div class="col-md-6 col-md-offset-3">
+                    <form method="POST" action="{% url 'account_signup' %}" id="signupform">
+                        <div class="card card-hidden">
+                            <div class="text-center header" style="display: block; overflow: auto; padding-bottom: 0px;">
+                                <a>{% trans 'Registration' %}</a>
+                            </div>
+                            <div class="content">
+                                {% csrf_token %}
+                                {% for field in form %}
+                                    <div class="form-group">
+                                        <label class="control-label">{{ field.labal_tag }}</label>
+                                        {{ field }}
+                                        {% for err in field.errors %}
+                                            <div class="alert alert-error">
+                                                <span>{{ err }}</span>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+
+                                <div class="footer text-center" style="display: block; overflow: auto">
+                                    <button type="submit"
+                                            class="btn btn-fill btn-lg btn-success col-md-12 col-sm-12">{% trans "Create Free Account" %}
+                                    </button>
+                                    <div class="col-xs-12">
+                                        <a class="btn-xs" href="{% url 'account_login' %}">
+                                            {% trans "Already have account?" %}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer footer-transparent">
+            <div class="container">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="/">
+                                Головна
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about">
+                                Про проект
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/help">
+                                Допомога
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/contacts">
+                                Контакти
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
+                    2016 &copy; <a href="/">30th Meridian</a> and
+                    <a href="http://rozumnemisto.org">Розумне Місто</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+</div>
+
+{% endblock %}

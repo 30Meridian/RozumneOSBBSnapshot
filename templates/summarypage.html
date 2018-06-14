@@ -1,0 +1,318 @@
+{% extends 'base.html' %}
+{% load static%}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Home Page' %}. {{ condominium.name }}.
+{% endblock %}
+
+{% block content %}
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet"/>
+    <!-- Main content -->
+{% if news %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">{% trans 'Last news in codominium' %}:</div>
+
+                <div class="content">
+                    <table class="table table-bordered table-hover">
+                        <tbody>
+                        {% for n in news %}
+                            <tr>
+                                <td class="vert-align" width="80px">
+                                    <a href="{% url 'condominium:news:article' condominium_slug=request.session.condominium_slug id=n.id %}">
+                                        <img src="{{ n.mainimg.thumbnail.url }}" width="80px">
+                                    </a></td>
+                                <td>
+                                    <h5><a href="{% url 'condominium:news:article' condominium_slug=request.session.condominium_slug id=n.id %}"
+                                           class="title-article">{{ n.title|truncatewords:50 }}
+                                    </a></h5>{{ n.shortdesc }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="footer">
+                    <div class="stats">
+                        <div class="btn-group">
+                            <a href="{% url 'condominium:news:list' condominium_slug=request.session.condominium_slug %}" class="btn btn-success btn-fill btn-default">{% trans 'Read all news' %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+    {% if ideas%}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">{% trans 'Last active ideas' %}:</div>
+                <div class="content">
+                    <table class="table table-bordered table-hover">
+                        <tbody>
+                        <tr bgcolor="#f4f4f4">
+                            <th  style="width: 65px">{% trans 'Picture' %}</th>
+                            <th style="width: 115px">{% trans 'Number' %}</th>
+                            <th>{% trans 'Text' %}</th>
+                            <th style="width: 125px">{% trans 'Signatures' %}</th>
+                        </tr>
+
+                        {% for idea in ideas %}
+                            <tr>
+                                <td class="vert-align">
+                                    {% if idea.image.thumbnail%}
+                                        <a href="/condominium/{{request.session.condominium_slug }}/ideas/{{ idea.id }}" class="title-idea"><img src="{{ MEDIA_URL }}{{ idea.image.thumbnail }}" width="80px"></a>
+                                    {% else %}
+                                        <a href="/condominium/{{request.session.condominium_slug }}/ideas/{{ idea.id }}" class="title-idea"><img src="{% static 'img/empty.gif' %}" width="80px"></a>
+                                    {% endif %}
+                                </td>
+                                <td class="vert-align"><a href="/condominium/{{request.session.condominium_slug }}/ideas/{{ idea.id }}" class="title-idea">{{ idea.id }}</a></td>
+                                <td class="valign"><a href="/condominium/{{request.session.condominium_slug }}/ideas/{{ idea.id }}" class="title-idea">{{ idea.title|truncatewords:25 }}</a></td>
+                                <td class="vert-align"><div class="text-center"> {{ idea.vote_count }}/{{ condominium.votes }}</div>
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar progress-bar-success" style="width:{% widthratio idea.ideasvoices_set.count condominium.votes 100%}%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+{#    {% if issues %}#}
+{#    <div class="row">#}
+{#        <div class="col-md-12">#}
+{#            <div class="card">#}
+{#                <div class="header">Свіжі заявки на усунення дефектів ЖКГ:</div>#}
+{#                <div class="content">#}
+{#                    <table class="table table-bordered table-hover">#}
+{#                        <tbody><tr bgcolor="#f4f4f4">#}
+{#                            <th  style="width: 65px">Ілюстрація</th>#}
+{#                            <th style="width: 115px">Номер заявки</th>#}
+{#                            <th>Суть заявки</th>#}
+{#                            <th style="width: 115px">Статус</th>#}
+{#                        </tr>#}
+{#                        {% for issue in issues|slice:":3" %}#}
+{#                        <tr>#}
+{#                            <td class="vert-align">#}
+{#                                {% if issue.issuefiles_set.all.0.document_ref.type_name == "image" %}#}
+{#                                    <a href="../defects/{{ issue.id  }}" id="defectitem"><img src="/media/defects/thumbnail.{{issue.issuefiles_set.all.0.document_ref.file_name}}"  alt="Зображення дефекту" width="100px" /></a>#}
+{#                                {% else %}#}
+{#                                    <a href="../defects/{{ issue.id  }}" id="defectitem"><img src="{{ MEDIA_URL }}/defects/empty.gif" width="80px"></a>#}
+{#                                {% endif %}#}
+{#                            </td>#}
+{#                            <td class="vert-align">#}
+{#                                <a href="../defects/{{ issue.id  }}" id="defectitem">№{{ issue.id }}</a><br/>#}
+{#                            </td>#}
+{#                            <td class="valign">#}
+{#                                <b><a href="../defects/{{ issue.id  }}" id="defectitem">{{issue.title|truncatewords:30}}</a></b><br/>#}
+{#                                <i class="fa fa-map-marker"></i>#}
+{#                                <a href="../defects/{{ issue.id  }}" id="defectitem">{{issue.address}}</a>#}
+{#                            </td>#}
+{#                            <td class="vert-align">#}
+{#                                <a href="../defects/{{ issue.id  }}" id="defectitem">#}
+{#                                    {% if issue.last_issue.status == 1 %}#}
+{#                                        <span class="badge bg-yellow">{{issue.last_issue.statusName}}</span>#}
+{#                                    {% elif issue.last_issue.status == 2 %}#}
+{#                                        <span class="badge bg-green">{{issue.last_issue.statusName}}</span>#}
+{#                                    {% elif issue.last_issue.status == 4 %}#}
+{#                                        <span class="badge bg-aqua">{{issue.last_issue.statusName}}</span>#}
+{#                                    {% elif issue.last_issue.status == 5 %}#}
+{#                                        <span class="badge bg-gray">{{issue.last_issue.statusName}}</span>#}
+{#                                    {% else%}#}
+{#                                        <span class="badge bg-gray">{{issue.last_issue.statusName}}</span>#}
+{#                                    {% endif %}#}
+{#                                </a>#}
+{#                            </td>#}
+{#                        </tr>#}
+{#                        {% endfor %}#}
+{#                        </tbody>#}
+{#                    </table>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    {% endif %}#}
+
+    {% if polls %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">{% trans 'Last polls' %}:</div>
+                <div class="content">
+                    <table class="table table-bordered table-hover">
+                        <tbody><tr bgcolor="#f4f4f4">
+                            <th style="width: 30px"><div class="text-center"> {% trans 'Number' %}</div></th>
+                            <th style="width: 500px"><div class="text-center"> {% trans 'Title' %}</div></th>
+                            <th><div class="text-center"> {% trans 'Date of start' %}</div></th>
+                            <th><div class="text-center"> {% trans 'Date of end' %}</div></th>
+                            <th><div class="text-center">{% trans 'Count of votes' %}</div></th>
+                            <th><div class="text-center"> {% trans 'Status' %}</div></th>
+                        </tr>
+                        {% for poll in polls %}
+                            <tr>
+                                <td class="vert-align">
+                                    <a href="{% url 'condominium:polls:detail' condominium_slug=request.session.condominium_slug pk=poll.id %}" class='title-poll'>{{poll.id}}</a>
+                                </td>
+                                <td class="vert-align">
+                                    <a href="{% url 'condominium:polls:detail' condominium_slug=request.session.condominium_slug pk=poll.id %}" class='title-poll'>{{poll.question|truncatechars:50 }}</a>
+                                </td>
+                                <td class="vert-align">
+                                    {{poll.date_start|date:"d-m-Y"}}
+                                </td>
+                                <td class="vert-align class='title-poll'">
+                                    {{poll.date_end|date:"d-m-Y"}}
+                                </td>
+                                <td class="vert-align">
+                                    <div class="text-center">{{ poll.vote_set.count }}</div>
+                                </td>
+                                <td class="vert-align">
+                                    {% if poll.archive == 0 %}
+                                        <span class="badge bg-green">{% trans 'Voting continues' %}</span>
+                                    {% else %}
+                                        {% trans 'In archive' %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.box -->
+    {% endif %}
+
+
+    {% if items%}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">{% trans 'Last problems' %}:</div>
+                <div class="content">
+                    <table class="table table-bordered table-hover">
+                        <tbody>
+                        <tr bgcolor="#f4f4f4">
+{#                            <th  style="width: 65px">Ілюстрація</th>#}
+                            <th style="padding: 20px">{% trans 'Item' %}</th>
+                            <th style="width: 150px">{% trans 'Create date' %}</th>
+                        </tr>
+
+                        {% for item in items %}
+                            <tr>
+                                <td class="vert-align">
+                                    <div class="illustration">
+                                        {% if item.photo.thumbnail%}
+                                            <a href="/condominium/{{request.session.condominium_slug }}/problems/{{ item.id }}"  style="padding: 10px"><img src="{{ MEDIA_URL }}{{ item.photo.thumbnail }}" width="80px"></a>
+                                        {% else %}
+                                            <a href="/condominium/{{request.session.condominium_slug }}/problems/{{ item.id }}"  style="padding: 10px"><img src="{% static 'img/empty.gif' %}" width="80px"></a>
+                                        {% endif %}
+                                    </div>
+                                    <div class="title-col">
+                                        <a href="/condominium/{{request.session.condominium_slug }}/problems/{{ item.id }}" style="align-items: center;">{{ item.title|truncatechars:80 }}</a>
+                                    </div>
+
+                                </td>
+                                <td class="vert-align">{{ item.create|date:"d-m-Y" }}<br/>{% trans 'Time to react' %}: <b>
+                                    {% if item.days_left >= 0 %}
+                                        {{ item.days_left }}
+                                    {% else %}
+                                        0
+                                    {% endif %}
+                                </b> {% trans 'days' %}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="footer">
+                    <div class="stats">
+                        <div class="btn-group">
+                            <a href="{% url 'condominium:problems:items_list' condominium_slug=request.session.condominium_slug %}" class="btn btn-success btn-fill btn-default">{% trans 'View all problems' %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if topics %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">{% trans 'Last topics on forums' %}:</div>
+                <div class="content">
+                    <table class="table table-bordered table-hover">
+                        <tbody>
+                        <tr bgcolor="#f4f4f4">
+{#                            <th  style="width: 65px">Ілюстрація форуму</th>#}
+                            <th style="width: 300px">{% trans 'Forum' %}</th>
+                            <th >{% trans 'Topic title' %}</th>
+                            <th style="width: 115px">{% trans 'Count of publications' %}</th>
+                            <th style="width: 150px">{% trans 'Date of the last publications in topic' %}</th>
+                        </tr>
+
+                        {% for topic in topics %}
+                            <tr>
+                                <td class="vert-align" >
+{#                                    <div class="illustration">#}
+{#                                        {% if topic.forum.image != null %}#}
+{#                                            <a href="{% url 'condominium:forum:forum' request.session.condominium_slug topic.forum.slug topic.forum.id %}"><img src="{{ topic.forum.image.url }}" width="80px"> </a>#}
+{#                                        {% else %}#}
+{#                                            <a href="{% url 'condominium:forum:forum' request.session.condominium_slug topic.forum.slug topic.forum.id %}" ><img src="{{ MEDIA_URL }}/ideas/empty.gif" width="80px"></a>#}
+{#                                        {% endif %}#}
+{#                                    </div>#}
+                                    <div class="title-col">
+                                        <a href="{% url 'condominium:forum:forum' request.session.condominium_slug topic.forum.slug topic.forum.id %}" >{{ topic.forum.name|truncatechars:25 }}</a>
+                                    </div>
+                                </td>
+
+                                 <td class="vert-align" >
+                                    <div class="topic-name"  >
+                                    <a href="{% url 'condominium:forum_conversation:topic' request.session.condominium_slug topic.forum.slug topic.forum.pk topic.slug topic.pk %}" class="topic-name-link" >{{ topic.subject|truncatechars:50 }}</a>
+                                    </div>
+                                </td>
+
+                                <td class="vert-align">{{ topic.posts_count }}</td>
+                                <td>
+                                  {{ topic.last_post.created }}
+                            </td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="footer">
+                    <div class="stats">
+                        <div class="btn-group">
+                            <a href="/condominium/{{ request.session.condominium_slug }}/forum/{#% url 'condominium:home' condominium_slug=request.session.condominium_slug  %#}" class="btn btn-success btn-fill btn-default">{% trans 'View all forums' %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if not news and not ideas and not polls and not items and not topics  %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">{% trans "This condominium has not any content!" %}</div>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

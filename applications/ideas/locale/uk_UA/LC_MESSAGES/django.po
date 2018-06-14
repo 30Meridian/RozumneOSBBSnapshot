@@ -1,0 +1,822 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-10 14:08+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: applications/ideas/admin.py:32
+msgid "General"
+msgstr "Загальна інформація"
+
+#: applications/ideas/admin.py:32 applications/ideas/models.py:61
+msgid "Activities"
+msgstr "Активності"
+
+#: applications/ideas/admin.py:60 applications/ideas/admin.py:97
+#: applications/ideas/templates/idea.html:39
+#: applications/ideas/templates/idea_print.html:11
+msgid "Author"
+msgstr "Автор:"
+
+#: applications/ideas/admin.py:61
+msgid "Count of Voices"
+msgstr "Кількість голосів"
+
+#: applications/ideas/admin.py:62 applications/ideas/models.py:23
+msgid "idea create_date"
+msgstr "Дата створення"
+
+#: applications/ideas/admin.py:98
+msgid "created"
+msgstr "Дата створення"
+
+#: applications/ideas/admin.py:114
+msgid "List"
+msgstr "Список"
+
+#: applications/ideas/admin.py:114
+msgid "Add idea"
+msgstr "Додати ідею"
+
+#: applications/ideas/admin.py:114
+msgid "Archive"
+msgstr "Архів"
+
+#: applications/ideas/apps.py:6 applications/ideas/models.py:36
+msgid "Ideas"
+msgstr "Ідеї"
+
+#: applications/ideas/forms.py:10
+msgid "Enter idea title"
+msgstr "Введіть назву ідеї"
+
+#: applications/ideas/forms.py:12
+msgid ""
+"Please enter description of raised idea and give arguments why this idea "
+"should be satisfied (max: 1000 characters)"
+msgstr ""
+"Розгорнуто опишіть підняте питання, приведіть аргументи,чому саме ця ідея "
+"має бути задоволена (максимально 1000 символів)"
+
+#: applications/ideas/forms.py:16
+msgid "Choose picture"
+msgstr "Оберіть зображення"
+
+#: applications/ideas/forms.py:40 applications/ideas/models.py:21
+msgid "idea text"
+msgstr "Зміст"
+
+#: applications/ideas/forms.py:42 applications/ideas/models.py:25
+msgid "idea resolution"
+msgstr "Рішення"
+
+#: applications/ideas/models.py:16
+msgid "idea title"
+msgstr "Назва"
+
+#: applications/ideas/models.py:20
+msgid "idea image"
+msgstr "Зображення"
+
+#: applications/ideas/models.py:22
+msgid "idea status"
+msgstr "Статус"
+
+#: applications/ideas/models.py:24
+msgid "idea owner_user"
+msgstr "Власник"
+
+#: applications/ideas/models.py:26
+msgid "idea condominium"
+msgstr "ОСББ"
+
+#: applications/ideas/models.py:27
+msgid "idea when_approve"
+msgstr "Коли затверджена"
+
+#: applications/ideas/models.py:28
+msgid "idea anonymous"
+msgstr "Анонімно"
+
+#: applications/ideas/models.py:29
+msgid "Public"
+msgstr "Публічність"
+
+#: applications/ideas/models.py:30
+msgid "Allows to view idea for users from other condominiums"
+msgstr ""
+"Дозволити переглядати ідею користувачам інших ОСББ або анонімним "
+"користувачам."
+
+#: applications/ideas/models.py:35 applications/ideas/templates/idea.html:29
+msgid "Idea"
+msgstr "Ідея"
+
+#: applications/ideas/models.py:51
+msgid "activity datatime"
+msgstr "Дата активності"
+
+#: applications/ideas/models.py:52
+msgid "activity activity"
+msgstr "Назва активності"
+
+#: applications/ideas/models.py:53
+msgid "activity user"
+msgstr "Користувач"
+
+#: applications/ideas/models.py:54
+msgid "activity ip"
+msgstr "IP"
+
+#: applications/ideas/models.py:55
+msgid "activity idea"
+msgstr "Ідея"
+
+#: applications/ideas/models.py:60
+msgid "Activity"
+msgstr "Активність"
+
+#: applications/ideas/models.py:67
+msgid "status title"
+msgstr "Назва статусу"
+
+#: applications/ideas/models.py:72 applications/ideas/templates/idea.html:12
+#: applications/ideas/templates/idea.html:35
+#: applications/ideas/templates/idea_print.html:14
+msgid "Status"
+msgstr "Статус"
+
+#: applications/ideas/models.py:73
+msgid "Statuses"
+msgstr "Статуси"
+
+#: applications/ideas/models.py:80
+msgid "Voice idea"
+msgstr "Голос"
+
+#: applications/ideas/models.py:81
+msgid "Voice user"
+msgstr "Користувач"
+
+#: applications/ideas/models.py:82
+msgid "Voice block"
+msgstr "Заблоковано"
+
+#: applications/ideas/models.py:83
+msgid "Voice created"
+msgstr "Дата створення"
+
+#: applications/ideas/models.py:84
+msgid "Voice ip"
+msgstr "ІР"
+
+#: applications/ideas/models.py:89
+msgid "Voice"
+msgstr "Голос"
+
+#: applications/ideas/models.py:90
+msgid "Voices"
+msgstr "Голоси"
+
+#: applications/ideas/templates/add_idea.html:4
+msgid "Add idea. Information system 'Smart OSBB' "
+msgstr "Додати свою ідею. Інформаційна система \"Розумне ОСББ\""
+
+#: applications/ideas/templates/add_idea.html:10
+msgid "Add idea for your OSBB"
+msgstr "Додати ідею для свого ОСББ"
+
+#: applications/ideas/templates/add_idea.html:14
+#: applications/ideas/templates/idea.html:16
+msgid "Main page"
+msgstr "Головна"
+
+#: applications/ideas/templates/add_idea.html:15
+#: applications/ideas/templates/idea.html:17
+msgid "List of ideas"
+msgstr "Список ідей"
+
+#: applications/ideas/templates/add_idea.html:16
+msgid "Add own idea"
+msgstr "Додати свою ідею"
+
+#: applications/ideas/templates/add_idea.html:36
+#: applications/ideas/templates/help_idea.html:25
+msgid "Idea title"
+msgstr "Назва ідеї"
+
+#: applications/ideas/templates/add_idea.html:43
+msgid "Idea description"
+msgstr "Опис ідеї"
+
+#: applications/ideas/templates/add_idea.html:50
+msgid "Illustration for idea"
+msgstr "Ілюстрація до ідеї"
+
+#: applications/ideas/templates/add_idea.html:76
+msgid "read"
+msgstr "з"
+
+#: applications/ideas/templates/add_idea.html:76
+msgid "rules"
+msgstr "правилами"
+
+#: applications/ideas/templates/add_idea.html:77
+msgid "of ideas and consent to the processing of personal data"
+msgstr "ідей ознайомлений(на) та даю згоду на обробку персональних даних"
+
+#: applications/ideas/templates/add_idea.html:87
+msgid "Submit idea!"
+msgstr "Відправити ідею!"
+
+#: applications/ideas/templates/help_idea.html:4
+#: applications/ideas/templates/help_idea.html:14
+msgid "Help for the module \"Ideas\""
+msgstr "Допомога по модулю \"Ідеї\""
+
+#: applications/ideas/templates/help_idea.html:16
+msgid "How does create idea?"
+msgstr "Як створити ідею?"
+
+#: applications/ideas/templates/help_idea.html:17
+msgid "To create idea user must:"
+msgstr "Для того, щоб створити ідею, користувачу необхідно:"
+
+#: applications/ideas/templates/help_idea.html:18
+msgid "register on the web portal"
+msgstr "зареєструватися на веб-порталі;"
+
+#: applications/ideas/templates/help_idea.html:20
+msgid "In the sidebar choose \"Ideas\" then \"Add idea\""
+msgstr "в лівому меню «Ідеї» обрати «Додати ідею»"
+
+#: applications/ideas/templates/help_idea.html:23
+msgid "Fill all these fields"
+msgstr "заповнити всі поля та нажати на кнопку «Відправити»:"
+
+#: applications/ideas/templates/help_idea.html:26
+msgid "Text substantiation ideas"
+msgstr "Текст-обгрунтування ідеї"
+
+#: applications/ideas/templates/help_idea.html:27
+msgid "Requirements to authorities"
+msgstr "Вимоги до органів влади"
+
+#: applications/ideas/templates/help_idea.html:28
+msgid "Load picture"
+msgstr "Кнопка завантаження зображення"
+
+#: applications/ideas/templates/help_idea.html:29
+msgid "Confirm that you agree with the processing of your personal data"
+msgstr "Поставте галочку,що Ви згодні з обробкою Ваших персональних даних"
+
+#: applications/ideas/templates/help_idea.html:31
+msgid "Push submit to sent your idea to moderation"
+msgstr "Кнопка «Відправити», для надіслання ідеї на модерацію"
+
+#: applications/ideas/templates/help_idea.html:34
+msgid ""
+"After reviewing your idea of a moderator, it will appear on the site. In the "
+"event that your idea will not pass moderation,You will be notified on your "
+"registration e-mail."
+msgstr ""
+"Після розгляду Вашої ідеї модератором, вона з’явиться на сайті. У випадку, "
+"якщо Ваша ідея не пройде модерацію,Вам буде повідомлено про це на вказаний "
+"при реєстрації е-мейл."
+
+#: applications/ideas/templates/help_idea.html:36
+msgid "How sign idea?"
+msgstr "Як підписати ідею?"
+
+#: applications/ideas/templates/help_idea.html:38
+msgid ""
+"For sign idea user must choose \"Ideas\" then \"Ideas List\" in the sidebar."
+msgstr ""
+"Для того, щоб підписати ідею, необхідно зайти в меню «Ідеї» - «Активні ідеї»."
+
+#: applications/ideas/templates/help_idea.html:39
+msgid ""
+"On this page you can see: illustration, number, essence, colected voives, "
+"and status of idea"
+msgstr ""
+"На даній сторінці Ви можете бачити опис ідеї, кількість зібраних голосів, "
+"кількість днів, що залишилося для підписів."
+
+#: applications/ideas/templates/help_idea.html:44
+msgid ""
+"Ideas what were signed by you have status \"Signed\", and ideas what you can "
+"sign have status \"Doesn`t signed\""
+msgstr ""
+"Підписані Вами ідеї мають статус «Підписана», а ті, що можна підписати – «Не "
+"підписана»."
+
+#: applications/ideas/templates/help_idea.html:48
+msgid "If idea was signed by you, you can cancel your voice."
+msgstr ""
+"Якщо ідея вже підписана Вами, ми можете «забрати» свій підпис, нажавши в "
+"картці ідей на кнопку «Відхилити»."
+
+#: applications/ideas/templates/idea.html:4
+#: applications/ideas/templates/idea.html:12
+msgid "Idea #"
+msgstr "Ідея №"
+
+#: applications/ideas/templates/idea.html:18
+msgid "Card of idea"
+msgstr "Картка ідеї"
+
+#: applications/ideas/templates/idea.html:30
+msgid "Idea number"
+msgstr "Власник"
+
+#: applications/ideas/templates/idea.html:31
+#: applications/ideas/templates/idea_print.html:9
+msgid "Create date"
+msgstr "Дата створення"
+
+#: applications/ideas/templates/idea.html:32
+msgid "Date of publication"
+msgstr "Дата публікації:"
+
+#: applications/ideas/templates/idea.html:34
+msgid "Date of removal from publication"
+msgstr "Дата зняття з публікації:"
+
+#: applications/ideas/templates/idea.html:35
+msgid "The collection of signatures completed."
+msgstr "Збір підписів завершено."
+
+#: applications/ideas/templates/idea.html:37
+msgid "Condominium"
+msgstr "ОСББ"
+
+#: applications/ideas/templates/idea.html:50
+msgid "Signed. Deny?"
+msgstr "Пiдписана. Відхилити?"
+
+#: applications/ideas/templates/idea.html:55
+msgid "Sign"
+msgstr "Пiдписати"
+
+#: applications/ideas/templates/idea.html:61
+msgid "You must be member of this condominium to sign this idea!"
+msgstr "Ви повинні бути членом цього ОСББ, щоб підписати ідею!"
+
+#: applications/ideas/templates/idea.html:64
+msgid "Do you want sign?"
+msgstr "Бажаете підписати?"
+
+#: applications/ideas/templates/idea.html:65
+msgid "LogIn/ Register"
+msgstr "Увійти/ Зареєструватись"
+
+#: applications/ideas/templates/idea.html:77
+msgid "VOICES"
+msgstr "ГОЛОСІВ"
+
+#: applications/ideas/templates/idea.html:85
+#, python-format
+msgid " from %(needvotes)s neccessarily "
+msgstr "з %(needvotes)s необхідних"
+
+#: applications/ideas/templates/idea.html:99
+msgid "remained"
+msgstr "Залишилось"
+
+#: applications/ideas/templates/idea.html:100
+#: applications/ideas/templates/idea.html:107
+msgid "days"
+msgstr "днів"
+
+#: applications/ideas/templates/idea.html:107
+msgid "deadline"
+msgstr "поріг"
+
+#: applications/ideas/templates/idea.html:133
+#: applications/ideas/templates/ideas_list_2.html:27
+msgid "Idea essense"
+msgstr "Суть ідеї"
+
+#: applications/ideas/templates/idea.html:146
+msgid "Management ressolution"
+msgstr "Резолюція правління"
+
+#: applications/ideas/templates/idea.html:164
+#: applications/ideas/templates/idea_print.html:64
+msgid "Supported"
+msgstr "Підтримали"
+
+#: applications/ideas/templates/idea_print.html:8
+msgid "Idea Number"
+msgstr "Номер ідеї"
+
+#: applications/ideas/templates/idea_print.html:10
+msgid "Publication date"
+msgstr "Дата публікації"
+
+#: applications/ideas/templates/idea_print.html:13
+msgid "Date of removed from publication"
+msgstr "Дата зняття з публікації:"
+
+#: applications/ideas/templates/idea_print.html:14
+msgid ""
+"The collection of signatures is completed. Idea has not collected necessary "
+"number of voices."
+msgstr "Збір підписів завершено. Ідея не набрала потрібну кількість голосів."
+
+#: applications/ideas/templates/idea_print.html:16
+msgid "Contact the author"
+msgstr "Зв'язок з автором"
+
+#: applications/ideas/templates/idea_print.html:16
+msgid "phone"
+msgstr "телефонний №"
+
+#: applications/ideas/templates/idea_print.html:16
+msgid "email"
+msgstr "e-mail"
+
+#: applications/ideas/templates/idea_print.html:17
+msgid "Signatures"
+msgstr "Підписів"
+
+#: applications/ideas/templates/idea_print.html:18
+msgid "Needed"
+msgstr "Необхідно"
+
+#: applications/ideas/templates/idea_print.html:29
+#: applications/ideas/templates/ideas_list_3.html:26
+#: applications/ideas/templates/ideas_list_4.html:25
+#: applications/ideas/templates/ideas_list_5.html:26
+msgid "Idea text"
+msgstr "Суть ідеї"
+
+#: applications/ideas/templates/idea_print.html:47
+msgid "Idea resolution"
+msgstr "Резолюція по ідеї"
+
+#: applications/ideas/templates/ideas_list_2.html:3
+msgid "Ideas.In the collection of signatures."
+msgstr "Ідеї. На зборі підписів."
+
+#: applications/ideas/templates/ideas_list_2.html:21
+msgid "Ideas on the voting"
+msgstr "Ідеї на голосуванні"
+
+#: applications/ideas/templates/ideas_list_2.html:25
+#: applications/ideas/templates/ideas_list_3.html:24
+#: applications/ideas/templates/ideas_list_4.html:23
+#: applications/ideas/templates/ideas_list_5.html:24
+#: applications/ideas/templates/ideas_list_6.html:23
+msgid "Illustration"
+msgstr "Ілюстрація"
+
+#: applications/ideas/templates/ideas_list_2.html:26
+#: applications/ideas/templates/ideas_list_3.html:25
+#: applications/ideas/templates/ideas_list_4.html:24
+#: applications/ideas/templates/ideas_list_5.html:25
+#: applications/ideas/templates/ideas_list_6.html:24
+msgid "Number"
+msgstr "Номер"
+
+#: applications/ideas/templates/ideas_list_2.html:28
+msgid "Count of votes"
+msgstr "Голосів зібрано"
+
+#: applications/ideas/templates/ideas_list_2.html:29
+msgid "Your vote"
+msgstr "Ваш голос"
+
+#: applications/ideas/templates/ideas_list_2.html:52
+msgid "You voted"
+msgstr "Проголосовано"
+
+#: applications/ideas/templates/ideas_list_2.html:54
+msgid "You didn`t vote"
+msgstr "Не проголосовано"
+
+#: applications/ideas/templates/ideas_list_2.html:70
+msgid "Unfortunately, your condominium has nothing opened ideas yet "
+msgstr "На жаль, для Вашого міста відкритих ідей поки що немає"
+
+#: applications/ideas/templates/ideas_list_3.html:4
+msgid "Ideas that was rejected by manager"
+msgstr "Ідеї, що відхилені модератором"
+
+#: applications/ideas/templates/ideas_list_3.html:20
+msgid "Rejected ideas"
+msgstr "Ідеї, що відхилені модератором"
+
+#: applications/ideas/templates/ideas_list_3.html:55
+msgid "Your condominium has not rejected ideas yet."
+msgstr "Для Вашого міста відхилених ідей поки що немає"
+
+#: applications/ideas/templates/ideas_list_4.html:5
+msgid "Ideas that was viewed by manager"
+msgstr "Ідеї. Розглянуті."
+
+#: applications/ideas/templates/ideas_list_4.html:19
+msgid "Viewed ideas"
+msgstr "Розглянуті ідеї"
+
+#: applications/ideas/templates/ideas_list_4.html:55
+msgid "Your condominium has not viewed ideas yet."
+msgstr "На жаль, для Вашого міста немає розглянутих ідей"
+
+#: applications/ideas/templates/ideas_list_5.html:4
+msgid "Ideas what didn`t collect needed count of voice"
+msgstr "Ідеї, що не набрали потрібну кількість голосів."
+
+#: applications/ideas/templates/ideas_list_5.html:20
+msgid "Ideas in Archive"
+msgstr "Ідеї, що не зібрали голоси (архівні)"
+
+#: applications/ideas/templates/ideas_list_5.html:27
+#: applications/ideas/templates/ideas_list_6.html:26
+msgid "Count of signatures"
+msgstr "Голосів зібрано"
+
+#: applications/ideas/templates/ideas_list_5.html:65
+msgid "Your condominium has not ideas in archive yet."
+msgstr "На жаль, для Вашого міста архівних ідей поки що немає"
+
+#: applications/ideas/templates/ideas_list_6.html:4
+#: applications/ideas/templates/ideas_list_6.html:19
+msgid "Ideas under consideration"
+msgstr "Ідеї, що набрали голоси і розглядаються"
+
+#: applications/ideas/templates/ideas_list_6.html:25
+msgid "Text"
+msgstr "Суть звернення"
+
+#: applications/ideas/templates/ideas_list_6.html:27
+msgid "Your signature"
+msgstr "Ваш голос"
+
+#: applications/ideas/templates/ideas_list_6.html:68
+msgid ""
+"Unfortunately, your condominium has nothing ideas under consideration yet"
+msgstr "На жаль, для Вашого міста ідей, які розглядаються немає поки що немає"
+
+#: applications/ideas/templates/rules.html:3
+#: applications/ideas/templates/rules.html:12
+msgid "Rules of module \"Ideas\""
+msgstr "Правила інструменту \"Ідеї\""
+
+#: applications/ideas/templates/rules.html:13
+msgid ""
+"\"Ideas\" is module of web service \"Smart Condominium\", what was designed "
+"subject to the requirements of citizens and allowing them to express their "
+"views and focus on the important issues of their condominium."
+msgstr ""
+"Ідеї – це модуль веб-сервісу \"Розумне ОСББ\", який розроблений з "
+"урахуванням вимог громадян і дозволяє їм висловлювати свою думку та "
+"акцентувати увагу на важливих для їх ОСББ питаннях."
+
+#: applications/ideas/templates/rules.html:15
+msgid ""
+"To the idea was sent for consideration to the management of condominiums, it "
+"must gain necessary number of signatures in the allotted voting time"
+msgstr ""
+"Для того, щоб ідея була надіслана для розгляду до управління ОСББ, вона "
+"повинна набрати необхідну кількість підписів за відведений для голосування "
+"час."
+
+#: applications/ideas/templates/rules.html:18
+msgid "General recommendations for placement ideas"
+msgstr "Загальні рекомендації щодо розміщення ідей"
+
+#: applications/ideas/templates/rules.html:22
+msgid "The idea should not duplicate existing"
+msgstr "Ідея не повинна дублювати вже існуючу;"
+
+#: applications/ideas/templates/rules.html:23
+msgid ""
+"Please refrain from submitting ideas with the requirements that are in the "
+"process of implementation"
+msgstr "Утримайтесь від подачі ідеї з вимогами, що вже у процесі реалізації;"
+
+#: applications/ideas/templates/rules.html:24
+msgid ""
+"Text ideas must conform to generally accepted standards of ethics and "
+"morality"
+msgstr ""
+"Текст ідеї повинен відповідати загальноприйнятим нормам етики та моралі;"
+
+#: applications/ideas/templates/rules.html:25
+msgid "Raised issue should relate to the competence of condominium"
+msgstr "Піднята проблема повинна відноситись до компетенції ОСББ ;"
+
+#: applications/ideas/templates/rules.html:26
+msgid ""
+"Enter the recipient ideas, like the head of condominiums, condominium manager"
+msgstr "Вказуйте адресата ідеї, наприклад: голову ОСББ, менеджера ОСББ."
+
+#: applications/ideas/templates/rules.html:27
+msgid "The idea that does not meet the guidelines may be rejected by manager"
+msgstr "Ідея, яка не відповідає рекомендаціям може бути відхилена менеджером."
+
+#: applications/ideas/templates/rules.html:31
+msgid ""
+"Electronic idea that meets all requirements published in menu \"Ideas\" in "
+"the section  \"List\"."
+msgstr ""
+"Електронна ідея, яка відповідає всім вимогам публікується у меню \"Ідеї\" у "
+"розділі \"Список\"."
+
+#: applications/ideas/templates/rules.html:32
+msgid ""
+"In case of discrepancy of  requirements this idea does not publicate. You "
+"get the message to the specified e-mail address"
+msgstr ""
+" У разі невідповідності електронної ідеї вимогам публікація такої ідеї не "
+"здійснюється, про щоавтор електронної ідеї отримує повідомлення на вказану "
+"ним адресу електронної пошти."
+
+#: applications/ideas/templates/rules.html:33
+msgid ""
+"Verification of ideas and sending printed version of ideas to the "
+"appropriate authorities makes condominium manager."
+msgstr ""
+" Перевірку ідеї та передачу текстової ідеї у відповідні органи влади "
+"здійснює менеджер ОСББ."
+
+#: applications/ideas/templates/rules.html:35
+msgid "Ideas statuses"
+msgstr "Статуси ідей"
+
+#: applications/ideas/templates/rules.html:37
+msgid ""
+"On moderation. These ideas is checked by manager and you can not view their."
+msgstr ""
+"Данні ідеї проходять перевірку менеджером і не доступні для перегляду "
+"користувачами сервісу"
+
+#: applications/ideas/templates/rules.html:38
+msgid "Active. Ideas what have passed check and now collect signatures"
+msgstr "Активні. Ідеї, що пройшли перевірку та збирають підписи"
+
+#: applications/ideas/templates/rules.html:39
+msgid ""
+"Under consideration. Ideas what collected needed count of voice and moved to "
+"appropriate authorities."
+msgstr ""
+"Розглядаються. Ідеї, які набрали потрібну кількість голосів та відправлені "
+"на розгляд до органу місцевого самоврядування"
+
+#: applications/ideas/templates/rules.html:40
+msgid "Considered. Ideas what war considered by appropriate authorities."
+msgstr ""
+"Розглянуті. Ідеї, які були розглянуті представниками влади і по ним вже є "
+"певне рішення"
+
+#: applications/ideas/templates/rules.html:41
+msgid "Rejected.Ideas what do not conform requirements of current legislation"
+msgstr "Відхилені. Ідеї, які не відповідають вимогам чинного законодавства"
+
+#: applications/ideas/templates/rules.html:42
+msgid "Archive. Ideas what didn`t collect needed count of voice"
+msgstr "Архів. Ідеї, які не набрали необхідної кількості голосів"
+
+#: applications/ideas/templates/rules.html:43
+msgid ""
+"Hidden.Ideas what from ethical reasons can not be published on the site."
+"These ideas are viewable only for service manager"
+msgstr ""
+"Приховані. Ідеї, які з етичних причин не можуть бути опубліковані на сайті. "
+"Данні ідеї доступні для перегляду лише менеджерам сервісу"
+
+#: applications/ideas/templates/thank_you.html:4
+msgid "Idea on moderation"
+msgstr "Ідея на модерації"
+
+#: applications/ideas/templates/thank_you.html:14
+msgid "Thank! Your idea has added and moved to moderation. "
+msgstr "Дякуємо! Вашу ідею успішно додано і вона знаходиться на модерації"
+
+#: applications/ideas/templates/thank_you.html:15
+msgid ""
+"After reviewing by conominium manager you get confirmation letter. Thank "
+"You! "
+msgstr ""
+"Після розгляду менеджером ОСББ Ви отримаєте лист-підтвердження. Дякуємо Вам!"
+
+#: applications/ideas/views.py:40
+msgid "Idea created"
+msgstr "Дата створення"
+
+#: applications/ideas/views.py:41
+msgid "New idea moved to moderation"
+msgstr "Нова ідея віправлена на модерацію"
+
+#: applications/ideas/views.py:42
+msgid "Your idea moved to moderation"
+msgstr "Ваша ідея відправлена на модерацію"
+
+#: applications/ideas/views.py:45
+msgid "Warning! You have added public Idea"
+msgstr "Зверніть увагу! Додана ідея буде публічною."
+
+#: applications/ideas/views.py:76
+msgid "Automatic status change to \"Archive\""
+msgstr "Стату автоматично змінено на \"Архівний\""
+
+#: applications/ideas/views.py:77
+msgid ""
+"The idea has not collected the necessary number votes and moved to the "
+"archive."
+msgstr ""
+"Ця ідея не зібрала необхіднку кількість голосів, і була перенесена в архів."
+
+#: applications/ideas/views.py:78
+msgid ""
+"Your idea has not collected the necessary number votes and moved to the "
+"archive."
+msgstr ""
+"Ваша ідея не зібрала необхіднку кількість голосів, і була перенесена в архів."
+
+#: applications/ideas/views.py:84
+msgid "Not found any ideas that mutch enddate!"
+msgstr "Не здайдено ідей, які прострочили дату закінчення!"
+
+#: applications/ideas/views.py:86 applications/ideas/views.py:271
+msgid "Access denied."
+msgstr "Доступ заборонено"
+
+#: applications/ideas/views.py:105
+msgid "You can't view ideas what are on moderation"
+msgstr "Ви не можете перглядати ідеї, що знаходяться на модерації."
+
+#: applications/ideas/views.py:112 applications/ideas/views.py:219
+#: applications/ideas/views.py:221 applications/ideas/views.py:235
+#: applications/ideas/views.py:237
+msgid "Access denied"
+msgstr "Доступ заборонено"
+
+#: applications/ideas/views.py:214
+msgid "Automatic status change to \"Verification votes\""
+msgstr "Стату автоматично змінено на \"Перевірка голосів\""
+
+#: applications/ideas/views.py:215
+msgid "The idea has the necessary number of votes. Check signatures."
+msgstr ""
+"Ця ідея зібрала необхіднку кількість голосів. і була перенесена в архів. "
+"Перевірка підписів."
+
+#: applications/ideas/views.py:216
+msgid ""
+"Your idea has the necessary number of votes and has moved to signatures check"
+msgstr ""
+"Ваша ідея зібрала необхіднку кількість голосів, і була перенесена на "
+"перевірку підписів."
+
+#: applications/ideas/views.py:274
+msgid "Test email"
+msgstr "Тестова пошта"
+
+#~ msgid "idea claim"
+#~ msgstr "Вимога"
+
+#~ msgid ""
+#~ "Please enter claim of raised idea: Please install / review / provide etc. "
+#~ "Enter the recipient of  idea: head of condominiums , residents of "
+#~ "condominiums, etc.(max: 1000 characters)"
+#~ msgstr ""
+#~ "Опишіть вимогу до цієї ідеї: Прошу встановити/розглянути/надати і т.д."
+#~ "Вкажіть адресата ідеї: голова ОСББ, жителі ОСББ, тощо. Максимально 1000 "
+#~ "символів."
+
+#~ msgid "Idea claim"
+#~ msgstr "Вимога ідеї"
+
+#~ msgid ""
+#~ "condominium manager will choose recipient of idea if you did not enter "
+#~ "recipient of idea."
+#~ msgstr ""
+#~ "якщо не вказано адресата ідеї то ідея направляється до адресата на розсуд "
+#~ "менеджера ОСББ"
+
+#~ msgid "Suggest"
+#~ msgstr "Пропоную"
+
+#~ msgid "activity petition"
+#~ msgstr "Ідея"
+
+#~ msgid "Voice petition"
+#~ msgstr "Ідеяя"
+
+#~ msgid "idea statussssss"
+#~ msgstr "Статус"

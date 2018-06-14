@@ -1,0 +1,356 @@
+.header-text {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.post-detail iframe {
+    width:100%;
+    height:400px;
+}
+
+@media screen and (max-width: 480px) {
+    .post-detail iframe {
+        height:230px;
+    }
+
+}
+
+header .btn-primary {
+    border: 1px solid #fff;
+}
+
+header .btn-primary:hover {
+    background-color: #08a057;
+    border-color: #fff;
+}
+
+header .btn-primary:active:hover,
+header .btn-primary.active:hover,
+header .open>.dropdown-toggle.btn-primary:hover,
+header .btn-primary:active:focus,
+header .btn-primary.active:focus,
+header .open>.dropdown-toggle.btn-primary:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.open>.dropdown-toggle.btn-primary.focus {
+    background-color: #08a057;
+    border-color: #fff;
+}
+
+header .btn-primary.active,
+header .btn-primary.focus,
+header .btn-primary:active,
+header .btn-primary:focus,
+header .btn-primary:hover,
+header .open>.dropdown-toggle.btn-primary {
+    border-color: #fff;
+}
+
+header .btn-group {
+    float: right;
+}
+
+.news-head {
+    font-size: 20px;
+    color: #333;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+.news-heads h2 {
+    padding-left: 15px;
+}
+
+.map-block {
+    position: relative;
+    padding-bottom: 75%;
+    overflow: hidden;
+}
+
+.map-block iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.log-in i::before,
+.registration i::before {
+    position: relative;
+    transition: left .35s ease;
+    left: 0;
+}
+
+.log-in:hover i::before,
+.registration:hover i::before {
+    left: -5px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.page-head h1 {
+    text-align: center;
+    font-size: 28px;
+}
+
+.about-block {
+    font-family: "Open Sans", sans-serif;
+    padding-left: 20px;
+}
+
+.about-block h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.about-block ul {
+    padding-left: 15px;
+}
+
+.about-block li {
+    font-size: 15px;
+    list-style-type: disc;
+}
+
+.fb-frame iframe {
+    max-width: 340px;
+}
+
+
+/*TEAM SECTION*/
+
+.team-head {
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 50px;
+    padding-left: 16px;
+}
+
+.team-head h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.team-head ul {
+    padding-left: 18px;
+    list-style-type: disc;
+}
+
+.team-head li {
+    list-style-type: disc;
+    font-size: 15px;
+}
+
+.team-item {
+    text-align: center;
+    margin: 20px 0;
+    padding: 0 17px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.team-item h4 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.team-item__img img {
+    margin: 0 auto;
+    border: 2px solid #08a057;
+}
+
+.team-item i {
+    font-size: 18px;
+}
+
+.team-item__description {
+    margin-bottom: 15px;
+}
+
+.team-item__description a {
+    border-bottom: 1px solid transparent;
+    transition: border-bottom .35s ease;
+}
+
+.team-item__description a:hover {
+    border-bottom: 1px solid #08a057;
+}
+
+.team-item li a i::before {
+    transition: color .35s linear;
+}
+
+.team-item li a:hover i::before {
+    color: #000;
+}
+
+
+/*END OF TEAM SECTION*/
+
+.languages-btn .btn-default {
+    background: #08a057;
+    color: #fff;
+}
+
+.languages-btn .btn-default:active:hover,
+.languages-btn .btn-default.active:hover,
+.languages-btn .open>.dropdown-toggle.btn-default:hover,
+.languages-btn .btn-default:active:focus,
+.languages-btn .btn-default.active:focus,
+.languages-btn .open>.dropdown-toggle.btn-default:focus,
+.languages-btn .btn-default:active.focus,
+.languages-btn .btn-default.active.focus,
+.languages-btn .open>.dropdown-toggle.btn-default.focus {
+    color: #fff;
+    background-color: #08a057;
+    border-color: #fff;
+    box-shadow: none;
+}
+
+.languages-btn .btn-default:active:hover,
+.languages-btn .btn-default.active:hover,
+.languages-btn .open>.dropdown-toggle.btn-default:hover,
+.languages-btn .btn-default:active:focus,
+.languages-btn .btn-default.active:focus,
+.languages-btn .open>.dropdown-toggle.btn-default:focus,
+.languages-btn .btn-default:active.focus,
+.languages-btn .btn-default.active.focus,
+.languages-btn .open>.dropdown-toggle.btn-default.focus {
+    color: #fff;
+    background-color: #08a057;
+    border-color: #fff;
+    box-shadow: none;
+}
+
+.languages-btn .btn-default:active:hover,
+.languages-btn .btn-default.active:hover,
+.languages-btn .open>.dropdown-toggle.btn-default:hover,
+.languages-btn .btn-default:active:focus,
+.languages-btn .btn-default.active:focus,
+.languages-btn .open>.dropdown-toggle.btn-default:focus,
+.languages-btn .btn-default:active.focus,
+.languages-btn .btn-default.active.focus,
+.languages-btn .open>.dropdown-toggle.btn-default.focus {
+		color: #fff;
+    background-color: #08a057;
+    border-color: #fff;
+    box-shadow: none;
+}
+
+.lang-select .form-control {
+	background-color: #08a057;
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+.lang-select .form-control option {
+	background-color: rgba(51, 51, 51, 1);
+}
+
+.lang-select {
+	padding-right: 10px;
+}
+
+
+@media screen and (max-width: 992px) {
+
+	.lang-select {
+		max-width: 160px;
+		float: right;
+		margin-top: 15px;
+	}
+
+	.log-buttons {
+		padding-right: 15px;
+	}
+
+	.header-text {
+		line-height: 48px;
+	}
+
+	.footer .list-category li {
+		width: 45%;
+	}
+
+	header .btn-group {
+		padding-right: 30px;
+	}
+
+	.about-text {
+		margin-bottom: 40px;
+	}
+
+	.lang-select {
+		padding-right: 30px;
+	}
+
+	.team-item {
+		margin: 30px 0;
+	}
+}
+
+
+@media screen and (max-width: 768px) {
+    section {
+        padding: 20px 0;
+    }
+    .header-text {
+        padding: 15px 0;
+    }
+    header .btn-group {
+        margin-bottom: 15px;
+    }
+    .header a.logo {
+        padding: 10px 0 0 0;
+    }
+    .header a.logo img {
+        max-width: 75%;
+    }
+
+    header .btn-group {
+    	float: none;
+    	padding-right: 0;
+    }
+
+    .lang-select {
+    	margin: 15px auto 15px;
+    	float: none;
+    }
+
+    .header a.logo {
+    	float: none;
+    }
+
+    .header a.logo img {
+    	max-width: 320px;
+    }
+
+    .container {
+    	max-width: 100%;
+    }
+
+    .header-text {
+    	line-height: 26px;
+    }
+
+    .news-head {
+    	text-align: center;
+    }
+
+    .lang-select {
+    	padding-right: 0;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+
+	.header a.logo img {
+		max-width: 230px;
+	}
+}

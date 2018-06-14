@@ -1,0 +1,256 @@
+{#{% extends 'base.html' %}#}
+{# {% load staticfiles %}#}
+{#    <title>{% block title %}Розумне місто - електронне врядування для активних міст та спроможних громад{% endblock %}</title>#}
+{##}
+{#{% block content %}#}
+{#            <!-- Main content -->#}
+{#        <section class="content">#}
+{##}
+{#          <!-- Default box -->#}
+{#          <div class="card">#}
+{##}
+{#            <div class="content">#}
+{##}
+{# <div class="col-md-4"><br/>#}
+{#       <p align="justify"> <strong>Вітаємо Вас у системі "Розумне місто" !</strong></p>#}
+{#        <p align="justify"> Мета <a href="/about" title="Про проект Розумне місто">проекту</a> <a href="https://www.facebook.com/rozumnemisto.org/?fref=ts" target="_blank"> <i class="fa fa-facebook-official"></i></a>  - об'єднати зусилля громади та влади над вирішенням проблем міста шляхом роботи через зручний web-сервіс.#}
+{#        "Розумне місто" - це децентралізована, <a href="https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BD%D0%B5_%D0%B7%D0%B0%D0%B1%D0%B5%D0%B7%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%BD%D1%8F_%D1%8F%D0%BA_%D0%BF%D0%BE%D1%81%D0%BB%D1%83%D0%B3%D0%B0" target="_blank"> SaaS</a> інформаційна система з індивідуальним набором модулів для кожного#}
+{#            населеного пункту.#}
+{#        <a href="/contacts" title="Контакти">Ми</a>  підберемо найкращий варіант <a href="/join" title="Стати частиною родини Розумного міста" target="_blank">старту системи у Вашому місті</a>, впровадить її та навчить Ваш персонал абсолютно БЕЗКОШТОВНО!</p>#}
+{#     <p align="justify"> <strong>Для старту оберіть <a href="/choosecondominium/1">тестове</a>  або <a href="/choosecondominium/4">реальне місто</a> чи </br> перегляньте короткий <a href="https://www.youtube.com/watch?v=A7uGtARBESc" target="_blank"> відео-огляд </a>системи. </strong></p>#}
+{##}
+{# </div>#}
+{#  <div class="col-md-8">#}
+{#        <img src="{%  static 'img/main_pic.jpg' %}" style="max-width: 100%;">#}
+{# </div>#}
+{##}
+{##}
+{##}
+{#  <div class="col-md-12">#}
+{#  <br/>#}
+{#  <div class="box box-default">#}
+{#      <div class="content">#}
+{#   <div class="text-center">#}
+{#         <img src="{%  static 'img/main_progress.jpg' %}" style="max-width: 100%;">#}
+{#   </div>#}
+{##}
+{#<div class="col-md-4">#}
+{#   <h4>#}
+{#       <ul>#}
+{#       <li><p>Інформування населення щодо діяльності державних органів влади</p></li>#}
+{#         <li><p>Можливість отримання оперативної інформації щодо проблем в місті</p></li>#}
+{#         <li><p>Можливість вивчати популярні цілі для капітальних інвестицій</p></li>#}
+{##}
+{#       </ul>#}
+{#   </h4>#}
+{#</div>#}
+{#<div class="col-md-4">#}
+{#   <h4>#}
+{#       <ul>#}
+{#       <li><p>Чисте та комфортне місто </p></li>#}
+{#         <li><p>Безпека та розвиток</p></li>#}
+{#         <li><p>Покращення рівня обслуговування державними установами в місті</p></li>#}
+{#         <li><p>Збільшення доходів через відкритість бюджету та витрат </p></li>#}
+{#       </ul>#}
+{#   </h4>#}
+{#</div>#}
+{#          <div class="col-md-4">#}
+{#   <h4>#}
+{#       <ul>#}
+{#       <li><p>Контроль роботи влади і комунальних підприємств</p></li>#}
+{#         <li><p>Зручне інформування влади про проблеми міста</p></li>#}
+{#         <li><p>Доступ до актуальної інформації</p></li>#}
+{#         <li><p>Можливість ведення реального діалогу з владою</p></li>#}
+{##}
+{#       </ul>#}
+{#   </h4>#}
+{#</div>#}
+{#</div>#}
+{#</div>#}
+{#  </div>#}
+{##}
+{##}
+{##}
+{#                 <div class="col-md-12">#}
+{##}
+{##}
+{##}
+{#<div class="col-md-6">#}
+{#<div class="card">#}
+{#            <div class="box-header">#}
+{#              <h3 class="box-title">Рейтинг міст по використанню інструментів сервісу </h3>#}
+{#            </div>#}
+{#            <!-- /.box-header -->#}
+{#            <div class="box-body no-padding">#}
+{#              <table class="table table-condensed">#}
+{#                <tbody><tr>#}
+{##}
+{#                  <td>Населений пункт</td>#}
+{#                  <td>Присутність у сервісах</td>#}
+{#                  <td style="width: 40px">%</td>#}
+{#                </tr>#}
+{##}
+{#                  <td><strong><a href="/yuzhny">Южне</strong>  (Одеська область)</a></td>#}
+{#                    <td>#}
+{#                    <div class="progress progress-xs     active">#}
+{#                      <div class="progress-bar progress-bar-success" style="width: 100%"></div>#}
+{#                    </div>#}
+{#                  </td>#}
+{#                  <td><span class="badge bg-green">100%</span></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{# </tr><tr>#}
+{#                 <td><strong><a href="http://www.rozumnemisto.org/druzhkivka">Дружківка</strong> (Донецька область)</a></td>#}
+{#                  <td>#}
+{#                    <div class="progress progress-xs  active">#}
+{#                      <div class="progress-bar progress-bar-green" style="width: 100%"></div>#}
+{#                    </div>#}
+{#                  </td>#}
+{#                  <td><span class="badge bg-green">100%</span></td>#}
+{#                </tr>#}
+{#<tr>#}
+{#                 <td><strong><a href="http://www.rozumnemisto.org/netishyn">Нетішин</strong> (Хмельницька область)</a></td>#}
+{#                  <td>#}
+{#                    <div class="progress progress-xs  active">#}
+{#                      <div class="progress-bar progress-bar-green" style="width: 92%"></div>#}
+{#                    </div>#}
+{#                  </td>#}
+{#                  <td><span class="badge bg-green">92%</span></td>#}
+{#                </tr>#}
+{#                  <tr><td><strong><a href="http://www.rozumnemisto.org/zorya">Зоря</strong> (Рівненська область)</a></td>#}
+{#                  <td>#}
+{#                    <div class="progress progress-xs">#}
+{#                      <div class="progress-bar progress-bar-yellow" style="width: 83%"></div>#}
+{#                    </div>#}
+{#                  </td>#}
+{#                  <td><span class="badge bg-yellow">83%</span></td>#}
+{#                </tr>#}
+{#                 <tr>#}
+{#                  <td><strong><a href="http://www.rozumnemisto.org/ostroh">Острог</strong> (Рівненська область)</a></td>#}
+{#                  <td>#}
+{#                    <div class="progress progress-xs active">#}
+{#                      <div class="progress-bar progress-bar-yellow" style="width: 83%"></div>#}
+{#                    </div>#}
+{#                  </td>#}
+{#                  <td><span class="badge bg-yellow">83%</span></td>#}
+{##}
+{#                </tr>#}
+{#                <tr>#}
+{##}
+{#                    <td><strong><a href="http://www.rozumnemisto.org/berdychiv">Бердичів</strong> (Житомирська область)</a></td>#}
+{#                  <td>#}
+{#                    <div class="progress progress-xs">#}
+{#                      <div class="progress-bar progress-bar-yellow" style="width: 75%"></div>#}
+{#                    </div>#}
+{#                  </td>#}
+{#                  <td><span class="badge bg-yellow">75%</span></td>#}
+{#                </tr>#}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{#                <tr>#}
+{##}
+{#                 <td><strong><a href="http://www.rozumnemisto.org/condominium/zhydachiv">Жидачів</a></strong> <a href="/condominiums/13">(Львівська область)</a></td>#}
+{#                  <td>#}
+{#                    <div class="progress progress-xs  active">#}
+{#                      <div class="progress-bar progress-bar-red" style="width: 67%"></div>#}
+{#                    </div>#}
+{#                  </td>#}
+{#                  <td><span class="badge bg-red">67%</span></td>#}
+{#                </tr>#}
+{##}
+{#                <tr>#}
+{#                 <td><strong><a href="http://www.rozumnemisto.org/condominium/zdolbuniv">Здолбунів</a></strong> <a href="/condominiums/17">(Рівненська область)</a></td>#}
+{#                  <td>#}
+{#                    <div class="progress progress-xs  active">#}
+{#                      <div class="progress-bar progress-bar-red" style="width: 67%"></div>#}
+{#                    </div>#}
+{#                  </td>#}
+{#                  <td><span class="badge bg-red">67%</span></td>#}
+{#                </tr>#}
+{#              </tbody></table>#}
+{#            </div>#}
+{#            <!-- /.box-body -->#}
+{#          </div>#}
+{##}
+{#</div>#}
+{##}
+{##}
+{#   <div class="col-md-6">#}
+{#<div class="card">#}
+{#            <div class="box-header">#}
+{#              <h3 class="box-title">Статистика сервісу "Розумне місто" за <strong><span id="countdays"></span></strong> днів роботи</h3>#}
+{#            </div>#}
+{#            <!-- /.box-header -->#}
+{#            <div class="box-body no-padding">#}
+{#              <table class="table table-condensed">#}
+{#                <tbody>#}
+{#                <tr>#}
+{#                  <td >Населених пунктів у системі</td>#}
+{#                  <td style="width: 40px"><span class="badge bg-green">{{ statistic.condominiums }}</span></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                  <td >Зареєстрованих користувачів у системі</td>#}
+{#                  <td style="width: 40px"><span class="badge bg-green">{{ statistic.users }}</span></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                  <td >Задіяних модулів системи (інструментів)</td>#}
+{#                  <td style="width: 40px"><span class="badge bg-green">{{ statistic.modules }}</span></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                  <td >Додано новин</td>#}
+{#                  <td style="width: 40px"><span class="badge bg-green">{{ statistic.news }}</span></td>#}
+{#                </tr>#}
+{##}
+{#                <tr>#}
+{#                  <td >Додано заявок на усунення дефектів ЖКГ</td>#}
+{#                  <td style="width: 40px"><span class="badge bg-green">{{ statistic.issues }}</span></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                  <td >Додатно ідей</td>#}
+{#                  <td style="width: 40px"><span class="badge bg-green">{{ statistic.ideas }}</span></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                  <td >Віддано голосів за ідеї</td>#}
+{#                  <td style="width: 40px"><span class="badge bg-green">{{ statistic.ideas_voices }}</span></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                  <td >Створено опитуваннь (e-референдумів)</td>#}
+{#                  <td style="width: 40px"><span class="badge bg-green">{{ statistic.polls }}</span></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                  <td >Віддано голосів за опитування</td>#}
+{#                  <td style="width: 40px"><span class="badge bg-green">{{ statistic.polls_votes }}</span></td>#}
+{#                </tr>#}
+{##}
+{#              </tbody></table>#}
+{#            </div>#}
+{#            <!-- /.box-body -->#}
+{#          </div>#}
+{##}
+{#</div>#}
+{#<script>#}
+{#//Set the two dates#}
+{#var millennium =new Date(2016, 01, 19) //Month is 0-11 in JavaScript#}
+{#today=new Date()#}
+{#//Get 1 day in milliseconds#}
+{#var one_day=1000*60*60*24#}
+{##}
+{#//Calculate difference btw the two dates, and convert to days#}
+{#var diffDays = Math.ceil((today.getTime()-millennium.getTime())/(one_day))#}
+{##}
+{#    $("#countdays").text(diffDays)#}
+{##}
+{#</script>#}
+{##}
+{#            </div><!-- /.box-body -->#}
+{##}
+{#          </div><!-- /.box -->#}
+{##}
+{#        </section><!-- /.content -->#}
+{##}
+{#{% endblock %}#}

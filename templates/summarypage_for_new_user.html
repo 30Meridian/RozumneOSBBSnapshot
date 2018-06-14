@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static%}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Home Page' %}. {{ condominium.name }}.
+{% endblock %}
+
+{% block content %}
+    <!-- Main content -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="content">
+                    <h3 class="text-center"><img src="{% static 'img/celebration.png' %}"> <br/>{% trans 'Thank you for registration' %}! </h3>
+                    <h4 class="text-center">{% trans 'In this condominium is not created content yet' %}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

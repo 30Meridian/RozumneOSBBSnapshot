@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load base %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="card">
+        <div class="content">
+            <form method="post" >
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-group {% if field.errors %}has-error{% endif %}">
+                        {{ field.label_tag }}
+                            {{ field|add_css:"form-control" }}
+                        {% for err in field.errors %}
+                            <span class="help-block">{{ err }}</span>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+                <input class="btn btn-success btn-fill" type="submit" value="{% trans 'Submit' %}" />
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

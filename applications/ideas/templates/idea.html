@@ -1,0 +1,231 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans 'Idea #' %}{{ idea.id }}. {{ idea.title }}. {% endblock %}
+
+{% block content %}
+
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-9"><b>{% trans 'Idea #' %}{{ idea_number }} . {% trans 'Status' %} - {{ idea.status.title }}</b></div>
+            <div class="col-md-3">
+                <div class="pull-right">
+                    <ol class="breadcrumb">
+                        <li><a href="{% url 'condominium:home' request.session.condominium_slug %}"><i class="fa fa-home"></i> {% trans 'Main page' %}</a></li>
+                        <li><a href="../ideas/">{% trans 'List of ideas' %}</a></li>
+                        <li class="active">{% trans 'Card of idea' %}</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="content" style="overflow: auto;">
+                <div class="col-md-7">
+                    <div class="col-md-7">
+                        <strong>{% trans 'Idea' %}:</strong> {{ idea.title }} <br/>
+                        <strong>{% trans 'Idea number' %}:</strong> {{ idea_number }}<br/>
+                        <strong>{% trans 'Create date' %}:</strong> {{ idea.create_date|date:"d.m.Y H:i" }}<br/>
+                        <strong>{% trans 'Date of publication' %}</strong> {{ idea.when_approve|date:"d.m.Y H:i" }}<br/>
+                        {% if end_date %}
+                            <strong>{% trans 'Date of removal from publication' %}:</strong> {{ end_date|date:"d.m.Y H:i" }}<br/>
+                            <strong>{% trans 'Status' %}:</strong> {% trans 'The collection of signatures completed.' %}  <br/>
+                        {% endif %}
+                        <strong>{% trans 'Condominium' %}:</strong> <a
+                            href="{% url 'condominium:summary' idea.condominium.slug %}"> {{ idea.condominium.name }}</a><br/>
+                        <strong>{% trans 'Author' %}:</strong> {{ fullname }} </a>
+                        <br/><br/>
+                    </div>
+                    <div class="col-md-5">
+                        <br/>
+                        {% if idea.status.id == 2 %}
+                            {% if request.user.is_authenticated and request.user.is_active %}
+                                {% if request.session.condominium_id in request.user.condominiums_list %}
+                                    {% if getusersign %}
+                                        <a href="../ideas/disvote/{{ idea.id }}">
+                                            <button type="button" class="btn btn-block btn-fill btn-danger btn-lg">
+                                                {% trans 'Signed. Deny?' %}
+                                            </button>
+                                        </a>
+                                    {% else %}
+                                        <a href="../ideas/vote/{{ idea.id }}">
+                                            <button type="button" class="btn btn-block btn-success btn-lg">{% trans 'Sign' %} &nbsp;&nbsp;
+                                                <i class="fa fa-thumbs-o-up"></i>
+                                            </button>
+                                        </a>
+                                    {% endif %}
+                                {% else %}
+                                    {% trans 'You must be member of this condominium to sign this idea!' %}
+                                {% endif %}
+                            {% else %}
+                                {% trans 'Do you want sign?' %}<br/>
+                                <a href="/accounts/login/"> {% trans 'LogIn/ Register' %}</a><br/>
+                            {% endif %}
+                            <br/>
+                        {% endif %}
+                    </div>
+
+                    {% if idea.status.id == 2 %}
+                        <div class="col-md-6">
+                            <div class="info-box bg-green">
+                                <span class="info-box-icon"><i class="fa  fa-list-ul"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">{% trans 'VOICES' %}</span>
+                                    <span class="info-box-number">{{ votes_count }}</span>
+
+                                    <div class="progress">
+                                        <div class="progress-bar"
+                                             style="width: {% widthratio idea.ideasvoices_set.count needvotes 100 %}%"></div>
+                                    </div>
+                                    <span class="progress-description">
+                                       {% blocktrans %} from {{ needvotes }} neccessarily {% endblocktrans %}
+                                    </span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="info-box {% if days_left < 20 %} bg-red{% else %} bg-yellow{% endif %}">
+                                <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">{% trans 'remained' %}</span>
+                                    <span class="info-box-number"> {{ days_left }} {% trans 'days' %}</span>
+
+                                    <div class="progress">
+                                        <div class="progress-bar"
+                                             style="width: {% widthratio days_passed ideas_days 100 %}%"></div>
+                                    </div>
+                                    <span class="progress-description">
+                                        {% trans 'deadline' %} - {{ ideas_days }} {% trans 'days' %}
+                                    </span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-5">
+                    {% if idea.image.large %}
+                        <a href="{{ idea.image.large.url }}" data-lightbox="image-1"
+                           data-title="{{ idea.title|truncatewords:25 }}">
+                            <div class="petbox"><img src="{{ idea.image.large.url }}" width="100%"></div>
+                        </a>
+                    {% else %}
+                        <div class="petbox"><img src="{% static 'img/empty.gif' %}" width="100%"></div>
+                    {% endif %}
+                    </br>
+
+                </div>
+
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <legend>{% trans 'Idea essense' %}:</legend>
+                        </div>
+                        <div class="content">
+                            {{ idea.text }}
+                        </div>
+                    </div>
+                </div>
+
+
+                {% if idea.status.id != 1 and idea.status.id != 2 and idea.status.id != 6 and idea.status.id != 5 %}
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <legend>{% trans 'Management ressolution' %}:</legend>
+                            </div>
+                            <div class="content">
+                                {{ idea.resolution }}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+
+
+
+
+                {% if votes.object_list %}
+                    {% if idea.status.id == 2 or idea.status.id == 4 or idea.status.id == 6 or idea.status.id == 8 %}
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="header">
+                                    <legend>{% trans 'Supported' %}:</legend>
+                                </div>
+
+                                <div class="content">
+                                    <div class="row">
+                                    {% for vote in votes.object_list %}
+                                        <div class="col-md-4">
+                                            <div class="small-box bg-gray">
+
+                                                <div class="inner">
+                                                    <h3> {{ vote.user.last_name }} {{ vote.user.first_name|slice:":1" }}.{{ vote.user.middle_name|slice:":1" }}. </h3>
+
+                                                    <p> ({{ vote.created|date:"d.m.Y" }})</p>
+                                                </div>
+                                                <div class="icon">
+                                                    <i class="fa fa-pencil-square-o"></i>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if votes.paginator.count > 9 %}
+                        <div class="col-md-12">
+                            <div class="text-center"> {{ votes.render }}</div>
+                        </div>
+                    {% endif %}
+                {% endif %}
+
+                {#                {% if allowed %}#}
+                {#                    <div class="col-md-12">#}
+                {#                    {% if activities %}#}
+                {#                        <div class="card">#}
+                {#                            <div class="header"><h3 class="box-title">Активність:</h3></div>#}
+                {#                            <div class="content">#}
+                {#                                <table class="table table-bordered table-hover">#}
+                {#                                    <tbody>#}
+                {#                                    <tr bgcolor="#f4f4f4">#}
+                {#                                        <th style="width: 120px">Час</th>#}
+                {#                                        <th>Тип активності</th>#}
+                {#                                        <th>Користувач</th>#}
+                {#                                        <th style="width: 125px">IP-адреса</th>#}
+                {#                                    </tr>#}
+                {#                                    {% for activiti in activities %}#}
+                {#                                        <tr>#}
+                {#                                            <td class="vert-align">{{ activiti.datatime|date:'d-m-Y, H:i' }}</td>#}
+                {#                                            <td class="valign">{{ activiti.activity }}</td>#}
+                {#                                            <td class="valign">{{ activiti.user.get_full_name }}</td>#}
+                {#                                            <td class="valign">{{ activiti.ip }}</td>#}
+                {#                                        </tr>#}
+                {#                                    {% endfor %}#}
+                {#                                    </tbody>#}
+                {#                                </table>#}
+                {#                            </div>#}
+                {#                        </div>#}
+                {#                    {% endif %}#}
+                {#                {% endif %}#}
+                {#                </div><!-- /.box-body -->#}
+            </div>
+        </div><!-- /.box -->
+    </section><!-- /.content -->
+
+{% endblock %}

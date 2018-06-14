@@ -1,0 +1,94 @@
+    .header {
+        background-image: -webkit-gradient(linear, left top, right top, from(#08a057), to(#08a057));
+        text-shadow:0 0px ;
+    }
+    .header #branding h1 {
+        text-shadow: 0 0px #121414;
+    }
+    .header #branding{
+        border-right-color: #d4d4d4;
+    }
+    .header .header-content.header-content-first {
+    border-left: 1px solid #d4d4d4;
+    }
+
+    .left-nav>ul>li.active>a {
+        background-image: -webkit-linear-gradient(#08a057, #08a057);
+    }
+    .left-nav>ul>li.active>a:after {
+        content: url(//);
+    }
+    a{
+        color: #0a7553;
+    }
+    body {
+        font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
+    }
+    .btn-info {
+        background-image: linear-gradient(to bottom, #08a057, #08a060);
+    }
+
+    .alert-info {
+        background-color: #08a057;
+        text-shadow : 0 0px;
+        color: #d4d4d4;
+    }
+
+    .header a{
+        color: #FFF;
+    }
+    .alert-info a {
+        color : #FFF;
+        text-shadow : 0 0px;
+    }
+
+    textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus,
+    input[type="time"]:focus,input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus,
+    input[type="color"]:focus, .uneditable-input:focus {
+      border-color: rgba(126, 239, 104, 0.8);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(8,160,87, 0.6);
+      outline: 0 none;
+    }
+
+    /*DATETIME*/
+
+    /*.controls .datetime{min-width: 600px}*/
+     /*.controls .datetime .vDateField{*/
+         /*margin-right: 80%;*/
+         /*float: right;*/
+         /*clear:both;*/
+         /*width: 70px;*/
+         /*text-align: center;*/
+    /*}*/
+    .datetime .vDateField{
+        width: 70px;
+    }
+    .datetime .vTimeField{
+        width: 70px;
+    }
+
+     .datetime .datetimeshortcuts{
+         position: absolute;
+         width: 90px;
+         word-wrap:break-word;
+         margin-left: -2px;
+
+     }
+
+     .datetime {
+        display: inline-block;
+        width: 110px;
+        word-wrap:break-word;
+        height: 100px;
+    }
+     .controls .help-inline{
+         display: block;
+         margin-top: 10px;
+     }
+
+     /*ENDDATETIME*/
+
+    #result_list > tbody > tr > th {
+    word-break: break-all;
+    word-wrap:  break-word;
+    }

@@ -1,0 +1,435 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}
+
+{% for i in issue.getTree %}
+    {% if i.firstIssue %}
+        Дефекти ЖКГ. Заявка № {{i.id }}. {{ i.title }}.
+     {% endif %}
+{% endfor %}
+
+{% endblock %}
+{% block content %}
+
+    <section class="content-header">
+
+{% for i in issue.getTree %}
+    {% if i.firstIssue %}
+      <h1>Заявка № {{i.id }}. Статус - {{i.statusNameFirst}}</h1>
+     {% endif %}
+{% endfor %}
+
+
+{% trans "Test" %}
+      <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-home"></i> Головна</a></li>
+        <li><a href="../defects/list">Список заявок на усунення проблем ЖКГ</a></li>
+        <li class="active">Картка Заявки</li>
+      </ol>
+
+
+
+</section>
+
+
+                  <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+
+            <div class="content">
+
+<script type="text/javascript">
+//thumbs for uploading pictures
+function cardThumb(input,container){
+	if (input.files && input.files[0]) {
+		$.each(input.files,function(k,file){
+			var reader = new FileReader();
+
+			reader.onload = function (e) {
+				var pic_frame = document.createElement("div");
+				pic_frame.style["display"]="inline-block";
+				pic_frame.classList.add("imageHolder","img-thumbnail");
+				var title = document.createElement("div");
+				title.innerHTML=file.name;
+				title.classList.add("text-success","adidedImgTitle");
+				var xFrame = document.createElement("div");
+				xFrame.innerHTML="X";
+				xFrame.classList.add("btn","btn-danger","btnX");
+				xFrame.onclick=function(e){
+					e.target.parentNode.remove();
+				}
+				xFrame.style["display"]="inline";
+				xFrame.style["vertical-align"]="top";
+				xFrame.style["cursor"]="pointer";
+				var pic = new Image();
+				pic.src=e.target.result; 
+				pic.classList.add("img-responsive","adidedImg");							
+				var picture_file = document.createElement("input");
+				picture_file.type="hidden";
+				picture_file.name="attachements["+file.name+"]";
+				picture_file.value=e.target.result;
+				pic_frame.appendChild(pic);
+				pic_frame.appendChild(xFrame);
+				pic_frame.appendChild(picture_file);
+				container.appendChild(pic_frame);
+				var files = document.createElement("input");
+ 				files.type="hidden";
+  				files.value=file.name;
+  				files.name="files[]";
+  				pic_frame.appendChild(files);
+				input.value="";
+			}
+
+			reader.readAsDataURL(file);
+		});
+	}
+}
+</script>
+
+{% for i in issue.getTree %}
+    {% if i.firstIssue %}
+
+
+           <div class="card">
+                <div class="header">
+                  <div class="box-title">{{i.title}}</div>
+                    <div class="pull-right">
+
+                        <a href="../defects/{{ i.id }}/print" target="_blank"><i class="fa fa-print" style="font-size: 24px"></i></a> </div>
+                    </div>
+           <div class="content">
+
+            <div class="col-md-12">
+
+				<div class="cardOwner"><strong>Додав:</strong> <a href="/profile/{{issue.owner_ref.id }}" target="_blank">{{issue.owner_ref.first_name}} {{issue.owner_ref.last_name}}</a></div>
+                <strong>Додана: </strong>{{i.created|date:"d.m.Y H:i"}}
+                <div class="cardAddress"><strong>Адреса: </strong>
+				{{i.address}}
+                </div>
+    <div class="cardDescr"><strong>Опис заявки:</strong><br/> {{i.description}}</div><br/>
+
+
+
+
+                </div>
+
+            </div></div>
+
+            <div class="card">
+
+                <div class="header">
+                  <h3 class="box-title">Зображення:</h3>
+                </div>
+                <div class="content">
+              {% for file in i.issuefiles_set.all %}
+                    {% if file.document_ref.type_name == "image" %}
+
+                        <div class="col-md-2">
+                        <div class="defbox">
+                            <a href="/media/defects/{{file.document_ref.file_name}}" data-lightbox="card_image" target="_blank">
+                                <img class="cardImgItem" src="/media/defects/medium.{{file.document_ref.file_name}}"></a>
+                        </div>
+                            </div>
+
+                    {% endif %}
+
+		{% endfor %}
+                </div>
+        </div>
+
+        <ul class="timeline">
+    {% else %}
+
+    {% if i.status == 1 %} {# Відправлено на виконання #}
+    <!-- timeline time label -->
+
+    <li class="time-label">
+
+        <span class="bg-yellow">
+            <div class="pull-right"><i style="font-size: 50px; margin-right:15px " class="fa fa-clock-o"></i></div>
+            <span class="label label-gray">{{i.title}}</span> - {{i.description}} ({{i.owner_ref.first_name}} {{i.owner_ref.last_name}}. {{ i.owner_ref.work_for.all.0.name}})<br />
+        <span class="label label-gray"> Статус:</span> "{{i.statusName}}" | {{i.created|date:"d.m.Y H:i" }}
+
+        </span>
+    </li>
+
+    {% elif i.status == 2%}{# Виконано підрядником #}
+    <li class="time-label">
+
+        <span class="bg-green">
+            <div class="pull-right"><i style="font-size: 50px; margin-right:15px " class="fa fa-check"></i></div>
+            <span class="label label-gray">{{i.title}}</span> - {{i.description}} ({{i.owner_ref.first_name}} {{i.owner_ref.last_name}}. {{ i.owner_ref.work_for.all.0.name}})<br />
+        <span class="label label-gray"> Статус:</span> "{{i.statusName}}" | {{i.created|date:"d.m.Y H:i" }}
+
+        </span>
+    </li>
+
+    {% elif i.status == 3%}{# Відхилено модератором #}
+    <li class="time-label">
+
+        <span class="bg-red">
+           <div class="pull-right"><i style="font-size: 50px; margin-right:15px " class="fa fa-close"></i></div>
+            <span class="label label-gray">{{i.title}}</span> - {{i.description}} ({{i.owner_ref.first_name}} {{i.owner_ref.last_name}}. {{ i.owner_ref.work_for.all.0.name}})<br />
+        <span class="label label-gray"> Статус:</span> "{{i.statusName}}" | {{i.created|date:"d.m.Y H:i" }}
+
+        </span>
+    </li>
+      {% elif i.status == 4%}{# Прийнята до виконання #}
+    <li class="time-label">
+
+        <span class="bg-aqua">
+           <div class="pull-right"><i style="font-size: 50px; margin-right:15px " class="fa fa-cogs"></i></div>
+            <span class="label label-gray">{{i.title}}</span> - {{i.description}} ({{i.owner_ref.first_name}} {{i.owner_ref.last_name}}. {{ i.owner_ref.work_for.all.0.name}})<br />
+        <span class="label label-gray"> Статус:</span> "{{i.statusName}}" | {{i.created|date:"d.m.Y H:i" }}
+
+        </span>
+    </li>
+
+
+
+     {% elif i.status == 5%}{# Запланована#}
+    <li class="time-label">
+
+        <span class="bg-gray">
+           <div class="pull-right"><i style="font-size: 50px; margin-right:15px " class="fa fa-calendar "></i></div>
+            <span class="label label-gray">{{i.title}}</span> - {{i.description}} ({{i.owner_ref.first_name}} {{i.owner_ref.last_name}}. {{ i.owner_ref.work_for.all.0.name}})<br />
+        <span class="label label-gray"> Статус:</span> "{{i.statusName}}" | {{i.created|date:"d.m.Y H:i" }}
+
+        </span>
+    </li>
+
+        {% else%}{# Арбітраж і все інше #}
+    <li class="time-label">
+
+        <span class="bg-blue">
+           <div class="pull-right"><i style="font-size: 50px; margin-right:15px " class="fa fa-cog"></i></div>
+            <span class="label label-gray">{{i.title}}</span> - {{i.description}} ({{i.owner_ref.first_name}} {{i.owner_ref.last_name}}. {{ i.owner_ref.work_for.all.0.name}})<br />
+        <span class="label label-gray"> Статус:</span> "{{i.statusName}}" | {{i.created|date:"d.m.Y H:i" }}
+
+        </span>
+    </li>
+
+     {% endif %}
+
+			{% endif %}
+
+    <!-- /.timeline-label -->
+
+    <!-- timeline item -->
+{% if i.hasComments %}
+
+    {% for comment in i.comments_set.all %}
+        {% if comment.block != 1 %}
+           {% if i.status == 1 %}
+
+            <li>
+                <!-- timeline icon -->
+                <i class="fa  fa-comment bg-yellow"></i>
+                <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> {{comment.created|date:"d.m.Y H:i" }} {% if allowed %}<a href="../defects/{{ comment.id }}/{{ defect_id}}/blockcomment" class="btn btn-default btn-xs">Блокувати</a>{% endif %}</span>
+
+                    <h3 class="timeline-header"><strong>{{comment.owner_ref}}</strong></h3>
+
+                    <div class="timeline-body">
+                        {{comment.body}} <br />
+                        {% if comment.commentattachements_set.count %}
+                   <br/>
+                        {% for file in comment.commentattachements_set.all %}
+                            {% if file.document_ref.type_name == "image" %}
+                                <a href="{{ MEDIA_URL }}/defects/comments/{{file.document_ref.file_name}}" data-lightbox="comments" ><img class="cardImgItem" src="/media/defects/comments/thumbnail.{{file.document_ref.file_name}}"></a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}<br />
+                    </div>
+
+
+                </div>
+            </li>
+
+        {% elif i.status == 2 %}
+
+            <li>
+                <!-- timeline icon -->
+                <i class="fa  fa-comment bg-green"></i>
+                <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> {{comment.created|date:"d.m.Y H:i" }} {% if allowed %} <a href="../defects/{{ comment.id }}/{{ defect_id }}/blockcomment" class="btn btn-default btn-xs">Блокувати</a>{% endif %}</span>
+
+                    <h3 class="timeline-header"><strong>{{comment.owner_ref}}</strong></h3>
+
+                    <div class="timeline-body">
+                        {{comment.body}} <br />
+                        {% if comment.commentattachements_set.count %}
+                    <br/>Зображення:<br/><br/>
+                        {% for file in comment.commentattachements_set.all %}
+                            {% if file.document_ref.type_name == "image" %}
+                                <a href="{{ MEDIA_URL }}/defects/comments/{{file.document_ref.file_name}}" data-lightbox="comments"><img class="cardImgItem" src="/media/defects/comments/thumbnail.{{file.document_ref.file_name}}"></a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}<br />
+                    </div>
+
+
+                </div>
+            </li>
+        {% elif i.status == 3 %}
+
+            <li>
+                <!-- timeline icon -->
+                <i class="fa  fa-comment bg-red"></i>
+                <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> {{comment.created|date:"d.m.Y H:i" }} {% if allowed %}<a href="../defects/{{ comment.id }}/{{ defect_id }}/blockcomment" class="btn btn-default btn-xs">Блокувати</a>{% endif %}</span>
+
+                    <h3 class="timeline-header"><strong>{{comment.owner_ref}}</strong></h3>
+
+                    <div class="timeline-body">
+                        {{comment.body}} <br />
+                        {% if comment.commentattachements_set.count %}
+                    <br/>Зображення:<br/><br/>
+                        {% for file in comment.commentattachements_set.all %}
+                            {% if file.document_ref.type_name == "image" %}
+                                <a href="{{ MEDIA_URL }}/defects/comments/{{file.document_ref.file_name}}" data-lightbox="comments"><img class="cardImgItem" src="/media/defects/comments/thumbnail.{{file.document_ref.file_name}}"></a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}<br />
+                    </div>
+
+                </div>
+            </li>
+
+
+                    {% elif i.status == 4 %}
+
+            <li>
+                <!-- timeline icon -->
+                <i class="fa  fa-comment bg-aqua"></i>
+                <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> {{comment.created|date:"d.m.Y H:i" }} {% if allowed %}<a href="../defects/{{ comment.id }}/{{ defect_id }}/blockcomment" class="btn btn-default btn-xs">Блокувати</a>{% endif %}</span>
+
+                    <h3 class="timeline-header"><strong>{{comment.owner_ref}}</strong></h3>
+
+                    <div class="timeline-body">
+                        {{comment.body}} <br />
+                        {% if comment.commentattachements_set.count %}
+                    <br/>Зображення:<br/><br/>
+                        {% for file in comment.commentattachements_set.all %}
+                            {% if file.document_ref.type_name == "image" %}
+                                <a href="{{ MEDIA_URL }}/defects/comments/{{file.document_ref.file_name}}" data-lightbox="comments"><img class="cardImgItem" src="/media/defects/comments/thumbnail.{{file.document_ref.file_name}}"></a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}<br />
+                    </div>
+
+                </div>
+            </li>
+
+
+
+                    {% elif i.status == 5 %}
+
+            <li>
+                <!-- timeline icon -->
+                <i class="fa  fa-comment bg-gray"></i>
+                <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> {{comment.created|date:"d.m.Y H:i" }} {% if allowed %}<a href="../defects/{{ comment.id }}/{{ defect_id }}/blockcomment" class="btn btn-default btn-xs">Блокувати</a>{% endif %}</span>
+
+                    <h3 class="timeline-header"><strong>{{comment.owner_ref}}</strong></h3>
+
+                    <div class="timeline-body">
+                        {{comment.body}} <br />
+                        {% if comment.commentattachements_set.count %}
+                    <br/>Зображення:<br/><br/>
+                        {% for file in comment.commentattachements_set.all %}
+                            {% if file.document_ref.type_name == "image" %}
+                                <a href="{{ MEDIA_URL }}/defects/comments/{{file.document_ref.file_name}}" data-lightbox="comments"><img class="cardImgItem" src="/media/defects/comments/thumbnail.{{file.document_ref.file_name}}"></a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}<br />
+                    </div>
+
+                </div>
+            </li>
+
+
+
+
+
+        {% else %}
+
+            <li>
+                <!-- timeline icon -->
+                <i class="fa  fa-comment bg-blue"></i>
+                <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> {{comment.created|date:"d.m.Y H:i" }}{% if allowed %} <a href="../defects/{{ comment.id }}/{{ defect_id}}/blockcomment" class="btn btn-default btn-xs">Блокувати</a>{% endif %}</span>
+
+                    <h3 class="timeline-header"><strong>{{comment.owner_ref}}</strong></h3>
+
+                    <div class="timeline-body">
+                        {{comment.body}} <br />
+                        {% if comment.commentattachements_set.count %}
+                    <br/>Зображення:<br/><br/>
+                        {% for file in comment.commentattachements_set.all %}
+                            {% if file.document_ref.type_name == "image" %}
+                                <a href="{{ MEDIA_URL }}/defects/comments/{{file.document_ref.file_name}}" data-lightbox="comments"><img class="cardImgItem" src="/media/defects/comments/thumbnail.{{file.document_ref.file_name}}"></a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}<br />
+                    </div>
+
+ {}
+                </div>
+            </li>
+        {% endif %}
+    <!-- END timeline item -->
+{% endif %}
+	{% endfor %}
+     {% endif %}
+    {% endfor %}
+</ul>
+
+               {%  if issue.last_issue.status != 0 and issue.last_issue.status != 2 and issue.last_issue.status != 3 %}
+{% if issue.condominium_ref in request.user.condominiums.all %}
+<div class="card">
+                <div class="header">
+                  <h3 class="box-title">Додати комментар до останнього статусу:</h3>
+                </div>
+                <div class="content">
+
+
+<form name="addComment" action="../defects/{{ issue.id }}/addComment" method="POST" id="defcomments">
+	{% csrf_token %}
+    <div class="form-group">
+
+
+	  <textarea name="body" class="form-control input-lg" cols="40" id="id_text" maxlength="1000" name="text"
+                placeholder="Ваш текст повідомлення не більше 1000 символів" rows="5"></textarea><br>
+     </div>
+   <div class="form-group" style="margin-top: -20px">
+
+	<div id="thumbHolder2"></div>
+       <br/>
+	<input type="file" data-buttonText="Виберіть зображення або декілька" class="filestyle" data-badge="false" data-buttonBefore="true" accept="image/*" multiple onchange="cardThumb(this,thumbHolder2)">
+
+    </div>
+    <div class="text-center">
+        <input type="submit" class="btn btn-primary " value="Додати комментар"  onclick="this.value='Зачекайте, будь ласка ..';this.disabled='disabled'; this.form.submit();" >
+    </div>
+
+</form>
+
+                </div>
+         </div>
+
+{% endif %}
+{% endif %}
+
+
+
+          </div><!-- /.box -->
+  </div>
+        </section><!-- /.content -->
+
+
+
+{% endblock %}

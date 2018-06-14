@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Contacts' %}.{% endblock %}
+{% load staticfiles %}
+{% block content %}
+        <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+
+            <div class="content">
+
+
+<div class="text-center">
+    <h2>{% trans 'How to contact with team of "Smart OSBB"' %}</h2></div>
+                <div class="col-md-5">
+        <h4><i class="fa fa-clock-o"></i> {% trans 'We work' %}:  9:00 - 18:00</h4>
+        <h4><i class="fa fa-phone-square"></i> {% trans 'Phone' %}: (097) 84-86-092 </h4>
+{#        <a href="https://www.facebook.com/rozumnemisto.org/?fref=ts" target="_blank"><img src="{% static 'img/facebook.png' %}"></a>#}
+                </div>
+                <div class="col-md-7">
+{#        <h4><i class="fa  fa-chrome"></i> ГО "Місто Майбутнього": <a href="http://cityfuture.org.ua" target="_blank">www.cityfuture.org.ua</a></h4>#}
+{#        <h4><i class="fa  fa-chrome"></i> БФ "Разом для України": <a href="http://razomforukraine.org" target="_blank">www.razomforukraine.org</a></h4>#}
+        <h4><i class="fa fa-envelope"></i> {% trans 'Email' %}: office@rozumneosbb.org</h4>
+                </div>
+
+      </div><!-- /.box-body -->
+
+          </div><!-- /.box -->
+
+        </section><!-- /.content -->
+    
+{% endblock %}

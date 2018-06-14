@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %} {% trans "Additional pages" %} {% endblock %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+    <section class="content">
+        <div class="card">
+            <div class="content">
+            <div class="header">
+                <h3 class="box-title">{% trans "Additional materials" %}:</h3>
+            </div>
+            <div class="content">
+                {% if pages %}
+                    {% for page in pages %}
+                        <a href={% url 'condominium:management:cms:page' condominium_slug=request.session.condominium_slug path=page.slug %}>
+                            <b>{{ page.title }}</b>
+                        </a><br/>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

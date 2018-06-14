@@ -1,0 +1,745 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-10 14:08+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: applications/ideas/admin.py:32
+msgid "General"
+msgstr ""
+
+#: applications/ideas/admin.py:32 applications/ideas/models.py:61
+msgid "Activities"
+msgstr ""
+
+#: applications/ideas/admin.py:60 applications/ideas/admin.py:97
+#: applications/ideas/templates/idea.html:39
+#: applications/ideas/templates/idea_print.html:11
+msgid "Author"
+msgstr ""
+
+#: applications/ideas/admin.py:61
+msgid "Count of Voices"
+msgstr ""
+
+#: applications/ideas/admin.py:62 applications/ideas/models.py:23
+msgid "idea create_date"
+msgstr ""
+
+#: applications/ideas/admin.py:98
+msgid "created"
+msgstr ""
+
+#: applications/ideas/admin.py:114
+msgid "List"
+msgstr ""
+
+#: applications/ideas/admin.py:114
+msgid "Add idea"
+msgstr ""
+
+#: applications/ideas/admin.py:114
+msgid "Archive"
+msgstr ""
+
+#: applications/ideas/apps.py:6 applications/ideas/models.py:36
+msgid "Ideas"
+msgstr ""
+
+#: applications/ideas/forms.py:10
+msgid "Enter idea title"
+msgstr ""
+
+#: applications/ideas/forms.py:12
+msgid ""
+"Please enter description of raised idea and give arguments why this idea "
+"should be satisfied (max: 1000 characters)"
+msgstr ""
+
+#: applications/ideas/forms.py:16
+msgid "Choose picture"
+msgstr ""
+
+#: applications/ideas/forms.py:40 applications/ideas/models.py:21
+msgid "idea text"
+msgstr ""
+
+#: applications/ideas/forms.py:42 applications/ideas/models.py:25
+msgid "idea resolution"
+msgstr ""
+
+#: applications/ideas/models.py:16
+msgid "idea title"
+msgstr ""
+
+#: applications/ideas/models.py:20
+msgid "idea image"
+msgstr ""
+
+#: applications/ideas/models.py:22
+msgid "idea status"
+msgstr ""
+
+#: applications/ideas/models.py:24
+msgid "idea owner_user"
+msgstr ""
+
+#: applications/ideas/models.py:26
+msgid "idea condominium"
+msgstr ""
+
+#: applications/ideas/models.py:27
+msgid "idea when_approve"
+msgstr ""
+
+#: applications/ideas/models.py:28
+msgid "idea anonymous"
+msgstr ""
+
+#: applications/ideas/models.py:29
+msgid "Public"
+msgstr ""
+
+#: applications/ideas/models.py:30
+msgid "Allows to view idea for users from other condominiums"
+msgstr ""
+
+#: applications/ideas/models.py:35 applications/ideas/templates/idea.html:29
+msgid "Idea"
+msgstr ""
+
+#: applications/ideas/models.py:51
+msgid "activity datatime"
+msgstr ""
+
+#: applications/ideas/models.py:52
+msgid "activity activity"
+msgstr ""
+
+#: applications/ideas/models.py:53
+msgid "activity user"
+msgstr ""
+
+#: applications/ideas/models.py:54
+msgid "activity ip"
+msgstr ""
+
+#: applications/ideas/models.py:55
+msgid "activity idea"
+msgstr ""
+
+#: applications/ideas/models.py:60
+msgid "Activity"
+msgstr ""
+
+#: applications/ideas/models.py:67
+msgid "status title"
+msgstr ""
+
+#: applications/ideas/models.py:72 applications/ideas/templates/idea.html:12
+#: applications/ideas/templates/idea.html:35
+#: applications/ideas/templates/idea_print.html:14
+msgid "Status"
+msgstr ""
+
+#: applications/ideas/models.py:73
+msgid "Statuses"
+msgstr ""
+
+#: applications/ideas/models.py:80
+msgid "Voice idea"
+msgstr ""
+
+#: applications/ideas/models.py:81
+msgid "Voice user"
+msgstr ""
+
+#: applications/ideas/models.py:82
+msgid "Voice block"
+msgstr ""
+
+#: applications/ideas/models.py:83
+msgid "Voice created"
+msgstr ""
+
+#: applications/ideas/models.py:84
+msgid "Voice ip"
+msgstr ""
+
+#: applications/ideas/models.py:89
+msgid "Voice"
+msgstr ""
+
+#: applications/ideas/models.py:90
+msgid "Voices"
+msgstr ""
+
+#: applications/ideas/templates/add_idea.html:4
+msgid "Add idea. Information system 'Smart OSBB' "
+msgstr ""
+
+#: applications/ideas/templates/add_idea.html:10
+msgid "Add idea for your OSBB"
+msgstr ""
+
+#: applications/ideas/templates/add_idea.html:14
+#: applications/ideas/templates/idea.html:16
+msgid "Main page"
+msgstr ""
+
+#: applications/ideas/templates/add_idea.html:15
+#: applications/ideas/templates/idea.html:17
+msgid "List of ideas"
+msgstr ""
+
+#: applications/ideas/templates/add_idea.html:16
+msgid "Add own idea"
+msgstr ""
+
+#: applications/ideas/templates/add_idea.html:36
+#: applications/ideas/templates/help_idea.html:25
+msgid "Idea title"
+msgstr ""
+
+#: applications/ideas/templates/add_idea.html:43
+msgid "Idea description"
+msgstr ""
+
+#: applications/ideas/templates/add_idea.html:50
+msgid "Illustration for idea"
+msgstr ""
+
+#: applications/ideas/templates/add_idea.html:76
+msgid "read"
+msgstr ""
+
+#: applications/ideas/templates/add_idea.html:76
+msgid "rules"
+msgstr ""
+
+#: applications/ideas/templates/add_idea.html:77
+msgid "of ideas and consent to the processing of personal data"
+msgstr ""
+
+#: applications/ideas/templates/add_idea.html:87
+msgid "Submit idea!"
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:4
+#: applications/ideas/templates/help_idea.html:14
+msgid "Help for the module \"Ideas\""
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:16
+msgid "How does create idea?"
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:17
+msgid "To create idea user must:"
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:18
+msgid "register on the web portal"
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:20
+msgid "In the sidebar choose \"Ideas\" then \"Add idea\""
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:23
+msgid "Fill all these fields"
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:26
+msgid "Text substantiation ideas"
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:27
+msgid "Requirements to authorities"
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:28
+msgid "Load picture"
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:29
+msgid "Confirm that you agree with the processing of your personal data"
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:31
+msgid "Push submit to sent your idea to moderation"
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:34
+msgid ""
+"After reviewing your idea of a moderator, it will appear on the site. In the "
+"event that your idea will not pass moderation,You will be notified on your "
+"registration e-mail."
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:36
+msgid "How sign idea?"
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:38
+msgid ""
+"For sign idea user must choose \"Ideas\" then \"Ideas List\" in the sidebar."
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:39
+msgid ""
+"On this page you can see: illustration, number, essence, colected voives, "
+"and status of idea"
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:44
+msgid ""
+"Ideas what were signed by you have status \"Signed\", and ideas what you can "
+"sign have status \"Doesn`t signed\""
+msgstr ""
+
+#: applications/ideas/templates/help_idea.html:48
+msgid "If idea was signed by you, you can cancel your voice."
+msgstr ""
+
+#: applications/ideas/templates/idea.html:4
+#: applications/ideas/templates/idea.html:12
+msgid "Idea #"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:18
+msgid "Card of idea"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:30
+msgid "Idea number"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:31
+#: applications/ideas/templates/idea_print.html:9
+msgid "Create date"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:32
+msgid "Date of publication"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:34
+msgid "Date of removal from publication"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:35
+msgid "The collection of signatures completed."
+msgstr ""
+
+#: applications/ideas/templates/idea.html:37
+msgid "Condominium"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:50
+msgid "Signed. Deny?"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:55
+msgid "Sign"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:61
+msgid "You must be member of this condominium to sign this idea!"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:64
+msgid "Do you want sign?"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:65
+msgid "LogIn/ Register"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:77
+msgid "VOICES"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:85
+#, python-format
+msgid " from %(needvotes)s neccessarily "
+msgstr ""
+
+#: applications/ideas/templates/idea.html:99
+msgid "remained"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:100
+#: applications/ideas/templates/idea.html:107
+msgid "days"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:107
+msgid "deadline"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:133
+#: applications/ideas/templates/ideas_list_2.html:27
+msgid "Idea essense"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:146
+msgid "Management ressolution"
+msgstr ""
+
+#: applications/ideas/templates/idea.html:164
+#: applications/ideas/templates/idea_print.html:64
+msgid "Supported"
+msgstr ""
+
+#: applications/ideas/templates/idea_print.html:8
+msgid "Idea Number"
+msgstr ""
+
+#: applications/ideas/templates/idea_print.html:10
+msgid "Publication date"
+msgstr ""
+
+#: applications/ideas/templates/idea_print.html:13
+msgid "Date of removed from publication"
+msgstr ""
+
+#: applications/ideas/templates/idea_print.html:14
+msgid ""
+"The collection of signatures is completed. Idea has not collected necessary "
+"number of voices."
+msgstr ""
+
+#: applications/ideas/templates/idea_print.html:16
+msgid "Contact the author"
+msgstr ""
+
+#: applications/ideas/templates/idea_print.html:16
+msgid "phone"
+msgstr ""
+
+#: applications/ideas/templates/idea_print.html:16
+msgid "email"
+msgstr ""
+
+#: applications/ideas/templates/idea_print.html:17
+msgid "Signatures"
+msgstr ""
+
+#: applications/ideas/templates/idea_print.html:18
+msgid "Needed"
+msgstr ""
+
+#: applications/ideas/templates/idea_print.html:29
+#: applications/ideas/templates/ideas_list_3.html:26
+#: applications/ideas/templates/ideas_list_4.html:25
+#: applications/ideas/templates/ideas_list_5.html:26
+msgid "Idea text"
+msgstr ""
+
+#: applications/ideas/templates/idea_print.html:47
+msgid "Idea resolution"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_2.html:3
+msgid "Ideas.In the collection of signatures."
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_2.html:21
+msgid "Ideas on the voting"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_2.html:25
+#: applications/ideas/templates/ideas_list_3.html:24
+#: applications/ideas/templates/ideas_list_4.html:23
+#: applications/ideas/templates/ideas_list_5.html:24
+#: applications/ideas/templates/ideas_list_6.html:23
+msgid "Illustration"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_2.html:26
+#: applications/ideas/templates/ideas_list_3.html:25
+#: applications/ideas/templates/ideas_list_4.html:24
+#: applications/ideas/templates/ideas_list_5.html:25
+#: applications/ideas/templates/ideas_list_6.html:24
+msgid "Number"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_2.html:28
+msgid "Count of votes"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_2.html:29
+msgid "Your vote"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_2.html:52
+msgid "You voted"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_2.html:54
+msgid "You didn`t vote"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_2.html:70
+msgid "Unfortunately, your condominium has nothing opened ideas yet "
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_3.html:4
+msgid "Ideas that was rejected by manager"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_3.html:20
+msgid "Rejected ideas"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_3.html:55
+msgid "Your condominium has not rejected ideas yet."
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_4.html:5
+msgid "Ideas that was viewed by manager"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_4.html:19
+msgid "Viewed ideas"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_4.html:55
+msgid "Your condominium has not viewed ideas yet."
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_5.html:4
+msgid "Ideas what didn`t collect needed count of voice"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_5.html:20
+msgid "Ideas in Archive"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_5.html:27
+#: applications/ideas/templates/ideas_list_6.html:26
+msgid "Count of signatures"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_5.html:65
+msgid "Your condominium has not ideas in archive yet."
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_6.html:4
+#: applications/ideas/templates/ideas_list_6.html:19
+msgid "Ideas under consideration"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_6.html:25
+msgid "Text"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_6.html:27
+msgid "Your signature"
+msgstr ""
+
+#: applications/ideas/templates/ideas_list_6.html:68
+msgid ""
+"Unfortunately, your condominium has nothing ideas under consideration yet"
+msgstr ""
+
+#: applications/ideas/templates/rules.html:3
+#: applications/ideas/templates/rules.html:12
+msgid "Rules of module \"Ideas\""
+msgstr ""
+
+#: applications/ideas/templates/rules.html:13
+msgid ""
+"\"Ideas\" is module of web service \"Smart Condominium\", what was designed "
+"subject to the requirements of citizens and allowing them to express their "
+"views and focus on the important issues of their condominium."
+msgstr ""
+
+#: applications/ideas/templates/rules.html:15
+msgid ""
+"To the idea was sent for consideration to the management of condominiums, it "
+"must gain necessary number of signatures in the allotted voting time"
+msgstr ""
+
+#: applications/ideas/templates/rules.html:18
+msgid "General recommendations for placement ideas"
+msgstr ""
+
+#: applications/ideas/templates/rules.html:22
+msgid "The idea should not duplicate existing"
+msgstr ""
+
+#: applications/ideas/templates/rules.html:23
+msgid ""
+"Please refrain from submitting ideas with the requirements that are in the "
+"process of implementation"
+msgstr ""
+
+#: applications/ideas/templates/rules.html:24
+msgid ""
+"Text ideas must conform to generally accepted standards of ethics and "
+"morality"
+msgstr ""
+
+#: applications/ideas/templates/rules.html:25
+msgid "Raised issue should relate to the competence of condominium"
+msgstr ""
+
+#: applications/ideas/templates/rules.html:26
+msgid ""
+"Enter the recipient ideas, like the head of condominiums, condominium manager"
+msgstr ""
+
+#: applications/ideas/templates/rules.html:27
+msgid "The idea that does not meet the guidelines may be rejected by manager"
+msgstr ""
+
+#: applications/ideas/templates/rules.html:31
+msgid ""
+"Electronic idea that meets all requirements published in menu \"Ideas\" in "
+"the section  \"List\"."
+msgstr ""
+
+#: applications/ideas/templates/rules.html:32
+msgid ""
+"In case of discrepancy of  requirements this idea does not publicate. You "
+"get the message to the specified e-mail address"
+msgstr ""
+
+#: applications/ideas/templates/rules.html:33
+msgid ""
+"Verification of ideas and sending printed version of ideas to the "
+"appropriate authorities makes condominium manager."
+msgstr ""
+
+#: applications/ideas/templates/rules.html:35
+msgid "Ideas statuses"
+msgstr ""
+
+#: applications/ideas/templates/rules.html:37
+msgid ""
+"On moderation. These ideas is checked by manager and you can not view their."
+msgstr ""
+
+#: applications/ideas/templates/rules.html:38
+msgid "Active. Ideas what have passed check and now collect signatures"
+msgstr ""
+
+#: applications/ideas/templates/rules.html:39
+msgid ""
+"Under consideration. Ideas what collected needed count of voice and moved to "
+"appropriate authorities."
+msgstr ""
+
+#: applications/ideas/templates/rules.html:40
+msgid "Considered. Ideas what war considered by appropriate authorities."
+msgstr ""
+
+#: applications/ideas/templates/rules.html:41
+msgid "Rejected.Ideas what do not conform requirements of current legislation"
+msgstr ""
+
+#: applications/ideas/templates/rules.html:42
+msgid "Archive. Ideas what didn`t collect needed count of voice"
+msgstr ""
+
+#: applications/ideas/templates/rules.html:43
+msgid ""
+"Hidden.Ideas what from ethical reasons can not be published on the site."
+"These ideas are viewable only for service manager"
+msgstr ""
+
+#: applications/ideas/templates/thank_you.html:4
+msgid "Idea on moderation"
+msgstr ""
+
+#: applications/ideas/templates/thank_you.html:14
+msgid "Thank! Your idea has added and moved to moderation. "
+msgstr ""
+
+#: applications/ideas/templates/thank_you.html:15
+msgid ""
+"After reviewing by conominium manager you get confirmation letter. Thank "
+"You! "
+msgstr ""
+
+#: applications/ideas/views.py:40
+msgid "Idea created"
+msgstr ""
+
+#: applications/ideas/views.py:41
+msgid "New idea moved to moderation"
+msgstr ""
+
+#: applications/ideas/views.py:42
+msgid "Your idea moved to moderation"
+msgstr ""
+
+#: applications/ideas/views.py:45
+msgid "Warning! You have added public Idea"
+msgstr ""
+
+#: applications/ideas/views.py:76
+msgid "Automatic status change to \"Archive\""
+msgstr ""
+
+#: applications/ideas/views.py:77
+msgid ""
+"The idea has not collected the necessary number votes and moved to the "
+"archive."
+msgstr ""
+
+#: applications/ideas/views.py:78
+msgid ""
+"Your idea has not collected the necessary number votes and moved to the "
+"archive."
+msgstr ""
+
+#: applications/ideas/views.py:84
+msgid "Not found any ideas that mutch enddate!"
+msgstr ""
+
+#: applications/ideas/views.py:86 applications/ideas/views.py:271
+msgid "Access denied."
+msgstr ""
+
+#: applications/ideas/views.py:105
+msgid "You can't view ideas what are on moderation"
+msgstr ""
+
+#: applications/ideas/views.py:112 applications/ideas/views.py:219
+#: applications/ideas/views.py:221 applications/ideas/views.py:235
+#: applications/ideas/views.py:237
+msgid "Access denied"
+msgstr ""
+
+#: applications/ideas/views.py:214
+msgid "Automatic status change to \"Verification votes\""
+msgstr ""
+
+#: applications/ideas/views.py:215
+msgid "The idea has the necessary number of votes. Check signatures."
+msgstr ""
+
+#: applications/ideas/views.py:216
+msgid ""
+"Your idea has the necessary number of votes and has moved to signatures check"
+msgstr ""
+
+#: applications/ideas/views.py:274
+msgid "Test email"
+msgstr ""

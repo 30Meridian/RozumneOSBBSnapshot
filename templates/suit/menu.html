@@ -1,0 +1,124 @@
+{#{% load sitetree %}#}
+{% load static %}
+{% load i18n suit_menu %}
+{% load url from suit_compat %}
+
+<link rel="icon" type="image/png" href="{% static 'img/favicon.ico' %}">
+
+
+<div class="left-nav" id="left-nav">
+  <ul>
+    {% block menu_home %}
+      {% url 'admin:index' as index_url %}
+      <li{% if index_url == request.path %} class="active"{% endif %}>
+        <a href="{{ index_url }}"><i class="icon-home"></i>{% trans 'Home' %}
+        </a>
+      </li>
+    {% endblock %}
+
+    {% get_menu request as app_list %}
+    {% if app_list %}
+      {% for app in app_list %}
+        {% if app.separator %}
+          <li class="separator"></li>
+        {% else %}
+          <li{{ app.is_active|yesno:' class=active,' }}>
+            <a href="{{ app.url }}"{{ app.blank|yesno:' target=_blank,' }}><i class="{% firstof app.icon 'icon-chevron-right' %}"></i>{% trans app.label|capfirst %}
+            </a>
+            {% if app.models %}
+              <ul>
+{# FORUM #}
+                {% if app.name == 'forum' %}
+{#                  <li{{ model.is_active|yesno:' class=active,' }}>#}
+                    {% for model in app.models %}
+                        {% if model.name == 'forum.forum' %}
+                          <li{{ model.is_active|yesno:' class=active,' }}>
+                            <a href="{{ model.url }}"{{ model.blank|yesno:' target=_blank,' }}>{{ model.label }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+                        <li style="cursor: pointer;" class="text"><a class="down">{% trans 'Conversations' %} ◄</a></li>
+                            <ol class="nested" style="display:none;">
+                             {% for model in app.models %}
+                                {% if model.name == 'forum.proxyforumconversationattachment' or model.name == 'forum.proxyforumconversationtopicpollvote' or model.name == 'forum.proxyforumconversationpost' or model.name == 'forum.proxyforumconversationtopic' or model.name == 'forum.proxyforumconversationtopicpoll' %}
+                                     <li{{ model.is_active|yesno:' class=active,' }} style="list-style-type: none; margin-left: -15px">
+                                    <a href="{{ model.url }}"{{ model.blank|yesno:' target=_blank,' }}>{{ model.label }}</a></li>
+                                {% endif %}
+                             {% endfor %}
+                             </ol>
+                        <li style="cursor: pointer;" class="text"><a class="down">{% trans 'Permissions of forum' %} ◄</a></li>
+                            <ol class="nested" style="display:none;">
+                             {% for model in app.models %}
+                                {% if model.name == 'forum.proxygroupforumpermission' or model.name == 'forum.proxyuserforumpermission' or model.name == 'forum.proxyforumpermission' or model.name == 'forum.proxyforumprofile'  %}
+                                     <li{{ model.is_active|yesno:' class=active,' }} style="list-style-type: none; margin-left: -15px">
+                                    <a href="{{ model.url }}"{{ model.blank|yesno:' target=_blank,' }}>{{ model.label }}</a></li>
+                                {% endif %}
+                             {% endfor %}
+                            </ol>
+                        <li style="cursor: pointer;" class="text"><a class="down">{% trans 'Tracking' %} ◄</a></li>
+                                <ol class="nested" style="display:none;">
+                                 {% for model in app.models %}
+                                    {% if model.name == 'forum.proxytopicreadtrack' or model.name == 'forum.proxyforumreadtrack'  %}
+                                         <li{{ model.is_active|yesno:' class=active,' }} style="list-style-type: none; margin-left: -15px; max-width: 27ch;">
+                                        <a href="{{ model.url }}"{{ model.blank|yesno:' target=_blank,' }}>{{ model.label }}</a></li>
+                                    {% endif %}
+                                 {% endfor %}
+                                </ol>
+
+{# ENDFORUM #}
+{# SYSTEM #}
+{#                {% elif app.name == 'system' %}#}
+{##}
+{#                    {% for model in app.models %}#}
+{#                        {% if model.name != 'system.proxycondominium' and  model.name != 'system.proxymanagementpages' %}#}
+{#                      <li{{ model.is_active|yesno:' class=active,' }}>#}
+{#                        <a href="{{ model.url }}"{{ model.blank|yesno:' target=_blank,' }}>{{ model.label }}</a></li>#}
+{#                        {% endif %}#}
+{#                    {% endfor %}#}
+{##}
+{#                    <li style="cursor: pointer;" class="text"><a class="down">{% trans 'Module management' %} ◄</a></li>#}
+{#                        <ol class="nested"#}
+{#                            style="{% if request.path != '/manage/system/proxycondominium/' and request.path != '/manage/system/proxymanagementpages/' %}#}
+{#                                display:none;{% endif %}">#}
+{#                        {% for model in app.models %}#}
+{#                    {{ request.path }}#}
+{#                            {% if model.name == 'system.proxycondominium' or  model.name == 'system.proxymanagementpages' %}#}
+{#                                 <li{{ model.is_active|yesno:' class=active,' }} style="list-style-type: none; margin-left: -15px; max-width: 27ch;">#}
+{#                                <a href="{{ model.url }}"{{ model.blank|yesno:' target=_blank,' }}>{{ model.label }}</a></li>#}
+{#                            {% endif %}#}
+{#                        {% endfor %}#}
+{#                        </ol>#}
+{# ENDSYSTEM #}
+                {% else %}
+                    {% for model in app.models %}
+                      <li{{ model.is_active|yesno:' class=active,' }}>
+                        <a href="{{ model.url }}"{{ model.blank|yesno:' target=_blank,' }}>{{ model.label }}</a></li>
+                    {% endfor %}
+                {% endif %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </ul>
+    <br/>
+    <div class="text-center" >
+        <a href="/manage/help"><button type="button" class="btn btn-fill btn-success btn-lg" style="width: 80%;background-color:#08a057;background-image: linear-gradient(to bottom,#08a057, #00a65a);">
+           {% trans 'Help' %}
+         </button></a>
+    </div>
+</div>
+<script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+<script>
+  $(".text").click(function() {
+      $(this).next(".nested").toggle();
+  });
+
+  $(".down").click(function(){
+      var down_text = $(this).text().split(' ◄')[0];
+      var down_text_2 = $(this).text().split(' ▼')[0];
+      $(this).text($(this).text() == down_text+' ◄' ? down_text+' ▼' : down_text_2+' ◄');
+
+    });
+</script>

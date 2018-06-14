@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans 'My neighbors' %}{% endblock %}
+
+{% block head_top %}
+    <link rel="stylesheet" href="{% static 'plugins/datatables/dataTables.bootstrap.css'%}">
+      <!-- daterange picker -->
+    <link rel="stylesheet" href="{% static 'plugins/daterangepicker/daterangepicker-bs3.css'%}">
+{% endblock %}
+
+{% block content %}
+    <!-- Main content -->
+    <section class="content">
+        {% if users %}
+            <!-- Default box -->
+            <div class="card">
+                <div class="header">
+                    <h3 class="text-center"><i class="fa fa-user"></i> {% trans 'My neighbors in Condominium' %}</h3>
+                </div>
+                <div class="content">
+                    <table id="users" class="table table-striped">
+                        <thead>
+                        <tr role="row">
+                            <th>ID</th>
+                            <th>{% trans 'Full Name' %}</th>
+                            <th>{% trans 'Email' %}</th>
+                            <th>{% trans 'Phone' %}</th>
+                            <th>{% trans 'Flat' %}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for user in users %}
+                            <tr role="row">
+                                <td class="vert-align"><a href="{% url 'profile' user_id=user.id %}">{{ user.id }}</a></td>
+                                <td> <a href="/profile/{{ user.id }}">{{ user.last_name}} {{ user.first_name}} {{ user.middle_name}}</a></td>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.phone }}</td>
+                                <td><ul style="margin-left: -40px">
+                                    {% for flat in user.condominiumresidentialpremise_set.all %}
+                                            <li style="list-style: none">{% trans 'Porch' %} {{ flat.floor.porch.number }}, {% trans 'floor' %} {{ flat.floor.number }}, {% trans 'flat' %} {{ flat.number }} ;</li>
+                                    {% empty %}
+                                        {% trans 'Undefined' %}
+                                    {% endfor %}
+
+                                    </ul>
+
+                                    </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div><!-- /.box-body -->
+            </div>
+        {% endif %}
+    </section><!-- /.content -->
+{% endblock %}
+
+{% block footerjs %}
+
+    <script type="text/javascript" src="/static/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/static/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$("#users").DataTable( {
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Ukrainian.json"
+            }
+        });</script>
+
+{% endblock footerjs %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Information is absent' %}{% endblock %}
+
+{% block content %}
+  <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+
+            <div class="content">
+
+
+                <section class="content">
+      <div class="error-page">
+        <h2 class="headline text-yellow"> 404</h2>
+
+        <div class="error-content">
+          <h3><i class="fa fa-warning text-yellow"></i> {% trans 'Uppps. Page not found' %}:(</h3>
+
+            <p>
+            {% trans 'Maybe the link does not correct' %}.
+            </p>
+
+            <p>{% trans 'You can' %}<a href="/">{% trans 'go to ' %}</a> {% trans 'home page' %}
+            {% trans 'If you need help - below is chat' %} <i class="fa fa-level-down"></i>
+             </p>
+
+        </div>
+        <!-- /.error-content -->
+
+      </div>
+      <!-- /.error-page -->
+                     </section>
+</div>
+              </div>
+
+        </section><!-- /.content -->
+
+{% endblock %}

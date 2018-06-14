@@ -1,0 +1,14 @@
+{% load i18n %}
+
+<ul class="breadcrumb">
+    <li><a href="{% url 'condominium:forum:index' request.session.condominium_slug %}"><i class="fa fa-home">&nbsp;</i>{% trans "Forum index" %}</a></li>
+    {% if forum %}
+        {% for ancestor in forum.get_ancestors %}
+            <li><a href="{% url 'condominium:forum:forum' request.session.condominium_slug ancestor.slug ancestor.id %}">{{ ancestor.name }}</a></li>
+        {% endfor %}
+        <li><a href="{% url 'condominium:forum:forum' request.session.condominium_slug forum.slug forum.id %}">{{ forum.name }}</a></li>
+    {% endif %}
+    {% if topic %}
+        <li><a href="{% url 'condominium:forum_conversation:topic' request.session.condominium_slug forum.slug forum.id topic.slug topic.id %}">{{ topic.subject }}</a></li>
+    {% endif %}
+</ul>
