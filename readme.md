@@ -1,5 +1,9 @@
 **SaaS Service for Condominiums** 
    
+Effective tool for managing your Association of co-owners of multiappartment house's, apartment complex and local area. 
+Supporting the idea of self-government by residents of their home and providing a communication instrument for condominium members and housing cooperative.
+   
+   
 **Requirements**
 - Python3
 - Django 1.8.13
